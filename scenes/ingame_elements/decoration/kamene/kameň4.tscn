@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3l5ided4vydc"]
+
+[ext_resource type="Texture2D" uid="uid://rd3l2xs46igt" path="res://assets/decoration/kamene/kameň4.png" id="1_sun1r"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ytclh"]
+friction = 0.0
+absorbent = true
+
+[node name="kameň" type="StaticBody2D" groups=["Wall"]]
+collision_layer = 4
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_ytclh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-6, 3)
+texture = ExtResource("1_sun1r")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-2, 6)
+polygon = PackedVector2Array(-106, -99, -101.552, -102.885, 83.9542, -98.1043, 89, -93, 97, 97, 93.3336, 100.979, -88.8748, 99.9463, -94, 94)

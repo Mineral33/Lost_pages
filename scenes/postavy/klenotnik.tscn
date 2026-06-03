@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://mpsqfrito0t1"]
+
+[ext_resource type="Script" uid="uid://c8dflsrcb3jj7" path="res://scripts/klenotnik.gd" id="1_p1qis"]
+[ext_resource type="Texture2D" uid="uid://w2tu8eo6n8jt" path="res://assets/postavy/klenotnik.png" id="2_sp46n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfpil"]
+size = Vector2(147, 99)
+
+[node name="klenotnik" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_p1qis")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sp46n")
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 245
+position = Vector2(58, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-67.5, 22.5)
+shape = SubResource("RectangleShape2D_xfpil")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://binc1fb31wk0p"]
+
+[ext_resource type="FontFile" uid="uid://c6qhix57jt7x3" path="res://assets/UI/fonts/Oswald/static/Oswald-Regular.ttf" id="1_4cu33"]
+[ext_resource type="Script" uid="uid://vnu2eujmh1el" path="res://scripts/damage_number_label.gd" id="2_4cu33"]
+
+[node name="damage_number_label" type="Label"]
+z_index = 130
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_4cu33")
+theme_override_font_sizes/font_size = 15
+text = "20"
+script = ExtResource("2_4cu33")

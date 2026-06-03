@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqodnd5gvpcpx"]
+
+[ext_resource type="Script" uid="uid://cqjxhwslk3ola" path="res://scripts/oxygen_ui.gd" id="1_ow6h1"]
+
+[node name="oxbar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ow6h1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -6.0
+offset_right = 20.0
+offset_bottom = 4.0
+color = Color(0.376484, 0.982278, 0.944059, 1)

@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://8lv3yvb83lu"]
+
+[ext_resource type="Script" uid="uid://mqm37sl3wyhw" path="res://scripts/Projectile_enemy.gd" id="1_7u3be"]
+[ext_resource type="Texture2D" uid="uid://7s8xgaednlgn" path="res://assets/enemies/strom_firing/strom.png" id="2_sc1rj"]
+[ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="3_1n7ry"]
+[ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="4_1e2vg"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="5_wplki"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tgh78"]
+radius = 1200.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1n7ry"]
+size = Vector2(25.7801, 72.2124)
+
+[node name="firing_enemy" type="Node2D" groups=["Enemies"]]
+z_index = 110
+script = ExtResource("1_7u3be")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sc1rj")
+
+[node name="FireTimer" type="Timer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.82236, -14.1118)
+shape = SubResource("CircleShape2D_tgh78")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Healthbar" parent="." groups=["Enemies"] instance=ExtResource("3_1n7ry")]
+offset_left = 0.289673
+offset_top = -70.6781
+offset_right = 0.289673
+offset_bottom = -70.6781
+
+[node name="hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(-4.17415, 26.1062)
+shape = SubResource("RectangleShape2D_1n7ry")
+
+[node name="enemy_health_component" parent="." instance=ExtResource("4_1e2vg")]
+
+[node name="damage_number_display" parent="." instance=ExtResource("5_wplki")]
+offset_left = -38.2512
+offset_top = -38.3757
+offset_right = 36.7488
+offset_bottom = 36.6243
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

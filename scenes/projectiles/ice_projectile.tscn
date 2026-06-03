@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ey0cd71gtfcp"]
+
+[ext_resource type="Script" uid="uid://ctrlpptxqls" path="res://scripts/ice_projectile.gd" id="1_6r8xs"]
+[ext_resource type="Texture2D" uid="uid://bla3a4pdy8rxj" path="res://assets/enemies/mage/shotgun_ice_mage/ice_projectille.png" id="2_ymdys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1cydy"]
+size = Vector2(29, 15)
+
+[node name="Ice" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_6r8xs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -2.5)
+shape = SubResource("RectangleShape2D_1cydy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ymdys")
+
+[node name="LifeTimer" type="Timer" parent="."]

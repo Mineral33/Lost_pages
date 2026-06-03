@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://bddv2jfhboye3"]
+
+[ext_resource type="Script" uid="uid://cvuj4b6p3dxld" path="res://scripts/spikes.gd" id="1_xbcdo"]
+[ext_resource type="Texture2D" uid="uid://nlhwoxbbxaqr" path="res://assets/mec/spike.png" id="2_xbcdo"]
+
+[sub_resource type="Animation" id="Animation_bflj7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mover:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xbcdo"]
+resource_name = "move"
+length = 10.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mover:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 9.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -500)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kd5gq"]
+_data = {
+&"RESET": SubResource("Animation_bflj7"),
+&"move": SubResource("Animation_xbcdo")
+}
+
+[node name="spikes" type="Node2D"]
+scale = Vector2(0.413, 0.63)
+script = ExtResource("1_xbcdo")
+
+[node name="mover" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="mover"]
+position = Vector2(13, -34)
+texture = ExtResource("2_xbcdo")
+
+[node name="Area2D" type="Area2D" parent="mover"]
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="mover/Area2D"]
+polygon = PackedVector2Array(119, -9, 220, 215, -224, 210, -116, 58, -49, -108, -38, -182, 4, -275, 40, -143, 96, -79)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kd5gq")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(7, -290)
+
+[connection signal="area_entered" from="mover/Area2D" to="." method="_on_area_2d_area_entered"]

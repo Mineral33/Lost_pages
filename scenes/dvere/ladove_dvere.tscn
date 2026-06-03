@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ber1cauoqkt0b"]
+
+[ext_resource type="Texture2D" uid="uid://dl6xk3iwmathl" path="res://assets/decoration/door/ladove_dvere.png" id="1_3nlh2"]
+[ext_resource type="Script" uid="uid://6qhvmwra50fd" path="res://scripts/ladove_dvere.gd" id="1_ck7vh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ck7vh"]
+size = Vector2(67, 137)
+
+[node name="ladove dvere" type="Node2D"]
+script = ExtResource("1_ck7vh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3nlh2")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(5.5, 42.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ck7vh")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

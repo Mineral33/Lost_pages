@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://5ls8070prhca"]
+
+[ext_resource type="Script" uid="uid://0ubsbanlq5uu" path="res://scripts/wisdom.gd" id="1_b2hlr"]
+[ext_resource type="Texture2D" uid="uid://c45xld80v6v2q" path="res://assets/budovy/bookshelf/bookshelf0000.png" id="2_clc4b"]
+[ext_resource type="Texture2D" uid="uid://cf72dy6e1ig2g" path="res://assets/budovy/bookshelf/bookshelf0001.png" id="3_xo3hq"]
+[ext_resource type="Texture2D" uid="uid://chsaxju3r28qr" path="res://assets/budovy/bookshelf/bookshelf0002.png" id="4_cwbd0"]
+[ext_resource type="Texture2D" uid="uid://b6eti6vjcx2em" path="res://assets/budovy/bookshelf/bookshelf0003.png" id="5_t3k4j"]
+[ext_resource type="Texture2D" uid="uid://cbxcvfyvyoppb" path="res://assets/budovy/bookshelf/bookshelf0004.png" id="6_p07tr"]
+[ext_resource type="Texture2D" uid="uid://c6l3jg8avok17" path="res://assets/budovy/bookshelf/bookshelf_empty0000.png" id="7_suo62"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17vji"]
+size = Vector2(52, 55)
+
+[sub_resource type="Animation" id="Animation_kmsc1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_clc4b")]
+}
+
+[sub_resource type="Animation" id="Animation_fyemv"]
+resource_name = "empty"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_suo62")]
+}
+
+[sub_resource type="Animation" id="Animation_npu7g"]
+resource_name = "idle"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.2, 0.333333, 0.466667, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_clc4b"), ExtResource("3_xo3hq"), ExtResource("4_cwbd0"), ExtResource("5_t3k4j"), ExtResource("6_p07tr")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_utovl"]
+_data = {
+&"RESET": SubResource("Animation_kmsc1"),
+&"empty": SubResource("Animation_fyemv"),
+&"idle": SubResource("Animation_npu7g")
+}
+
+[node name="wisdom" type="Node2D" groups=["wisdom"]]
+script = ExtResource("1_b2hlr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_clc4b")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 6.5)
+shape = SubResource("RectangleShape2D_17vji")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_utovl")
+}
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

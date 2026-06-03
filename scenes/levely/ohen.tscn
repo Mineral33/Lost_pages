@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfeac8kl2r4av"]
+
+[ext_resource type="Texture2D" uid="uid://bsol5pcumxsek" path="res://assets/mec/kamene_ohen.png" id="1_lmo6i"]
+[ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_n862p"]
+[ext_resource type="PackedScene" uid="uid://da28lp31q8oc7" path="res://scenes/player.tscn" id="3_i2ou2"]
+[ext_resource type="PackedScene" uid="uid://14jbjx0enb5v" path="res://scenes/dvere/door_back.tscn" id="4_5ql05"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l785e"]
+texture = ExtResource("1_lmo6i")
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:1/0 = 0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:1/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_25rs0"]
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 4
+sources/0 = SubResource("TileSetAtlasSource_l785e")
+
+[node name="ohen" type="Node2D"]
+
+[node name="UImanager" parent="." instance=ExtResource("2_n862p")]
+
+[node name="Player" parent="." instance=ExtResource("3_i2ou2")]
+position = Vector2(-40, -7)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_25rs0")
+format = 2
+layer_0/tile_data = PackedInt32Array(262138, 65536, 1, 327674, 65536, 2, 262139, 131072, 1, 327675, 131072, 2, 262140, 196608, 1, 327676, 196608, 2, 262141, 262144, 1, 327677, 262144, 2, 262142, 327680, 1, 327678, 327680, 2, 262143, 393216, 1, 327679, 393216, 2, 196608, 458752, 1, 262144, 458752, 2, 196609, 524288, 1, 262145, 524288, 2, 196610, 589824, 1, 262146, 589824, 2, 196611, 655360, 1, 262147, 655360, 2, 196612, 720896, 1, 262148, 720896, 2)
+
+[node name="door_back" parent="." instance=ExtResource("4_5ql05")]
+position = Vector2(119, -59)

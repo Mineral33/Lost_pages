@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://14jbjx0enb5v"]
+
+[ext_resource type="Script" uid="uid://c3u0mgc7s1lm0" path="res://scripts/door_back.gd" id="1_dobrb"]
+[ext_resource type="Texture2D" uid="uid://darkq7087stxq" path="res://assets/decoration/door/dvere.png" id="2_g12u8"]
+[ext_resource type="Texture2D" uid="uid://m5dsruw6ddw3" path="res://assets/decoration/sign.png" id="3_o8vw5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x58om"]
+size = Vector2(62, 137)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8vw5"]
+size = Vector2(225, 140)
+
+[node name="door_back" type="Node2D"]
+script = ExtResource("1_dobrb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_g12u8")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(7, 35.5)
+shape = SubResource("RectangleShape2D_x58om")
+
+[node name="Sign" type="Sprite2D" parent="."]
+z_index = 1440
+position = Vector2(66, 78)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_o8vw5")
+
+[node name="Area2D" type="Area2D" parent="Sign"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sign/Area2D"]
+position = Vector2(9.15527e-05, -45)
+shape = SubResource("RectangleShape2D_o8vw5")
+
+[node name="Label" type="Label" parent="Sign"]
+visible = false
+offset_left = -69.9999
+offset_top = -85.0
+offset_right = 89.0001
+offset_bottom = -36.0
+theme_override_font_sizes/font_size = 30
+text = "unknown"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Sign/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Sign/Area2D" to="." method="_on_area_2d_mouse_exited"]

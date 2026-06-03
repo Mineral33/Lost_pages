@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhotnbwowjl2m"]
+
+[ext_resource type="Script" uid="uid://c2ts2a0nlp4eq" path="res://scripts/kameň_projectile.gd" id="1_dvota"]
+[ext_resource type="Texture2D" uid="uid://cnepcpe8swgw0" path="res://assets/enemies/kanon/kameň.png" id="2_8ttoc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i26p2"]
+radius = 23.0868
+
+[node name="kameň_projectile" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_dvota")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 4096
+texture = ExtResource("2_8ttoc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i26p2")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

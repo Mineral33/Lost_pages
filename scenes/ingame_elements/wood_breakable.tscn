@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://vrsadocxvmsy"]
+
+[ext_resource type="Texture2D" uid="uid://coe154j66s1gb" path="res://assets/interactable/breakable/prekažka_breakable.png" id="1_25o0g"]
+[ext_resource type="Script" uid="uid://fxlh4vua1ulf" path="res://scripts/wood_breakable.gd" id="1_wp6qp"]
+[ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="2_wp6qp"]
+[ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="4_wp6qp"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="5_5vkgw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ax7ui"]
+size = Vector2(38, 175)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp6qp"]
+size = Vector2(37, 176)
+
+[node name="Node2D" type="Node2D" groups=["Enemies"]]
+script = ExtResource("1_wp6qp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_25o0g")
+
+[node name="hurtbox" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(-8, 5.5)
+shape = SubResource("RectangleShape2D_ax7ui")
+
+[node name="Healthbar" parent="." instance=ExtResource("4_wp6qp")]
+offset_left = 36.0
+offset_top = -28.0
+offset_right = 36.0
+offset_bottom = -28.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-7.5, 5)
+shape = SubResource("RectangleShape2D_wp6qp")
+
+[node name="enemy_health_component" parent="." instance=ExtResource("2_wp6qp")]
+position = Vector2(-5, 3)
+
+[node name="damage_number_display" parent="." instance=ExtResource("5_5vkgw")]

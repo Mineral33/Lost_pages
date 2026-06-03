@@ -1,0 +1,233 @@
+[gd_scene load_steps=18 format=3 uid="uid://cc637bpb8c0ic"]
+
+[ext_resource type="Script" uid="uid://brm0lw5yfv6y2" path="res://scripts/cerv.gd" id="1_tw2t4"]
+[ext_resource type="Script" uid="uid://dmqbvjr3jqklh" path="res://scripts/hlava.gd" id="2_eio1b"]
+[ext_resource type="Texture2D" uid="uid://be6t1bvjxo2od" path="res://assets/enemies/červ/červ-hlava.png" id="2_o51n0"]
+[ext_resource type="Texture2D" uid="uid://cwfa5xrlxcxi6" path="res://assets/enemies/červ/červ-telo.png" id="3_et5n8"]
+[ext_resource type="Texture2D" uid="uid://cona28jj51a2d" path="res://assets/enemies/červ/červ-....png" id="4_clei0"]
+[ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="5_clei0"]
+[ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="6_eio1b"]
+[ext_resource type="Script" uid="uid://bcm5oywvqvdyi" path="res://scripts/enemy_health_component.gd" id="7_72wgq"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="9_72wgq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eio1b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_72wgq"]
+radius = 94.1913
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_clei0"]
+radius = 103.333
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o51n0"]
+size = Vector2(183.333, 286.667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72wgq"]
+size = Vector2(105, 190)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tw2t4"]
+size = Vector2(223.333, 191.833)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_et5n8"]
+radius = 98.714
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gd7ha"]
+size = Vector2(5992, 2512)
+
+[node name="červ" type="Node2D" groups=["Enemies"]]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_tw2t4")
+
+[node name="hlava" type="CharacterBody2D" parent="." groups=["Enemies"]]
+script = ExtResource("2_eio1b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hlava"]
+shape = SubResource("RectangleShape2D_eio1b")
+
+[node name="hlava" type="Sprite2D" parent="hlava" groups=["Enemies"]]
+texture = ExtResource("2_o51n0")
+
+[node name="Timer" type="Timer" parent="hlava"]
+wait_time = 3.0
+autostart = true
+
+[node name="atttack_Area" type="Area2D" parent="hlava"]
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hlava/atttack_Area"]
+position = Vector2(-24, 2)
+shape = SubResource("CircleShape2D_72wgq")
+
+[node name="hurtbox" type="Area2D" parent="hlava"]
+position = Vector2(-1310, -6.66667)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hlava/hurtbox"]
+position = Vector2(-1280, 13.3332)
+shape = SubResource("CircleShape2D_clei0")
+
+[node name="červ-segmet-2" type="Sprite2D" parent="." groups=["Enemies"]]
+position = Vector2(-214, 0)
+texture = ExtResource("4_clei0")
+
+[node name="attack_area_1" type="Area2D" parent="červ-segmet-2"]
+position = Vector2(17.3333, -70)
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="červ-segmet-2/attack_area_1"]
+position = Vector2(-15, 63.3333)
+shape = SubResource("RectangleShape2D_o51n0")
+
+[node name="hurtbox" type="Area2D" parent="červ-segmet-2"]
+position = Vector2(137.333, -160)
+scale = Vector2(2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="červ-segmet-2/hurtbox"]
+position = Vector2(-61.6667, 166.667)
+shape = SubResource("RectangleShape2D_72wgq")
+
+[node name="Červ-telo" type="Sprite2D" parent="." groups=["Enemies"]]
+position = Vector2(-440, 4)
+texture = ExtResource("3_et5n8")
+
+[node name="attack_area_2" type="Area2D" parent="Červ-telo"]
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Červ-telo/attack_area_2"]
+position = Vector2(1.66669, 3.41667)
+shape = SubResource("RectangleShape2D_tw2t4")
+
+[node name="hurtbox" type="Area2D" parent="Červ-telo"]
+position = Vector2(150, -164)
+scale = Vector2(2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Červ-telo/hurtbox"]
+position = Vector2(-72.5, 165)
+shape = SubResource("RectangleShape2D_72wgq")
+
+[node name="Červ-telo2" type="Sprite2D" parent="." groups=["Enemies"]]
+position = Vector2(-662, 4)
+texture = ExtResource("3_et5n8")
+
+[node name="attack_area_3" type="Area2D" parent="Červ-telo2"]
+position = Vector2(-1.33333, -0.666667)
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Červ-telo2/attack_area_3"]
+position = Vector2(1.66669, 3.41667)
+shape = SubResource("RectangleShape2D_tw2t4")
+
+[node name="hurtbox" type="Area2D" parent="Červ-telo2"]
+position = Vector2(145.333, -160.667)
+scale = Vector2(2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Červ-telo2/hurtbox"]
+position = Vector2(-72.5, 165)
+shape = SubResource("RectangleShape2D_72wgq")
+
+[node name="Červ-telo3" type="Sprite2D" parent="." groups=["Enemies"]]
+position = Vector2(-886, 4)
+texture = ExtResource("3_et5n8")
+
+[node name="attack_area_4" type="Area2D" parent="Červ-telo3"]
+position = Vector2(-3.99994, 2.66667)
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Červ-telo3/attack_area_4"]
+position = Vector2(1.66669, 3.41667)
+shape = SubResource("RectangleShape2D_tw2t4")
+
+[node name="hurtbox" type="Area2D" parent="Červ-telo3"]
+position = Vector2(146, -164)
+scale = Vector2(2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Červ-telo3/hurtbox"]
+position = Vector2(-72.5, 165)
+shape = SubResource("RectangleShape2D_72wgq")
+
+[node name="Červ-telo4" type="Sprite2D" parent="." groups=["Enemies"]]
+position = Vector2(-1110, 3.33333)
+texture = ExtResource("3_et5n8")
+
+[node name="attack_area_4" type="Area2D" parent="Červ-telo4"]
+position = Vector2(-3.99994, 2.66667)
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Červ-telo4/attack_area_4"]
+position = Vector2(1.66669, 3.41667)
+shape = SubResource("RectangleShape2D_tw2t4")
+
+[node name="hurtbox" type="Area2D" parent="Červ-telo4"]
+position = Vector2(160, -163.333)
+scale = Vector2(2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Červ-telo4/hurtbox"]
+position = Vector2(-72.5, 165)
+shape = SubResource("RectangleShape2D_72wgq")
+
+[node name="Červ-zadok" type="Sprite2D" parent="." groups=["Enemies"]]
+position = Vector2(-1310, -6.66667)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("2_o51n0")
+
+[node name="attack_area_5" type="Area2D" parent="Červ-zadok"]
+position = Vector2(-194, 8.66667)
+rotation = 3.14159
+scale = Vector2(1, -1)
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Červ-zadok/attack_area_5"]
+position = Vector2(-160, 0)
+shape = SubResource("CircleShape2D_et5n8")
+
+[node name="hurtbox" type="Area2D" parent="Červ-zadok"]
+position = Vector2(-6.66677, -6.66667)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Červ-zadok/hurtbox"]
+position = Vector2(-30.0001, 3.33333)
+shape = SubResource("CircleShape2D_clei0")
+
+[node name="enemy_health_component" parent="." instance=ExtResource("5_clei0")]
+
+[node name="Healthbar" parent="." instance=ExtResource("6_eio1b")]
+z_index = 920
+offset_left = -44.0
+offset_top = -176.0
+offset_right = -44.0
+offset_bottom = -176.0
+scale = Vector2(2, 1)
+
+[node name="front" type="Marker2D" parent="."]
+position = Vector2(92, 0)
+script = ExtResource("7_72wgq")
+
+[node name="player_follow" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_follow"]
+position = Vector2(-212, 72)
+shape = SubResource("RectangleShape2D_gd7ha")
+
+[node name="damage_number_display" parent="." instance=ExtResource("9_72wgq")]
+offset_left = -276.0
+offset_top = -92.0
+offset_right = -20.0
+offset_bottom = 108.0
+
+[connection signal="timeout" from="hlava/Timer" to="hlava" method="_on_timer_timeout"]
+[connection signal="area_entered" from="hlava/atttack_Area" to="." method="_on_atttack_area_area_entered"]
+[connection signal="area_entered" from="červ-segmet-2/attack_area_1" to="." method="_on_atttack_area_area_entered"]
+[connection signal="area_exited" from="Červ-telo/attack_area_2" to="." method="_on_atttack_area_area_entered"]
+[connection signal="area_entered" from="Červ-telo2/attack_area_3" to="." method="_on_atttack_area_area_entered"]
+[connection signal="area_entered" from="Červ-telo3/attack_area_4" to="." method="_on_atttack_area_area_entered"]
+[connection signal="area_entered" from="Červ-telo4/attack_area_4" to="." method="_on_atttack_area_area_entered"]
+[connection signal="area_exited" from="Červ-zadok/attack_area_5" to="." method="_on_atttack_area_area_entered"]
+[connection signal="area_entered" from="player_follow" to="." method="_on_player_follow_area_entered"]
+[connection signal="area_exited" from="player_follow" to="." method="_on_player_follow_area_exited"]

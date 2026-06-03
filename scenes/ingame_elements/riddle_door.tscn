@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://b15gjg5v5dadx"]
+
+[ext_resource type="Texture2D" uid="uid://b725uuot21wo6" path="res://assets/interactable/riddle_door/riddle_door.png" id="1_3bhbu"]
+[ext_resource type="Script" uid="uid://byujiqm5ablxj" path="res://scripts/riddle_door.gd" id="1_clya7"]
+[ext_resource type="Texture2D" uid="uid://chbiuf57ns8bk" path="res://assets/interactable/riddle_door/riddle_door_1.png" id="3_dp5gt"]
+[ext_resource type="Texture2D" uid="uid://cy6axbkrg32wl" path="res://assets/interactable/riddle_door/riddle_door_2.png" id="4_674qh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clya7"]
+size = Vector2(14, 104)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxotb"]
+size = Vector2(56.5, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dp5gt"]
+
+[node name="riddle_door" type="StaticBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_clya7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3bhbu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 8)
+shape = SubResource("RectangleShape2D_clya7")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5.25, 24)
+shape = SubResource("RectangleShape2D_gxotb")
+
+[node name="RiddleDoor1" type="Sprite2D" parent="."]
+z_index = 130
+position = Vector2(0, -0.5)
+texture = ExtResource("3_dp5gt")
+
+[node name="RiddleDoor2" type="Sprite2D" parent="."]
+position = Vector2(-0.5, 0)
+texture = ExtResource("4_674qh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-11.5, 2)
+shape = SubResource("RectangleShape2D_dp5gt")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

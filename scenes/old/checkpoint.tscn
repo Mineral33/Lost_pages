@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://cnu0ku34fda5l"]
+
+[ext_resource type="Script" uid="uid://dixudyn8x2kgv" path="res://scripts/checkpoint.gd" id="1_yqsag"]
+[ext_resource type="Texture2D" uid="uid://d16d2o6nyixpq" path="res://assets/decoration/old/chcekpoint0000.png" id="2_c45tw"]
+[ext_resource type="Texture2D" uid="uid://bvvuctha4353m" path="res://assets/decoration/old/chcekpoint0001.png" id="2_yqsag"]
+[ext_resource type="Texture2D" uid="uid://dy0rcpie7n2aw" path="res://assets/decoration/old/chcekpoint0002.png" id="3_c45tw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55jpe"]
+size = Vector2(29.5, 46)
+
+[sub_resource type="Animation" id="Animation_tl56q"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_vc08m"]
+resource_name = "active"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_yqsag"), ExtResource("3_c45tw")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ok2sx"]
+_data = {
+&"RESET": SubResource("Animation_tl56q"),
+&"active": SubResource("Animation_vc08m")
+}
+
+[node name="Checkpoint" type="Node2D"]
+script = ExtResource("1_yqsag")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_c45tw")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5.25, -8)
+shape = SubResource("RectangleShape2D_55jpe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ok2sx")
+}
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

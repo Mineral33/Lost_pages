@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://bujkufxxdick4"]
+
+[ext_resource type="Script" uid="uid://ghiiufljwkyj" path="res://scripts/poleno.gd" id="1_ahwma"]
+[ext_resource type="Texture2D" uid="uid://ct1wdn5padv20" path="res://assets/player/poleno/snímka0000.png" id="2_kadot"]
+[ext_resource type="Texture2D" uid="uid://b14ijtitkvapf" path="res://assets/player/poleno/snímka0001.png" id="3_i501k"]
+[ext_resource type="Texture2D" uid="uid://cailmdllrpyhu" path="res://assets/player/poleno/snímka0002.png" id="4_kafmf"]
+[ext_resource type="Texture2D" uid="uid://cv5dfkgumlllg" path="res://assets/player/poleno/snímka0003.png" id="5_qchwd"]
+[ext_resource type="Texture2D" uid="uid://m1rayvjgquh4" path="res://assets/player/poleno/snímka0004.png" id="6_k5e6b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yt3q"]
+size = Vector2(25, 38)
+
+[sub_resource type="Animation" id="Animation_u5aq0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_kadot")]
+}
+
+[sub_resource type="Animation" id="Animation_r0rym"]
+resource_name = "hori"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_kadot"), ExtResource("3_i501k"), ExtResource("4_kafmf"), ExtResource("5_qchwd"), ExtResource("6_k5e6b")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ku70o"]
+_data = {
+&"RESET": SubResource("Animation_u5aq0"),
+&"hori": SubResource("Animation_r0rym")
+}
+
+[node name="poleno" type="Area2D"]
+script = ExtResource("1_ahwma")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 34)
+shape = SubResource("RectangleShape2D_5yt3q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, -41)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("2_kadot")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ku70o")
+}
+
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bplgwd7gun5te"]
+
+[ext_resource type="Script" uid="uid://b6oiie8n7uqms" path="res://scripts/syry.gd" id="1_xaowl"]
+[ext_resource type="Texture2D" uid="uid://bgs2sk10lm3sf" path="res://assets/postavy/syry.png" id="2_24rk7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfpil"]
+size = Vector2(180, 110)
+
+[node name="syry_shop" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_xaowl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7, 0)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_24rk7")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-87, 12)
+shape = SubResource("RectangleShape2D_xfpil")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

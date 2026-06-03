@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cukjw1xy44apt"]
+
+[ext_resource type="Script" uid="uid://b21y4fyffn1do" path="res://scripts/snowball.gd" id="1_dlouw"]
+[ext_resource type="Texture2D" uid="uid://cnepcpe8swgw0" path="res://assets/enemies/kanon/kameň.png" id="2_dlouw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j35gf"]
+radius = 14.0
+
+[node name="snowball" type="Area2D"]
+script = ExtResource("1_dlouw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_j35gf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_dlouw")
+
+[node name="LifeTimer" type="Timer" parent="."]

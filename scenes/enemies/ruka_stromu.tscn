@@ -1,0 +1,66 @@
+[gd_scene load_steps=15 format=3 uid="uid://gt3r17e1ybun"]
+
+[ext_resource type="Texture2D" uid="uid://bjftpc1nh4prx" path="res://assets/enemies/vstrom/prava/attak0000.png" id="1_5chbj"]
+[ext_resource type="Texture2D" uid="uid://bdem1hau3th0l" path="res://assets/enemies/vstrom/prava/attak0001.png" id="2_488j5"]
+[ext_resource type="Texture2D" uid="uid://ycveudvw6xn6" path="res://assets/enemies/vstrom/prava/attak0002.png" id="3_gcx1f"]
+[ext_resource type="Texture2D" uid="uid://bseg8vhhu1a2s" path="res://assets/enemies/vstrom/prava/attak0003.png" id="4_r4u4k"]
+[ext_resource type="Texture2D" uid="uid://fugfxi3hi6l5" path="res://assets/enemies/vstrom/prava/attak0004.png" id="5_2f2yg"]
+[ext_resource type="Texture2D" uid="uid://b4hl6fd34b3of" path="res://assets/enemies/vstrom/prava/attak0005.png" id="6_nmkqt"]
+[ext_resource type="Texture2D" uid="uid://d4ktpaxgrs8h5" path="res://assets/enemies/vstrom/prava/attak0006.png" id="7_x5dw6"]
+[ext_resource type="Texture2D" uid="uid://crya2s42g4waw" path="res://assets/enemies/vstrom/prava/attak0007.png" id="8_bfe2k"]
+[ext_resource type="Texture2D" uid="uid://bl4t2vngsqhdl" path="res://assets/enemies/vstrom/prava/attak0008.png" id="9_o6pa4"]
+[ext_resource type="Texture2D" uid="uid://b8qbmechn2ngy" path="res://assets/enemies/vstrom/prava/attak0009.png" id="10_4now4"]
+[ext_resource type="Texture2D" uid="uid://btxu3e0bhf0nh" path="res://assets/enemies/vstrom/prava/attak0010.png" id="11_fd6sq"]
+
+[sub_resource type="Animation" id="Animation_8exyf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_5chbj")]
+}
+
+[sub_resource type="Animation" id="Animation_q5h6m"]
+resource_name = "atak"
+length = 1.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4, 0.533333, 0.903333, 0.933333, 0.963333, 1.00333, 1.03333, 1.06333, 2.33333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_5chbj"), ExtResource("2_488j5"), ExtResource("3_gcx1f"), ExtResource("4_r4u4k"), ExtResource("5_2f2yg"), ExtResource("6_nmkqt"), ExtResource("7_x5dw6"), ExtResource("8_bfe2k"), ExtResource("9_o6pa4"), ExtResource("10_4now4"), ExtResource("11_fd6sq"), ExtResource("1_5chbj")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mbfr2"]
+_data = {
+&"RESET": SubResource("Animation_8exyf"),
+&"atak": SubResource("Animation_q5h6m")
+}
+
+[node name="ruka_stromu" type="Sprite2D"]
+texture = ExtResource("1_5chbj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mbfr2")
+}
+
+[node name="hit_box" type="Area2D" parent="."]
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hit_box"]
+position = Vector2(376.74, -26.91)
+polygon = PackedVector2Array(-1000.77, 1315.76, -146.374, 1436.86, 418.736, 1302.31, 869.479, 831.381, 681.109, 414.276, -106.009, 965.931, -1094.95, 878.474)

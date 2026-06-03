@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://4iavqha1gxfu"]
+
+[ext_resource type="Texture2D" uid="uid://c5nenyqwmjqvr" path="res://assets/player/effects/teleport_efect.png" id="1_veuvh"]
+[ext_resource type="Script" uid="uid://g3dtdalb6upa" path="res://scripts/teleport_efefct.gd" id="2_5rnoc"]
+
+[node name="teleport_efefct" type="Sprite2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_veuvh")
+script = ExtResource("2_5rnoc")

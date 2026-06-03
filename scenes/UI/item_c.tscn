@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1pvf4gcpjp25"]
+
+[ext_resource type="Texture2D" uid="uid://buo6sv111qqu0" path="res://assets/decoration/ui/itemy_old/ash.png" id="1_8d1lm"]
+
+[node name="item_C" type="ColorRect"]
+custom_minimum_size = Vector2(120, 40)
+offset_right = 120.0
+offset_bottom = 40.0
+color = Color(0.529412, 0.447059, 0.32549, 1)
+
+[node name="item_C_pic" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_8d1lm")
+expand_mode = 1
+
+[node name="item_C_name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_right = 81.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 10
+text = "name"
+
+[node name="item_C_count" type="Label" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 23.0
+offset_right = 93.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 10
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 40.0

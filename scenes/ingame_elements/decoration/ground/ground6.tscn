@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://bd050qtlwkevh"]
+
+[ext_resource type="Texture2D" uid="uid://dgp8eria0lx50" path="res://assets/decoration/ground/ground7.png" id="1_dyrvh"]
+[ext_resource type="PackedScene" uid="uid://cimhkuw5w5q5p" path="res://scenes/ingame_elements/decoration/trava.tscn" id="2_8t17a"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ytclh"]
+friction = 0.0
+
+[node name="ground5" type="StaticBody2D" groups=["Wall"]]
+collision_layer = 4
+collision_mask = 4
+physics_material_override = SubResource("PhysicsMaterial_ytclh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(14, 69)
+texture = ExtResource("1_dyrvh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(67.1046, -170.654)
+polygon = PackedVector2Array(-128.715, 345.193, -134.598, 299.318, -15.9803, 153.944, -9.63397, 151.896, -0.224037, 140.418, 8.24865, 139.526, 16.2754, 176.538)
+
+[node name="trava" parent="." instance=ExtResource("2_8t17a")]
+visible = false
+position = Vector2(3.95898, 25.466)
+
+[node name="trava2" parent="." instance=ExtResource("2_8t17a")]
+visible = false
+position = Vector2(-16.4804, 52.104)
+
+[node name="trava3" parent="." instance=ExtResource("2_8t17a")]
+visible = false
+position = Vector2(-55.9195, 99.9656)
+
+[node name="trava4" parent="." instance=ExtResource("2_8t17a")]
+visible = false
+position = Vector2(-33.905, 73.9998)
+
+[node name="trava10" parent="." instance=ExtResource("2_8t17a")]
+visible = false
+position = Vector2(28.6047, 4.10248)
+
+[node name="trava11" parent="." instance=ExtResource("2_8t17a")]
+visible = false
+position = Vector2(48.3613, -28.0725)
+
+[node name="trava12" parent="." instance=ExtResource("2_8t17a")]
+visible = false
+position = Vector2(72.0692, -45.0067)

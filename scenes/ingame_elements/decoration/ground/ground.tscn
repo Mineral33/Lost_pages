@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgw7ak08tlvds"]
+
+[ext_resource type="Texture2D" uid="uid://duog7yx7oucl2" path="res://assets/decoration/ground/ground.png" id="1_u6lrr"]
+[ext_resource type="PackedScene" uid="uid://cimhkuw5w5q5p" path="res://scenes/ingame_elements/decoration/trava.tscn" id="2_ltwbk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ytclh"]
+friction = 0.0
+
+[node name="ground" type="StaticBody2D" groups=["Wall"]]
+collision_layer = 20
+collision_mask = 4
+physics_material_override = SubResource("PhysicsMaterial_ytclh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_u6lrr")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.270264, 0)
+polygon = PackedVector2Array(-182.257, 31.5353, -182.257, 19.779, -177.257, 7.21185, -175.5, 0.185066, -59.8287, -1.30137, -36.3993, -8.11696, 156.785, -20.3548, 162.596, -16.5711, 169.082, -8.19302, 169.758, 9.50908, 162.358, 16.4715)
+
+[node name="trava" parent="." instance=ExtResource("2_ltwbk")]
+visible = false
+position = Vector2(-161.773, -18.1545)
+
+[node name="trava2" parent="." instance=ExtResource("2_ltwbk")]
+visible = false
+position = Vector2(-135.058, -18.2147)
+
+[node name="trava3" parent="." instance=ExtResource("2_ltwbk")]
+visible = false
+position = Vector2(-109.934, -18.7771)
+
+[node name="trava4" parent="." instance=ExtResource("2_ltwbk")]
+visible = false
+position = Vector2(-85.1414, -19.1755)
+
+[node name="trava5" parent="." instance=ExtResource("2_ltwbk")]
+visible = false
+position = Vector2(-58.494, -22.8451)
+
+[node name="trava6" parent="." instance=ExtResource("2_ltwbk")]
+visible = false
+position = Vector2(-34.7661, -27.5359)
+
+[node name="trava7" parent="." instance=ExtResource("2_ltwbk")]
+visible = false
+position = Vector2(-7.74377, -31.3861)
+
+[node name="trava8" parent="." instance=ExtResource("2_ltwbk")]
+visible = false
+position = Vector2(18.3714, -33.3147)
+
+[node name="trava9" parent="." instance=ExtResource("2_ltwbk")]
+visible = false
+position = Vector2(122.254, -38.635)
+
+[node name="trava13" parent="." instance=ExtResource("2_ltwbk")]
+visible = false
+position = Vector2(149.24, -38.4173)
+
+[node name="trava10" parent="." instance=ExtResource("2_ltwbk")]
+visible = false
+position = Vector2(98.0972, -35.3705)
+
+[node name="trava11" parent="." instance=ExtResource("2_ltwbk")]
+visible = false
+position = Vector2(44.9957, -35.3705)
+
+[node name="trava12" parent="." instance=ExtResource("2_ltwbk")]
+visible = false
+position = Vector2(70.6759, -35.8058)

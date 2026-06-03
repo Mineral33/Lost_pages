@@ -1,0 +1,241 @@
+[gd_scene load_steps=27 format=3 uid="uid://dr77lub7e1tmo"]
+
+[ext_resource type="Script" uid="uid://c6pwxihkfk28d" path="res://scripts/liana.gd" id="1_r6ibh"]
+[ext_resource type="Texture2D" uid="uid://cwhagqvf55rfh" path="res://assets/enemies/lianoa/liana0000.png" id="2_3mxin"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="5_e4cth"]
+[ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="12_tdpmv"]
+[ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="13_u148s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvb7o"]
+size = Vector2(7.47099, 112.537)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3ge4q"]
+load_path = "res://.godot/imported/liana0001.png-cf06eca4429486099f5cac164394b7f0.ctex"
+
+[sub_resource type="Animation" id="Animation_mxjmi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CompressedTexture2D_3ge4q")]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u0hbe"]
+load_path = "res://.godot/imported/liana0014.png-8bf7191829ae8ab15adc0e03103bdb65.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lb25s"]
+load_path = "res://.godot/imported/liana0015.png-1e6f74865883dbe86ad160d26673341f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x31hr"]
+load_path = "res://.godot/imported/liana0016.png-44b7349f6e004d3a73666955548ea23c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r6ibh"]
+load_path = "res://.godot/imported/liana0017.png-7b394701a1674a300406205cd59af947.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yawh7"]
+load_path = "res://.godot/imported/liana0011.png-d1bf87d176e709ae10e718fee423214d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uj78e"]
+load_path = "res://.godot/imported/liana0010.png-3defd9e7fba56857811966cbb8b0a3bf.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yc3ap"]
+load_path = "res://.godot/imported/liana0006.png-61598ac7653f435f3a52bbb2b0cc0dd0.ctex"
+
+[sub_resource type="Animation" id="Animation_tdpmv"]
+resource_name = "attak"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.133333, 0.333333, 0.5, 0.7, 0.9, 1.03333, 1.16667, 1.36667, 1.56667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_3mxin"), SubResource("CompressedTexture2D_u0hbe"), SubResource("CompressedTexture2D_lb25s"), SubResource("CompressedTexture2D_x31hr"), SubResource("CompressedTexture2D_r6ibh"), SubResource("CompressedTexture2D_x31hr"), SubResource("CompressedTexture2D_yawh7"), SubResource("CompressedTexture2D_uj78e"), SubResource("CompressedTexture2D_yc3ap")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"atack_action"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ayrpy"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CompressedTexture2D_3ge4q")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3mxin"]
+load_path = "res://.godot/imported/liana0002.png-46c7f66def7c3a59ecb7bdb951e27810.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e4cth"]
+load_path = "res://.godot/imported/liana0003.png-d0204a5f79bdc7c3fa7e75207ae24bcd.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_32id8"]
+load_path = "res://.godot/imported/liana0004.png-9a0aa614d787b63d1c264ce753d53949.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_85w86"]
+load_path = "res://.godot/imported/liana0005.png-b7a0812b9be5ec0f8a2a8701950cf5d1.ctex"
+
+[sub_resource type="Animation" id="Animation_ta3d4"]
+resource_name = "idle"
+length = 1.15
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.5, 0.633333, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("CompressedTexture2D_3ge4q"), SubResource("CompressedTexture2D_3ge4q"), SubResource("CompressedTexture2D_3mxin"), SubResource("CompressedTexture2D_e4cth"), SubResource("CompressedTexture2D_32id8"), SubResource("CompressedTexture2D_85w86"), SubResource("CompressedTexture2D_yc3ap")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ayrpy"]
+_data = {
+&"RESET": SubResource("Animation_mxjmi"),
+&"attak": SubResource("Animation_tdpmv"),
+&"die": SubResource("Animation_ayrpy"),
+&"idle": SubResource("Animation_ta3d4")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fnw7"]
+size = Vector2(26.1893, 113.459)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rysy"]
+size = Vector2(224.763, 125.211)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u148s"]
+size = Vector2(667.105, 187.303)
+
+[node name="liana" type="CharacterBody2D" groups=["Enemies"]]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_r6ibh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.79288, 10.4571)
+scale = Vector2(4.08, 0.662096)
+shape = SubResource("RectangleShape2D_hvb7o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_ayrpy")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(3.07635, -87.6932)
+scale = Vector2(-0.7, 0.7)
+texture = SubResource("CompressedTexture2D_3ge4q")
+offset = Vector2(35, 0)
+flip_h = true
+
+[node name="HitBox" type="Area2D" parent="."]
+visible = false
+position = Vector2(-2.75301, -1.30239)
+scale = Vector2(2.66994, 0.862394)
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
+position = Vector2(-3.21655, -14.1392)
+polygon = PackedVector2Array(19.0502, 8.97673, 15.975, 44.6791, -10.164, 44.084, -7.85758, 3.62138)
+
+[node name="up_autostep_raycat" type="RayCast2D" parent="."]
+position = Vector2(-5.5262, 22.6664)
+target_position = Vector2(24.7814, -0.120415)
+collision_mask = 4
+
+[node name="down_autostep raycast" type="RayCast2D" parent="."]
+position = Vector2(-5.19209, 43.7716)
+target_position = Vector2(25.8115, -0.458683)
+collision_mask = 4
+
+[node name="Healthbar" parent="." instance=ExtResource("12_tdpmv")]
+offset_top = -57.0
+offset_bottom = -57.0
+
+[node name="hurtbox" type="Area2D" parent="."]
+position = Vector2(-22.3021, -0.198582)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(20.2178, -28.4382)
+shape = SubResource("RectangleShape2D_1fnw7")
+
+[node name="Attack_area" type="Area2D" parent="."]
+visible = false
+position = Vector2(7.93928, 13.2125)
+collision_layer = 8
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_area"]
+position = Vector2(9.29475, -16.543)
+shape = SubResource("RectangleShape2D_5rysy")
+
+[node name="enemy_health_component" parent="." instance=ExtResource("13_u148s")]
+
+[node name="Player_follow_area" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_follow_area"]
+position = Vector2(15.4034, 8.35734)
+shape = SubResource("RectangleShape2D_u148s")
+
+[node name="damage_number_display" parent="." instance=ExtResource("5_e4cth")]
+offset_left = -43.456
+offset_top = -48.2043
+offset_right = 31.544
+offset_bottom = 26.7957
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="area_exited" from="HitBox" to="." method="_on_hit_box_area_exited"]
+[connection signal="area_entered" from="Attack_area" to="." method="_on_attack_area_area_entered"]
+[connection signal="area_exited" from="Attack_area" to="." method="_on_attack_area_area_exited"]

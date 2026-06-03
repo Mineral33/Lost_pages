@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlelumqquagmr"]
+
+[ext_resource type="Script" uid="uid://qt3mh35fhosa" path="res://scripts/kovac.gd" id="1_8qpip"]
+[ext_resource type="Texture2D" uid="uid://dlfjmq402tw83" path="res://assets/postavy/kovac.png" id="2_8qpip"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfpil"]
+size = Vector2(155, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qpip"]
+size = Vector2(30, 28)
+
+[node name="kovac" type="Node2D"]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_8qpip")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8qpip")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-168.5, 25)
+shape = SubResource("RectangleShape2D_xfpil")
+
+[node name="hot" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hot"]
+position = Vector2(68, 161)
+shape = SubResource("RectangleShape2D_8qpip")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="hot" to="." method="_on_hot_area_entered"]
+[connection signal="area_exited" from="hot" to="." method="_on_hot_area_exited"]

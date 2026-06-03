@@ -1,0 +1,2655 @@
+[gd_scene load_steps=57 format=3 uid="uid://dmdioispe2bdd"]
+
+[ext_resource type="Script" uid="uid://bydw6c5sq01an" path="res://scripts/u_imanager.gd" id="1_fdhb7"]
+[ext_resource type="Texture2D" uid="uid://bmtqc0eom3dy" path="res://assets/tilesets/coin0000.png" id="1_j2vkc"]
+[ext_resource type="Texture2D" uid="uid://bc041d0uu2qyh" path="res://assets/player/staffs/staff4.png" id="7_6ulu1"]
+[ext_resource type="Texture2D" uid="uid://cqqyh8w0qhati" path="res://assets/mec/firesword.png" id="7_ueqfl"]
+[ext_resource type="Texture2D" uid="uid://blnxfx4afbpai" path="res://assets/player/staffs/staff8.png" id="8_ftgio"]
+[ext_resource type="Texture2D" uid="uid://dgdc1les0lnkn" path="res://assets/mec/windsword.png" id="8_kl6ft"]
+[ext_resource type="Texture2D" uid="uid://1nbxqgm3c77b" path="res://assets/player/staffs/staff5.png" id="9_vwdia"]
+[ext_resource type="Texture2D" uid="uid://bshwwdonjmssv" path="res://assets/mec/earthsword.png" id="9_ydwg0"]
+[ext_resource type="Texture2D" uid="uid://4pam86ng7wpc" path="res://assets/player/staffs/staff2.png" id="10_jypra"]
+[ext_resource type="Texture2D" uid="uid://d3tykje0j0u23" path="res://assets/player/necklaces/necklaceshopitem - fire.png" id="11_ilc2p"]
+[ext_resource type="Texture2D" uid="uid://ctpc6o6bid7iy" path="res://assets/player/necklaces/necklaceshopitem - wind.png" id="12_hyb5f"]
+[ext_resource type="Texture2D" uid="uid://ryupr7p1olim" path="res://assets/player/necklaces/necklaceshopitem - ice.png" id="13_mrf4c"]
+[ext_resource type="Texture2D" uid="uid://biceuciqf4vvm" path="res://assets/player/UI/button_checkmark.png" id="14_6ihub"]
+[ext_resource type="Texture2D" uid="uid://blqpjrcftaews" path="res://assets/player/necklaces/necklaceshopitem - earth.png" id="14_33b1w"]
+[ext_resource type="Texture2D" uid="uid://dqh8f63ceufma" path="res://assets/predavač/predavač0000.png" id="15_6ujci"]
+[ext_resource type="Script" uid="uid://cg520fvgyue3i" path="res://scripts/item_count.gd" id="15_kvwef"]
+[ext_resource type="Texture2D" uid="uid://jxflxbq3uesr" path="res://assets/decoration/ui/items.png" id="16_4l3vx"]
+[ext_resource type="Texture2D" uid="uid://d0odd3tdsdt8g" path="res://assets/decoration/ui/drevo.png" id="16_6ra2j"]
+[ext_resource type="Texture2D" uid="uid://bwvc8ixha4hnl" path="res://assets/mec/icesword.png" id="16_qcwiq"]
+[ext_resource type="Texture2D" uid="uid://dw0wkntmjbv62" path="res://assets/decoration/ui/deepfrost.png" id="17_qq7dl"]
+[ext_resource type="Texture2D" uid="uid://buo6sv111qqu0" path="res://assets/decoration/ui/ash.png" id="18_qcsmj"]
+[ext_resource type="Texture2D" uid="uid://ou4r5ioiytxm" path="res://assets/decoration/ui/windsteel.png" id="19_bqhxh"]
+[ext_resource type="Texture2D" uid="uid://d1nu083fahs1v" path="res://assets/trees/pozadie/obloha.png" id="20_qcwiq"]
+[ext_resource type="Texture2D" uid="uid://bd3r4r6ohmnj1" path="res://assets/decoration/ui/gold.png" id="20_qq7dl"]
+[ext_resource type="Texture2D" uid="uid://bwaph72k1a0k6" path="res://assets/trees/pozadie/pozadie - hory a les.png" id="21_wauh5"]
+[ext_resource type="ButtonGroup" uid="uid://blg8ne3lb5ly6" path="res://scenes/UI/Button_group_staff.tres" id="22_2too3"]
+[ext_resource type="Texture2D" uid="uid://bftsme4ecnp8l" path="res://assets/player/UI/button_idle.png" id="22_33b1w"]
+[ext_resource type="Texture2D" uid="uid://mapymvgow2rg" path="res://assets/tilesets/healthui.png" id="22_qcsmj"]
+[ext_resource type="Texture2D" uid="uid://btg11y4t3qqc8" path="res://assets/tilesets/equip.png" id="23_bqhxh"]
+[ext_resource type="Texture2D" uid="uid://f6s4go5bi18c" path="res://assets/player/UI/button_pressed.png" id="23_h82tm"]
+[ext_resource type="Texture2D" uid="uid://bw34bhel6sbir" path="res://assets/tilesets/log_icon.png" id="24_h8oxo"]
+[ext_resource type="Texture2D" uid="uid://kc7flmu2pfiu" path="res://assets/player/UI/button_hower.png" id="24_h82tm"]
+[ext_resource type="Texture2D" uid="uid://iv0a5ytpvknh" path="res://assets/player/UI/button_disabled.png" id="24_y4q4s"]
+[ext_resource type="Texture2D" uid="uid://bmgk2bs24k7n2" path="res://assets/tilesets/pause_icon.png" id="25_6ujci"]
+[ext_resource type="ButtonGroup" uid="uid://de6tuivnnem7t" path="res://scenes/UI/Button_group_necklace.tres" id="27_2too3"]
+[ext_resource type="Texture2D" uid="uid://udvcytsil6tq" path="res://assets/predavač/dievca0000.png" id="27_gvqfs"]
+[ext_resource type="Texture2D" uid="uid://bg1l4vmcvda1n" path="res://assets/predavač/recruiter0000.png" id="27_y06qt"]
+[ext_resource type="Texture2D" uid="uid://pawxy7a3ip21" path="res://assets/player/UI/button_equiped2.png" id="28_54jyg"]
+[ext_resource type="Texture2D" uid="uid://ba8h7pcqqi3va" path="res://assets/predavač/výmena_face.png" id="29_5obsl"]
+[ext_resource type="Texture2D" uid="uid://b5w8mlnkloptd" path="res://assets/player/UI/button_cross.png" id="29_uuq5v"]
+[ext_resource type="Texture2D" uid="uid://s2o0t4khvs57" path="res://assets/player/UI/button_cross_pressed.png" id="30_7wnc6"]
+[ext_resource type="Texture2D" uid="uid://bu6muektfexlh" path="res://assets/trees/pozadie/predDrotaverínom.png" id="31_ilc2p"]
+[ext_resource type="Texture2D" uid="uid://c63ugsyhhopdr" path="res://assets/player/UI/button_cross_hower.png" id="31_qcwiq"]
+[ext_resource type="ButtonGroup" uid="uid://eybj20fcofws" path="res://scenes/UI/Btton_group_meele.tres" id="35_wauh5"]
+[ext_resource type="Texture2D" uid="uid://b684474gdki4d" path="res://assets/player/UI/wisdom_icon.png" id="41_5sltr"]
+[ext_resource type="Texture2D" uid="uid://cgb2vw625bmpp" path="res://assets/player/UI/vzorec_momentum.png" id="46_7atty"]
+[ext_resource type="Texture2D" uid="uid://b5vfbgiyxxraj" path="res://assets/player/UI/wisdom_points.png" id="48_6ulu1"]
+[ext_resource type="Texture2D" uid="uid://lh4jp0cpedom" path="res://assets/player/UI/magic_equation.png" id="48_ftgio"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ulu1"]
+atlas = ExtResource("16_qcwiq")
+region = Rect2(43, 182.5, 386, 126)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sltr"]
+atlas = ExtResource("9_ydwg0")
+region = Rect2(56, 227.5, 378, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wauh5"]
+atlas = ExtResource("7_ueqfl")
+region = Rect2(37, 216.5, 354, 177)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7atty"]
+atlas = ExtResource("8_kl6ft")
+region = Rect2(104, 210.5, 267, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jypra"]
+atlas = ExtResource("16_qcwiq")
+region = Rect2(46, 182.5, 360, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3fsj"]
+atlas = ExtResource("9_ydwg0")
+region = Rect2(71, 232.5, 342, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftgio"]
+atlas = ExtResource("7_ueqfl")
+region = Rect2(64, 241.5, 319, 155)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwdia"]
+atlas = ExtResource("8_kl6ft")
+region = Rect2(81, 193.5, 314, 129)
+
+[node name="UImanager" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_fdhb7")
+
+[node name="CoinDisplay" type="Label" parent="."]
+visible = false
+offset_left = 78.0
+offset_top = 25.0
+offset_right = 105.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 58.0
+offset_bottom = 59.0
+texture = ExtResource("1_j2vkc")
+
+[node name="Shop" type="ColorRect" parent="."]
+visible = false
+offset_left = 50.0
+offset_top = 489.0
+offset_right = 1250.0
+offset_bottom = 714.0
+color = Color(0.678352, 0.625131, 0.507458, 1)
+
+[node name="magic_class" type="Control" parent="Shop"]
+anchors_preset = 0
+offset_left = 208.0
+offset_right = 248.0
+offset_bottom = 40.0
+
+[node name="ice" type="TextureButton" parent="Shop/magic_class"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 13.0
+offset_top = 20.0
+offset_right = 463.0
+offset_bottom = 470.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("14_6ihub")
+stretch_mode = 4
+
+[node name="cena_l" type="Label" parent="Shop/magic_class/ice"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.628
+anchor_top = 0.5
+anchor_right = -0.628
+anchor_bottom = 0.5
+offset_left = 143.667
+offset_top = 200.0
+offset_right = 788.667
+offset_bottom = 440.0
+theme_override_font_sizes/font_size = 50
+text = "
+steals shield"
+
+[node name="ice_mag_upgrade_1" type="ColorRect" parent="Shop/magic_class/ice"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.5
+offset_left = 475.0
+offset_top = 280.0
+offset_right = 595.0
+offset_bottom = 95.0
+color = Color(0.541496, 0.857682, 0.769462, 1)
+
+[node name="ice_mag_upgrade_2" type="ColorRect" parent="Shop/magic_class/ice"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.5
+offset_left = 475.0
+offset_top = 180.0
+offset_right = 595.0
+offset_bottom = -5.0
+color = Color(0.541496, 0.857682, 0.769462, 1)
+
+[node name="ice_mag_upgrade_3" type="ColorRect" parent="Shop/magic_class/ice"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.5
+offset_left = 475.0
+offset_top = 80.0
+offset_right = 595.0
+offset_bottom = -105.0
+color = Color(0.541496, 0.857682, 0.769462, 1)
+
+[node name="shop_ice_staff_pic" type="TextureRect" parent="Shop/magic_class/ice"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 450.0
+texture = ExtResource("7_6ulu1")
+stretch_mode = 5
+
+[node name="earth" type="TextureButton" parent="Shop/magic_class"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 223.0
+offset_top = 20.0
+offset_right = 673.0
+offset_bottom = 470.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("14_6ihub")
+stretch_mode = 4
+
+[node name="cena_z" type="Label" parent="Shop/magic_class/earth"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.628
+anchor_top = 0.5
+anchor_right = -0.628
+anchor_bottom = 0.5
+offset_left = 143.667
+offset_top = 200.0
+offset_right = 395.667
+offset_bottom = 347.0
+theme_override_font_sizes/font_size = 50
+text = "
+steals health"
+
+[node name="earth_mag_upgrade_1" type="ColorRect" parent="Shop/magic_class/earth"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.5
+offset_left = 475.0
+offset_top = 280.0
+offset_right = 595.0
+offset_bottom = 95.0
+color = Color(0.541496, 0.857682, 0.769462, 1)
+
+[node name="earth_mag_upgrade_2" type="ColorRect" parent="Shop/magic_class/earth"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.5
+offset_left = 475.0
+offset_top = 180.0
+offset_right = 595.0
+offset_bottom = -5.0
+color = Color(0.541496, 0.857682, 0.769462, 1)
+
+[node name="earth_mag_upgrade_3" type="ColorRect" parent="Shop/magic_class/earth"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.5
+offset_left = 475.0
+offset_top = 80.0
+offset_right = 595.0
+offset_bottom = -105.0
+color = Color(0.541496, 0.857682, 0.769462, 1)
+
+[node name="shop_earth_staff_pic" type="TextureRect" parent="Shop/magic_class/earth"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 450.0
+texture = ExtResource("8_ftgio")
+stretch_mode = 5
+
+[node name="fire" type="TextureButton" parent="Shop/magic_class"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 423.0
+offset_top = 20.0
+offset_right = 873.0
+offset_bottom = 470.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("14_6ihub")
+stretch_mode = 4
+
+[node name="cena_o" type="Label" parent="Shop/magic_class/fire"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.628
+anchor_top = 0.5
+anchor_right = -0.628
+anchor_bottom = 0.5
+offset_left = 88.4
+offset_top = 200.0
+offset_right = 835.4
+offset_bottom = 413.0
+theme_override_font_sizes/font_size = 50
+text = "
+Deals bonus damage to shields"
+
+[node name="fire_mag_upgrade_1" type="ColorRect" parent="Shop/magic_class/fire"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.5
+offset_left = 475.0
+offset_top = 280.0
+offset_right = 595.0
+offset_bottom = 95.0
+color = Color(0.541496, 0.857682, 0.769462, 1)
+
+[node name="fire_mag_upgrade_2" type="ColorRect" parent="Shop/magic_class/fire"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.5
+offset_left = 475.0
+offset_top = 180.0
+offset_right = 595.0
+offset_bottom = -5.0
+color = Color(0.541496, 0.857682, 0.769462, 1)
+
+[node name="fire_mag_upgrade_3" type="ColorRect" parent="Shop/magic_class/fire"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.5
+offset_left = 475.0
+offset_top = 80.0
+offset_right = 595.0
+offset_bottom = -105.0
+color = Color(0.541496, 0.857682, 0.769462, 1)
+
+[node name="shop_fire_staff_pic" type="TextureRect" parent="Shop/magic_class/fire"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 450.0
+texture = ExtResource("9_vwdia")
+stretch_mode = 5
+
+[node name="wind" type="TextureButton" parent="Shop/magic_class"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 623.0
+offset_top = 20.0
+offset_right = 1073.0
+offset_bottom = 470.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("14_6ihub")
+stretch_mode = 4
+
+[node name="cena_w" type="Label" parent="Shop/magic_class/wind"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.628
+anchor_top = 0.5
+anchor_right = -0.628
+anchor_bottom = 0.5
+offset_left = 191.734
+offset_top = 200.0
+offset_right = 612.734
+offset_bottom = 347.0
+theme_override_font_sizes/font_size = 50
+text = "
+Partialy penetrates shield"
+
+[node name="wind_mag_upgrade_1" type="ColorRect" parent="Shop/magic_class/wind"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.5
+offset_left = 475.0
+offset_top = 280.0
+offset_right = 595.0
+offset_bottom = 95.0
+scale = Vector2(0.974478, 0.982561)
+color = Color(0.541496, 0.857682, 0.769462, 1)
+
+[node name="wind_mag_upgrade_2" type="ColorRect" parent="Shop/magic_class/wind"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 475.0
+offset_top = 180.0
+offset_right = 595.0
+offset_bottom = 220.0
+color = Color(0.541496, 0.857682, 0.769462, 1)
+
+[node name="wind_mag_upgrade_3" type="ColorRect" parent="Shop/magic_class/wind"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 475.0
+offset_top = 80.0
+offset_right = 595.0
+offset_bottom = 120.0
+color = Color(0.541496, 0.857682, 0.769462, 1)
+
+[node name="shop_wind_staff_pic" type="TextureRect" parent="Shop/magic_class/wind"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 450.0
+texture = ExtResource("10_jypra")
+
+[node name="meele_class" type="Control" parent="Shop"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ice_m" type="TextureButton" parent="Shop/meele_class"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 221.0
+offset_top = 20.0
+offset_right = 671.0
+offset_bottom = 470.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("14_6ihub")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="shop_ice_meele_pic" type="TextureRect" parent="Shop/meele_class/ice_m"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 450.0
+texture = SubResource("AtlasTexture_6ulu1")
+stretch_mode = 5
+
+[node name="shop_meele_ice_label" type="Label" parent="Shop/meele_class/ice_m"]
+layout_mode = 0
+offset_left = -50.0
+offset_top = 500.0
+offset_right = 511.0
+offset_bottom = 569.0
+theme_override_font_sizes/font_size = 50
+text = "when blocking, projectiles
+deal half of damage"
+
+[node name="earth_m" type="TextureButton" parent="Shop/meele_class"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 431.0
+offset_top = 20.0
+offset_right = 881.0
+offset_bottom = 470.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("14_6ihub")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="shop_earth_meele_pic" type="TextureRect" parent="Shop/meele_class/earth_m"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 450.0
+texture = SubResource("AtlasTexture_5sltr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="shop_meele_earth_label" type="Label" parent="Shop/meele_class/earth_m"]
+layout_mode = 0
+offset_left = -46.6667
+offset_top = 500.0
+offset_right = 476.333
+offset_bottom = 641.0
+theme_override_font_sizes/font_size = 50
+text = "passively regenerates 
+health"
+
+[node name="fire_m" type="TextureButton" parent="Shop/meele_class"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 631.0
+offset_top = 20.0
+offset_right = 1081.0
+offset_bottom = 470.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("14_6ihub")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="shop_fire_meele_pic" type="TextureRect" parent="Shop/meele_class/fire_m"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 450.0
+texture = SubResource("AtlasTexture_wauh5")
+stretch_mode = 5
+
+[node name="shop_meele_fire_label" type="Label" parent="Shop/meele_class/fire_m"]
+layout_mode = 0
+offset_left = -19.9999
+offset_top = 453.333
+offset_right = 719.0
+offset_bottom = 666.333
+theme_override_font_sizes/font_size = 50
+text = "deals 3 times as much
+ damage to shield,
+but shield blocks it"
+
+[node name="wind_m" type="TextureButton" parent="Shop/meele_class"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 831.0
+offset_top = 20.0
+offset_right = 1281.0
+offset_bottom = 470.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("14_6ihub")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="shop_wind_meele_pic" type="TextureRect" parent="Shop/meele_class/wind_m"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 450.0
+texture = SubResource("AtlasTexture_7atty")
+expand_mode = 1
+stretch_mode = 3
+flip_v = true
+
+[node name="shop_meele_wind_label" type="Label" parent="Shop/meele_class/wind_m"]
+layout_mode = 0
+offset_top = 500.0
+offset_right = 475.0
+offset_bottom = 569.0
+theme_override_font_sizes/font_size = 50
+text = "hits acumulate charge,
+that bolt strikes enemy"
+
+[node name="armor_class" type="Control" parent="Shop"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="fire_a" type="TextureButton" parent="Shop/armor_class"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 600.0
+offset_top = 30.0
+offset_right = 1050.0
+offset_bottom = 480.0
+scale = Vector2(0.3, 0.3)
+tooltip_text = "+20 magic damage
+- 20% health"
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("14_6ihub")
+stretch_mode = 4
+
+[node name="earth_fire_label" type="Label" parent="Shop/armor_class/fire_a"]
+layout_mode = 0
+offset_top = 450.0
+offset_right = 732.0
+offset_bottom = 591.0
+theme_override_font_sizes/font_size = 50
+text = "Increses all magic damage, 
+at cost of some health"
+
+[node name="shop_fire_neck_pick" type="TextureRect" parent="Shop/armor_class/fire_a"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 450.0
+texture = ExtResource("11_ilc2p")
+stretch_mode = 5
+
+[node name="wind_a" type="TextureButton" parent="Shop/armor_class"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 800.0
+offset_top = 31.0
+offset_right = 1250.0
+offset_bottom = 481.0
+scale = Vector2(0.3, 0.3)
+tooltip_text = "+ 20 meele damage
+- 30% shield"
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("14_6ihub")
+stretch_mode = 4
+
+[node name="earth_wind_label" type="Label" parent="Shop/armor_class/wind_a"]
+layout_mode = 0
+offset_top = 450.0
+offset_right = 732.0
+offset_bottom = 591.0
+theme_override_font_sizes/font_size = 50
+text = "Increases meele damage,
+ at cost of quite lot shield"
+
+[node name="shop_wind_neck_pic" type="TextureRect" parent="Shop/armor_class/wind_a"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 450.0
+texture = ExtResource("12_hyb5f")
+stretch_mode = 5
+
+[node name="earth_a" type="TextureButton" parent="Shop/armor_class"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 400.0
+offset_top = 30.0
+offset_right = 850.0
+offset_bottom = 480.0
+scale = Vector2(0.3, 0.3)
+tooltip_text = "+100% health"
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("14_6ihub")
+stretch_mode = 4
+
+[node name="earth_neck_label" type="Label" parent="Shop/armor_class/earth_a"]
+layout_mode = 0
+offset_top = 450.0
+offset_right = 732.0
+offset_bottom = 519.0
+theme_override_font_sizes/font_size = 50
+text = "Increases health by 
+notable amount"
+
+[node name="shop_earth_neck_pic" type="TextureRect" parent="Shop/armor_class/earth_a"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 450.0
+texture = ExtResource("14_33b1w")
+stretch_mode = 5
+
+[node name="ice_a" type="TextureButton" parent="Shop/armor_class"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 200.0
+offset_top = 30.0
+offset_right = 650.0
+offset_bottom = 480.0
+scale = Vector2(0.3, 0.3)
+tooltip_text = "+100% shield"
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("14_6ihub")
+stretch_mode = 4
+
+[node name="ice_neck_label" type="Label" parent="Shop/armor_class/ice_a"]
+layout_mode = 0
+offset_top = 450.0
+offset_right = 732.0
+offset_bottom = 519.0
+theme_override_font_sizes/font_size = 50
+text = "Increases magic 
+shield by a lot"
+
+[node name="shop_ice_neck_pic" type="TextureRect" parent="Shop/armor_class/ice_a"]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 450.0
+texture = ExtResource("13_mrf4c")
+stretch_mode = 5
+
+[node name="close" type="Button" parent="Shop"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 0
+offset_left = 1050.0
+offset_top = 170.0
+offset_right = 1170.0
+offset_bottom = 205.0
+text = "exit"
+
+[node name="meele2" type="Button" parent="Shop"]
+layout_mode = 0
+offset_left = 1050.0
+offset_top = 65.0
+offset_right = 1170.0
+offset_bottom = 100.0
+text = "meele"
+
+[node name="magic2" type="Button" parent="Shop"]
+layout_mode = 0
+offset_left = 1050.0
+offset_top = 20.0
+offset_right = 1170.0
+offset_bottom = 55.0
+text = "magic"
+
+[node name="armor" type="Button" parent="Shop"]
+layout_mode = 0
+offset_left = 1050.0
+offset_top = 109.0
+offset_right = 1170.0
+offset_bottom = 144.0
+text = "armor"
+
+[node name="notenough" type="Label" parent="Shop"]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 14.0
+offset_top = 9.0
+offset_right = 176.0
+offset_bottom = 32.0
+text = "Not enugh "
+
+[node name="Shop_face" type="TextureRect" parent="Shop"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 30.0
+offset_right = 188.0
+offset_bottom = 194.0
+texture = ExtResource("15_6ujci")
+expand_mode = 1
+
+[node name="pauseMenu" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -80.0
+offset_right = 60.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.678431, 0.623529, 0.505882, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pauseMenu"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 120.0
+offset_bottom = 150.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="pauseMenu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Resume" type="Button" parent="pauseMenu/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "Resume"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="pauseMenu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Restart" type="Button" parent="pauseMenu/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "Restart"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="pauseMenu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="World_map" type="Button" parent="pauseMenu/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "World map"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="pauseMenu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Quit" type="Button" parent="pauseMenu/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "Quit"
+
+[node name="WinScreen" type="ColorRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(240, 120)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -60.0
+offset_right = 120.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.678431, 0.623529, 0.505882, 1)
+
+[node name="Label" type="Label" parent="WinScreen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -26.0
+offset_right = 26.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Score: "
+
+[node name="Restart" type="Button" parent="WinScreen"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 0
+offset_left = 7.0
+offset_top = 82.0
+offset_right = 72.0
+offset_bottom = 113.0
+text = "Restart"
+
+[node name="FinishLevel" type="Button" parent="WinScreen"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 0
+offset_left = 161.0
+offset_top = 81.0
+offset_right = 231.0
+offset_bottom = 112.0
+text = "Map"
+
+[node name="MainMenu" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -225.0
+offset_right = 200.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.678431, 0.623529, 0.505882, 1)
+
+[node name="new" type="Button" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.259
+anchor_top = 0.125
+anchor_right = 0.259
+anchor_bottom = 0.125
+offset_left = -4.6
+offset_top = -10.25
+offset_right = 195.4
+offset_bottom = 39.75
+focus_mode = 0
+text = "new
+"
+
+[node name="load" type="Button" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.259
+anchor_top = 0.125
+anchor_right = 0.259
+anchor_bottom = 0.125
+offset_left = -2.6
+offset_top = 80.75
+offset_right = 197.4
+offset_bottom = 130.75
+text = "load
+"
+
+[node name="info" type="Button" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.259
+anchor_top = 0.125
+anchor_right = 0.259
+anchor_bottom = 0.125
+offset_left = -2.6
+offset_top = 170.75
+offset_right = 197.4
+offset_bottom = 220.75
+text = "info"
+
+[node name="quit" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 307.0
+offset_right = 301.0
+offset_bottom = 357.0
+text = "quit"
+
+[node name="pozadie_obloha" type="TextureRect" parent="MainMenu"]
+z_index = -435
+layout_mode = 0
+offset_left = -440.0
+offset_top = -135.0
+offset_right = -400.0
+offset_bottom = -95.0
+mouse_filter = 2
+texture = ExtResource("20_qcwiq")
+
+[node name="pozadie" type="TextureRect" parent="MainMenu"]
+z_index = -330
+layout_mode = 0
+offset_left = -547.0
+offset_top = -196.0
+offset_right = 989.0
+offset_bottom = 668.0
+mouse_filter = 2
+texture = ExtResource("21_wauh5")
+expand_mode = 1
+
+[node name="infotext" type="ColorRect" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.48
+anchor_top = 2.88
+anchor_right = 0.48
+anchor_bottom = 2.88
+offset_left = -176.96
+offset_top = -1767.24
+offset_right = 223.04
+offset_bottom = -1317.24
+color = Color(0.678431, 0.623529, 0.505882, 1)
+
+[node name="TextEdit" type="TextEdit" parent="infotext"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.504
+anchor_right = 0.5
+anchor_bottom = 0.504
+offset_left = -188.0
+offset_top = -213.8
+offset_right = 189.0
+offset_bottom = 162.2
+text = "This game exists"
+
+[node name="return" type="Button" parent="infotext"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 402.0
+offset_right = 376.0
+offset_bottom = 434.0
+text = "return"
+
+[node name="lostscreen" type="ColorRect" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.481
+anchor_top = 0.448
+anchor_right = 0.481
+anchor_bottom = 0.448
+offset_left = -266.68
+offset_top = -209.56
+offset_right = 210.32
+offset_bottom = 42.44
+color = Color(0.678431, 0.623529, 0.505882, 1)
+
+[node name="TextEdit" type="TextEdit" parent="lostscreen"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 31.0
+offset_right = 449.0
+offset_bottom = 126.0
+text = "you lost"
+
+[node name="base" type="Button" parent="lostscreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.5
+offset_top = 36.0
+offset_right = 68.5
+offset_bottom = 86.0
+text = "respawn at base"
+
+[node name="gate" type="Button" parent="lostscreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.5
+offset_top = 36.0
+offset_right = -79.5
+offset_bottom = 86.0
+text = "respawn at gate"
+
+[node name="quit" type="Button" parent="lostscreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 91.5
+offset_top = 36.0
+offset_right = 211.5
+offset_bottom = 86.0
+text = "quit
+"
+
+[node name="ItemCount" type="ColorRect" parent="."]
+visible = false
+offset_left = 852.0
+offset_top = 30.0
+offset_right = 1102.0
+offset_bottom = 180.0
+color = Color(0.678431, 0.623529, 0.505882, 1)
+script = ExtResource("15_kvwef")
+
+[node name="drevo_texture" type="TextureRect" parent="ItemCount"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 6.0
+offset_right = 60.0
+offset_bottom = 56.0
+texture = ExtResource("16_6ra2j")
+
+[node name="drevo_label" type="Label" parent="ItemCount/drevo_texture"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 16.0
+offset_right = 94.0
+offset_bottom = 39.0
+text = ": 0"
+
+[node name="lad_texture" type="TextureRect" parent="ItemCount"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 50.0
+offset_right = 61.0
+offset_bottom = 100.0
+texture = ExtResource("17_qq7dl")
+
+[node name="lad_label" type="Label" parent="ItemCount/lad_texture"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 2.146
+anchor_top = -0.11
+anchor_right = 2.146
+anchor_bottom = -0.11
+offset_left = -53.3
+offset_top = 20.5
+offset_right = -13.3
+offset_bottom = 43.5
+text = ": 0"
+
+[node name="ash_texture" type="TextureRect" parent="ItemCount"]
+layout_mode = 0
+offset_left = 117.0
+offset_right = 167.0
+offset_bottom = 50.0
+texture = ExtResource("18_qcsmj")
+
+[node name="ash_label" type="Label" parent="ItemCount/ash_texture"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 23.0
+offset_right = 101.0
+offset_bottom = 46.0
+text = ": 0"
+
+[node name="wind_texture" type="TextureRect" parent="ItemCount"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.472
+anchor_top = 0.5
+anchor_right = 0.472
+anchor_bottom = 0.5
+offset_left = -1.00001
+offset_top = -25.0
+offset_right = 49.0
+offset_bottom = 25.0
+texture = ExtResource("19_bqhxh")
+
+[node name="wind_label" type="Label" parent="ItemCount/wind_texture"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 15.0
+offset_right = 100.0
+offset_bottom = 38.0
+text = ": 0"
+
+[node name="gold_texture" type="TextureRect" parent="ItemCount"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 85.0
+offset_right = 66.0
+offset_bottom = 135.0
+texture = ExtResource("20_qq7dl")
+
+[node name="gold_label" type="Label" parent="ItemCount/gold_texture"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 22.0
+offset_right = 90.0
+offset_bottom = 45.0
+text = ": 0"
+
+[node name="health_ui" type="ColorRect" parent="."]
+visible = false
+offset_left = 42.0
+offset_top = 97.0
+offset_right = 268.0
+offset_bottom = 174.0
+color = Color(0.678431, 0.623529, 0.505882, 1)
+script = ExtResource("15_kvwef")
+
+[node name="health" type="ColorRect" parent="health_ui"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 111.0
+offset_bottom = 30.0
+color = Color(1, 0.378184, 0.393597, 1)
+
+[node name="health_ui_Label" type="Label" parent="health_ui/health"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = -5.0
+offset_right = 160.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 20
+text = "50 / 50"
+
+[node name="shield" type="ColorRect" parent="health_ui"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 43.0
+offset_right = 111.0
+offset_bottom = 63.0
+color = Color(0.2, 0.72549, 1, 1)
+
+[node name="shield_ui_Label" type="Label" parent="health_ui/shield"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = -4.0
+offset_right = 161.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 20
+text = "200 / 200"
+
+[node name="equipment" type="ColorRect" parent="."]
+visible = false
+offset_left = 54.0
+offset_top = 350.0
+offset_right = 660.0
+offset_bottom = 710.0
+color = Color(0.678431, 0.623529, 0.505882, 1)
+script = ExtResource("15_kvwef")
+
+[node name="eq_wind_but" type="TextureButton" parent="equipment"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 80.0
+offset_right = 675.0
+offset_bottom = 380.0
+scale = Vector2(0.25, 0.25)
+toggle_mode = true
+button_group = ExtResource("22_2too3")
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("24_y4q4s")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="eq_wind_staf_pic" type="TextureRect" parent="equipment/eq_wind_but"]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+texture = ExtResource("10_jypra")
+
+[node name="eq_fire_but" type="TextureButton" parent="equipment"]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 80.0
+offset_right = 566.0
+offset_bottom = 380.0
+scale = Vector2(0.25, 0.25)
+toggle_mode = true
+button_group = ExtResource("22_2too3")
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("24_y4q4s")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="eq_fire_staf_pic" type="TextureRect" parent="equipment/eq_fire_but"]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+texture = ExtResource("9_vwdia")
+
+[node name="eq_earth_but" type="TextureButton" parent="equipment"]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 80.0
+offset_right = 458.0
+offset_bottom = 380.0
+scale = Vector2(0.25, 0.25)
+toggle_mode = true
+button_group = ExtResource("22_2too3")
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("24_y4q4s")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="eq_earth_staf_pic" type="TextureRect" parent="equipment/eq_earth_but"]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+texture = ExtResource("8_ftgio")
+
+[node name="eq_ice_but" type="TextureButton" parent="equipment"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 80.0
+offset_right = 350.0
+offset_bottom = 380.0
+scale = Vector2(0.25, 0.25)
+toggle_mode = true
+button_group = ExtResource("22_2too3")
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("24_y4q4s")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="eq_ice_staf_pic" type="TextureRect" parent="equipment/eq_ice_but"]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+texture = ExtResource("7_6ulu1")
+
+[node name="eq_none_staff_but" type="TextureButton" parent="equipment"]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 80.0
+offset_right = 783.0
+offset_bottom = 380.0
+scale = Vector2(0.25, 0.25)
+toggle_mode = true
+button_group = ExtResource("22_2too3")
+texture_normal = ExtResource("29_uuq5v")
+texture_pressed = ExtResource("30_7wnc6")
+texture_hover = ExtResource("31_qcwiq")
+texture_disabled = ExtResource("24_y4q4s")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="not_bought" type="Label" parent="equipment"]
+visible = false
+layout_mode = 0
+offset_left = 144.0
+offset_top = 8.0
+offset_right = 230.0
+offset_bottom = 31.0
+text = "not bought"
+
+[node name="ice_label" type="Label" parent="equipment"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 50.0
+offset_right = 116.0
+offset_bottom = 73.0
+text = "Ice"
+
+[node name="earth_label" type="Label" parent="equipment"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 50.0
+offset_right = 219.0
+offset_bottom = 73.0
+text = "Earth"
+
+[node name="fire_label" type="Label" parent="equipment"]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 50.0
+offset_right = 327.0
+offset_bottom = 73.0
+text = "Fire"
+
+[node name="wind_label" type="Label" parent="equipment"]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 50.0
+offset_right = 433.0
+offset_bottom = 100.0
+text = "Wind"
+
+[node name="uneqip" type="Label" parent="equipment"]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 50.0
+offset_right = 552.0
+offset_bottom = 73.0
+text = "Unequip"
+
+[node name="nadpis" type="Label" parent="equipment"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 20.0
+offset_right = 139.0
+offset_bottom = 43.0
+text = "Equipment"
+
+[node name="eq_necklace_ice" type="TextureButton" parent="equipment"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 175.0
+offset_right = 350.0
+offset_bottom = 475.0
+scale = Vector2(0.25, 0.25)
+toggle_mode = true
+button_group = ExtResource("27_2too3")
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("24_y4q4s")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="eq_ice_neck_pic" type="TextureRect" parent="equipment/eq_necklace_ice"]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+texture = ExtResource("13_mrf4c")
+stretch_mode = 5
+
+[node name="eq_necklace_earth" type="TextureButton" parent="equipment"]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 175.0
+offset_right = 458.0
+offset_bottom = 475.0
+scale = Vector2(0.25, 0.25)
+toggle_mode = true
+button_group = ExtResource("27_2too3")
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("24_y4q4s")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="eq_earth_neck_pic" type="TextureRect" parent="equipment/eq_necklace_earth"]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+texture = ExtResource("14_33b1w")
+stretch_mode = 5
+
+[node name="eq_necklace_fire" type="TextureButton" parent="equipment"]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 175.0
+offset_right = 566.0
+offset_bottom = 475.0
+scale = Vector2(0.25, 0.25)
+toggle_mode = true
+button_group = ExtResource("27_2too3")
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("24_y4q4s")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="eq_fire_neck_pic" type="TextureRect" parent="equipment/eq_necklace_fire"]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+texture = ExtResource("11_ilc2p")
+stretch_mode = 5
+
+[node name="eq_necklace_wind" type="TextureButton" parent="equipment"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 175.0
+offset_right = 675.0
+offset_bottom = 475.0
+scale = Vector2(0.25, 0.25)
+toggle_mode = true
+button_group = ExtResource("27_2too3")
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("24_y4q4s")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="eq_wind_neck_pic" type="TextureRect" parent="equipment/eq_necklace_wind"]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+texture = ExtResource("12_hyb5f")
+stretch_mode = 5
+
+[node name="eq_necklace_unequip" type="TextureButton" parent="equipment"]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 175.0
+offset_right = 783.0
+offset_bottom = 475.0
+scale = Vector2(0.25, 0.25)
+toggle_mode = true
+button_group = ExtResource("27_2too3")
+texture_normal = ExtResource("29_uuq5v")
+texture_pressed = ExtResource("30_7wnc6")
+texture_hover = ExtResource("31_qcwiq")
+texture_disabled = ExtResource("24_y4q4s")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="eq_meele_unequip" type="TextureButton" parent="equipment"]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 270.0
+offset_right = 783.0
+offset_bottom = 570.0
+scale = Vector2(0.25, 0.25)
+toggle_mode = true
+button_group = ExtResource("35_wauh5")
+texture_normal = ExtResource("29_uuq5v")
+texture_pressed = ExtResource("30_7wnc6")
+texture_hover = ExtResource("31_qcwiq")
+texture_disabled = ExtResource("24_y4q4s")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="eq_meele_ice" type="TextureButton" parent="equipment"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 270.0
+offset_right = 350.0
+offset_bottom = 570.0
+scale = Vector2(0.25, 0.25)
+toggle_mode = true
+button_group = ExtResource("35_wauh5")
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("24_y4q4s")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="eq_ice_meele_pic" type="TextureRect" parent="equipment/eq_meele_ice"]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+texture = SubResource("AtlasTexture_jypra")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="eq_meele_earth" type="TextureButton" parent="equipment"]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 270.0
+offset_right = 458.0
+offset_bottom = 570.0
+scale = Vector2(0.25, 0.25)
+toggle_mode = true
+button_group = ExtResource("35_wauh5")
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("24_y4q4s")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="eq_earth_meele_pic" type="TextureRect" parent="equipment/eq_meele_earth"]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+texture = SubResource("AtlasTexture_e3fsj")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="eq_meele_fire" type="TextureButton" parent="equipment"]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 270.0
+offset_right = 566.0
+offset_bottom = 570.0
+scale = Vector2(0.25, 0.25)
+toggle_mode = true
+button_group = ExtResource("35_wauh5")
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("24_y4q4s")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="eq_fire_meele_pic" type="TextureRect" parent="equipment/eq_meele_fire"]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+texture = SubResource("AtlasTexture_ftgio")
+stretch_mode = 5
+
+[node name="eq_meele_wind" type="TextureButton" parent="equipment"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 270.0
+offset_right = 675.0
+offset_bottom = 570.0
+scale = Vector2(0.25, 0.25)
+toggle_mode = true
+button_group = ExtResource("35_wauh5")
+texture_normal = ExtResource("22_33b1w")
+texture_pressed = ExtResource("23_h82tm")
+texture_hover = ExtResource("24_h82tm")
+texture_disabled = ExtResource("24_y4q4s")
+texture_focused = ExtResource("28_54jyg")
+stretch_mode = 4
+
+[node name="eq_wind_meele_pic" type="TextureRect" parent="equipment/eq_meele_wind"]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+texture = SubResource("AtlasTexture_vwdia")
+stretch_mode = 5
+
+[node name="log" type="ColorRect" parent="."]
+visible = false
+offset_left = 942.0
+offset_top = 202.0
+offset_right = 1113.0
+offset_bottom = 352.0
+color = Color(0.678431, 0.623529, 0.505882, 1)
+script = ExtResource("15_kvwef")
+
+[node name="log_text" type="RichTextLabel" parent="log"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 9.0
+offset_right = 152.0
+offset_bottom = 139.0
+
+[node name="Options" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 22.0
+offset_top = 108.0
+offset_right = 62.0
+offset_bottom = 148.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = -73.0
+offset_right = 370.0
+offset_bottom = -23.0
+localize_numeral_system = false
+
+[node name="item_button" type="TextureButton" parent="Options/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("16_4l3vx")
+texture_pressed = ExtResource("16_4l3vx")
+texture_hover = ExtResource("16_4l3vx")
+texture_disabled = ExtResource("16_4l3vx")
+texture_focused = ExtResource("16_4l3vx")
+
+[node name="health_button" type="TextureButton" parent="Options/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("22_qcsmj")
+texture_pressed = ExtResource("22_qcsmj")
+texture_hover = ExtResource("22_qcsmj")
+texture_disabled = ExtResource("22_qcsmj")
+texture_focused = ExtResource("22_qcsmj")
+
+[node name="eqipiment_button" type="TextureButton" parent="Options/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("23_bqhxh")
+texture_pressed = ExtResource("23_bqhxh")
+texture_hover = ExtResource("23_bqhxh")
+texture_disabled = ExtResource("23_bqhxh")
+texture_focused = ExtResource("23_bqhxh")
+
+[node name="log_button" type="TextureButton" parent="Options/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("24_h8oxo")
+texture_pressed = ExtResource("24_h8oxo")
+texture_hover = ExtResource("24_h8oxo")
+texture_disabled = ExtResource("24_h8oxo")
+texture_focused = ExtResource("24_h8oxo")
+
+[node name="pause_button" type="TextureButton" parent="Options/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("25_6ujci")
+texture_pressed = ExtResource("25_6ujci")
+texture_hover = ExtResource("25_6ujci")
+texture_disabled = ExtResource("25_6ujci")
+texture_focused = ExtResource("25_6ujci")
+
+[node name="wisdom" type="TextureButton" parent="Options/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("41_5sltr")
+texture_pressed = ExtResource("41_5sltr")
+texture_hover = ExtResource("41_5sltr")
+texture_disabled = ExtResource("41_5sltr")
+texture_focused = ExtResource("41_5sltr")
+stretch_mode = 4
+
+[node name="recruiter" type="ColorRect" parent="."]
+visible = false
+offset_left = 512.0
+offset_top = 202.0
+offset_right = 934.0
+offset_bottom = 423.0
+color = Color(0.678431, 0.623529, 0.505882, 1)
+
+[node name="re_face" type="TextureRect" parent="recruiter"]
+layout_mode = 0
+offset_top = 29.0
+offset_right = 136.0
+offset_bottom = 170.0
+texture = ExtResource("27_y06qt")
+expand_mode = 1
+
+[node name="re_text" type="RichTextLabel" parent="recruiter"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 14.0
+offset_right = 370.0
+offset_bottom = 160.0
+
+[node name="re_close" type="Button" parent="recruiter"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.018
+offset_left = 385.0
+offset_top = 5.0
+offset_right = 416.0
+offset_bottom = 32.022
+text = "x"
+
+[node name="re_next" type="Button" parent="recruiter"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.776
+anchor_right = 0.5
+anchor_bottom = 0.776
+offset_left = 16.0
+offset_top = -3.496
+offset_right = 59.0
+offset_bottom = 27.504
+text = "next"
+
+[node name="quest_kill_tree" type="ColorRect" parent="."]
+visible = false
+offset_left = 210.0
+offset_top = 166.0
+offset_right = 730.0
+offset_bottom = 405.0
+color = Color(0.678431, 0.623529, 0.505882, 1)
+
+[node name="qkt_face" type="TextureRect" parent="quest_kill_tree"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 39.0
+offset_right = 189.0
+offset_bottom = 192.0
+texture = ExtResource("27_gvqfs")
+expand_mode = 1
+
+[node name="qkt_yes" type="Button" parent="quest_kill_tree/qkt_face"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 57.817
+anchor_bottom = 24.156
+offset_left = 308.0
+offset_top = 157.0
+offset_right = -7752.38
+offset_bottom = -3507.87
+text = "yes"
+
+[node name="qkt_no" type="Button" parent="quest_kill_tree/qkt_face"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.2
+anchor_bottom = 0.808
+offset_left = 286.0
+offset_top = 157.0
+offset_right = 288.0
+offset_bottom = 53.376
+text = "no"
+
+[node name="qkt_text" type="RichTextLabel" parent="quest_kill_tree"]
+layout_mode = 0
+offset_left = 241.0
+offset_top = 27.0
+offset_right = 449.0
+offset_bottom = 180.0
+text = "Please, help!!"
+
+[node name="qkt_close" type="Button" parent="quest_kill_tree"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.38
+anchor_top = 0.274
+anchor_right = 0.38
+anchor_bottom = 0.274
+offset_left = 287.4
+offset_top = -60.486
+offset_right = 318.4
+offset_bottom = -29.486
+text = "x"
+
+[node name="exchange" type="ColorRect" parent="."]
+visible = false
+offset_left = 50.0
+offset_top = 489.0
+offset_right = 1250.0
+offset_bottom = 714.0
+color = Color(0.678431, 0.623529, 0.505882, 1)
+
+[node name="ex_face" type="TextureRect" parent="exchange"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 44.0
+offset_right = 197.0
+offset_bottom = 230.0
+texture = ExtResource("29_5obsl")
+expand_mode = 1
+
+[node name="ex_close" type="Button" parent="exchange"]
+layout_mode = 0
+offset_left = 1025.0
+offset_top = 160.0
+offset_right = 1145.0
+offset_bottom = 200.0
+text = "exit"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="exchange"]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 22.0
+offset_right = 445.0
+offset_bottom = 85.0
+text = "Hello!
+welcome to exchange place!"
+
+[node name="ex_buy" type="Button" parent="exchange"]
+layout_mode = 0
+offset_left = 1025.0
+offset_top = 100.0
+offset_right = 1145.0
+offset_bottom = 140.0
+text = "buy"
+
+[node name="ex_sell" type="Button" parent="exchange"]
+layout_mode = 0
+offset_left = 1025.0
+offset_top = 40.0
+offset_right = 1145.0
+offset_bottom = 80.0
+text = "sell"
+
+[node name="ex_buy_class" type="Control" parent="exchange"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ex_lw_buy" type="TextureRect" parent="exchange/ex_buy_class"]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 80.0
+offset_right = 925.0
+offset_bottom = 155.0
+texture = ExtResource("16_6ra2j")
+stretch_mode = 5
+
+[node name="ex_lw_but" type="Button" parent="exchange/ex_buy_class/ex_lw_buy"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 80.0
+offset_right = 83.0
+offset_bottom = 130.0
+text = "100 g for 10"
+
+[node name="ex_ws_buy" type="TextureRect" parent="exchange/ex_buy_class"]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 80.0
+offset_right = 725.0
+offset_bottom = 155.0
+texture = ExtResource("19_bqhxh")
+stretch_mode = 5
+
+[node name="ex_ws_but" type="Button" parent="exchange/ex_buy_class/ex_ws_buy"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 80.0
+offset_right = 83.0
+offset_bottom = 130.0
+text = "100 g for 10"
+
+[node name="ex_df_buy" type="TextureRect" parent="exchange/ex_buy_class"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 80.0
+offset_right = 525.0
+offset_bottom = 155.0
+texture = ExtResource("17_qq7dl")
+
+[node name="ex_df_but" type="Button" parent="exchange/ex_buy_class/ex_df_buy"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 80.0
+offset_right = 88.0
+offset_bottom = 130.0
+text = "100 g for 10"
+
+[node name="ex_ash_buy" type="TextureRect" parent="exchange/ex_buy_class"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 80.0
+offset_right = 325.0
+offset_bottom = 155.0
+texture = ExtResource("18_qcsmj")
+stretch_mode = 5
+
+[node name="ex_ash_but" type="Button" parent="exchange/ex_buy_class/ex_ash_buy"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 80.0
+offset_right = 88.0
+offset_bottom = 130.0
+text = "100 g for 10"
+
+[node name="ex_buy_label" type="Label" parent="exchange/ex_buy_class"]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 77.0
+offset_right = 321.0
+offset_bottom = 100.0
+text = "I'll sell to you"
+
+[node name="ex_sell_class" type="Control" parent="exchange"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ex_lw_sell" type="TextureRect" parent="exchange/ex_sell_class"]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 80.0
+offset_right = 925.0
+offset_bottom = 155.0
+texture = ExtResource("16_6ra2j")
+stretch_mode = 5
+
+[node name="ex_lw_but_sell" type="Button" parent="exchange/ex_sell_class/ex_lw_sell"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 80.0
+offset_right = 83.0
+offset_bottom = 130.0
+text = "10 for 75 g "
+
+[node name="ex_ws_sell" type="TextureRect" parent="exchange/ex_sell_class"]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 80.0
+offset_right = 725.0
+offset_bottom = 155.0
+texture = ExtResource("19_bqhxh")
+stretch_mode = 5
+
+[node name="ex_ws_but_sell" type="Button" parent="exchange/ex_sell_class/ex_ws_sell"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 80.0
+offset_right = 83.0
+offset_bottom = 130.0
+text = "10 for 75 g "
+
+[node name="ex_df_sell" type="TextureRect" parent="exchange/ex_sell_class"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 80.0
+offset_right = 525.0
+offset_bottom = 155.0
+texture = ExtResource("17_qq7dl")
+stretch_mode = 5
+
+[node name="ex_df_but_sell" type="Button" parent="exchange/ex_sell_class/ex_df_sell"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 80.0
+offset_right = 83.0
+offset_bottom = 130.0
+text = "10 for 75 g "
+
+[node name="ex_ash_sell" type="TextureRect" parent="exchange/ex_sell_class"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 80.0
+offset_right = 325.0
+offset_bottom = 155.0
+texture = ExtResource("18_qcsmj")
+stretch_mode = 5
+
+[node name="ex_ash_but_sell" type="Button" parent="exchange/ex_sell_class/ex_ash_sell"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 80.0
+offset_right = 83.0
+offset_bottom = 130.0
+text = "10 for 75 g "
+
+[node name="ex_sell_label" type="Label" parent="exchange/ex_sell_class"]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 77.0
+offset_right = 235.0
+offset_bottom = 100.0
+text = "I'll buy from you"
+
+[node name="wisdom_lockdown" type="ColorRect" parent="."]
+visible = false
+z_index = 605
+anchors_preset = -1
+anchor_bottom = 0.031
+offset_left = 201.0
+offset_top = 104.0
+offset_right = 1089.0
+offset_bottom = 417.68
+color = Color(0.678431, 0.623529, 0.505882, 1)
+
+[node name="wisdom_text" type="RichTextLabel" parent="wisdom_lockdown"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 23.0
+offset_right = 851.0
+offset_bottom = 435.0
+
+[node name="close_wisdom" type="Button" parent="wisdom_lockdown"]
+visible = false
+z_index = 925
+layout_mode = 0
+offset_left = 693.0
+offset_top = 261.0
+offset_right = 793.0
+offset_bottom = 310.0
+text = "exit"
+
+[node name="smuggler" type="ColorRect" parent="."]
+offset_left = 50.0
+offset_top = 489.0
+offset_right = 1250.0
+offset_bottom = 714.0
+color = Color(0.678431, 0.623529, 0.505882, 1)
+
+[node name="smuggler_close" type="Button" parent="smuggler"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.108
+anchor_top = 0.03
+anchor_right = 0.108
+anchor_bottom = 0.03
+offset_left = 996.4
+offset_top = 170.25
+offset_right = 1046.4
+offset_bottom = 201.25
+text = "close"
+
+[node name="smuggler_yes" type="Button" parent="smuggler"]
+clip_contents = true
+layout_mode = 0
+offset_left = 310.0
+offset_top = 173.0
+offset_right = 360.0
+offset_bottom = 204.0
+text = "yes
+"
+
+[node name="smuggler_face" type="TextureRect" parent="smuggler"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 55.0
+offset_right = 165.0
+offset_bottom = 188.0
+expand_mode = 1
+
+[node name="smuggler_text" type="RichTextLabel" parent="smuggler"]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 27.0
+offset_right = 500.0
+offset_bottom = 154.0
+text = "Hello, i would need something, would you help me?"
+
+[node name="cutscene_background" type="ColorRect" parent="."]
+visible = false
+offset_left = 1.0
+offset_right = 1281.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="cutscene" type="TextureRect" parent="cutscene_background"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+expand_mode = 1
+
+[node name="cuscene_advance" type="TextureButton" parent="cutscene_background"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="view" type="TextureRect" parent="."]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("31_ilc2p")
+expand_mode = 1
+
+[node name="conversation" type="ColorRect" parent="."]
+visible = false
+offset_left = 45.0
+offset_top = 486.0
+offset_right = 1245.0
+offset_bottom = 711.0
+color = Color(0.678431, 0.623529, 0.505882, 1)
+
+[node name="conversation_face" type="TextureRect" parent="conversation"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 13.0
+offset_right = 212.0
+offset_bottom = 213.0
+expand_mode = 1
+
+[node name="conversation_text" type="RichTextLabel" parent="conversation"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 12.0
+offset_right = 1076.0
+offset_bottom = 212.0
+fit_content = true
+
+[node name="advance in conversation" type="Button" parent="conversation"]
+layout_mode = 0
+offset_left = 1089.0
+offset_top = 143.0
+offset_right = 1169.0
+offset_bottom = 203.0
+text = "next
+"
+
+[node name="Upgrade_wisdom" type="ColorRect" parent="."]
+visible = false
+z_index = -115
+offset_left = 173.0
+offset_top = 178.0
+offset_right = 873.0
+offset_bottom = 678.0
+color = Color(0.678431, 0.623529, 0.505882, 1)
+script = ExtResource("15_kvwef")
+
+[node name="wisdom_upgrades_text" type="Label" parent="Upgrade_wisdom"]
+z_index = 2
+layout_mode = 0
+offset_left = 25.0
+offset_top = 27.0
+offset_right = 205.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 20
+text = "Wisdom upgrades:"
+
+[node name="wisdom_points_border" type="TextureRect" parent="Upgrade_wisdom"]
+z_index = 1
+layout_mode = 0
+offset_left = 15.0
+offset_top = 17.0
+offset_right = 213.0
+offset_bottom = 192.0
+texture = ExtResource("22_33b1w")
+
+[node name="wisdom_points_counter" type="Label" parent="Upgrade_wisdom"]
+z_index = 225
+layout_mode = 0
+offset_left = 40.0
+offset_top = 56.0
+offset_right = 86.0
+offset_bottom = 166.0
+theme_override_font_sizes/font_size = 80
+text = "0"
+
+[node name="w_meele_but" type="Button" parent="Upgrade_wisdom"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 20.0
+offset_right = 330.0
+offset_bottom = 55.0
+text = "meele"
+
+[node name="w_magic_but" type="Button" parent="Upgrade_wisdom"]
+layout_mode = 0
+offset_left = 365.0
+offset_top = 20.0
+offset_right = 445.0
+offset_bottom = 55.0
+text = "magic"
+
+[node name="w_other_but" type="Button" parent="Upgrade_wisdom"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 20.0
+offset_right = 560.0
+offset_bottom = 55.0
+text = "stats"
+
+[node name="w_convert" type="Button" parent="Upgrade_wisdom"]
+layout_mode = 0
+offset_left = 595.0
+offset_top = 20.0
+offset_right = 675.0
+offset_bottom = 55.0
+text = "convert
+points"
+
+[node name="w_meele_class" type="Control" parent="Upgrade_wisdom"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="meele_equation" type="TextureRect" parent="Upgrade_wisdom/w_meele_class"]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 94.0
+offset_right = 1428.0
+offset_bottom = 385.0
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("46_7atty")
+
+[node name="meele_description" type="Label" parent="Upgrade_wisdom/w_meele_class/meele_equation"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 20
+text = "Damage of charged attak is dependent of charge time. But if you hold for too long damage beins to drop."
+
+[node name="A" type="Label" parent="Upgrade_wisdom/w_meele_class"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 240.0
+offset_right = 276.0
+offset_bottom = 315.0
+text = "A - maximum charged damage
+"
+
+[node name="w_meele_A_but" type="Button" parent="Upgrade_wisdom/w_meele_class/A"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 230.0
+offset_bottom = 90.0
+text = "upgrade"
+
+[node name="A_value" type="Label" parent="Upgrade_wisdom/w_meele_class/A"]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 40.0
+offset_bottom = 73.0
+text = "A = 5"
+
+[node name="h" type="Label" parent="Upgrade_wisdom/w_meele_class"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 340.0
+offset_right = 534.0
+offset_bottom = 415.0
+text = "h - time to fully charge
+"
+
+[node name="h_value" type="Label" parent="Upgrade_wisdom/w_meele_class/h"]
+layout_mode = 0
+offset_top = 70.0
+offset_right = 40.0
+offset_bottom = 93.0
+text = "h = 2.5"
+
+[node name="w_meele_h_but" type="Button" parent="Upgrade_wisdom/w_meele_class/h"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 230.0
+offset_bottom = 90.0
+text = "upgrade"
+
+[node name="sigma" type="Label" parent="Upgrade_wisdom/w_meele_class"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 340.0
+offset_right = 329.0
+offset_bottom = 467.0
+text = "sigma - determines sharpness
+ of peak "
+
+[node name="w_meele_s_but" type="Button" parent="Upgrade_wisdom/w_meele_class/sigma"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 230.0
+offset_bottom = 90.0
+text = "upgrade"
+
+[node name="s_value" type="Label" parent="Upgrade_wisdom/w_meele_class/sigma"]
+layout_mode = 0
+offset_top = 70.0
+offset_right = 40.0
+offset_bottom = 93.0
+text = "sigma = 1.1"
+
+[node name="F" type="Label" parent="Upgrade_wisdom/w_meele_class"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 240.0
+offset_right = 630.0
+offset_bottom = 303.0
+text = "F - flat damage"
+
+[node name="F_value" type="Label" parent="Upgrade_wisdom/w_meele_class/F"]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 73.0
+offset_bottom = 73.0
+text = "F = 10"
+
+[node name="w_meele_F_but" type="Button" parent="Upgrade_wisdom/w_meele_class/F"]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 230.0
+offset_bottom = 90.0
+text = "upgrade"
+
+[node name="w_magic_class" type="Control" parent="Upgrade_wisdom"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="magic_equation" type="TextureRect" parent="Upgrade_wisdom/w_magic_class"]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 87.0
+offset_right = 1173.0
+offset_bottom = 367.0
+scale = Vector2(0.45, 0.45)
+
+[node name="R" type="Label" parent="Upgrade_wisdom/w_magic_class"]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 234.0
+offset_right = 478.0
+offset_bottom = 259.0
+text = "R - fire rate"
+
+[node name="R_value" type="Label" parent="Upgrade_wisdom/w_magic_class/R"]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 49.0
+offset_bottom = 73.0
+text = "R  - 1"
+
+[node name="w_magic_R_but" type="Button" parent="Upgrade_wisdom/w_magic_class/R"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 40.0
+offset_right = 165.0
+offset_bottom = 80.0
+text = "upgrade"
+
+[node name="PD" type="Label" parent="Upgrade_wisdom/w_magic_class"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 234.0
+offset_right = 262.0
+offset_bottom = 259.0
+text = "PD - projectile damage"
+
+[node name="PD_value" type="Label" parent="Upgrade_wisdom/w_magic_class/PD"]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 49.0
+offset_bottom = 73.0
+text = "PD  - 5"
+
+[node name="w_magic_PD_but" type="Button" parent="Upgrade_wisdom/w_magic_class/PD"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 40.0
+offset_right = 165.0
+offset_bottom = 80.0
+text = "upgrade"
+
+[node name="magic_equation2" type="TextureRect" parent="Upgrade_wisdom/w_magic_class"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 71.0
+offset_right = 737.0
+offset_bottom = 293.0
+scale = Vector2(0.705, 0.705)
+texture = ExtResource("48_ftgio")
+
+[node name="SPD" type="Label" parent="Upgrade_wisdom/w_magic_class"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 344.0
+offset_right = 211.0
+offset_bottom = 367.0
+text = "Projectile speed"
+
+[node name="SPD_value" type="Label" parent="Upgrade_wisdom/w_magic_class/SPD"]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 40.0
+offset_bottom = 73.0
+text = "SPD - 500"
+
+[node name="w_magic_spd_but" type="Button" parent="Upgrade_wisdom/w_magic_class/SPD"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 40.0
+offset_right = 165.0
+offset_bottom = 80.0
+text = "upgrade"
+
+[node name="w_stats_class" type="Control" parent="Upgrade_wisdom"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="w_stats_h" type="Label" parent="Upgrade_wisdom/w_stats_class"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 213.0
+offset_right = 87.0
+offset_bottom = 236.0
+text = "Base health"
+
+[node name="health_value" type="Label" parent="Upgrade_wisdom/w_stats_class/w_stats_h"]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 40.0
+offset_bottom = 73.0
+text = "50"
+
+[node name="w_other_health_but" type="Button" parent="Upgrade_wisdom/w_stats_class/w_stats_h"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 40.0
+offset_right = 205.0
+offset_bottom = 80.0
+text = "upgrade"
+
+[node name="w_stats_s" type="Label" parent="Upgrade_wisdom/w_stats_class"]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 213.0
+offset_right = 402.0
+offset_bottom = 236.0
+text = "Base shield"
+
+[node name="shield_value" type="Label" parent="Upgrade_wisdom/w_stats_class/w_stats_s"]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 40.0
+offset_bottom = 73.0
+text = "200"
+
+[node name="w_other_shield_but" type="Button" parent="Upgrade_wisdom/w_stats_class/w_stats_s"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 41.0
+offset_right = 205.0
+offset_bottom = 81.0
+text = "upgrade"
+
+[node name="convert" type="Control" parent="Upgrade_wisdom"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="wisdom_points" type="Label" parent="Upgrade_wisdom/convert"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 205.0
+offset_right = 194.0
+offset_bottom = 233.0
+theme_override_font_sizes/font_size = 20
+text = "Wisdom points:"
+
+[node name="Label" type="Label" parent="Upgrade_wisdom/convert/wisdom_points"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 25.0
+offset_right = 626.0
+offset_bottom = 100.0
+text = "Widom upgrades are used to upgrade various stats,
+amount of wisdom points needed for next upgrade can
+be computed by equation above."
+
+[node name="wisom_points_equation" type="TextureRect" parent="Upgrade_wisdom/convert"]
+visible = false
+layout_mode = 0
+offset_left = 225.0
+offset_top = 102.0
+offset_right = 1095.0
+offset_bottom = 282.0
+scale = Vector2(0.52, 0.52)
+texture = ExtResource("48_6ulu1")
+
+[node name="wisdom_points_counter" type="Label" parent="Upgrade_wisdom/convert"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 243.0
+offset_right = 98.0
+offset_bottom = 285.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="convert" type="Button" parent="Upgrade_wisdom/convert"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 303.0
+offset_right = 207.0
+offset_bottom = 373.0
+text = "points needed: 3"
+
+[node name="wisdom_not_enough" type="Label" parent="Upgrade_wisdom/convert"]
+visible = false
+layout_mode = 0
+offset_left = 51.0
+offset_top = 383.0
+offset_right = 195.0
+offset_bottom = 406.0
+text = "Not enough points"
+
+[node name="w_reset" type="Button" parent="Upgrade_wisdom/convert"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 389.0
+offset_right = 207.0
+offset_bottom = 459.0
+text = "Reset upgrades
+Cost: 100 gold"
+
+[node name="total_upgrades" type="Label" parent="Upgrade_wisdom/convert"]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 325.0
+offset_right = 368.0
+offset_bottom = 348.0
+text = "Total upgrades: 0"
+
+[node name="Wisdom_shop" type="ColorRect" parent="."]
+visible = false
+offset_left = 34.0
+offset_top = 489.0
+offset_right = 1234.0
+offset_bottom = 714.0
+color = Color(0.678431, 0.623529, 0.505882, 1)
+
+[node name="ws_face" type="TextureRect" parent="Wisdom_shop"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 13.0
+offset_right = 213.0
+offset_bottom = 213.0
+texture = ExtResource("29_5obsl")
+expand_mode = 1
+
+[node name="ws_option_1" type="Button" parent="Wisdom_shop"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 150.0
+offset_right = 370.0
+offset_bottom = 190.0
+text = "Buy"
+
+[node name="ws_ desc_1" type="Label" parent="Wisdom_shop/ws_option_1"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -86.0
+offset_right = 97.0
+offset_bottom = -63.0
+text = "folk wisdom"
+
+[node name="ws_cost_1" type="Label" parent="Wisdom_shop/ws_option_1"]
+layout_mode = 0
+offset_top = -50.0
+offset_right = 40.0
+offset_bottom = -27.0
+text = "cost: 150 g"
+
+[node name="ws_option_2" type="Button" parent="Wisdom_shop"]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 150.0
+offset_right = 620.0
+offset_bottom = 190.0
+text = "Buy"
+
+[node name="ws_ desc_2" type="Label" parent="Wisdom_shop/ws_option_2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -83.0
+offset_right = 139.0
+offset_bottom = -60.0
+text = "fables"
+
+[node name="ws_cost_2" type="Label" parent="Wisdom_shop/ws_option_2"]
+layout_mode = 0
+offset_top = -50.0
+offset_right = 81.0
+offset_bottom = -27.0
+text = "cost: 150 g"
+
+[node name="ws_option_3" type="Button" parent="Wisdom_shop"]
+layout_mode = 0
+offset_left = 750.0
+offset_top = 150.0
+offset_right = 870.0
+offset_bottom = 190.0
+text = "Buy"
+
+[node name="ws_cost_3" type="Label" parent="Wisdom_shop/ws_option_3"]
+layout_mode = 0
+offset_top = -50.0
+offset_right = 81.0
+offset_bottom = -27.0
+text = "cost: 150 g"
+
+[node name="ws_ desc_3" type="Label" parent="Wisdom_shop/ws_option_3"]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -83.0
+offset_right = 127.0
+offset_bottom = -60.0
+text = "Could be anything"
+
+[node name="ws_exit" type="Button" parent="Wisdom_shop"]
+layout_mode = 0
+offset_left = 1019.0
+offset_top = 150.0
+offset_right = 1139.0
+offset_bottom = 190.0
+text = "exit"
+
+[node name="ws_talk" type="Label" parent="Wisdom_shop"]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 21.0
+offset_right = 605.0
+offset_bottom = 44.0
+text = "Hello I'm selling wise stories, check them out!"
+
+[connection signal="mouse_entered" from="Shop/magic_class/ice" to="." method="_on_ice_mouse_entered"]
+[connection signal="mouse_exited" from="Shop/magic_class/ice" to="." method="_on_ice_mouse_exited"]
+[connection signal="pressed" from="Shop/magic_class/ice" to="." method="_on_ice_pressed"]
+[connection signal="mouse_entered" from="Shop/magic_class/earth" to="." method="_on_earth_mouse_entered"]
+[connection signal="mouse_exited" from="Shop/magic_class/earth" to="." method="_on_earth_mouse_exited"]
+[connection signal="pressed" from="Shop/magic_class/earth" to="." method="_on_earth_pressed"]
+[connection signal="mouse_entered" from="Shop/magic_class/fire" to="." method="_on_fire_mouse_entered"]
+[connection signal="mouse_exited" from="Shop/magic_class/fire" to="." method="_on_fire_mouse_exited"]
+[connection signal="pressed" from="Shop/magic_class/fire" to="." method="_on_fire_pressed"]
+[connection signal="mouse_entered" from="Shop/magic_class/wind" to="." method="_on_wind_mouse_entered"]
+[connection signal="mouse_exited" from="Shop/magic_class/wind" to="." method="_on_wind_mouse_exited"]
+[connection signal="pressed" from="Shop/magic_class/wind" to="." method="_on_wind_pressed"]
+[connection signal="pressed" from="Shop/meele_class/ice_m" to="." method="_on_ice_m_pressed"]
+[connection signal="pressed" from="Shop/meele_class/earth_m" to="." method="_on_earth_m_pressed"]
+[connection signal="pressed" from="Shop/meele_class/fire_m" to="." method="_on_fire_m_pressed"]
+[connection signal="pressed" from="Shop/meele_class/wind_m" to="." method="_on_wind_m_pressed"]
+[connection signal="pressed" from="Shop/armor_class/fire_a" to="." method="_on_fire_a_pressed"]
+[connection signal="pressed" from="Shop/armor_class/wind_a" to="." method="_on_wind_a_pressed"]
+[connection signal="pressed" from="Shop/armor_class/earth_a" to="." method="_on_earth_a_pressed"]
+[connection signal="pressed" from="Shop/armor_class/ice_a" to="." method="_on_ice_a_pressed"]
+[connection signal="pressed" from="Shop/close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Shop/meele2" to="." method="_on_meele_2_pressed"]
+[connection signal="pressed" from="Shop/magic2" to="." method="_on_magic_2_pressed"]
+[connection signal="pressed" from="Shop/armor" to="." method="_on_armor_pressed"]
+[connection signal="pressed" from="pauseMenu/VBoxContainer/HBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="pauseMenu/VBoxContainer/HBoxContainer2/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="pauseMenu/VBoxContainer/HBoxContainer3/World_map" to="." method="_on_world_map_pressed"]
+[connection signal="pressed" from="pauseMenu/VBoxContainer/HBoxContainer4/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="WinScreen/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="WinScreen/FinishLevel" to="." method="_on_finish_level_pressed"]
+[connection signal="pressed" from="MainMenu/new" to="." method="_on_levels_pressed"]
+[connection signal="pressed" from="MainMenu/load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="MainMenu/info" to="." method="_on_info_pressed"]
+[connection signal="pressed" from="MainMenu/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="infotext/return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="lostscreen/base" to="." method="_on_base_pressed"]
+[connection signal="pressed" from="lostscreen/gate" to="." method="_on_respawn_pressed"]
+[connection signal="pressed" from="lostscreen/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="equipment/eq_wind_but" to="." method="_on_eq_wind_but_pressed"]
+[connection signal="pressed" from="equipment/eq_fire_but" to="." method="_on_eq_fire_but_pressed"]
+[connection signal="pressed" from="equipment/eq_earth_but" to="." method="_on_eq_earth_but_pressed"]
+[connection signal="pressed" from="equipment/eq_ice_but" to="." method="_on_eq_ice_but_pressed"]
+[connection signal="pressed" from="equipment/eq_none_staff_but" to="." method="_on_eq_none_staff_but_pressed"]
+[connection signal="pressed" from="equipment/eq_necklace_ice" to="." method="_on_eq_necklace_ice_pressed"]
+[connection signal="pressed" from="equipment/eq_necklace_earth" to="." method="_on_eq_necklace_earth_pressed"]
+[connection signal="pressed" from="equipment/eq_necklace_fire" to="." method="_on_eq_necklace_fire_pressed"]
+[connection signal="pressed" from="equipment/eq_necklace_wind" to="." method="_on_eq_necklace_wind_pressed"]
+[connection signal="pressed" from="equipment/eq_necklace_unequip" to="." method="_on_eq_necklace_unequip_pressed"]
+[connection signal="pressed" from="equipment/eq_meele_unequip" to="." method="_on_eq_meele_unequip_pressed"]
+[connection signal="pressed" from="equipment/eq_meele_ice" to="." method="_on_eq_meele_ice_pressed"]
+[connection signal="pressed" from="equipment/eq_meele_earth" to="." method="_on_eq_meele_earth_pressed"]
+[connection signal="pressed" from="equipment/eq_meele_fire" to="." method="_on_eq_meele_fire_pressed"]
+[connection signal="pressed" from="equipment/eq_meele_wind" to="." method="_on_eq_meele_wind_pressed"]
+[connection signal="pressed" from="Options/HBoxContainer/item_button" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Options/HBoxContainer/health_button" to="." method="_on_health_button_pressed"]
+[connection signal="pressed" from="Options/HBoxContainer/eqipiment_button" to="." method="_on_eqipiment_button_pressed"]
+[connection signal="pressed" from="Options/HBoxContainer/log_button" to="." method="_on_log_pressed"]
+[connection signal="pressed" from="Options/HBoxContainer/pause_button" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="Options/HBoxContainer/wisdom" to="." method="_on_wisdom_pressed"]
+[connection signal="pressed" from="recruiter/re_close" to="." method="_on_re_close_pressed"]
+[connection signal="pressed" from="recruiter/re_next" to="." method="_on_re_next_pressed"]
+[connection signal="pressed" from="quest_kill_tree/qkt_face/qkt_yes" to="." method="_on_qkt_yes_pressed"]
+[connection signal="pressed" from="quest_kill_tree/qkt_face/qkt_no" to="." method="_on_qkt_no_pressed"]
+[connection signal="pressed" from="quest_kill_tree/qkt_close" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="exchange/ex_close" to="." method="_on_ex_close_pressed"]
+[connection signal="pressed" from="exchange/ex_buy" to="." method="_on_ex_buy_pressed"]
+[connection signal="pressed" from="exchange/ex_sell" to="." method="_on_ex_sell_pressed"]
+[connection signal="pressed" from="exchange/ex_buy_class/ex_lw_buy/ex_lw_but" to="." method="_on_ex_lw_but_pressed"]
+[connection signal="pressed" from="exchange/ex_buy_class/ex_ws_buy/ex_ws_but" to="." method="_on_ex_ws_but_pressed"]
+[connection signal="pressed" from="exchange/ex_buy_class/ex_df_buy/ex_df_but" to="." method="_on_ex_df_but_pressed"]
+[connection signal="pressed" from="exchange/ex_buy_class/ex_ash_buy/ex_ash_but" to="." method="_on_ex_ash_but_pressed"]
+[connection signal="pressed" from="exchange/ex_sell_class/ex_lw_sell/ex_lw_but_sell" to="." method="_on_ex_lw_but_sell_pressed"]
+[connection signal="pressed" from="exchange/ex_sell_class/ex_ws_sell/ex_ws_but_sell" to="." method="_on_ex_ws_but_sell_pressed"]
+[connection signal="pressed" from="exchange/ex_sell_class/ex_df_sell/ex_df_but_sell" to="." method="_on_ex_df_but_sell_pressed"]
+[connection signal="pressed" from="exchange/ex_sell_class/ex_ash_sell/ex_ash_but_sell" to="." method="_on_ex_ash_but_sell_pressed"]
+[connection signal="pressed" from="wisdom_lockdown/close_wisdom" to="." method="_on_close_wisdom_pressed"]
+[connection signal="pressed" from="smuggler/smuggler_close" to="." method="_on_smuggler_close_pressed"]
+[connection signal="pressed" from="smuggler/smuggler_yes" to="." method="_on_smuggler_yes_pressed"]
+[connection signal="pressed" from="cutscene_background/cuscene_advance" to="." method="_on_cuscene_advance_pressed"]
+[connection signal="pressed" from="conversation/advance in conversation" to="." method="_on_advance_in_conversation_pressed"]
+[connection signal="pressed" from="Upgrade_wisdom/w_meele_but" to="." method="_on_w_meele_but_pressed"]
+[connection signal="pressed" from="Upgrade_wisdom/w_magic_but" to="." method="_on_w_magic_but_pressed"]
+[connection signal="pressed" from="Upgrade_wisdom/w_other_but" to="." method="_on_w_other_but_pressed"]
+[connection signal="pressed" from="Upgrade_wisdom/w_convert" to="." method="_on_w_convert_pressed"]
+[connection signal="pressed" from="Upgrade_wisdom/w_meele_class/A/w_meele_A_but" to="." method="_on_w_meele_a_but_pressed"]
+[connection signal="pressed" from="Upgrade_wisdom/w_meele_class/h/w_meele_h_but" to="." method="_on_w_meele_h_but_pressed"]
+[connection signal="pressed" from="Upgrade_wisdom/w_meele_class/sigma/w_meele_s_but" to="." method="_on_w_meele_s_but_pressed"]
+[connection signal="pressed" from="Upgrade_wisdom/w_meele_class/F/w_meele_F_but" to="." method="_on_w_meele_f_but_pressed"]
+[connection signal="pressed" from="Upgrade_wisdom/w_magic_class/R/w_magic_R_but" to="." method="_on_w_magic_r_but_pressed"]
+[connection signal="pressed" from="Upgrade_wisdom/w_magic_class/PD/w_magic_PD_but" to="." method="_on_w_magic_pd_but_pressed"]
+[connection signal="pressed" from="Upgrade_wisdom/w_magic_class/SPD/w_magic_spd_but" to="." method="_on_w_magic_spd_but_pressed"]
+[connection signal="pressed" from="Upgrade_wisdom/w_stats_class/w_stats_h/w_other_health_but" to="." method="_on_w_other_health_but_pressed"]
+[connection signal="pressed" from="Upgrade_wisdom/w_stats_class/w_stats_s/w_other_shield_but" to="." method="_on_w_other_shield_but_pressed"]
+[connection signal="pressed" from="Upgrade_wisdom/convert/convert" to="." method="_on_convert_pressed"]
+[connection signal="pressed" from="Upgrade_wisdom/convert/w_reset" to="." method="_on_w_reset_pressed"]
+[connection signal="pressed" from="Wisdom_shop/ws_option_1" to="." method="_on_ws_option_1_pressed"]
+[connection signal="pressed" from="Wisdom_shop/ws_option_2" to="." method="_on_ws_option_2_pressed"]
+[connection signal="pressed" from="Wisdom_shop/ws_option_3" to="." method="_on_ws_option_3_pressed"]
+[connection signal="pressed" from="Wisdom_shop/ws_exit" to="." method="_on_ws_exit_pressed"]

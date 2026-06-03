@@ -1,0 +1,184 @@
+[gd_scene load_steps=26 format=3 uid="uid://iumuytf2u5fd"]
+
+[ext_resource type="Script" uid="uid://ckiemh72pqb4g" path="res://scripts/motyl.gd" id="1_6fmga"]
+[ext_resource type="Texture2D" uid="uid://bhis3isbwvkek" path="res://assets/enemies/motyl/motyl_telo0000.png" id="2_h3snn"]
+[ext_resource type="Texture2D" uid="uid://cbaqgctgsyh2" path="res://assets/enemies/motyl/motyl_fly0000.png" id="3_7wfid"]
+[ext_resource type="Texture2D" uid="uid://dv11d06tjr7nn" path="res://assets/enemies/motyl/motyl_fly0001.png" id="4_3ily6"]
+[ext_resource type="Texture2D" uid="uid://d2x2r5yv6hafh" path="res://assets/enemies/motyl/motyl_fly0002.png" id="5_jxhe2"]
+[ext_resource type="Texture2D" uid="uid://cg2nc4wmi60kc" path="res://assets/enemies/motyl/motyl_fly0003.png" id="6_knbbq"]
+[ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="7_ao14c"]
+[ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="8_vops1"]
+[ext_resource type="Texture2D" uid="uid://yruf7tofhbin" path="res://assets/enemies/motyl/motyl_charge_10000.png" id="9_wgbq1"]
+[ext_resource type="Texture2D" uid="uid://saf8wabcvj5e" path="res://assets/enemies/motyl/motyl_charge_10001.png" id="10_3xcqc"]
+[ext_resource type="Texture2D" uid="uid://vmy21h4j404y" path="res://assets/enemies/motyl/motyl_charge_10002.png" id="11_nxjn2"]
+[ext_resource type="Texture2D" uid="uid://1xc0yqyvrngt" path="res://assets/enemies/motyl/motyl_charge_10003.png" id="12_k5463"]
+[ext_resource type="Texture2D" uid="uid://dlj4y02y1cv4" path="res://assets/enemies/motyl/motyl_charge_2.0000.png" id="13_vwxnh"]
+[ext_resource type="Texture2D" uid="uid://bi4vjhtswp0el" path="res://assets/enemies/motyl/motyl_charge_2.0001.png" id="14_oitvb"]
+[ext_resource type="Texture2D" uid="uid://bu7lrtrqrtfdc" path="res://assets/enemies/motyl/motyl_charge_2.0002.png" id="15_ji33q"]
+[ext_resource type="Texture2D" uid="uid://4x2f2hm1cfad" path="res://assets/enemies/motyl/motyl_charge_2.0003.png" id="16_abox5"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="17_3xcqc"]
+
+[sub_resource type="Animation" id="Animation_3xcqc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_7wfid")]
+}
+
+[sub_resource type="Animation" id="Animation_wgbq1"]
+resource_name = "fly"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_7wfid"), ExtResource("4_3ily6"), ExtResource("5_jxhe2"), ExtResource("6_knbbq")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nxjn2"]
+_data = {
+&"RESET": SubResource("Animation_3xcqc"),
+&"fly": SubResource("Animation_wgbq1")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fmga"]
+size = Vector2(132.417, 27.845)
+
+[sub_resource type="Animation" id="Animation_k5463"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_h3snn")]
+}
+
+[sub_resource type="Animation" id="Animation_nxjn2"]
+resource_name = "charge1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.233333, 0.4, 0.566667, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9_wgbq1"), ExtResource("10_3xcqc"), ExtResource("11_nxjn2"), ExtResource("12_k5463"), ExtResource("2_h3snn")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"bolt_attak_1"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_6fyqe"]
+resource_name = "charge2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.266667, 0.433333, 0.6, 0.766667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_vwxnh"), ExtResource("14_oitvb"), ExtResource("15_ji33q"), ExtResource("16_abox5"), ExtResource("2_h3snn")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"bolt_attak_1"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vwxnh"]
+_data = {
+&"RESET": SubResource("Animation_k5463"),
+&"charge1": SubResource("Animation_nxjn2"),
+&"charge2": SubResource("Animation_6fyqe")
+}
+
+[node name="motyl" type="CharacterBody2D" groups=["Enemies"]]
+script = ExtResource("1_6fmga")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_h3snn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+texture = ExtResource("3_7wfid")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nxjn2")
+}
+
+[node name="enemy_health_component" parent="." instance=ExtResource("7_ao14c")]
+
+[node name="Healthbar" parent="." instance=ExtResource("8_vops1")]
+offset_left = -0.909088
+offset_top = -95.4545
+offset_right = -0.909088
+offset_bottom = -95.4545
+
+[node name="hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(5.35938, -40.8622)
+shape = SubResource("RectangleShape2D_6fmga")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vwxnh")
+}
+
+[node name="attack_marker" type="Marker2D" parent="."]
+position = Vector2(-66.5566, -19.5)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="damage_number_display" parent="." instance=ExtResource("17_3xcqc")]
+offset_left = -34.4744
+offset_top = -99.8293
+offset_right = 40.5256
+offset_bottom = -24.8293

@@ -1,0 +1,5 @@
+[gd_resource type="ButtonGroup" format=3 uid="uid://blg8ne3lb5ly6"]
+
+[resource]
+resource_local_to_scene = false
+resource_name = "Button_row_staff"

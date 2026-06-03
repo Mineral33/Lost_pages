@@ -1,0 +1,146 @@
+[gd_scene load_steps=12 format=3 uid="uid://cr0mph5xfdpjw"]
+
+[ext_resource type="Script" uid="uid://b1r4aft3q23xg" path="res://scripts/canon.gd" id="1_mij61"]
+[ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="2_s8x8u"]
+[ext_resource type="Texture2D" uid="uid://id4hl2kn2gih" path="res://assets/enemies/kanon/kanon.png" id="3_y4vr1"]
+[ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="4_lx3fx"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="5_nk5a2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8x8u"]
+size = Vector2(106, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07shc"]
+size = Vector2(124, 81)
+
+[sub_resource type="Animation" id="Animation_knex3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_y4vr1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:shooting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_nk37k"]
+resource_name = "fire"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_y4vr1")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"fire"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_0uelt"]
+resource_name = "hit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_y4vr1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:shooting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pbtwn"]
+_data = {
+&"RESET": SubResource("Animation_knex3"),
+&"fire": SubResource("Animation_nk37k"),
+&"hit": SubResource("Animation_0uelt")
+}
+
+[node name="Canon" type="StaticBody2D" groups=["Enemies"]]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_mij61")
+
+[node name="Healthbar" parent="." instance=ExtResource("2_s8x8u")]
+offset_top = -37.0
+offset_bottom = -37.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 2)
+texture = ExtResource("3_y4vr1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, -7.5)
+shape = SubResource("RectangleShape2D_s8x8u")
+
+[node name="hurtbox" type="Area2D" parent="." groups=["Enemies"]]
+position = Vector2(1, 6)
+collision_layer = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(3, -15.5)
+shape = SubResource("RectangleShape2D_07shc")
+
+[node name="FirePoint" type="Marker2D" parent="."]
+position = Vector2(54, -5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pbtwn")
+}
+
+[node name="enemy_health_component" parent="." instance=ExtResource("4_lx3fx")]
+
+[node name="damage_number_display" parent="." instance=ExtResource("5_nk5a2")]
+offset_left = -33.0
+offset_top = -71.0
+offset_right = 42.0
+offset_bottom = 4.0

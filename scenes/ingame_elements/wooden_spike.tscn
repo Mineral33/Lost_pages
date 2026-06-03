@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlomnh578qhg3"]
+
+[ext_resource type="Script" uid="uid://c1egytdwbb85g" path="res://scripts/wooden_spike.gd" id="1_410oj"]
+[ext_resource type="Texture2D" uid="uid://o6se0ntrpvpp" path="res://assets/interactable/wooden_spike/wooden_spike.png" id="2_hh8ts"]
+
+[node name="wooden_spike" type="Node2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_410oj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hh8ts")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-67, 70, 0.961319, -73.0944, 72, 73)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

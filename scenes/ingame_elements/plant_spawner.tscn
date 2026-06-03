@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds3j37akneod5"]
+
+[ext_resource type="Script" uid="uid://byn0exjeu27w8" path="res://scripts/plant_spawner.gd" id="1_rp771"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ijpm3"]
+load_path = "res://.godot/imported/mata_2.png-14c9f9eef6e775aa4b71ba62f9c0e8da.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oym5c"]
+size = Vector2(17, 33)
+
+[node name="plant_spawner" type="Node2D"]
+script = ExtResource("1_rp771")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = 22
+position = Vector2(2, -25)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CompressedTexture2D_ijpm3")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, -16.5)
+shape = SubResource("RectangleShape2D_oym5c")
+disabled = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://jh78yf2ls0nq"]
+
+[ext_resource type="Script" uid="uid://d32l3mxeihmsx" path="res://scripts/bolt.gd" id="1_jconi"]
+[ext_resource type="Texture2D" uid="uid://clw4280fi3lir" path="res://assets/player/elemental_meele/wind_ab/blesk0000.png" id="2_1nss6"]
+[ext_resource type="Texture2D" uid="uid://qlnlg6ud31gc" path="res://assets/player/elemental_meele/wind_ab/blesk0001.png" id="3_3b6xd"]
+[ext_resource type="Texture2D" uid="uid://b4sf6qvlhmnkc" path="res://assets/player/elemental_meele/wind_ab/blesk0002.png" id="4_4il7c"]
+[ext_resource type="Texture2D" uid="uid://nranp4d8twn6" path="res://assets/player/elemental_meele/wind_ab/blesk0003.png" id="5_pgxtk"]
+
+[sub_resource type="Animation" id="Animation_jhab2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_1nss6")]
+}
+
+[sub_resource type="Animation" id="Animation_j77bh"]
+resource_name = "boom"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_1nss6"), ExtResource("3_3b6xd"), ExtResource("4_4il7c"), ExtResource("5_pgxtk")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6jq3s"]
+_data = {
+&"RESET": SubResource("Animation_jhab2"),
+&"boom": SubResource("Animation_j77bh")
+}
+
+[node name="bolt" type="Node2D"]
+script = ExtResource("1_jconi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 590
+position = Vector2(-4.34644, -72.0269)
+texture = ExtResource("2_1nss6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6jq3s")
+}
+autoplay = "boom"

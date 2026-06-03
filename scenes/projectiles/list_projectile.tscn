@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7g4ls5dey5qh"]
+
+[ext_resource type="Script" uid="uid://cla6dw1oqcrua" path="res://scripts/poleno_projectile.gd" id="1_x7sti"]
+[ext_resource type="Texture2D" uid="uid://dn43h4ub2ykvq" path="res://assets/enemies/mage/list_mage/list_projectile.png" id="2_x7sti"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k3hpm"]
+
+[node name="poleno" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_x7sti")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -3)
+shape = SubResource("CircleShape2D_k3hpm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_x7sti")
+
+[node name="LifeTimer" type="Timer" parent="."]

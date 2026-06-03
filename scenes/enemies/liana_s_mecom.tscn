@@ -1,0 +1,217 @@
+[gd_scene load_steps=24 format=3 uid="uid://c6xt4sq38afqi"]
+
+[ext_resource type="Script" uid="uid://cvt6whpjki6ph" path="res://scripts/liana_s_mecom.gd" id="1_rvhid"]
+[ext_resource type="Texture2D" uid="uid://d3y7k2w1r3q7u" path="res://assets/enemies/liana_s_mecom/liana_s_mecom0000.png" id="2_qj1ls"]
+[ext_resource type="Texture2D" uid="uid://bcro1x1gxo8gk" path="res://assets/enemies/liana_s_mecom/liana_s_mecom0006.png" id="3_0y4bc"]
+[ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="3_5if8c"]
+[ext_resource type="Texture2D" uid="uid://ba3wlh6ut6yy4" path="res://assets/enemies/liana_s_mecom/liana_s_mecom0010.png" id="4_vu7cw"]
+[ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="4_x1vc7"]
+[ext_resource type="Texture2D" uid="uid://ctx1vgse0ubb6" path="res://assets/enemies/liana_s_mecom/liana_s_mecom0011.png" id="5_gn12h"]
+[ext_resource type="Texture2D" uid="uid://bvionkto2644y" path="res://assets/enemies/liana_s_mecom/liana_s_mecom0001.png" id="6_a3ryh"]
+[ext_resource type="Texture2D" uid="uid://cj4xqpu4psr1a" path="res://assets/enemies/liana_s_mecom/liana_s_mecom0002.png" id="7_8ii4e"]
+[ext_resource type="Texture2D" uid="uid://crlo4304noxu3" path="res://assets/enemies/liana_s_mecom/liana_s_mecom0003.png" id="8_x1oxs"]
+[ext_resource type="Texture2D" uid="uid://ddcxeuuuta0be" path="res://assets/enemies/liana_s_mecom/liana_s_mecom0004.png" id="9_jbbwf"]
+[ext_resource type="Texture2D" uid="uid://dtku5iifmjr5i" path="res://assets/enemies/liana_s_mecom/liana_s_mecom0005.png" id="10_kc7v4"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="13_qj1ls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvb7o"]
+size = Vector2(7.47099, 112.537)
+
+[sub_resource type="Animation" id="Animation_mxjmi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_qj1ls")]
+}
+
+[sub_resource type="Animation" id="Animation_tdpmv"]
+resource_name = "attak"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.2, 0.433333, 0.566667, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_0y4bc"), ExtResource("4_vu7cw"), ExtResource("5_gn12h"), ExtResource("4_vu7cw"), ExtResource("3_0y4bc")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.433333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"atack_action"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ayrpy"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_qj1ls")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ta3d4"]
+resource_name = "idle"
+length = 1.15
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.5, 0.633333, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_qj1ls"), ExtResource("6_a3ryh"), ExtResource("7_8ii4e"), ExtResource("8_x1oxs"), ExtResource("9_jbbwf"), ExtResource("10_kc7v4"), ExtResource("3_0y4bc")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ayrpy"]
+_data = {
+&"RESET": SubResource("Animation_mxjmi"),
+&"attak": SubResource("Animation_tdpmv"),
+&"die": SubResource("Animation_ayrpy"),
+&"idle": SubResource("Animation_ta3d4")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvhid"]
+size = Vector2(26.8448, 33.4126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fnw7"]
+size = Vector2(26.1893, 113.459)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rysy"]
+size = Vector2(224.763, 125.211)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u148s"]
+size = Vector2(667.105, 187.303)
+
+[node name="liana_S_mecom" type="CharacterBody2D" groups=["Enemies"]]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_rvhid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-3.79288, 10.4571)
+scale = Vector2(4.08, 0.662096)
+shape = SubResource("RectangleShape2D_hvb7o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_ayrpy")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(3.07635, -101.217)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_qj1ls")
+offset = Vector2(35, 0)
+flip_h = true
+
+[node name="HitBox" type="Area2D" parent="."]
+position = Vector2(-2.75301, -1.30239)
+scale = Vector2(2.67, 0.862)
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(14.5547, -7.12266)
+shape = SubResource("RectangleShape2D_rvhid")
+
+[node name="up_autostep_raycat" type="RayCast2D" parent="."]
+position = Vector2(-5.5262, 22.6664)
+target_position = Vector2(24.7814, -0.120415)
+collision_mask = 4
+
+[node name="down_autostep raycast" type="RayCast2D" parent="."]
+position = Vector2(-5.19209, 43.7716)
+target_position = Vector2(25.8115, -0.458683)
+collision_mask = 4
+
+[node name="Healthbar" parent="." instance=ExtResource("3_5if8c")]
+offset_top = -57.0
+offset_bottom = -57.0
+
+[node name="hurtbox" type="Area2D" parent="."]
+visible = false
+position = Vector2(-22.3021, -0.198582)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(20.2178, -28.4382)
+shape = SubResource("RectangleShape2D_1fnw7")
+
+[node name="Attack_area" type="Area2D" parent="."]
+visible = false
+position = Vector2(7.93928, 13.2125)
+collision_layer = 8
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_area"]
+position = Vector2(9.29475, -16.543)
+shape = SubResource("RectangleShape2D_5rysy")
+
+[node name="enemy_health_component" parent="." instance=ExtResource("4_x1vc7")]
+
+[node name="Player_follow_area" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_follow_area"]
+position = Vector2(15.4034, 8.35734)
+shape = SubResource("RectangleShape2D_u148s")
+
+[node name="damage_number_display" parent="." instance=ExtResource("13_qj1ls")]
+offset_left = -31.8938
+offset_top = -72.5954
+offset_right = 43.1062
+offset_bottom = 2.40465
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="area_exited" from="HitBox" to="." method="_on_hit_box_area_exited"]
+[connection signal="area_entered" from="Attack_area" to="." method="_on_attack_area_area_entered"]
+[connection signal="area_exited" from="Attack_area" to="." method="_on_attack_area_area_exited"]

@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://dtaru2bwk2c1n"]
+
+[ext_resource type="Script" uid="uid://m1fxcfh5x7sd" path="res://scripts/snow_ball.gd" id="1_swj73"]
+[ext_resource type="Texture2D" uid="uid://0e2fs4cmahbs" path="res://assets/enemies/snehuliak/Snehová_Guľa.png" id="2_lw0u1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_326c3"]
+radius = 12.7891
+
+[sub_resource type="Animation" id="Animation_ego8a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_o40dc"]
+resource_name = "hit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0yuu3"]
+_data = {
+&"RESET": SubResource("Animation_ego8a"),
+&"hit": SubResource("Animation_o40dc")
+}
+
+[node name="SnowBall" type="Node2D"]
+script = ExtResource("1_swj73")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_lw0u1")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.637253, -0.955894)
+shape = SubResource("CircleShape2D_326c3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0yuu3")
+}
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

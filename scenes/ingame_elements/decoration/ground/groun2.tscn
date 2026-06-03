@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcody6b1gnyp1"]
+
+[ext_resource type="Texture2D" uid="uid://cux525rstxl40" path="res://assets/decoration/ground/ground2.png" id="1_dt000"]
+[ext_resource type="PackedScene" uid="uid://cimhkuw5w5q5p" path="res://scenes/ingame_elements/decoration/trava.tscn" id="2_fv7qv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ytclh"]
+friction = 0.0
+
+[node name="ground2" type="StaticBody2D" groups=["Wall"]]
+collision_layer = 20
+collision_mask = 20
+physics_material_override = SubResource("PhysicsMaterial_ytclh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(14, 69)
+texture = ExtResource("1_dt000")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1.15662, -4.24097)
+polygon = PackedVector2Array(-187, 74, -184.481, 3.65287, -181.407, 0.370656, 196.18, 0.200435, 198.819, 4.05841, 198, 73)
+
+[node name="trava" parent="." instance=ExtResource("2_fv7qv")]
+visible = false
+position = Vector2(-170.396, -23.9427)
+
+[node name="trava2" parent="." instance=ExtResource("2_fv7qv")]
+visible = false
+position = Vector2(-143.443, -24.6147)
+
+[node name="trava3" parent="." instance=ExtResource("2_fv7qv")]
+visible = false
+position = Vector2(-117.702, -24.3777)
+
+[node name="trava4" parent="." instance=ExtResource("2_fv7qv")]
+visible = false
+position = Vector2(-91.3009, -23.1167)
+
+[node name="trava5" parent="." instance=ExtResource("2_fv7qv")]
+visible = false
+position = Vector2(-65.4444, -22.8964)
+
+[node name="trava6" parent="." instance=ExtResource("2_fv7qv")]
+visible = false
+position = Vector2(-38.7839, -23.6622)
+
+[node name="trava7" parent="." instance=ExtResource("2_fv7qv")]
+visible = false
+position = Vector2(-9.66688, -22.0651)
+
+[node name="trava8" parent="." instance=ExtResource("2_fv7qv")]
+visible = false
+position = Vector2(16.6471, -24.1966)
+
+[node name="trava9" parent="." instance=ExtResource("2_fv7qv")]
+visible = false
+position = Vector2(71.0833, -22.6983)
+
+[node name="trava11" parent="." instance=ExtResource("2_fv7qv")]
+visible = false
+position = Vector2(96.9147, -21.9272)
+
+[node name="trava12" parent="." instance=ExtResource("2_fv7qv")]
+visible = false
+position = Vector2(120.047, -22.6983)
+
+[node name="trava13" parent="." instance=ExtResource("2_fv7qv")]
+visible = false
+position = Vector2(143.951, -22.3128)
+
+[node name="trava14" parent="." instance=ExtResource("2_fv7qv")]
+visible = false
+position = Vector2(165.541, -21.1562)
+
+[node name="trava15" parent="." groups=["Wall"] instance=ExtResource("2_fv7qv")]
+visible = false
+position = Vector2(189.059, -21.9272)
+
+[node name="trava10" parent="." instance=ExtResource("2_fv7qv")]
+visible = false
+position = Vector2(43.7869, -23.8164)

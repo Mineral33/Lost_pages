@@ -1,0 +1,154 @@
+[gd_scene load_steps=34 format=3 uid="uid://b2gf6egtkjfpc"]
+
+[ext_resource type="Script" uid="uid://c1e22yv44u06a" path="res://scripts/Dexamet_spawn.gd" id="1_kdpn0"]
+[ext_resource type="Texture2D" uid="uid://dgk4sny8bchp5" path="res://assets/enemies/dexomet/dex0000.png" id="2_3gnds"]
+[ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="3_dg1lw"]
+[ext_resource type="Texture2D" uid="uid://dfqhpyfb2og3x" path="res://assets/enemies/dexomet/dex0001.png" id="4_0lo65"]
+[ext_resource type="Texture2D" uid="uid://dlxnxvtbnwu03" path="res://assets/enemies/dexomet/dex0002.png" id="5_sbs1r"]
+[ext_resource type="Texture2D" uid="uid://cuqvdsu5ep0co" path="res://assets/enemies/dexomet/dex0003.png" id="6_jenxt"]
+[ext_resource type="Texture2D" uid="uid://7uqi8d344b0f" path="res://assets/enemies/dexomet/dex0004.png" id="7_lh6ak"]
+[ext_resource type="Texture2D" uid="uid://dyurvnwfpi11q" path="res://assets/enemies/dexomet/dex0005.png" id="8_d7fje"]
+[ext_resource type="Texture2D" uid="uid://cccdh8i0aeoho" path="res://assets/enemies/dexomet/dex0006.png" id="9_4wsde"]
+[ext_resource type="Texture2D" uid="uid://dayjkhm81w4cb" path="res://assets/enemies/dexomet/dex0007.png" id="10_14sk8"]
+[ext_resource type="Texture2D" uid="uid://dhh5tgmgfnbsf" path="res://assets/enemies/dexomet/dex0008.png" id="11_kdima"]
+[ext_resource type="Texture2D" uid="uid://cnjl5tt7ylyc2" path="res://assets/enemies/dexomet/dex0009.png" id="12_fi7fl"]
+[ext_resource type="Texture2D" uid="uid://l1ijoc2urt07" path="res://assets/enemies/dexomet/dex0010.png" id="13_errnc"]
+[ext_resource type="Texture2D" uid="uid://dk8v6qexbw0nh" path="res://assets/enemies/dexomet/dex0011.png" id="14_a2sq0"]
+[ext_resource type="Texture2D" uid="uid://baeqqhbkdv20i" path="res://assets/enemies/dexomet/dex0012.png" id="15_cxy1w"]
+[ext_resource type="Texture2D" uid="uid://c7n2h3wliqvxq" path="res://assets/enemies/dexomet/dex0013.png" id="16_f7sjj"]
+[ext_resource type="Texture2D" uid="uid://bytkx2rsa3owf" path="res://assets/enemies/dexomet/dex0014.png" id="17_7m0n2"]
+[ext_resource type="Texture2D" uid="uid://cg88gqjh5will" path="res://assets/enemies/dexomet/dex0015.png" id="18_00lir"]
+[ext_resource type="Texture2D" uid="uid://ceb3cjhj3ut2i" path="res://assets/enemies/dexomet/dex0016.png" id="19_4fr3u"]
+[ext_resource type="Texture2D" uid="uid://xu2ewake35r7" path="res://assets/enemies/dexomet/dex0017.png" id="20_lsjp8"]
+[ext_resource type="Texture2D" uid="uid://k0ua8pdwwf12" path="res://assets/enemies/dexomet/dex0018.png" id="21_8rpkf"]
+[ext_resource type="Texture2D" uid="uid://c0o5rw22e8qn7" path="res://assets/enemies/dexomet/dex0019.png" id="22_v1qwy"]
+[ext_resource type="Texture2D" uid="uid://d0virj41qb7fc" path="res://assets/enemies/dexomet/dex0020.png" id="23_5ki05"]
+[ext_resource type="Texture2D" uid="uid://ckjavcpqjrqgm" path="res://assets/enemies/dexomet/dex0021.png" id="24_4k5k5"]
+[ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="25_3gnds"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="26_dg1lw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ibu68"]
+radius = 11.0454
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v44ju"]
+radius = 16.0312
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6fb88"]
+radius = 10.0499
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0lbid"]
+size = Vector2(1797.46, 705.498)
+
+[sub_resource type="Animation" id="Animation_1tjfq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_3gnds")]
+}
+
+[sub_resource type="Animation" id="Animation_31bfc"]
+resource_name = "run"
+length = 2.45
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.133333, 0.233333, 0.333333, 0.433333, 0.5, 0.6, 0.733333, 0.833333, 0.933333, 1.03333, 1.16667, 1.26667, 1.4, 1.53333, 1.66667, 1.76667, 1.86667, 2, 2.1, 2.26667, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_3gnds"), ExtResource("4_0lo65"), ExtResource("5_sbs1r"), ExtResource("6_jenxt"), ExtResource("7_lh6ak"), ExtResource("8_d7fje"), ExtResource("9_4wsde"), ExtResource("10_14sk8"), ExtResource("11_kdima"), ExtResource("12_fi7fl"), ExtResource("13_errnc"), ExtResource("14_a2sq0"), ExtResource("15_cxy1w"), ExtResource("16_f7sjj"), ExtResource("17_7m0n2"), ExtResource("18_00lir"), ExtResource("19_4fr3u"), ExtResource("20_lsjp8"), ExtResource("21_8rpkf"), ExtResource("22_v1qwy"), ExtResource("23_5ki05"), ExtResource("24_4k5k5")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_di55r"]
+_data = {
+&"RESET": SubResource("Animation_1tjfq"),
+&"run": SubResource("Animation_31bfc")
+}
+
+[node name="Dexamet" type="CharacterBody2D" groups=["Enemies"]]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_kdpn0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 2)
+shape = SubResource("CircleShape2D_ibu68")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(3, 0)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_3gnds")
+
+[node name="HitBox" type="Area2D" parent="."]
+position = Vector2(-2.75301, -1.30239)
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(4.75301, 3.30239)
+shape = SubResource("CircleShape2D_v44ju")
+
+[node name="up_autostep_raycat" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(24.7814, -0.120415)
+collision_mask = 4
+
+[node name="down_autostep raycast" type="RayCast2D" parent="."]
+position = Vector2(0, 10)
+target_position = Vector2(25.8115, -0.458683)
+collision_mask = 4
+
+[node name="Healthbar" parent="." instance=ExtResource("3_dg1lw")]
+offset_top = -57.0
+offset_bottom = -57.0
+
+[node name="hurtbox" type="Area2D" parent="."]
+position = Vector2(0.718178, 0.478786)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(0.281822, 1.52121)
+shape = SubResource("CircleShape2D_6fb88")
+
+[node name="ground_detection_raycast" type="RayCast2D" parent="."]
+position = Vector2(12, 13)
+target_position = Vector2(-0.431129, 9.73234)
+collision_mask = 4
+
+[node name="player_follow_area" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+input_pickable = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_follow_area"]
+position = Vector2(6.24033, -3.77554)
+shape = SubResource("RectangleShape2D_0lbid")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_di55r")
+}
+
+[node name="enemy_health_component" parent="." instance=ExtResource("25_3gnds")]
+
+[node name="damage_number_display" parent="." instance=ExtResource("26_dg1lw")]
+offset_left = -26.9341
+offset_top = -72.3307
+offset_right = 48.0659
+offset_bottom = 2.66931
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="area_exited" from="HitBox" to="." method="_on_hit_box_area_exited"]

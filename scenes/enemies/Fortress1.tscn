@@ -1,0 +1,391 @@
+[gd_scene load_steps=55 format=3 uid="uid://b4c6bcuunvrba"]
+
+[ext_resource type="Script" uid="uid://wv4pfes8bfv0" path="res://scripts/fortress1.gd" id="1_pjgb1"]
+[ext_resource type="Texture2D" uid="uid://bq8wllojtuuvq" path="res://assets/enemies/legged_fortress_v1/get_up/get_up0011.png" id="2_nx22h"]
+[ext_resource type="Texture2D" uid="uid://b5bipugm4kcf7" path="res://assets/enemies/legged_fortress_v1/get_up/get_up0005.png" id="5_keydh"]
+[ext_resource type="Texture2D" uid="uid://cphkbddwkdvvl" path="res://assets/enemies/legged_fortress_v1/get_up/get_up0006.png" id="6_pe4gx"]
+[ext_resource type="Texture2D" uid="uid://cb3by53wil3et" path="res://assets/enemies/legged_fortress_v1/get_up/get_up0007.png" id="7_kpqym"]
+[ext_resource type="Texture2D" uid="uid://bcyfxkb2746t" path="res://assets/enemies/legged_fortress_v1/get_up/get_up0008.png" id="8_x1qht"]
+[ext_resource type="Texture2D" uid="uid://o63ql10objmr" path="res://assets/enemies/legged_fortress_v1/get_up/get_up0009.png" id="9_7dpgx"]
+[ext_resource type="Texture2D" uid="uid://dsrwtgb4ghg62" path="res://assets/enemies/legged_fortress_v1/get_up/get_up0010.png" id="10_wnvhy"]
+[ext_resource type="Texture2D" uid="uid://dlmediufqh5yi" path="res://assets/enemies/legged_fortress_v1/attak/attak0005.png" id="11_28pqb"]
+[ext_resource type="Texture2D" uid="uid://bayyoigv7ppvv" path="res://assets/enemies/legged_fortress_v1/attak/attak0006.png" id="12_cwlpf"]
+[ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="12_mav64"]
+[ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="13_pjgb1"]
+[ext_resource type="Texture2D" uid="uid://di03a51j3dlig" path="res://assets/enemies/legged_fortress_v1/attak/attak0007.png" id="13_wwthx"]
+[ext_resource type="Texture2D" uid="uid://ccbseaya04ihr" path="res://assets/enemies/legged_fortress_v1/attak/attak0008.png" id="14_smqrt"]
+[ext_resource type="Texture2D" uid="uid://b7oie86nqjsmm" path="res://assets/enemies/legged_fortress_v1/attak/attak0009.png" id="15_nr0i0"]
+[ext_resource type="Texture2D" uid="uid://ds2rfaly7pema" path="res://assets/enemies/legged_fortress_v1/jump/jump0026.png" id="16_0qn20"]
+[ext_resource type="Texture2D" uid="uid://dvyp3r8in0v20" path="res://assets/enemies/legged_fortress_v1/jump/jump0027.png" id="17_qqdsc"]
+[ext_resource type="Texture2D" uid="uid://duco5nbtp2a25" path="res://assets/enemies/legged_fortress_v1/jump/jump0028.png" id="18_ti121"]
+[ext_resource type="Texture2D" uid="uid://wn3wbdhgoaba" path="res://assets/enemies/legged_fortress_v1/jump/jump0029.png" id="19_g24fo"]
+[ext_resource type="Texture2D" uid="uid://j28o5nmceovo" path="res://assets/enemies/legged_fortress_v1/jump/jump0030.png" id="20_7dpgx"]
+[ext_resource type="Texture2D" uid="uid://d3262kkk0krfa" path="res://assets/enemies/legged_fortress_v1/jump/jump0032.png" id="21_k2cta"]
+[ext_resource type="Texture2D" uid="uid://bggktuv86uk7s" path="res://assets/enemies/legged_fortress_v1/walk/walk0026.png" id="22_p3g4l"]
+[ext_resource type="Texture2D" uid="uid://ccleggsqfrltq" path="res://assets/enemies/legged_fortress_v1/jump/jump0033.png" id="22_wnvhy"]
+[ext_resource type="Texture2D" uid="uid://dv60xyd4ndvqi" path="res://assets/enemies/legged_fortress_v1/jump/jump0034.png" id="23_28pqb"]
+[ext_resource type="Texture2D" uid="uid://cqo6bs0gp30n0" path="res://assets/enemies/legged_fortress_v1/walk/walk0027.png" id="23_vfovy"]
+[ext_resource type="Texture2D" uid="uid://dtndeltu4r3a0" path="res://assets/enemies/legged_fortress_v1/jump/jump0035.png" id="24_cwlpf"]
+[ext_resource type="Texture2D" uid="uid://qq1ue0arqu78" path="res://assets/enemies/legged_fortress_v1/jump/jump0031.png" id="24_pjgb1"]
+[ext_resource type="Texture2D" uid="uid://cjmqwpwcd51vf" path="res://assets/enemies/legged_fortress_v1/walk/walk0028.png" id="24_srkrc"]
+[ext_resource type="Texture2D" uid="uid://bld3cfcusma74" path="res://assets/enemies/legged_fortress_v1/walk/walk0029.png" id="25_fqux2"]
+[ext_resource type="Texture2D" uid="uid://m47qavki8orx" path="res://assets/enemies/legged_fortress_v1/jump/jump0037.png" id="26_7dpgx"]
+[ext_resource type="Texture2D" uid="uid://btkq5qtl0cpiq" path="res://assets/enemies/legged_fortress_v1/jump/jump0038.png" id="26_smqrt"]
+[ext_resource type="Texture2D" uid="uid://78kpbif76wwl" path="res://assets/enemies/legged_fortress_v1/attak_II/attak_II0026.png" id="32_nr0i0"]
+[ext_resource type="Texture2D" uid="uid://c0o4rohckm3ux" path="res://assets/enemies/legged_fortress_v1/attak_II/attak_II0027.png" id="33_0qn20"]
+[ext_resource type="Texture2D" uid="uid://basysrrvoob3a" path="res://assets/enemies/legged_fortress_v1/attak_II/attak_II0028.png" id="34_qqdsc"]
+[ext_resource type="Texture2D" uid="uid://b4njoslpjrdvu" path="res://assets/enemies/legged_fortress_v1/attak_II/attak_II0029.png" id="35_ti121"]
+[ext_resource type="Texture2D" uid="uid://i4e4n1sh38av" path="res://assets/enemies/legged_fortress_v1/attak_II/attak_II0030.png" id="36_g24fo"]
+[ext_resource type="Texture2D" uid="uid://c8864yylbcwyt" path="res://assets/enemies/legged_fortress_v1/attak_II/attak_II0031.png" id="37_dahe1"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="38_0qn20"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvb7o"]
+size = Vector2(32.1435, 450.002)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fnw7"]
+size = Vector2(194.872, 307.608)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjgb1"]
+size = Vector2(450.017, 174.221)
+
+[sub_resource type="Animation" id="Animation_l4xqh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("26_smqrt")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:attaking")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_k2cta"]
+resource_name = "attack_II"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.333333, 0.6, 0.7, 0.766667, 0.866667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("32_nr0i0"), ExtResource("33_0qn20"), ExtResource("34_qqdsc"), ExtResource("35_ti121"), ExtResource("36_g24fo"), ExtResource("37_dahe1")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"atack_action_II"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_tpbdc"]
+resource_name = "get_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.166667, 0.266667, 0.4, 0.466667, 0.666667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_keydh"), ExtResource("6_pe4gx"), ExtResource("7_kpqym"), ExtResource("8_x1qht"), ExtResource("9_7dpgx"), ExtResource("10_wnvhy"), ExtResource("2_nx22h")]
+}
+
+[sub_resource type="Animation" id="Animation_perag"]
+resource_name = "hand_attak"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.233333, 0.366667, 0.5, 0.7, 0.866667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("11_28pqb"), ExtResource("12_cwlpf"), ExtResource("13_wwthx"), ExtResource("14_smqrt"), ExtResource("15_nr0i0")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.433333, 0.933333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"atack_action"
+}, {
+"args": [],
+"method": &"attak_reset"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:attaking")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.99),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_qtk3k"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("26_smqrt")]
+}
+
+[sub_resource type="Animation" id="Animation_rdww5"]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.2, 0.266667, 0.3, 0.4, 0.466667, 0.533333, 0.6, 0.633333, 0.7, 0.766667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("16_0qn20"), ExtResource("17_qqdsc"), ExtResource("18_ti121"), ExtResource("19_g24fo"), ExtResource("20_7dpgx"), ExtResource("24_pjgb1"), ExtResource("21_k2cta"), ExtResource("22_wnvhy"), ExtResource("23_28pqb"), ExtResource("24_cwlpf"), ExtResource("26_smqrt")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_nx22h"]
+resource_name = "jump_impact"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("26_7dpgx"), ExtResource("26_smqrt")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack_action_fall"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_s3k18"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.3, 0.6, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("22_p3g4l"), ExtResource("23_vfovy"), ExtResource("24_srkrc"), ExtResource("25_fqux2")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p6ryo"]
+_data = {
+&"RESET": SubResource("Animation_l4xqh"),
+&"attack_II": SubResource("Animation_k2cta"),
+&"get_up": SubResource("Animation_tpbdc"),
+&"hand_attak": SubResource("Animation_perag"),
+&"idle": SubResource("Animation_qtk3k"),
+&"jump": SubResource("Animation_rdww5"),
+&"jump_impact": SubResource("Animation_nx22h"),
+&"walk": SubResource("Animation_s3k18")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nx22h"]
+size = Vector2(123.202, 107.904)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_keydh"]
+size = Vector2(195.041, 130.248)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3g4l"]
+size = Vector2(148.468, 109.626)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dpgx"]
+size = Vector2(801.787, 419.87)
+
+[node name="fortress1" type="CharacterBody2D" groups=["Enemies"]]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_pjgb1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-8.62787, 131.598)
+scale = Vector2(4.08, 0.662096)
+shape = SubResource("RectangleShape2D_hvb7o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-24.5226, 275.981)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("26_smqrt")
+centered = false
+offset = Vector2(-640, -1200)
+
+[node name="up_autostep_raycat" type="RayCast2D" parent="."]
+position = Vector2(6.27129, 25.771)
+target_position = Vector2(24.7814, -0.120415)
+collision_mask = 4
+
+[node name="down_autostep raycast" type="RayCast2D" parent="."]
+position = Vector2(5.98448, 44.3925)
+target_position = Vector2(25.8115, -0.458683)
+collision_mask = 4
+
+[node name="Healthbar" parent="." instance=ExtResource("12_mav64")]
+offset_left = -12.9
+offset_top = 230.858
+offset_right = -12.9
+offset_bottom = 230.858
+scale = Vector2(4, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="hurtbox" type="Area2D" parent="."]
+visible = false
+position = Vector2(0.718178, 0.478786)
+scale = Vector2(-1, 1)
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(24.617, 140.035)
+scale = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_1fnw7")
+
+[node name="Player_follow_raycast" type="RayCast2D" parent="."]
+position = Vector2(-403.428, 272.641)
+target_position = Vector2(777.532, 1.21664)
+
+[node name="attack_area" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_area"]
+position = Vector2(152.317, 206.143)
+shape = SubResource("RectangleShape2D_pjgb1")
+
+[node name="enemy_health_component" parent="." instance=ExtResource("13_pjgb1")]
+position = Vector2(-202.924, -152.998)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_p6ryo")
+}
+
+[node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(-34.1507, 4.09808)
+collision_layer = 9
+collision_mask = 9
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(206.21, 226.348)
+shape = SubResource("RectangleShape2D_nx22h")
+
+[node name="jump_area" type="Area2D" parent="."]
+visible = false
+collision_layer = 9
+collision_mask = 9
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jump_area"]
+position = Vector2(-18.7645, 233.248)
+shape = SubResource("RectangleShape2D_keydh")
+
+[node name="Hitbox_II" type="Area2D" parent="."]
+position = Vector2(-25.9545, 2.04904)
+collision_layer = 9
+collision_mask = 9
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox_II"]
+position = Vector2(66.8582, 230.589)
+shape = SubResource("RectangleShape2D_p3g4l")
+
+[node name="player_follow_area" type="Area2D" parent="."]
+visible = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_follow_area"]
+position = Vector2(-24.6165, 323.225)
+shape = SubResource("RectangleShape2D_7dpgx")
+
+[node name="damage_number_display" parent="." instance=ExtResource("38_0qn20")]
+z_index = 185
+offset_left = -47.8273
+offset_top = 193.924
+offset_right = 27.1727
+offset_bottom = 268.924
+
+[connection signal="area_entered" from="attack_area" to="." method="_on_attack_area_area_entered"]
+[connection signal="area_exited" from="attack_area" to="." method="_on_attack_area_area_exited"]
+[connection signal="area_entered" from="player_follow_area" to="." method="_on_player_follow_area_area_entered"]
+[connection signal="area_exited" from="player_follow_area" to="." method="_on_player_follow_area_area_exited"]

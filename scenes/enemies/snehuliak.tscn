@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://bw4lmy5c4x6ia"]
+
+[ext_resource type="Script" uid="uid://b4pn4kpedrml2" path="res://scripts/snehuliak.gd" id="1_tsspj"]
+[ext_resource type="Texture2D" uid="uid://dfrxwmr2og58w" path="res://assets/enemies/etoxusimid/etosuximid.png" id="2_tsspj"]
+[ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="3_eylsl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tgh78"]
+radius = 1654.09
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1n7ry"]
+size = Vector2(50.5914, 115.514)
+
+[node name="firing_enemy" type="Node2D" groups=["Enemies"]]
+script = ExtResource("1_tsspj")
+fire_rate = 0.4
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_tsspj")
+
+[node name="FireTimer" type="Timer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(2.82236, -14.1118)
+shape = SubResource("CircleShape2D_tgh78")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Healthbar" parent="." groups=["Enemies"] instance=ExtResource("3_eylsl")]
+offset_left = -19.5798
+offset_top = -66.3316
+offset_right = -19.5798
+offset_bottom = -66.3316
+
+[node name="hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(-19.6601, -0.490255)
+shape = SubResource("RectangleShape2D_1n7ry")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

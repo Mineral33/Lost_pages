@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://cimhkuw5w5q5p"]
+
+[ext_resource type="Script" uid="uid://canpkgyv4tl4g" path="res://scripts/trava.gd" id="1_k2hfe"]
+[ext_resource type="Texture2D" uid="uid://bam3r8guyt0qa" path="res://assets/decoration/trava/trava0001.png" id="2_cr7lw"]
+[ext_resource type="Texture2D" uid="uid://d1sk718l3gkg6" path="res://assets/decoration/trava/trava0002.png" id="3_bo2dy"]
+[ext_resource type="Texture2D" uid="uid://bhohdwbmx0jrb" path="res://assets/decoration/trava/trava0000.png" id="4_7jfwo"]
+[ext_resource type="Texture2D" uid="uid://hew1pfhi7x15" path="res://assets/decoration/trava/trava_right_to_left0000.png" id="5_bqubd"]
+[ext_resource type="Texture2D" uid="uid://cxa51upb132xh" path="res://assets/decoration/trava/trava_right_to_left0001.png" id="6_m2w72"]
+
+[sub_resource type="Animation" id="Animation_yk0uc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_7jfwo")]
+}
+
+[sub_resource type="Animation" id="Animation_w0iql"]
+resource_name = "left_to_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_cr7lw"), ExtResource("3_bo2dy"), ExtResource("2_cr7lw"), ExtResource("4_7jfwo")]
+}
+
+[sub_resource type="Animation" id="Animation_4k1y1"]
+resource_name = "right_to_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_bqubd"), ExtResource("6_m2w72"), ExtResource("5_bqubd"), ExtResource("4_7jfwo")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jgga4"]
+_data = {
+&"RESET": SubResource("Animation_yk0uc"),
+&"left_to_right": SubResource("Animation_w0iql"),
+&"right_to_left": SubResource("Animation_4k1y1")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2hfe"]
+size = Vector2(81, 130)
+
+[node name="trava" type="Sprite2D"]
+z_index = 21
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_7jfwo")
+script = ExtResource("1_k2hfe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jgga4")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4.5, 8)
+shape = SubResource("RectangleShape2D_k2hfe")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

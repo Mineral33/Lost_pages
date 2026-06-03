@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://coplffdq2s11s"]
+
+[ext_resource type="Script" uid="uid://cr3yd7mhon7g" path="res://scripts/haluz.gd" id="1_5qfeq"]
+[ext_resource type="Texture2D" uid="uid://cu4y6y6i7xtu0" path="res://assets/enemies/strom_firing/projectil_e.png" id="2_aemw6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ejpr"]
+size = Vector2(70, 18)
+
+[node name="haluz" type="Area2D"]
+script = ExtResource("1_5qfeq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 2)
+shape = SubResource("RectangleShape2D_1ejpr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_aemw6")
+
+[node name="LifeTimer" type="Timer" parent="."]

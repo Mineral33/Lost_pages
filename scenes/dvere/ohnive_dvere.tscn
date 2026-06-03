@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://4las2wmeoyp3"]
+
+[ext_resource type="Script" uid="uid://bnpqnd4mkq4k3" path="res://scripts/ohnive_dvere.gd" id="1_hglgc"]
+[ext_resource type="Script" uid="uid://c3a7pliv8fjm8" path="res://scripts/area_2d.gd" id="2_trgui"]
+[ext_resource type="Texture2D" uid="uid://dow8p3gfl1p63" path="res://assets/decoration/door/ohen_dvere.png" id="3_p3l4l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lworj"]
+size = Vector2(45, 115)
+
+[node name="ohnive dvere" type="Node2D"]
+script = ExtResource("1_hglgc")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_trgui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.5, 58.5)
+shape = SubResource("RectangleShape2D_lworj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_p3l4l")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]

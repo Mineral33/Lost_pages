@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://em144d1d40f7"]
+
+[ext_resource type="Script" uid="uid://bsh6r0d7535rl" path="res://scripts/wind_projectile.gd" id="1_l2rlm"]
+[ext_resource type="Texture2D" uid="uid://bput8oiaj1gas" path="res://assets/enemies/mage/wind_mage/wind_projectile.png" id="2_kgqlv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ejpr"]
+size = Vector2(41, 46)
+
+[node name="wind" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_l2rlm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -1)
+shape = SubResource("RectangleShape2D_1ejpr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_kgqlv")
+
+[node name="LifeTimer" type="Timer" parent="."]

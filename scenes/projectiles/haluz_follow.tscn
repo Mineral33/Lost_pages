@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1usgegsdupd2"]
+
+[ext_resource type="Script" uid="uid://ddyku2rg4rojc" path="res://scripts/haluz_follow.gd" id="1_88v8n"]
+[ext_resource type="Texture2D" uid="uid://cu4y6y6i7xtu0" path="res://assets/enemies/strom_firing/projectil_e.png" id="2_bafjv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ejpr"]
+size = Vector2(71, 20)
+
+[node name="haluz" type="Area2D"]
+z_index = 4096
+scale = Vector2(0.5, 0.5)
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_88v8n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 1)
+shape = SubResource("RectangleShape2D_1ejpr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bafjv")
+
+[node name="LifeTimer" type="Timer" parent="."]
+
+[node name="FollowTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]
