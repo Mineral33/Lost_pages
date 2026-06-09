@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bcgmxylwk1701"]
+[gd_scene load_steps=19 format=3 uid="uid://bcgmxylwk1701"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_acv70"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_qaumn"]
@@ -9,8 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://14jbjx0enb5v" path="res://scenes/dvere/door_back.tscn" id="6_sxkcj"]
 [ext_resource type="PackedScene" uid="uid://bdlrgr4t323dq" path="res://scenes/enemies/Dexamet.tscn" id="7_bdj4s"]
 [ext_resource type="PackedScene" uid="uid://dwnntb3ngvvp4" path="res://scenes/enemies/Tolper.tscn" id="8_vedyn"]
-[ext_resource type="PackedScene" uid="uid://5ls8070prhca" path="res://scenes/ingame_elements/wisdom.tscn" id="10_sbmkr"]
+[ext_resource type="PackedScene" uid="uid://5ls8070prhca" path="res://scenes/ingame_elements/one_time_collectable/wisdom.tscn" id="10_sbmkr"]
 [ext_resource type="PackedScene" uid="uid://b15gjg5v5dadx" path="res://scenes/ingame_elements/riddle_door.tscn" id="11_0f1f7"]
+[ext_resource type="PackedScene" uid="uid://bcody6b1gnyp1" path="res://scenes/ingame_elements/decoration/collision/ground/groun2.tscn" id="12_vedyn"]
+[ext_resource type="PackedScene" uid="uid://eq1pa601aymt" path="res://scenes/ingame_elements/decoration/collision/ground/ground3.tscn" id="13_6bvdi"]
+[ext_resource type="PackedScene" uid="uid://donb1fwbuxkml" path="res://scenes/postavy/caje.tscn" id="14_s33yf"]
+[ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="15_0b2r1"]
+[ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/spawners/plant_spawner.tscn" id="16_6bvdi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_j71mg")
@@ -88,7 +93,7 @@ texture = ExtResource("5_j71mg")
 6:10/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_mlscp"]
-physics_layer_0/collision_layer = 4
+physics_layer_0/collision_layer = 0
 physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_or7i8")
 
@@ -111,6 +116,7 @@ scale = Vector2(5, 5)
 texture = ExtResource("4_0f1f7")
 
 [node name="TileMap" type="TileMap" parent="." groups=["Wall"]]
+visible = false
 position = Vector2(13, 7)
 tile_set = SubResource("TileSet_mlscp")
 format = 2
@@ -132,10 +138,83 @@ player_spawn = 133
 position = Vector2(-2646, -389)
 
 [node name="wisdom" parent="." instance=ExtResource("10_sbmkr")]
-position = Vector2(681, -314)
+position = Vector2(684, -359)
 
 [node name="riddle_door" parent="." instance=ExtResource("11_0f1f7")]
-position = Vector2(444, -384)
+position = Vector2(346, -437)
 scale = Vector2(-2, 2)
 key = "mapa"
 text = "Viete, kde môžete nájsť mestá, hotely, obchody, dedinky a napriek tomu tam nie je ani jeden človek?"
+
+[node name="ground2" parent="." instance=ExtResource("12_vedyn")]
+position = Vector2(-2776, -332)
+
+[node name="ground5" parent="." instance=ExtResource("12_vedyn")]
+position = Vector2(-1677, -328)
+
+[node name="ground6" parent="." instance=ExtResource("12_vedyn")]
+position = Vector2(-1298, -327)
+
+[node name="ground7" parent="." instance=ExtResource("12_vedyn")]
+position = Vector2(-918, -328)
+
+[node name="ground8" parent="." instance=ExtResource("12_vedyn")]
+position = Vector2(-539, -327)
+
+[node name="ground9" parent="." instance=ExtResource("12_vedyn")]
+position = Vector2(-168, -326)
+
+[node name="ground10" parent="." instance=ExtResource("12_vedyn")]
+position = Vector2(209, -322)
+
+[node name="ground11" parent="." instance=ExtResource("12_vedyn")]
+position = Vector2(588, -321)
+
+[node name="ground12" parent="." instance=ExtResource("12_vedyn")]
+position = Vector2(968, -322)
+
+[node name="ground13" parent="." instance=ExtResource("12_vedyn")]
+position = Vector2(1347, -321)
+
+[node name="ground3" parent="." instance=ExtResource("13_6bvdi")]
+position = Vector2(-2043, -465)
+
+[node name="ground4" parent="." instance=ExtResource("13_6bvdi")]
+position = Vector2(-2398, -466)
+scale = Vector2(-1, 1)
+
+[node name="caj" parent="." instance=ExtResource("14_s33yf")]
+position = Vector2(-895, -395)
+
+[node name="Polygon2D10" type="Polygon2D" parent="caj"]
+texture_repeat = 2
+position = Vector2(-6616, -17)
+texture = ExtResource("15_0b2r1")
+polygon = PackedVector2Array(8976, 481, 4500, 555, 4032, 335, 3600, 565, 2836, 519, 2552, 243, 3286, 261, 3986, -79, 4674, 215, 11410, 233, 11246, 583)
+
+[node name="plant_spawner" parent="caj" instance=ExtResource("16_6bvdi")]
+position = Vector2(-1548, 122)
+
+[node name="plant_spawner2" parent="caj" instance=ExtResource("16_6bvdi")]
+position = Vector2(-872, 124)
+
+[node name="plant_spawner3" parent="caj" instance=ExtResource("16_6bvdi")]
+position = Vector2(-454, 126)
+
+[node name="plant_spawner4" parent="caj" instance=ExtResource("16_6bvdi")]
+position = Vector2(1024, 116)
+
+[node name="plant_spawner5" parent="caj" instance=ExtResource("16_6bvdi")]
+position = Vector2(3506, 130)
+
+[node name="plant_spawner6" parent="caj" instance=ExtResource("16_6bvdi")]
+position = Vector2(3642, 132)
+
+[node name="plant_spawner7" parent="caj" instance=ExtResource("16_6bvdi")]
+position = Vector2(3826, 134)
+
+[node name="plant_spawner8" parent="caj" instance=ExtResource("16_6bvdi")]
+position = Vector2(4498, 136)
+
+[node name="plant_spawner9" parent="caj" instance=ExtResource("16_6bvdi")]
+position = Vector2(4238, 128)

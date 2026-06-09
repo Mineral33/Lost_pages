@@ -1,4 +1,4 @@
-[gd_scene load_steps=192 format=3 uid="uid://da28lp31q8oc7"]
+[gd_scene load_steps=193 format=3 uid="uid://da28lp31q8oc7"]
 
 [ext_resource type="Script" uid="uid://pn1equy3ce4v" path="res://scripts/player.gd" id="1_fjrip"]
 [ext_resource type="Texture2D" uid="uid://dhf4j0gy8u2uv" path="res://assets/player/telo/stab0033.png" id="2_hhpqf"]
@@ -1606,6 +1606,9 @@ _data = {
 &"meele_passive_heal_effect": SubResource("Animation_0usgs")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ccnn6"]
+radius = 4.31891
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 20
 position = Vector2(-7.03085, 4.41471)
@@ -1799,6 +1802,14 @@ offset_left = -10.3939
 offset_top = -19.0545
 offset_right = 10.6061
 offset_bottom = 5.94554
+
+[node name="head" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="head"]
+position = Vector2(0.111688, -16.305)
+shape = SubResource("CircleShape2D_ccnn6")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]

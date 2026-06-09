@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckkin1m8635a3"]
+
+[ext_resource type="Texture2D" uid="uid://fs2ybnhywwcx" path="res://assets/pozadie/dlazka_v_meste.png" id="1_afk6h"]
+
+[node name="mestska_dlazka" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_afk6h")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 6)
+polygon = PackedVector2Array(-150, 61, 150, 61, 150, -54.5134, 142.499, -61, -140.843, -61, -151, -54)

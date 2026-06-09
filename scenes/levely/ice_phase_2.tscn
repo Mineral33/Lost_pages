@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cwcwhddi6ed5c" path="res://scripts/ice_phase_2.gd" id="1_tw4yc"]
 [ext_resource type="PackedScene" uid="uid://da28lp31q8oc7" path="res://scenes/player.tscn" id="2_qf0oc"]
 [ext_resource type="Texture2D" uid="uid://citgabxypq4wn" path="res://assets/mec/lad.png" id="3_tw4yc"]
-[ext_resource type="PackedScene" uid="uid://bddv2jfhboye3" path="res://scenes/ingame_elements/spikes.tscn" id="4_g7saq"]
+[ext_resource type="PackedScene" uid="uid://bddv2jfhboye3" path="res://scenes/ingame_elements/damage_trap/spikes.tscn" id="4_g7saq"]
 [ext_resource type="PackedScene" uid="uid://bw4lmy5c4x6ia" path="res://scenes/enemies/snehuliak.tscn" id="6_tw4yc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8bgwe"]

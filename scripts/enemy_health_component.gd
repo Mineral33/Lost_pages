@@ -7,7 +7,7 @@ var parent = self.get_parent()
 var momentum 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.01).timeout
 	health = get_parent().max_health
 	max_health = get_parent().max_health
 	shield = get_parent().max_shield

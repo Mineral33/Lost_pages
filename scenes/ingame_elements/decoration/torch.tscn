@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmwadf6ray34c"]
+
+[ext_resource type="Texture2D" uid="uid://du4s70fbhtkqg" path="res://assets/decoration/torch/torch0000.png" id="1_ly0x1"]
+[ext_resource type="Script" uid="uid://byhgusmu70xd1" path="res://scripts/torch.gd" id="2_7nvxi"]
+
+[sub_resource type="Gradient" id="Gradient_fcxdp"]
+offsets = PackedFloat32Array(0, 0.234568, 0.555556, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.381703, 0.381703, 0.381703, 1, 0.226707, 0.226708, 0.226707, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jghn0"]
+gradient = SubResource("Gradient_fcxdp")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="torch" type="Sprite2D"]
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("1_ly0x1")
+script = ExtResource("2_7nvxi")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-5.7143, -4)
+scale = Vector2(25.585, 25.585)
+texture = SubResource("GradientTexture2D_jghn0")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

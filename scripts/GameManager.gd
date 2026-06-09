@@ -605,7 +605,7 @@ func register_count(type, pos):
 		fab_count[pos] = 1
 
 func equip_magic_to_player():
-	print(player)
+#	print(player)
 	player.magic_weapeon_equip(equiped_staff)
 	
 	

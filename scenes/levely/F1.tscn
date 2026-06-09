@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://22ph6i87vgd2"]
+[gd_scene load_steps=48 format=3 uid="uid://22ph6i87vgd2"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_diglp"]
 [ext_resource type="Texture2D" uid="uid://dh6f8nxbyykr2" path="res://assets/UI/minimapy/f1.png" id="2_6hdlc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bwaph72k1a0k6" path="res://assets/pozadie/pozadie - hory a les.png" id="4_qykxg"]
 [ext_resource type="Texture2D" uid="uid://cxa0jdx7220w0" path="res://assets/pozadie/tileset_grass_stone.png" id="5_se57w"]
 [ext_resource type="PackedScene" uid="uid://14jbjx0enb5v" path="res://scenes/dvere/door_back.tscn" id="6_7txkk"]
+[ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="6_8bws2"]
 [ext_resource type="PackedScene" uid="uid://bdlrgr4t323dq" path="res://scenes/enemies/Dexamet.tscn" id="7_t8lca"]
 [ext_resource type="PackedScene" uid="uid://dwnntb3ngvvp4" path="res://scenes/enemies/Tolper.tscn" id="8_togxd"]
 [ext_resource type="PackedScene" uid="uid://b4c6bcuunvrba" path="res://scenes/enemies/Fortress1.tscn" id="9_2231s"]
@@ -20,7 +21,30 @@
 [ext_resource type="Texture2D" uid="uid://cnoemam3mq22w" path="res://assets/trees/stromy  V2/strom2.png" id="17_t3vy0"]
 [ext_resource type="Texture2D" uid="uid://cg0w5pxqjmmga" path="res://assets/trees/stromy  V2/strom4.png" id="18_u2yyc"]
 [ext_resource type="Texture2D" uid="uid://dtgleewfyt35a" path="res://assets/trees/stromy  V2/strom1.png" id="19_wx6e1"]
-[ext_resource type="PackedScene" uid="uid://5ls8070prhca" path="res://scenes/ingame_elements/wisdom.tscn" id="21_bo6bn"]
+[ext_resource type="PackedScene" uid="uid://5ls8070prhca" path="res://scenes/ingame_elements/one_time_collectable/wisdom.tscn" id="21_bo6bn"]
+[ext_resource type="PackedScene" uid="uid://bcody6b1gnyp1" path="res://scenes/ingame_elements/decoration/collision/ground/groun2.tscn" id="22_qi01g"]
+[ext_resource type="PackedScene" uid="uid://eq1pa601aymt" path="res://scenes/ingame_elements/decoration/collision/ground/ground3.tscn" id="23_scx88"]
+[ext_resource type="PackedScene" uid="uid://bd050qtlwkevh" path="res://scenes/ingame_elements/decoration/collision/ground/ground6.tscn" id="24_88ewh"]
+[ext_resource type="PackedScene" uid="uid://do43kvn4cfc5k" path="res://scenes/ingame_elements/decoration/collision/ground/ground7.tscn" id="25_7wdo8"]
+[ext_resource type="PackedScene" uid="uid://cgw7ak08tlvds" path="res://scenes/ingame_elements/decoration/collision/ground/ground.tscn" id="26_ls64a"]
+[ext_resource type="PackedScene" uid="uid://c13ksoack3k5t" path="res://scenes/ingame_elements/decoration/collision/ground/ground8.tscn" id="27_cpdeg"]
+[ext_resource type="PackedScene" uid="uid://cb4tksyco6wgd" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň12.tscn" id="29_fnndq"]
+[ext_resource type="PackedScene" uid="uid://co0sqftjiij6d" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň13.tscn" id="30_3yf46"]
+[ext_resource type="PackedScene" uid="uid://7o2qhrltrbis" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň14.tscn" id="31_4bhnl"]
+[ext_resource type="PackedScene" uid="uid://ntyqxpkxmioq" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň15.tscn" id="32_3yrdr"]
+[ext_resource type="Texture2D" uid="uid://ciccohemu5646" path="res://assets/pozadie/jaskyna.png" id="33_n4che"]
+[ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/spawners/plant_spawner.tscn" id="34_exmkx"]
+[ext_resource type="PackedScene" uid="uid://ds06rao6y36xo" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň11.tscn" id="35_xbym2"]
+[ext_resource type="PackedScene" uid="uid://cgq1r2oefma8f" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň6.tscn" id="36_0nwmk"]
+[ext_resource type="PackedScene" uid="uid://uq0tr4piqmsx" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň8.tscn" id="37_mi1fd"]
+[ext_resource type="Script" uid="uid://cxx8uauqaqsh5" path="res://scripts/cave_detection.gd" id="38_iudam"]
+[ext_resource type="PackedScene" uid="uid://cgomlw6hp5elx" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň2.tscn" id="39_b8pee"]
+[ext_resource type="PackedScene" uid="uid://bmwadf6ray34c" path="res://scenes/ingame_elements/decoration/torch.tscn" id="39_qi01g"]
+[ext_resource type="PackedScene" uid="uid://dhca608dgy1ex" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň7.tscn" id="40_fgc44"]
+[ext_resource type="PackedScene" uid="uid://whb5k7e66wwu" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň9.tscn" id="41_qtfbv"]
+[ext_resource type="PackedScene" uid="uid://c8kyo7bcxrytj" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň10.tscn" id="42_r4ftn"]
+[ext_resource type="PackedScene" uid="uid://d3wlmuwyf2hy6" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň.tscn" id="43_buh30"]
+[ext_resource type="PackedScene" uid="uid://df6fhcghbeyyj" path="res://scenes/ingame_elements/spawners/rock_spawn.tscn" id="45_scx88"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_se57w")
@@ -98,7 +122,7 @@ texture = ExtResource("5_se57w")
 6:10/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_mlscp"]
-physics_layer_0/collision_layer = 4
+physics_layer_0/collision_layer = 0
 physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_or7i8")
 
@@ -116,11 +140,24 @@ position = Vector2(4203, 1487)
 
 [node name="Pozadie-HoryALes" type="Sprite2D" parent="."]
 z_index = -380
-position = Vector2(575, 334)
+position = Vector2(435, 247)
 scale = Vector2(5, 5)
 texture = ExtResource("4_qykxg")
 
+[node name="Polygon2D10" type="Polygon2D" parent="Pozadie-HoryALes"]
+texture_repeat = 2
+position = Vector2(-2373.4, -1485.4)
+texture = ExtResource("6_8bws2")
+polygon = PackedVector2Array(2958, 1288.2, 2910.8, 1288.2, 2803.2, 1280.4, 2836, 1314.2, 2927.8, 1315.6, 3000, 1336, 3045, 1396.6, 3106.8, 1440.8, 3153, 1443.8, 3126, 1427.2, 3099.6, 1399.2, 3064.8, 1378.4, 3014.4, 1318.2)
+
+[node name="Polygon2D10" type="Polygon2D" parent="Pozadie-HoryALes/Polygon2D10"]
+texture_repeat = 2
+position = Vector2(-43.5999, 258)
+texture = ExtResource("6_8bws2")
+polygon = PackedVector2Array(3072.4, 1366, 3040.6, 1358.8, 3060.4, 1333.4, 3122.6, 1300.6, 3175.6, 1239, 3238.4, 1207.2, 3220.8, 1253.4, 3183.4, 1275.8, 3138.8, 1337.4)
+
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 z_index = 1
 position = Vector2(13, 7)
 tile_set = SubResource("TileSet_mlscp")
@@ -134,16 +171,16 @@ position = Vector2(4287, 42)
 position = Vector2(4179, 156)
 
 [node name="door_back" parent="." instance=ExtResource("6_7txkk")]
-position = Vector2(4496, 1608)
+position = Vector2(4140, 1546)
 to_level_name = "les 9"
 path_to_level = "res://scenes/levely/les_9.tscn"
 player_spawn = 131
 
 [node name="from_les_9" type="Marker2D" parent="."]
-position = Vector2(4352, 1622)
+position = Vector2(23, 1514)
 
 [node name="door_back2" parent="." instance=ExtResource("6_7txkk")]
-position = Vector2(2952, -971)
+position = Vector2(3022, -886)
 to_level_name = "les 10"
 path_to_level = "res://scenes/levely/les_10.tscn"
 player_spawn = 132
@@ -155,105 +192,438 @@ position = Vector2(-412, 1310)
 position = Vector2(3122, -939)
 
 [node name="Strom8" type="Sprite2D" parent="."]
-position = Vector2(2421, 1370)
+position = Vector2(2253, 1529)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_x6l4m")
 
 [node name="Strom7" type="Sprite2D" parent="."]
-position = Vector2(2243, 1337)
+position = Vector2(1988, 1477)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("11_6hdlc")
 
 [node name="Strom9" type="Sprite2D" parent="."]
-position = Vector2(2573, 1369)
+position = Vector2(2552, 1456)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_x6l4m")
 
 [node name="Strom11" type="Sprite2D" parent="."]
-position = Vector2(1596, 1361)
+position = Vector2(1591, 1451)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("12_bo6bn")
 
 [node name="Strom10" type="Sprite2D" parent="."]
-position = Vector2(-3080, 1488)
+position = Vector2(-2001, 1366)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("11_6hdlc")
 
 [node name="Strom12" type="Sprite2D" parent="."]
-position = Vector2(-3233, 1336)
+position = Vector2(-2301, 1226)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("13_u56a4")
 
 [node name="Strom13" type="Sprite2D" parent="."]
-position = Vector2(-2934, 1518)
+position = Vector2(-1778, 1451)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("11_6hdlc")
 
 [node name="Strom14" type="Sprite2D" parent="."]
 position = Vector2(3460, -795)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("13_u56a4")
 
 [node name="Strom6" type="Sprite2D" parent="."]
-position = Vector2(3694, -696)
+position = Vector2(3684, -628)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("14_rki7p")
 
 [node name="Strom15" type="Sprite2D" parent="."]
-position = Vector2(3988, -612)
+position = Vector2(3998, -317)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("14_rki7p")
 
 [node name="Strom3" type="Sprite2D" parent="."]
-position = Vector2(4274, -559)
+position = Vector2(4123, -221)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("15_23vf5")
 
 [node name="Strom16" type="Sprite2D" parent="."]
-position = Vector2(4538, -437)
+position = Vector2(3792, -472)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_x6l4m")
 
 [node name="Strom17" type="Sprite2D" parent="."]
 position = Vector2(3241, -860)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("16_2ce1u")
 
 [node name="Strom4" type="Sprite2D" parent="."]
-position = Vector2(2731, -935)
+position = Vector2(2739, -865)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("15_23vf5")
 
 [node name="Strom2" type="Sprite2D" parent="."]
-position = Vector2(4805, -297)
+position = Vector2(3787, 550)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("17_t3vy0")
 
 [node name="Strom5" type="Sprite2D" parent="."]
-position = Vector2(4587, -146)
+position = Vector2(4213, 173)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("18_u2yyc")
 
 [node name="Strom18" type="Sprite2D" parent="."]
-position = Vector2(4328, 9)
+position = Vector2(4494, -25)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("12_bo6bn")
 
 [node name="Strom1" type="Sprite2D" parent="."]
-position = Vector2(4047, 265)
+position = Vector2(4061, 362)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("19_wx6e1")
 
 [node name="Strom19" type="Sprite2D" parent="."]
-position = Vector2(3847, 415)
+position = Vector2(3870, 560)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("13_u56a4")
 
 [node name="Strom20" type="Sprite2D" parent="."]
-position = Vector2(3655, 603)
+position = Vector2(3703, 656)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("13_u56a4")
 
 [node name="Strom21" type="Sprite2D" parent="."]
-position = Vector2(3434, 745)
+position = Vector2(3466, 838)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("11_6hdlc")
 
 [node name="Strom22" type="Sprite2D" parent="."]
-position = Vector2(3173, 1002)
+position = Vector2(3250, 1023)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("18_u2yyc")
 
 [node name="Strom23" type="Sprite2D" parent="."]
-position = Vector2(2954, 1230)
+position = Vector2(3026, 1151)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("16_2ce1u")
 
 [node name="Strom24" type="Sprite2D" parent="."]
-position = Vector2(4200, 1735)
+position = Vector2(1385, 1530)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_x6l4m")
 
 [node name="Strom25" type="Sprite2D" parent="."]
-position = Vector2(3966, 1684)
+position = Vector2(2777, 1209)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("18_u2yyc")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-3498, 1062)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="ground2" parent="Node2D" instance=ExtResource("22_qi01g")]
+position = Vector2(-3082, 549)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="ground3" parent="Node2D" instance=ExtResource("22_qi01g")]
+position = Vector2(-3451, 545)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="ground4" parent="Node2D" instance=ExtResource("22_qi01g")]
+position = Vector2(-3833, 543)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="ground5" parent="Node2D" instance=ExtResource("22_qi01g")]
+position = Vector2(-4202, 541)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="ground6" parent="Node2D" instance=ExtResource("22_qi01g")]
+position = Vector2(-4571, 537)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="ground7" parent="Node2D" instance=ExtResource("22_qi01g")]
+position = Vector2(-4953, 535)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="ground30" parent="Node2D" instance=ExtResource("22_qi01g")]
+position = Vector2(-5327, 530.999)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="ground31" parent="Node2D" instance=ExtResource("22_qi01g")]
+position = Vector2(-5708, 532.999)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="ground11" parent="Node2D" instance=ExtResource("22_qi01g")]
+position = Vector2(-2009, 554)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="ground12" parent="Node2D" instance=ExtResource("22_qi01g")]
+position = Vector2(-2378, 550)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="ground13" parent="Node2D" instance=ExtResource("22_qi01g")]
+position = Vector2(-2760, 548)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="ground8" parent="Node2D" instance=ExtResource("23_scx88")]
+position = Vector2(-1644, 418)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="ground10" parent="Node2D" instance=ExtResource("23_scx88")]
+position = Vector2(-6677, 58.9994)
+rotation = 3.14159
+scale = Vector2(-1, -1)
+
+[node name="ground9" parent="Node2D" instance=ExtResource("23_scx88")]
+position = Vector2(-1279, 261)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="ground14" parent="Node2D" instance=ExtResource("24_88ewh")]
+position = Vector2(-6918, -96.0006)
+scale = Vector2(-1, 1)
+
+[node name="ground15" parent="Node2D" instance=ExtResource("24_88ewh")]
+position = Vector2(-7059, -258.001)
+scale = Vector2(-1, 1)
+
+[node name="ground18" parent="Node2D" instance=ExtResource("24_88ewh")]
+position = Vector2(-7509, -580.001)
+scale = Vector2(-1, 1)
+
+[node name="ground19" parent="Node2D" instance=ExtResource("24_88ewh")]
+position = Vector2(-7648, -740.001)
+scale = Vector2(-1, 1)
+
+[node name="ground23" parent="Node2D" instance=ExtResource("24_88ewh")]
+position = Vector2(-7628, -1251)
+
+[node name="ground25" parent="Node2D" instance=ExtResource("24_88ewh")]
+position = Vector2(-7337, -1485)
+
+[node name="ground26" parent="Node2D" instance=ExtResource("24_88ewh")]
+position = Vector2(-7201, -1646)
+
+[node name="ground16" parent="Node2D" instance=ExtResource("25_7wdo8")]
+position = Vector2(-7197, -378.001)
+scale = Vector2(-1, 1)
+
+[node name="ground32" parent="Node2D" instance=ExtResource("25_7wdo8")]
+position = Vector2(-5966, 439.999)
+scale = Vector2(-1, 1)
+
+[node name="ground34" parent="Node2D" instance=ExtResource("25_7wdo8")]
+position = Vector2(-6296, 196.999)
+scale = Vector2(-1, 1)
+
+[node name="ground33" parent="Node2D" instance=ExtResource("25_7wdo8")]
+position = Vector2(-6154, 439.999)
+
+[node name="ground17" parent="Node2D" instance=ExtResource("25_7wdo8")]
+position = Vector2(-7353, -462.001)
+scale = Vector2(-1, 1)
+
+[node name="ground20" parent="Node2D" instance=ExtResource("25_7wdo8")]
+position = Vector2(-7786, -859.001)
+scale = Vector2(-1, 1)
+
+[node name="ground21" parent="Node2D" instance=ExtResource("25_7wdo8")]
+position = Vector2(-7941, -944.001)
+scale = Vector2(-1, 1)
+
+[node name="ground22" parent="Node2D" instance=ExtResource("25_7wdo8")]
+position = Vector2(-7786, -1130)
+
+[node name="ground24" parent="Node2D" instance=ExtResource("25_7wdo8")]
+position = Vector2(-7491, -1370)
+
+[node name="ground27" parent="Node2D" instance=ExtResource("25_7wdo8")]
+position = Vector2(-7066, -1765)
+
+[node name="ground28" parent="Node2D" instance=ExtResource("25_7wdo8")]
+position = Vector2(-6913, -1846)
+
+[node name="ground29" parent="Node2D" instance=ExtResource("22_qi01g")]
+position = Vector2(-6625, -1834)
+
+[node name="ground" parent="Node2D" instance=ExtResource("26_ls64a")]
+position = Vector2(-6255, -1838)
+
+[node name="ground35" parent="Node2D" instance=ExtResource("27_cpdeg")]
+position = Vector2(-6438, 171.999)
 
 [node name="wisdom" parent="." instance=ExtResource("21_bo6bn")]
 position = Vector2(-3498, 1062)
 scale = Vector2(-1, 1)
+
+[node name="kameň" parent="." instance=ExtResource("29_fnndq")]
+position = Vector2(2901, 1578)
+
+[node name="kameň2" parent="." instance=ExtResource("30_3yf46")]
+position = Vector2(3271, 1592)
+
+[node name="kameň3" parent="." instance=ExtResource("31_4bhnl")]
+position = Vector2(3629, 1659)
+
+[node name="kameň4" parent="." instance=ExtResource("32_3yrdr")]
+position = Vector2(3883, 1704)
+
+[node name="kameň5" parent="." instance=ExtResource("31_4bhnl")]
+position = Vector2(4129, 1762)
+rotation = 2.61799
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(4443, 648)
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasModulate"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-1960, -657)
+texture = ExtResource("33_n4che")
+polygon = PackedVector2Array(2568, 2053, 1995, 1989, 251, 1852, 289, 1388, 416, 1301, 814, 1152, 1056, 901, 1523, 818, 1772, 501, 1982, 380, 2055, 163, 2415, 196, 2728, 1190)
+
+[node name="Polygon2D10" type="Polygon2D" parent="CanvasModulate/Polygon2D"]
+texture_repeat = 2
+position = Vector2(-6616, -17)
+texture = ExtResource("6_8bws2")
+polygon = PackedVector2Array(2517, 1680, 1790, 1371, 1801, 1662, 2426, 1901, 3259, 1885, 4526, 1910, 6667, 1835, 6901, 1882, 6909, 1653, 6704, 1563, 6550, 1662)
+
+[node name="kameň" parent="CanvasModulate" instance=ExtResource("32_3yrdr")]
+position = Vector2(-817, 623)
+
+[node name="plant_spawner" parent="CanvasModulate" instance=ExtResource("34_exmkx")]
+position = Vector2(-817, 623)
+
+[node name="kameň2" parent="CanvasModulate" instance=ExtResource("35_xbym2")]
+position = Vector2(-528, 672)
+rotation = 0.523598
+
+[node name="kameň3" parent="CanvasModulate" instance=ExtResource("36_0nwmk")]
+position = Vector2(-176, 855)
+
+[node name="kameň4" parent="CanvasModulate" instance=ExtResource("37_mi1fd")]
+position = Vector2(228, 885)
+
+[node name="cave_detector" type="Area2D" parent="."]
+script = ExtResource("38_iudam")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="cave_detector"]
+position = Vector2(4443, 648)
+polygon = PackedVector2Array(-41, 1057, -1668, 959, -1628, 730, -1334, 644, -1102, 505, -494, 83, 85, -382, 537, -413, 540, -95, 378, 415, 264, 1151)
+
+[node name="torch" parent="cave_detector" instance=ExtResource("39_qi01g")]
+position = Vector2(4134, 1497)
+
+[node name="torch2" parent="cave_detector" instance=ExtResource("39_qi01g")]
+position = Vector2(3403, 1462)
+
+[node name="torch3" parent="cave_detector" instance=ExtResource("39_qi01g")]
+position = Vector2(3719, 1072)
+
+[node name="torch4" parent="cave_detector" instance=ExtResource("39_qi01g")]
+position = Vector2(4409, 926)
+
+[node name="torch5" parent="cave_detector" instance=ExtResource("39_qi01g")]
+position = Vector2(4635, 1417)
+
+[node name="torch6" parent="cave_detector" instance=ExtResource("39_qi01g")]
+position = Vector2(4789, 532)
+
+[node name="kameň6" parent="." instance=ExtResource("30_3yf46")]
+position = Vector2(4466, 1643)
+rotation = 1.83259
+
+[node name="kameň7" parent="." instance=ExtResource("32_3yrdr")]
+position = Vector2(4457, 1322)
+rotation = 0.785397
+
+[node name="plant_spawner" parent="." instance=ExtResource("34_exmkx")]
+position = Vector2(3926, 619)
+
+[node name="plant_spawner2" parent="." instance=ExtResource("34_exmkx")]
+position = Vector2(3649, 757)
+
+[node name="plant_spawner3" parent="." instance=ExtResource("34_exmkx")]
+position = Vector2(4503, 141)
+
+[node name="plant_spawner4" parent="." instance=ExtResource("34_exmkx")]
+position = Vector2(3970, -273)
+
+[node name="plant_spawner5" parent="." instance=ExtResource("34_exmkx")]
+position = Vector2(3568, -660)
+
+[node name="plant_spawner6" parent="." instance=ExtResource("34_exmkx")]
+position = Vector2(-2137, 1407)
+
+[node name="plant_spawner7" parent="." instance=ExtResource("34_exmkx")]
+position = Vector2(-1872, 1523)
+
+[node name="plant_spawner8" parent="." instance=ExtResource("34_exmkx")]
+position = Vector2(387, 1589)
+
+[node name="plant_spawner9" parent="." instance=ExtResource("34_exmkx")]
+position = Vector2(2499, 1539)
+
+[node name="kameň8" parent="." instance=ExtResource("29_fnndq")]
+position = Vector2(4292, 1120)
+rotation = -0.785397
+
+[node name="kameň9" parent="." instance=ExtResource("39_b8pee")]
+position = Vector2(4008, 1081)
+rotation = 2.35619
+
+[node name="kameň10" parent="." instance=ExtResource("37_mi1fd")]
+position = Vector2(4304, 930)
+
+[node name="kameň11" parent="." instance=ExtResource("31_4bhnl")]
+position = Vector2(4541, 817)
+rotation = 2.09439
+
+[node name="kameň12" parent="." instance=ExtResource("40_fgc44")]
+position = Vector2(4587, 1702)
+
+[node name="kameň13" parent="." instance=ExtResource("41_qtfbv")]
+position = Vector2(4632, 1159)
+
+[node name="kameň14" parent="." instance=ExtResource("42_r4ftn")]
+position = Vector2(4838, 585)
+
+[node name="kameň15" parent="." instance=ExtResource("40_fgc44")]
+position = Vector2(4654, 426)
+
+[node name="kameň16" parent="." instance=ExtResource("43_buh30")]
+position = Vector2(4815, 307)
+
+[node name="kameň17" parent="." instance=ExtResource("30_3yf46")]
+position = Vector2(4529, 231)
+rotation = -1.309
+
+[node name="rock_spawn" parent="." instance=ExtResource("45_scx88")]
+position = Vector2(3866, 1219)
+
+[node name="rock_spawn2" parent="." instance=ExtResource("45_scx88")]
+position = Vector2(4052, 894)
+
+[node name="rock_spawn3" parent="." instance=ExtResource("45_scx88")]
+position = Vector2(4646, 1480)
+
+[node name="rock_spawn4" parent="." instance=ExtResource("45_scx88")]
+position = Vector2(2971, 1584)
+
+[node name="rock_spawn5" parent="." instance=ExtResource("45_scx88")]
+position = Vector2(4643, 422)
+
+[connection signal="area_entered" from="cave_detector" to="cave_detector" method="_on_area_entered"]
+[connection signal="area_exited" from="cave_detector" to="cave_detector" method="_on_area_exited"]

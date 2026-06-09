@@ -453,6 +453,7 @@ target_position = Vector2(101.205, -1.22008)
 collision_mask = 4
 
 [node name="player_follow_area" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_follow_area"]
 position = Vector2(2.61105, -32.8387)
@@ -469,6 +470,7 @@ position = Vector2(1.20609, -19.9727)
 shape = SubResource("RectangleShape2D_ap0wv")
 
 [node name="fall_damage_Area" type="Area2D" parent="."]
+visible = false
 collision_layer = 9
 collision_mask = 9
 

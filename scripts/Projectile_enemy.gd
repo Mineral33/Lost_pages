@@ -2,7 +2,7 @@ extends Node2D
 
 @export var projectile_scene = preload("res://scenes/projectiles/haluz_follow.tscn")
 @export var projectile_speed: float =500.0
-@export var fire_rate: float = 1.0
+@export var fire_rate: float = 2.0
 @export var max_health = 200
 @export var max_shield = 100
 var active = 1
@@ -48,7 +48,8 @@ func _shoot() -> void:
 	if not is_instance_valid(player):
 		player = null
 		return
-
+	if $enemy_health_component.health/float(max_health) <= 0.3:
+		$FireTimer.wait_time = 1
 	var proj = projectile_scene.instantiate()
 	get_tree().current_scene.add_child(proj)
 
@@ -68,7 +69,7 @@ func shoot():
 	var spread = Vector2(
 	randf_range(-inaccuracy, inaccuracy),
 	randf_range(-inaccuracy, inaccuracy))
-	haluz_inst.fire((direction + spread).normalized(), 750)
+	haluz_inst.fire((direction + spread).normalized(), 500)
 	
 	get_parent().add_child(haluz_inst)
 

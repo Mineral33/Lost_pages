@@ -7,8 +7,7 @@ func _ready() -> void:
 
 var damage_number = preload("res://scenes/UI/damage_number_label.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
 
 
 func display_took_damage(amount):

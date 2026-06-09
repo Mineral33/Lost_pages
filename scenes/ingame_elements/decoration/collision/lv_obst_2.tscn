@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://blse5mfe1pp4v"]
+
+[ext_resource type="Texture2D" uid="uid://bqtjpskgac3vk" path="res://assets/pozadie/stena_lv.png" id="1_y1c1p"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y1c1p"]
+friction = 0.0
+rough = true
+absorbent = true
+
+[node name="lv_obst" type="StaticBody2D" groups=["Wall"]]
+collision_layer = 20
+collision_mask = 20
+physics_material_override = SubResource("PhysicsMaterial_y1c1p")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-199, -190, -263, -137, -285.548, -113.585, -282.166, -109.862, 152.079, -101.099, 155, -105, 116, -149, 52, -180, 48, -232, -48, -249, -54, -244, -61, -185)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture_repeat = 3
+texture = ExtResource("1_y1c1p")
+polygon = PackedVector2Array(-261, -139, -198, -190, -61, -185, -53, -250, 48, -232, 52, -180, 115, -150, 159, -101, -290, -109)

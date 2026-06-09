@@ -104,7 +104,7 @@ func _ready():
 	floor_snap_length = 10.0 
 	wall_min_slide_angle = deg_to_rad(180.0)
 	activate_food()
-	invisibility_activate()
+	#invisibility_activate()
 #	GameManager.autosave()
 	
 	#print('caje ', GameManager.caje)
@@ -183,6 +183,7 @@ func _unhandled_input(event):
 	
 var i = 0
 func _process(delta):
+	#print(get_stack())
 	#print( !dead ,' ',  GameManager.magic_unlocked ,' ', !meele)
 #   print(meele)
 #	print(equiped_necklace,' ',in_air_passive,' ',perfeciton)
@@ -224,7 +225,7 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("Switch") and $Timer_switch.is_stopped() :
 		meele = !meele
-		print('switched meele ',meele)
+	#	print('switched meele ',meele)
 		if meele:
 			meele_weapeon_equip(meele_element)
 			$ruka/weapeon.hide()
@@ -494,7 +495,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and coyote_timer > 0.0:
 		
 		if water:
-			velocity.y = lerp(velocity.y, JUMP_VELOCITY*2.8, ACCELERATION * delta*0.3) * can_move
+			velocity.y = lerp(velocity.y, JUMP_VELOCITY*3, ACCELERATION * delta*0.3) * can_move
 		elif drunk:
 			velocity.y = lerp(velocity.y, JUMP_VELOCITY*2.8* randf_range(0.5,1.1), ACCELERATION * delta) * can_move
 		else:
@@ -663,7 +664,7 @@ func stab_action():
 	if in_air_passive:
 		check_in_air_passive()
 	for area in overlapping_objects:
-		print(area.get_parent())	
+	#	print(area.get_parent())	
 		var parent = area.get_parent()
 		if parent.get_parent().name== 'červ':
 					parent = parent.get_parent()
@@ -947,6 +948,7 @@ func update_stats():
 		health = max_health
 	if max_shield<shield:
 		shield = max_shield
+		
 	get_node("Healthbar").update_healthbar(health,max_health,shield,max_shield,shd)
 	get_parent().get_child(0).get_child(9).update_healthbar(health,max_health,shield,max_shield,shd)
 	
@@ -995,11 +997,12 @@ func in_water():
 	$effect.modulate = Color("#74acff")
 	$telo.modulate = Color("#74acff")
 	$nohy.modulate = Color("#74acff")
+	velocity.y = velocity.y/3
 	$other_hand.modulate = Color("#74acff")
 	while water:
 		$oxbar.show()
 		oxygen -=2
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.3).timeout
 		if oxygen < 0:
 			take_damage(round(max_health/25),'m','blub blub blub')
 		$oxbar.update_oxbar(oxygen, 100)
@@ -1013,7 +1016,8 @@ func out_water():
 	$telo.modulate = Color("#ffffff")
 	$nohy.modulate = Color("#ffffff")
 	$other_hand.modulate = Color("#ffffff")
-	
+	if velocity.y < 0:  # still moving up
+		velocity.y = JUMP_VELOCITY * can_move
 	while !water and oxygen <= 100:
 		await get_tree().create_timer(0.1).timeout
 		oxygen += 3
@@ -1405,7 +1409,7 @@ var in_air_passive = false
 func check_in_air_passive():
 	if !is_on_floor():
 		in_air_passive_multiliper = 1.2 + current_fly_time
-		print(current_fly_time)
+	#	print(current_fly_time)
 		
 	else:
 		in_air_passive_multiliper = 1

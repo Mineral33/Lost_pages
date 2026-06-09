@@ -314,6 +314,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(0.718178, 0.478786)
 scale = Vector2(-1, 1)
+collision_mask = 0
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
@@ -321,11 +322,8 @@ position = Vector2(24.617, 140.035)
 scale = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_1fnw7")
 
-[node name="Player_follow_raycast" type="RayCast2D" parent="."]
-position = Vector2(-403.428, 272.641)
-target_position = Vector2(777.532, 1.21664)
-
 [node name="attack_area" type="Area2D" parent="."]
+collision_layer = 0
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attack_area"]
@@ -347,6 +345,7 @@ collision_mask = 9
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+visible = false
 position = Vector2(206.21, 226.348)
 shape = SubResource("RectangleShape2D_nx22h")
 
@@ -367,11 +366,13 @@ collision_mask = 9
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox_II"]
+visible = false
 position = Vector2(66.8582, 230.589)
 shape = SubResource("RectangleShape2D_p3g4l")
 
 [node name="player_follow_area" type="Area2D" parent="."]
 visible = false
+collision_layer = 0
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_follow_area"]
@@ -385,7 +386,12 @@ offset_top = 193.924
 offset_right = 27.1727
 offset_bottom = 268.924
 
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [connection signal="area_entered" from="attack_area" to="." method="_on_attack_area_area_entered"]
 [connection signal="area_exited" from="attack_area" to="." method="_on_attack_area_area_exited"]
 [connection signal="area_entered" from="player_follow_area" to="." method="_on_player_follow_area_area_entered"]
 [connection signal="area_exited" from="player_follow_area" to="." method="_on_player_follow_area_area_exited"]
+[connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]

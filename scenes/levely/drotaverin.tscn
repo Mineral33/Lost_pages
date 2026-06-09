@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cok61d6qfieir"]
+[gd_scene load_steps=25 format=3 uid="uid://cok61d6qfieir"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_4iynu"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_rs0qt"]
@@ -20,6 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://b6w2miewds31u" path="res://scenes/postavy/exchange.tscn" id="18_dmicl"]
 [ext_resource type="PackedScene" uid="uid://cr6drwpvtq3mk" path="res://scenes/postavy/wisdom_shop.tscn" id="19_46io3"]
 [ext_resource type="Texture2D" uid="uid://d1nu083fahs1v" path="res://assets/pozadie/obloha.png" id="20_46io3"]
+[ext_resource type="PackedScene" uid="uid://ckkin1m8635a3" path="res://scenes/ingame_elements/decoration/collision/mestska_dlazka.tscn" id="21_n5iae"]
+[ext_resource type="Texture2D" uid="uid://ciccohemu5646" path="res://assets/pozadie/jaskyna.png" id="22_f1kei"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ttgkj"]
 texture = ExtResource("4_26wic")
@@ -100,7 +102,7 @@ texture = ExtResource("4_26wic")
 6:10/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_8a64l"]
-physics_layer_0/collision_layer = 4
+physics_layer_0/collision_layer = 0
 physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_ttgkj")
 
@@ -114,6 +116,7 @@ level_name = "Drotaverin"
 position = Vector2(637, 2)
 
 [node name="TileMap" type="TileMap" parent="." groups=["Wall"]]
+visible = false
 position = Vector2(-7.03085, 4.41471)
 tile_set = SubResource("TileSet_8a64l")
 format = 2
@@ -221,6 +224,112 @@ position = Vector2(-5325, 21)
 
 [node name="Obloha" type="Sprite2D" parent="."]
 z_index = -429
-position = Vector2(-3674.5, -369.5)
+position = Vector2(-3672, -396)
 scale = Vector2(8.28672, 1.2875)
 texture = ExtResource("20_46io3")
+
+[node name="mestska_dlazka" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-7263, 114)
+
+[node name="mestska_dlazka30" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-7562, 114)
+
+[node name="mestska_dlazka31" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-7857, 114)
+
+[node name="mestska_dlazka32" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-8148, 114)
+
+[node name="mestska_dlazka2" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-6966, 114)
+
+[node name="mestska_dlazka3" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-6666, 114)
+
+[node name="mestska_dlazka4" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-6370, 114)
+
+[node name="mestska_dlazka5" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-6076, 114)
+
+[node name="mestska_dlazka6" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-5782, 114)
+
+[node name="mestska_dlazka7" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-5494, 114)
+
+[node name="mestska_dlazka8" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-5200, 114)
+
+[node name="mestska_dlazka9" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-4907, 114)
+
+[node name="mestska_dlazka10" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-4611, 114)
+
+[node name="mestska_dlazka11" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-4319, 114)
+
+[node name="mestska_dlazka12" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-4019, 114)
+
+[node name="mestska_dlazka13" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-3729, 114)
+
+[node name="mestska_dlazka14" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-3439, 114)
+
+[node name="mestska_dlazka15" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-3142, 114)
+
+[node name="mestska_dlazka16" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-2845, 114)
+
+[node name="mestska_dlazka17" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-2552, 114)
+
+[node name="mestska_dlazka18" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-2252, 114)
+
+[node name="mestska_dlazka19" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-1953, 114)
+
+[node name="mestska_dlazka20" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-1656, 114)
+
+[node name="mestska_dlazka21" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-1360, 114)
+
+[node name="mestska_dlazka22" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-1062, 114)
+
+[node name="mestska_dlazka23" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-768, 114)
+
+[node name="mestska_dlazka24" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-513, 114)
+
+[node name="mestska_dlazka25" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-132, 114)
+
+[node name="mestska_dlazka33" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(-267, 114)
+
+[node name="Polygon2D" type="Polygon2D" parent="mestska_dlazka33"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-1960, -657)
+texture = ExtResource("22_f1kei")
+polygon = PackedVector2Array(3355, 1564, -6073, 1601, -6006, 691, 3318, 676)
+
+[node name="mestska_dlazka26" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(163, 114)
+
+[node name="mestska_dlazka27" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(451, 114)
+
+[node name="mestska_dlazka28" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(745, 114)
+
+[node name="mestska_dlazka29" parent="." instance=ExtResource("21_n5iae")]
+position = Vector2(1042, 114)

@@ -904,7 +904,7 @@ var item_slot = preload("res://scenes/UI/item.tscn")
 var swords_items_names = [' ľadový meč','zemový meč','horuci meč', 'veterný meč','charger','slow down']
 var swords_items_icons = [preload("res://assets/mec/icesword.png"),preload("res://assets/mec/earthsword.png"),preload("res://assets/mec/firesword.png"),preload("res://assets/mec/windsword.png"), preload("res://assets/mec/charge_sword.png"),
 preload("res://assets/mec/slow_down_sword.png")]
-var meele_eq_description = ['blocks magic','passivny regen','veky dmg bonus ale dava dmg stitim, ako po masle','3 bolt strike','passive: can charge infinately but doing so consumes health','charging is more powerful but slows down']
+var meele_eq_description = ['blocks magic','passivny regen','veky dmg bonus ale dava dmg stitim, ako po masle','3 bolt strike','passive: can charge infinately but doing so consumes health','charging is more powerful but slows downd']
 func _on_eqipiment_button_pressed() -> void:
 
 	eqipment_switch = !eqipment_switch

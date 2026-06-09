@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bqm5i8ve5jq52"]
+[gd_scene load_steps=50 format=3 uid="uid://bqm5i8ve5jq52"]
 
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="1_4pdbj"]
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_n02pm"]
@@ -19,26 +19,32 @@
 [ext_resource type="Texture2D" uid="uid://cnoemam3mq22w" path="res://assets/trees/stromy  V2/strom2.png" id="16_x8wuv"]
 [ext_resource type="Texture2D" uid="uid://buuqv0866hxy6" path="res://assets/trees/stromy  V2/strom3.png" id="17_rob4x"]
 [ext_resource type="Texture2D" uid="uid://drkcafq7y5ewm" path="res://assets/trees/stromy  V2/strom9.png" id="18_0i4ax"]
-[ext_resource type="PackedScene" uid="uid://5ls8070prhca" path="res://scenes/ingame_elements/wisdom.tscn" id="19_sp288"]
+[ext_resource type="PackedScene" uid="uid://5ls8070prhca" path="res://scenes/ingame_elements/one_time_collectable/wisdom.tscn" id="19_sp288"]
 [ext_resource type="PackedScene" uid="uid://iumuytf2u5fd" path="res://scenes/enemies/motyl.tscn" id="21_asjo1"]
 [ext_resource type="PackedScene" uid="uid://bg7g6o26vhcjs" path="res://scenes/ingame_elements/decoration/view_tower.tscn" id="22_f7gx0"]
 [ext_resource type="Texture2D" uid="uid://de2vnp7owwx8n" path="res://assets/pozadie/pozadie_mesto_na_lane.png" id="23_thf1l"]
-[ext_resource type="PackedScene" uid="uid://dh3ry4hsrw28n" path="res://scenes/ingame_elements/enemy_spawner.tscn" id="24_thf1l"]
-[ext_resource type="PackedScene" uid="uid://bcody6b1gnyp1" path="res://scenes/ingame_elements/decoration/ground/groun2.tscn" id="25_o7sx7"]
-[ext_resource type="PackedScene" uid="uid://eq1pa601aymt" path="res://scenes/ingame_elements/decoration/ground/ground3.tscn" id="26_mfgm3"]
-[ext_resource type="PackedScene" uid="uid://bd050qtlwkevh" path="res://scenes/ingame_elements/decoration/ground/ground6.tscn" id="27_j4lt2"]
-[ext_resource type="PackedScene" uid="uid://do43kvn4cfc5k" path="res://scenes/ingame_elements/decoration/ground/ground7.tscn" id="28_1ihx6"]
-[ext_resource type="PackedScene" uid="uid://whb5k7e66wwu" path="res://scenes/ingame_elements/decoration/kamene/kameň9.tscn" id="29_wypos"]
-[ext_resource type="PackedScene" uid="uid://c13ksoack3k5t" path="res://scenes/ingame_elements/decoration/ground/ground8.tscn" id="30_6c6e1"]
-[ext_resource type="PackedScene" uid="uid://dhca608dgy1ex" path="res://scenes/ingame_elements/decoration/kamene/kameň7.tscn" id="31_57eaa"]
-[ext_resource type="PackedScene" uid="uid://uq0tr4piqmsx" path="res://scenes/ingame_elements/decoration/kamene/kameň8.tscn" id="32_tmu0c"]
-[ext_resource type="PackedScene" uid="uid://c3l5ided4vydc" path="res://scenes/ingame_elements/decoration/kamene/kameň4.tscn" id="33_6pqox"]
-[ext_resource type="PackedScene" uid="uid://w2khfgc5fb46" path="res://scenes/ingame_elements/decoration/kamene/kameň5.tscn" id="34_k7uve"]
-[ext_resource type="PackedScene" uid="uid://du3cooawdjahx" path="res://scenes/ingame_elements/decoration/kamene/kameň3.tscn" id="35_0k6sy"]
-[ext_resource type="PackedScene" uid="uid://cgq1r2oefma8f" path="res://scenes/ingame_elements/decoration/kamene/kameň6.tscn" id="36_mc2af"]
-[ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/plant_spawner.tscn" id="37_ly5yp"]
+[ext_resource type="PackedScene" uid="uid://dh3ry4hsrw28n" path="res://scenes/ingame_elements/spawners/enemy_spawner.tscn" id="24_thf1l"]
+[ext_resource type="PackedScene" uid="uid://bcody6b1gnyp1" path="res://scenes/ingame_elements/decoration/collision/ground/groun2.tscn" id="25_o7sx7"]
+[ext_resource type="PackedScene" uid="uid://eq1pa601aymt" path="res://scenes/ingame_elements/decoration/collision/ground/ground3.tscn" id="26_mfgm3"]
+[ext_resource type="PackedScene" uid="uid://bd050qtlwkevh" path="res://scenes/ingame_elements/decoration/collision/ground/ground6.tscn" id="27_j4lt2"]
+[ext_resource type="PackedScene" uid="uid://do43kvn4cfc5k" path="res://scenes/ingame_elements/decoration/collision/ground/ground7.tscn" id="28_1ihx6"]
+[ext_resource type="PackedScene" uid="uid://whb5k7e66wwu" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň9.tscn" id="29_wypos"]
+[ext_resource type="PackedScene" uid="uid://c13ksoack3k5t" path="res://scenes/ingame_elements/decoration/collision/ground/ground8.tscn" id="30_6c6e1"]
+[ext_resource type="PackedScene" uid="uid://dhca608dgy1ex" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň7.tscn" id="31_57eaa"]
+[ext_resource type="PackedScene" uid="uid://uq0tr4piqmsx" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň8.tscn" id="32_tmu0c"]
+[ext_resource type="PackedScene" uid="uid://c3l5ided4vydc" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň4.tscn" id="33_6pqox"]
+[ext_resource type="PackedScene" uid="uid://w2khfgc5fb46" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň5.tscn" id="34_k7uve"]
+[ext_resource type="PackedScene" uid="uid://du3cooawdjahx" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň3.tscn" id="35_0k6sy"]
+[ext_resource type="PackedScene" uid="uid://cgq1r2oefma8f" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň6.tscn" id="36_mc2af"]
+[ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/spawners/plant_spawner.tscn" id="37_ly5yp"]
 [ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="38_ih56n"]
 [ext_resource type="PackedScene" uid="uid://bp7lehtusy0gq" path="res://scenes/enemies/list_gulomet_mage.tscn" id="39_mfgm3"]
+[ext_resource type="PackedScene" uid="uid://biqinu1w3rq4u" path="res://scenes/ingame_elements/decoration/collision/most/most_left.tscn" id="40_wypos"]
+[ext_resource type="PackedScene" uid="uid://pwumdovdi8n1" path="res://scenes/ingame_elements/decoration/collision/most/most_middle.tscn" id="41_6c6e1"]
+[ext_resource type="PackedScene" uid="uid://tjx7b3jem86d" path="res://scenes/ingame_elements/decoration/collision/most/most_right.tscn" id="42_57eaa"]
+[ext_resource type="Script" uid="uid://cxx8uauqaqsh5" path="res://scripts/cave_detection.gd" id="43_tmu0c"]
+[ext_resource type="PackedScene" uid="uid://bmwadf6ray34c" path="res://scenes/ingame_elements/decoration/torch.tscn" id="44_6pqox"]
+[ext_resource type="Texture2D" uid="uid://ciccohemu5646" path="res://assets/pozadie/jaskyna.png" id="45_k7uve"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_e1olp")
@@ -262,12 +268,17 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_sp288")
 
 [node name="Strom6" type="Sprite2D" parent="."]
-position = Vector2(-1864, 368)
+position = Vector2(-1893, 351)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_sp288")
 
 [node name="Strom7" type="Sprite2D" parent="."]
 position = Vector2(-1191, 948)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_sp288")
+
+[node name="Strom19" type="Sprite2D" parent="."]
+position = Vector2(528, 31)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_sp288")
 
@@ -303,6 +314,11 @@ texture = ExtResource("15_thf1l")
 
 [node name="Strom13" type="Sprite2D" parent="."]
 position = Vector2(3039, 1068)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("15_thf1l")
+
+[node name="Strom20" type="Sprite2D" parent="."]
+position = Vector2(1654, 17)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("15_thf1l")
 
@@ -345,25 +361,25 @@ texture = ExtResource("13_asjo1")
 position = Vector2(4399, -76)
 
 [node name="wisdom2" parent="." instance=ExtResource("19_sp288")]
-position = Vector2(-302, 2371)
+position = Vector2(-295, 2467)
 
 [node name="from_mesto_na_lanach" type="Marker2D" parent="."]
-position = Vector2(2730, 69)
+position = Vector2(2732, 48)
 
 [node name="from_kvetiny" type="Marker2D" parent="."]
-position = Vector2(2730, 69)
+position = Vector2(2719, 35)
 
 [node name="door_back3" parent="." instance=ExtResource("6_cm8v4")]
-position = Vector2(2868, -15)
+position = Vector2(2852, -6)
 to_level_name = "mesto na lanach"
 path_to_level = "res://scenes/levely/mesto_na_lanach.tscn"
 player_spawn = 123
 
 [node name="motyl" parent="." instance=ExtResource("21_asjo1")]
-position = Vector2(2062, -16)
+position = Vector2(1249, -25)
 
 [node name="view_tower" parent="." instance=ExtResource("22_f7gx0")]
-position = Vector2(2683, -50)
+position = Vector2(2673, -56)
 wiew_image = ExtResource("23_thf1l")
 
 [node name="enemy_spawner" parent="." instance=ExtResource("24_thf1l")]
@@ -682,6 +698,30 @@ position = Vector2(-2136, 197)
 [node name="plant_spawner3" parent="." instance=ExtResource("37_ly5yp")]
 position = Vector2(-1916, 370)
 
+[node name="plant_spawner22" parent="." instance=ExtResource("37_ly5yp")]
+position = Vector2(-970, 164)
+
+[node name="plant_spawner23" parent="." instance=ExtResource("37_ly5yp")]
+position = Vector2(-767, 167)
+
+[node name="plant_spawner24" parent="." instance=ExtResource("37_ly5yp")]
+position = Vector2(-286, 208)
+
+[node name="plant_spawner25" parent="." instance=ExtResource("37_ly5yp")]
+position = Vector2(366, 245)
+
+[node name="plant_spawner26" parent="." instance=ExtResource("37_ly5yp")]
+position = Vector2(962, 136)
+
+[node name="plant_spawner27" parent="." instance=ExtResource("37_ly5yp")]
+position = Vector2(1735, 137)
+
+[node name="plant_spawner28" parent="." instance=ExtResource("37_ly5yp")]
+position = Vector2(2185, 103)
+
+[node name="plant_spawner29" parent="." instance=ExtResource("37_ly5yp")]
+position = Vector2(2973, 104)
+
 [node name="plant_spawner4" parent="." instance=ExtResource("37_ly5yp")]
 position = Vector2(-1644, 619)
 
@@ -744,3 +784,181 @@ polygon = PackedVector2Array(71.3155, 236.984, 400.851, 403.321, 777.462, 415.87
 
 [node name="Mage_gulomet" parent="." instance=ExtResource("39_mfgm3")]
 position = Vector2(471, 2533)
+
+[node name="ground44" parent="." instance=ExtResource("30_6c6e1")]
+position = Vector2(-1752, 143)
+
+[node name="ground45" parent="." instance=ExtResource("30_6c6e1")]
+position = Vector2(-311, 188)
+
+[node name="ground47" parent="." instance=ExtResource("30_6c6e1")]
+position = Vector2(37, 93)
+
+[node name="ground48" parent="." instance=ExtResource("30_6c6e1")]
+position = Vector2(309, 222)
+
+[node name="ground49" parent="." instance=ExtResource("30_6c6e1")]
+position = Vector2(537, 70)
+
+[node name="ground50" parent="." instance=ExtResource("30_6c6e1")]
+position = Vector2(1950, -42)
+
+[node name="ground51" parent="." instance=ExtResource("30_6c6e1")]
+position = Vector2(964, 116)
+
+[node name="most_middle" parent="." instance=ExtResource("40_wypos")]
+position = Vector2(-1533, 120)
+
+[node name="most_middle2" parent="." instance=ExtResource("41_6c6e1")]
+position = Vector2(-1536, 120)
+
+[node name="most_middle3" parent="." instance=ExtResource("41_6c6e1")]
+position = Vector2(-1376, 120)
+
+[node name="most_middle4" parent="." instance=ExtResource("41_6c6e1")]
+position = Vector2(-1216, 120)
+
+[node name="most_right" parent="." instance=ExtResource("42_57eaa")]
+position = Vector2(-1218, 120)
+
+[node name="ground46" parent="." instance=ExtResource("25_o7sx7")]
+position = Vector2(-866, 168)
+
+[node name="most_middle5" parent="." instance=ExtResource("40_wypos")]
+position = Vector2(1183, 91)
+
+[node name="most_middle6" parent="." instance=ExtResource("41_6c6e1")]
+position = Vector2(1181, 90)
+
+[node name="most_right2" parent="." instance=ExtResource("42_57eaa")]
+position = Vector2(1179, 90)
+
+[node name="ground52" parent="." instance=ExtResource("25_o7sx7")]
+position = Vector2(1535, 139)
+
+[node name="ground53" parent="." instance=ExtResource("25_o7sx7")]
+position = Vector2(2802, 108)
+
+[node name="most_right3" parent="." instance=ExtResource("42_57eaa")]
+position = Vector2(2454, 59)
+
+[node name="most_middle7" parent="." instance=ExtResource("41_6c6e1")]
+position = Vector2(2455, 58)
+
+[node name="most_middle8" parent="." instance=ExtResource("40_wypos")]
+position = Vector2(2455, 58)
+
+[node name="ground54" parent="." instance=ExtResource("30_6c6e1")]
+position = Vector2(2233, 79)
+
+[node name="Polygon2D10" type="Polygon2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-15470, -5944)
+scale = Vector2(5, 5)
+texture = ExtResource("38_ih56n")
+polygon = PackedVector2Array(2899.2, 1245.4, 2884.4, 1236.4, 2957.2, 1232.4, 2950.2, 1241.4)
+
+[node name="Polygon2D11" type="Polygon2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-16226, -5913)
+scale = Vector2(5, 5)
+texture = ExtResource("38_ih56n")
+polygon = PackedVector2Array(2889.4, 1240.2, 2886, 1235.6, 2905.8, 1235.6, 2904.6, 1240.8)
+
+[node name="Polygon2D12" type="Polygon2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-14775, -5857)
+scale = Vector2(5, 5)
+texture = ExtResource("38_ih56n")
+polygon = PackedVector2Array(2890.2, 1238, 2883.6, 1232.8, 2903.2, 1232.8, 2898.6, 1241.2)
+
+[node name="Polygon2D13" type="Polygon2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-14425, -5953)
+scale = Vector2(5, 5)
+texture = ExtResource("38_ih56n")
+polygon = PackedVector2Array(2890.4, 1239.4, 2883.6, 1232.8, 2903.2, 1232.8, 2898.8, 1237.2)
+
+[node name="Polygon2D14" type="Polygon2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-14155, -5820)
+scale = Vector2(5, 5)
+texture = ExtResource("38_ih56n")
+polygon = PackedVector2Array(2890.4, 1239.4, 2883.6, 1232.8, 2903.2, 1232.8, 2893.8, 1236)
+
+[node name="Polygon2D15" type="Polygon2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-13922, -5969)
+scale = Vector2(5, 5)
+texture = ExtResource("38_ih56n")
+polygon = PackedVector2Array(2893.8, 1236.2, 2887.16, 1236.25, 2883.6, 1232.8, 2903.2, 1232.8, 2896.8, 1241)
+
+[node name="Polygon2D16" type="Polygon2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-13501, -5928)
+scale = Vector2(5, 5)
+texture = ExtResource("38_ih56n")
+polygon = PackedVector2Array(2892, 1240.6, 2889.4, 1236.4, 2883.6, 1232.8, 2903.2, 1232.8, 2896.6, 1242.4)
+
+[node name="Polygon2D17" type="Polygon2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-12513, -6088)
+scale = Vector2(5, 5)
+texture = ExtResource("38_ih56n")
+polygon = PackedVector2Array(2895.2, 1242, 2889, 1241.2, 2883.6, 1232.8, 2903.2, 1232.8, 2898, 1236.6)
+
+[node name="Polygon2D18" type="Polygon2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-12232, -5964)
+scale = Vector2(5, 5)
+texture = ExtResource("38_ih56n")
+polygon = PackedVector2Array(2894.2, 1237.8, 2889, 1241.2, 2883.6, 1232.8, 2903.2, 1232.8, 2900.4, 1241.6)
+
+[node name="Polygon2D19" type="Polygon2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-11794, -5998)
+scale = Vector2(5, 5)
+texture = ExtResource("38_ih56n")
+polygon = PackedVector2Array(2911.6, 1240, 2900.6, 1237.2, 2896.23, 1240.82, 2889, 1241.2, 2883.6, 1232.8, 2958, 1234.2, 2941.2, 1244)
+
+[node name="Polygon2D20" type="Polygon2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-13063, -5966)
+scale = Vector2(5, 5)
+texture = ExtResource("38_ih56n")
+polygon = PackedVector2Array(2911.6, 1240, 2901, 1246.2, 2896.23, 1240.82, 2888, 1240.2, 2883.6, 1232.8, 2958, 1234.2, 2944.18, 1242.26, 2939.6, 1238, 2934.78, 1243.13)
+
+[node name="cave_detector" type="Area2D" parent="."]
+position = Vector2(-1958.7, -1114.4)
+script = ExtResource("43_tmu0c")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="cave_detector"]
+position = Vector2(2138.7, 4019.4)
+polygon = PackedVector2Array(1016, -223, -641, -363, -601, -664, 337, -525, 1096, -539)
+
+[node name="torch" parent="cave_detector" instance=ExtResource("44_6pqox")]
+position = Vector2(2963.7, 3663.4)
+
+[node name="torch2" parent="cave_detector" instance=ExtResource("44_6pqox")]
+position = Vector2(2421.7, 3602.4)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-1565, 3)
+texture = ExtResource("45_k7uve")
+polygon = PackedVector2Array(3029, 2393, 2741, 2816, 2018, 2664, 1101, 2564, 1047, 2227, 1752, 2279, 2248, 2375)
+
+[connection signal="area_entered" from="cave_detector" to="cave_detector" method="_on_area_entered"]
+[connection signal="area_exited" from="cave_detector" to="cave_detector" method="_on_area_exited"]

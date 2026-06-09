@@ -73,12 +73,12 @@ func _physics_process(delta: float) -> void:
 				if previous_facing_right == false and facing_right== true:
 					$AnimationPlayer.play("attack_around_right")
 				
-				if !$up_autostep_raycat.is_colliding() && $"down_autostep raycast".is_colliding():
-					position.y -= 20
-					position.x -= 2
-				if !$up_autostep_raycat2.is_colliding() && $"down_autostep raycast2".is_colliding():
-					position.y -= 20
-					position.x += 2
+				#if !$up_autostep_raycat.is_colliding() && $"down_autostep raycast".is_colliding():
+				#	position.y -= 20
+				#	position.x -= 2
+				#if !$up_autostep_raycat2.is_colliding() && $"down_autostep raycast2".is_colliding():
+				#	position.y -= 20
+				#	position.x += 2
 					
 					
 				if dash:

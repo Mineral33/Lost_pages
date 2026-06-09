@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://wjgb7pshpcbr"]
+[gd_scene load_steps=29 format=3 uid="uid://wjgb7pshpcbr"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_8yggg"]
 [ext_resource type="Texture2D" uid="uid://b5ef3minkuklg" path="res://assets/UI/minimapy/S.png" id="2_42u46"]
@@ -20,8 +20,12 @@
 [ext_resource type="Texture2D" uid="uid://bjdsh5vr1wp2k" path="res://assets/trees/stromy  V2/strom10.png" id="17_igqh1"]
 [ext_resource type="Texture2D" uid="uid://ceiowfpltxjqk" path="res://assets/trees/stromy  V2/strom8.png" id="18_iomkt"]
 [ext_resource type="Texture2D" uid="uid://cg0w5pxqjmmga" path="res://assets/trees/stromy  V2/strom4.png" id="19_bweyt"]
-[ext_resource type="Texture2D" uid="uid://buuqv0866hxy6" path="res://assets/trees/stromy  V2/strom3.png" id="20_tfsq2"]
-[ext_resource type="PackedScene" uid="uid://5ls8070prhca" path="res://scenes/ingame_elements/wisdom.tscn" id="22_rcati"]
+[ext_resource type="PackedScene" uid="uid://bcody6b1gnyp1" path="res://scenes/ingame_elements/decoration/collision/ground/groun2.tscn" id="21_ta000"]
+[ext_resource type="PackedScene" uid="uid://eq1pa601aymt" path="res://scenes/ingame_elements/decoration/collision/ground/ground3.tscn" id="22_igqh1"]
+[ext_resource type="PackedScene" uid="uid://c13ksoack3k5t" path="res://scenes/ingame_elements/decoration/collision/ground/ground8.tscn" id="23_iomkt"]
+[ext_resource type="PackedScene" uid="uid://do43kvn4cfc5k" path="res://scenes/ingame_elements/decoration/collision/ground/ground7.tscn" id="24_bweyt"]
+[ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/spawners/plant_spawner.tscn" id="26_ta000"]
+[ext_resource type="PackedScene" uid="uid://bd050qtlwkevh" path="res://scenes/ingame_elements/decoration/collision/ground/ground6.tscn" id="26_uuw51"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_n54h5")
@@ -99,7 +103,7 @@ texture = ExtResource("5_n54h5")
 6:10/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_mlscp"]
-physics_layer_0/collision_layer = 5
+physics_layer_0/collision_layer = 0
 physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_or7i8")
 
@@ -117,11 +121,12 @@ position = Vector2(3982, -186)
 
 [node name="Pozadie-HoryALes" type="Sprite2D" parent="."]
 z_index = -380
-position = Vector2(61.0001, 77)
+position = Vector2(-111, 181)
 scale = Vector2(5, 5)
 texture = ExtResource("4_t7vxn")
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 z_index = 1
 position = Vector2(13, 7)
 tile_set = SubResource("TileSet_mlscp")
@@ -135,145 +140,213 @@ position = Vector2(3462, -396)
 position = Vector2(3406, 70)
 
 [node name="door_back" parent="." instance=ExtResource("8_5rw2c")]
-position = Vector2(-3682, 1413)
+position = Vector2(-3450, 1581)
 to_level_name = "les 15"
 path_to_level = "res://scenes/levely/les_15.tscn"
 player_spawn = 147
 
 [node name="from_les_15" type="Marker2D" parent="."]
-position = Vector2(-3421, 1412)
+position = Vector2(-3298, 1617)
 
 [node name="Prazosin" parent="." instance=ExtResource("9_fywuj")]
-position = Vector2(-1303, 1352)
+z_index = 1
+position = Vector2(-1241, 1537)
 
 [node name="Strom9" type="Sprite2D" parent="."]
-position = Vector2(-2944, 1563)
+z_index = -2
+position = Vector2(-3209, 1576)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_dw5ww")
 
 [node name="Strom10" type="Sprite2D" parent="."]
-position = Vector2(-1946, 1437)
+z_index = -2
+position = Vector2(-2408, 1421)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_dw5ww")
 
 [node name="Strom7" type="Sprite2D" parent="."]
-position = Vector2(-2694, 1535)
+z_index = -2
+position = Vector2(-2979, 1566)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("11_42u46")
 
 [node name="Strom11" type="Sprite2D" parent="."]
-position = Vector2(-2331, 1501)
+z_index = -2
+position = Vector2(-2684, 1525)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_dw5ww")
 
 [node name="Strom12" type="Sprite2D" parent="."]
-position = Vector2(-3318, 1527)
+z_index = -2
+position = Vector2(-3417, 1524)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("12_rcati")
 
 [node name="Strom1" type="Sprite2D" parent="."]
-position = Vector2(-1646, 1437)
+z_index = -2
+position = Vector2(-2162, 1486)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("13_fao5i")
 
 [node name="Strom5" type="Sprite2D" parent="."]
-position = Vector2(-1333, 1458)
+z_index = -2
+position = Vector2(-1953, 1627)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("14_ign7g")
 
 [node name="Strom6" type="Sprite2D" parent="."]
-position = Vector2(-1069, 1473)
+z_index = -2
+position = Vector2(-1733, 1631)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("15_4jste")
 
 [node name="Strom8" type="Sprite2D" parent="."]
-position = Vector2(-851, 1486)
+z_index = -2
+position = Vector2(-1502, 1577)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("14_ign7g")
 
 [node name="Strom2" type="Sprite2D" parent="."]
-position = Vector2(-497, 1407)
+z_index = -2
+position = Vector2(-1127, 1355)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("16_ta000")
 
 [node name="Strom13" type="Sprite2D" parent="."]
-position = Vector2(-210, 1441)
+z_index = -2
+position = Vector2(-863, 1615)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("17_igqh1")
+
+[node name="Strom17" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(391, 1413)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("17_igqh1")
 
 [node name="Strom14" type="Sprite2D" parent="."]
-position = Vector2(-4, 1441)
+z_index = -2
+position = Vector2(-606, 1599)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("11_42u46")
+
+[node name="Strom18" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(557, 1325)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("11_42u46")
 
 [node name="Strom15" type="Sprite2D" parent="."]
-position = Vector2(247, 1458)
+z_index = -2
+position = Vector2(-339, 1601)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_dw5ww")
+
+[node name="Strom19" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(819, 1338)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_dw5ww")
 
 [node name="Strom16" type="Sprite2D" parent="."]
-position = Vector2(468, 1475)
+position = Vector2(-180, 1662)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("18_iomkt")
 
 [node name="Strom3" type="Sprite2D" parent="."]
-position = Vector2(770, 1456)
+position = Vector2(41.0001, 1630)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("13_fao5i")
 
 [node name="Strom4" type="Sprite2D" parent="."]
-position = Vector2(976, 1422)
+position = Vector2(193, 1569)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("19_bweyt")
-
-[node name="Strom17" type="Sprite2D" parent="."]
-position = Vector2(1201, 1439)
-texture = ExtResource("20_tfsq2")
-
-[node name="Strom18" type="Sprite2D" parent="."]
-position = Vector2(1409, 1441)
-texture = ExtResource("11_42u46")
-
-[node name="Strom19" type="Sprite2D" parent="."]
-position = Vector2(1619, 1475)
-texture = ExtResource("15_4jste")
-
-[node name="Strom20" type="Sprite2D" parent="."]
-position = Vector2(1777, 1467)
-texture = ExtResource("18_iomkt")
-
-[node name="Strom21" type="Sprite2D" parent="."]
-position = Vector2(1977, 1441)
-texture = ExtResource("17_igqh1")
-
-[node name="Strom22" type="Sprite2D" parent="."]
-position = Vector2(2333, 1338)
-texture = ExtResource("12_rcati")
-
-[node name="Strom23" type="Sprite2D" parent="."]
-position = Vector2(2502, 1359)
-texture = ExtResource("11_42u46")
-
-[node name="Strom24" type="Sprite2D" parent="."]
-position = Vector2(2706, 1377)
-texture = ExtResource("13_fao5i")
-
-[node name="Strom25" type="Sprite2D" parent="."]
-position = Vector2(2922, 1366)
-texture = ExtResource("19_bweyt")
-
-[node name="Strom26" type="Sprite2D" parent="."]
-position = Vector2(3141, 1374)
-texture = ExtResource("11_42u46")
-
-[node name="Strom27" type="Sprite2D" parent="."]
-position = Vector2(3368, 1372)
-texture = ExtResource("17_igqh1")
-
-[node name="Strom28" type="Sprite2D" parent="."]
-position = Vector2(3563, 1351)
-texture = ExtResource("13_fao5i")
-
-[node name="Strom29" type="Sprite2D" parent="."]
-position = Vector2(3794, 1329)
-texture = ExtResource("19_bweyt")
-
-[node name="Strom30" type="Sprite2D" parent="."]
-position = Vector2(4052, 1329)
-texture = ExtResource("16_ta000")
-
-[node name="Strom31" type="Sprite2D" parent="."]
-position = Vector2(4281, 1329)
-texture = ExtResource("17_igqh1")
 
 [node name="Strom32" type="Sprite2D" parent="."]
-position = Vector2(-675, 1431)
+position = Vector2(-1339, 1509)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("17_igqh1")
 
-[node name="wisdom" parent="." instance=ExtResource("22_rcati")]
-position = Vector2(4340, 1343)
-type = "oth"
+[node name="ground2" parent="." instance=ExtResource("21_ta000")]
+position = Vector2(-3376, 1692)
+
+[node name="ground3" parent="." instance=ExtResource("21_ta000")]
+position = Vector2(-2999, 1691)
+
+[node name="ground4" parent="." instance=ExtResource("21_ta000")]
+position = Vector2(-1786, 1693)
+
+[node name="ground5" parent="." instance=ExtResource("21_ta000")]
+position = Vector2(-338, 1692)
+
+[node name="ground6" parent="." instance=ExtResource("21_ta000")]
+position = Vector2(-717, 1693)
+
+[node name="ground7" parent="." instance=ExtResource("21_ta000")]
+position = Vector2(45, 1694)
+
+[node name="ground8" parent="." instance=ExtResource("22_igqh1")]
+position = Vector2(-2157, 1554)
+
+[node name="ground9" parent="." instance=ExtResource("23_iomkt")]
+position = Vector2(-2393, 1504)
+
+[node name="ground10" parent="." instance=ExtResource("22_igqh1")]
+position = Vector2(-2618, 1553)
+scale = Vector2(-1, 1)
+
+[node name="ground11" parent="." instance=ExtResource("24_bweyt")]
+position = Vector2(-1530, 1600)
+
+[node name="ground13" parent="." instance=ExtResource("24_bweyt")]
+position = Vector2(-963, 1601)
+scale = Vector2(-1, 1)
+
+[node name="ground14" parent="." instance=ExtResource("26_uuw51")]
+position = Vector2(305, 1565)
+
+[node name="ground15" parent="." instance=ExtResource("24_bweyt")]
+position = Vector2(440, 1445)
+
+[node name="ground16" parent="." instance=ExtResource("21_ta000")]
+position = Vector2(721, 1457)
+
+[node name="ground12" parent="." instance=ExtResource("21_ta000")]
+position = Vector2(-1252, 1611)
+
+[node name="plant_spawner" parent="." instance=ExtResource("26_ta000")]
+position = Vector2(-113, 1691)
+
+[node name="plant_spawner2" parent="." instance=ExtResource("26_ta000")]
+position = Vector2(104, 1687)
+
+[node name="plant_spawner3" parent="." instance=ExtResource("26_ta000")]
+position = Vector2(660, 1453)
+
+[node name="plant_spawner4" parent="." instance=ExtResource("26_ta000")]
+position = Vector2(668, 1453)
+
+[node name="plant_spawner5" parent="." instance=ExtResource("26_ta000")]
+position = Vector2(-718, 1690)
+
+[node name="plant_spawner6" parent="." instance=ExtResource("26_ta000")]
+position = Vector2(-1116, 1605)
+
+[node name="plant_spawner7" parent="." instance=ExtResource("26_ta000")]
+position = Vector2(-1661, 1684)
+
+[node name="plant_spawner8" parent="." instance=ExtResource("26_ta000")]
+position = Vector2(-1927, 1689)
+
+[node name="plant_spawner9" parent="." instance=ExtResource("26_ta000")]
+position = Vector2(-2346, 1528)
+
+[node name="plant_spawner10" parent="." instance=ExtResource("26_ta000")]
+position = Vector2(-2847, 1677)
+
+[node name="plant_spawner11" parent="." instance=ExtResource("26_ta000")]
+position = Vector2(-3540, 1681)
+
+[node name="plant_spawner12" parent="." instance=ExtResource("26_ta000")]
+position = Vector2(-3540, 1681)

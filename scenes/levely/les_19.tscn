@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwhnhdfdvsd7i"]
+[gd_scene load_steps=25 format=3 uid="uid://cwhnhdfdvsd7i"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_6gwul"]
 [ext_resource type="Texture2D" uid="uid://cxefc10q6fa5l" path="res://assets/UI/minimapy/les_14.png" id="2_wlt0d"]
@@ -7,9 +7,21 @@
 [ext_resource type="Texture2D" uid="uid://bwaph72k1a0k6" path="res://assets/pozadie/pozadie - hory a les.png" id="5_wcfan"]
 [ext_resource type="Texture2D" uid="uid://cxa0jdx7220w0" path="res://assets/pozadie/tileset_grass_stone.png" id="6_twyky"]
 [ext_resource type="PackedScene" uid="uid://nx6f2lrhlxrc" path="res://scenes/ingame_elements/water.tscn" id="8_y6kxl"]
-[ext_resource type="PackedScene" uid="uid://cgypk0ao6bu88" path="res://scenes/ingame_elements/truhlica.tscn" id="9_4ufue"]
+[ext_resource type="PackedScene" uid="uid://cgypk0ao6bu88" path="res://scenes/ingame_elements/one_time_collectable/truhlica.tscn" id="9_4ufue"]
 [ext_resource type="PackedScene" uid="uid://14jbjx0enb5v" path="res://scenes/dvere/door_back.tscn" id="9_lhay7"]
-[ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/plant_spawner.tscn" id="10_qc6mv"]
+[ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/spawners/plant_spawner.tscn" id="10_qc6mv"]
+[ext_resource type="PackedScene" uid="uid://bcody6b1gnyp1" path="res://scenes/ingame_elements/decoration/collision/ground/groun2.tscn" id="11_twyky"]
+[ext_resource type="PackedScene" uid="uid://do43kvn4cfc5k" path="res://scenes/ingame_elements/decoration/collision/ground/ground7.tscn" id="12_fxuh1"]
+[ext_resource type="PackedScene" uid="uid://bd050qtlwkevh" path="res://scenes/ingame_elements/decoration/collision/ground/ground6.tscn" id="13_0olu2"]
+[ext_resource type="PackedScene" uid="uid://eq1pa601aymt" path="res://scenes/ingame_elements/decoration/collision/ground/ground3.tscn" id="14_lhay7"]
+[ext_resource type="PackedScene" uid="uid://cgomlw6hp5elx" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň2.tscn" id="15_5ymwc"]
+[ext_resource type="PackedScene" uid="uid://du3cooawdjahx" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň3.tscn" id="16_531de"]
+[ext_resource type="PackedScene" uid="uid://ntyqxpkxmioq" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň15.tscn" id="17_raw70"]
+[ext_resource type="PackedScene" uid="uid://cb4tksyco6wgd" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň12.tscn" id="18_8su46"]
+[ext_resource type="PackedScene" uid="uid://co0sqftjiij6d" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň13.tscn" id="19_lnoad"]
+[ext_resource type="PackedScene" uid="uid://ds06rao6y36xo" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň11.tscn" id="20_6a6ce"]
+[ext_resource type="PackedScene" uid="uid://7o2qhrltrbis" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň14.tscn" id="21_liyrt"]
+[ext_resource type="PackedScene" uid="uid://uq0tr4piqmsx" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň8.tscn" id="22_yix0y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("6_twyky")
@@ -93,8 +105,8 @@ texture = ExtResource("6_twyky")
 6:10/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_mlscp"]
-physics_layer_0/collision_layer = 4
-physics_layer_0/collision_mask = 5
+physics_layer_0/collision_layer = 0
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_or7i8")
 
 [node name="les_5" type="Node2D"]
@@ -112,11 +124,12 @@ position = Vector2(2973, 1458)
 
 [node name="Pozadie-HoryALes" type="Sprite2D" parent="."]
 z_index = -380
-position = Vector2(602, 550)
+position = Vector2(553, 544)
 scale = Vector2(5, 5)
 texture = ExtResource("5_wcfan")
 
 [node name="TileMap" type="TileMap" parent="." groups=["Wall"]]
+visible = false
 z_index = 1
 position = Vector2(13, 7)
 tile_set = SubResource("TileSet_mlscp")
@@ -133,68 +146,158 @@ player_spawn = 162
 position = Vector2(-3566, 1432)
 
 [node name="water" parent="." instance=ExtResource("8_y6kxl")]
-position = Vector2(732, 2445)
-scale = Vector2(50, 12)
+position = Vector2(-515, 2563)
+scale = Vector2(25, 15)
 
 [node name="truhlica" parent="." instance=ExtResource("9_4ufue")]
-position = Vector2(1242, 2930)
+position = Vector2(-650, 2631)
 
 [node name="plant_spawner" parent="." instance=ExtResource("10_qc6mv")]
 position = Vector2(-3496, 1601)
 
 [node name="plant_spawner2" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-3461, 1603)
+position = Vector2(-3464, 1616)
 
 [node name="plant_spawner3" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-3423, 1605)
+position = Vector2(-3435, 1629)
 
 [node name="plant_spawner4" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-3376, 1604)
+position = Vector2(-3408, 1644)
 
 [node name="plant_spawner5" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-3104, 1634)
+position = Vector2(-3318, 1647)
 
 [node name="plant_spawner6" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-3069, 1636)
+position = Vector2(-3095, 1647)
 
 [node name="plant_spawner7" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-3031, 1638)
+position = Vector2(-3058, 1646)
 
 [node name="plant_spawner8" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-2984, 1637)
+position = Vector2(-3129, 1651)
 
 [node name="plant_spawner9" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-2657, 1569)
+position = Vector2(-2855, 1487)
 
 [node name="plant_spawner10" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-2622, 1571)
+position = Vector2(-2805, 1488)
 
 [node name="plant_spawner11" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-2584, 1573)
+position = Vector2(-2739, 1490)
 
 [node name="plant_spawner12" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-2537, 1572)
+position = Vector2(-2654, 1487)
 
 [node name="plant_spawner13" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-2283, 1535)
+position = Vector2(-2320, 1648)
 
 [node name="plant_spawner14" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-2248, 1537)
+position = Vector2(-2262, 1647)
 
 [node name="plant_spawner15" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-2210, 1539)
+position = Vector2(-2202, 1648)
 
 [node name="plant_spawner16" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-2163, 1538)
+position = Vector2(-2146, 1644)
 
 [node name="plant_spawner17" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-1898, 1631)
+position = Vector2(-1909, 1692)
 
 [node name="plant_spawner18" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-1863, 1633)
+position = Vector2(-1861, 1709)
 
 [node name="plant_spawner19" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-1799, 1667)
+position = Vector2(-1800, 1737)
 
 [node name="plant_spawner20" parent="." instance=ExtResource("10_qc6mv")]
-position = Vector2(-1601, 1729)
+position = Vector2(-1711, 1779)
+
+[node name="plant_spawner21" parent="." instance=ExtResource("10_qc6mv")]
+position = Vector2(-89, 1758)
+
+[node name="plant_spawner22" parent="." instance=ExtResource("10_qc6mv")]
+position = Vector2(-18, 1759)
+
+[node name="from_les_14_water" type="Marker2D" parent="."]
+position = Vector2(-1138, 2100)
+
+[node name="ground2" parent="." instance=ExtResource("11_twyky")]
+position = Vector2(-3761, 1570)
+
+[node name="ground5" parent="." instance=ExtResource("12_fxuh1")]
+position = Vector2(-3473, 1559)
+scale = Vector2(-1, 1)
+
+[node name="ground3" parent="." instance=ExtResource("11_twyky")]
+position = Vector2(-3229, 1652)
+
+[node name="ground6" parent="." instance=ExtResource("13_0olu2")]
+position = Vector2(-2970, 1522)
+
+[node name="ground7" parent="." instance=ExtResource("13_0olu2")]
+position = Vector2(-2454, 1517)
+scale = Vector2(-1, 1)
+
+[node name="ground4" parent="." instance=ExtResource("11_twyky")]
+position = Vector2(-2719, 1491)
+
+[node name="ground8" parent="." instance=ExtResource("11_twyky")]
+position = Vector2(-2209, 1648)
+
+[node name="ground9" parent="." instance=ExtResource("14_lhay7")]
+position = Vector2(-1836, 1669)
+
+[node name="ground10" parent="." instance=ExtResource("11_twyky")]
+position = Vector2(-100, 1763)
+
+[node name="kameň" parent="." instance=ExtResource("15_5ymwc")]
+position = Vector2(-1614, 1900)
+
+[node name="kameň2" parent="." instance=ExtResource("16_531de")]
+position = Vector2(-1374, 2068)
+rotation = 1.57079
+
+[node name="kameň3" parent="." instance=ExtResource("17_raw70")]
+position = Vector2(-1260, 2236)
+rotation = 1.0472
+
+[node name="kameň4" parent="." instance=ExtResource("18_8su46")]
+position = Vector2(-1050, 2372)
+
+[node name="kameň5" parent="." instance=ExtResource("19_lnoad")]
+position = Vector2(-722, 2414)
+rotation = 2.87979
+
+[node name="kameň6" parent="." instance=ExtResource("20_6a6ce")]
+position = Vector2(-405, 2143)
+rotation = -0.261799
+
+[node name="kameň7" parent="." instance=ExtResource("21_liyrt")]
+position = Vector2(-242, 1901)
+rotation = -1.309
+
+[node name="kameň8" parent="." instance=ExtResource("19_lnoad")]
+position = Vector2(-799, 2628)
+rotation = -2.35619
+
+[node name="kameň9" parent="." instance=ExtResource("20_6a6ce")]
+position = Vector2(-409, 2597)
+
+[node name="kameň10" parent="." instance=ExtResource("21_liyrt")]
+position = Vector2(-97.9999, 2471)
+rotation = -0.785397
+
+[node name="kameň11" parent="." instance=ExtResource("18_8su46")]
+position = Vector2(39, 2229)
+rotation = -0.785397
+
+[node name="kameň12" parent="." instance=ExtResource("20_6a6ce")]
+position = Vector2(405, 2083)
+rotation = 2.35619
+
+[node name="kameň13" parent="." instance=ExtResource("22_yix0y")]
+position = Vector2(498, 1836)
+
+[node name="kameň14" parent="." instance=ExtResource("19_lnoad")]
+position = Vector2(519, 1640)
+rotation = 1.57079

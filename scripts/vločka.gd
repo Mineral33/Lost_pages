@@ -82,7 +82,7 @@ func _on_area_entered(area: Area2D) -> void:
 		elif parent is Barrel and parent not in pierced_enemies:
 			parent.destroy()
 			pierced_enemies.append(parent)
-			print(parent,' ',pierced_enemies)
+			#print(parent,' ',pierced_enemies)
 			if len(pierced_enemies) == pierce:
 				queue_free()
 			return 
@@ -106,7 +106,7 @@ func type(magic_weapeon):
 
 
 func _on_wall_body_entered(body: Node2D) -> void:
-		print(body.name, body.is_in_group('Wall'))
+	#	print(body.name, body.is_in_group('Wall'))
 		pierce_active = get_parent().get_node('Player').pierce_ab_b
 		
 		if body.is_in_group("Wall") and !pierce_active:

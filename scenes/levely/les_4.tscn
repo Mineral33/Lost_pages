@@ -19,18 +19,18 @@
 [ext_resource type="Texture2D" uid="uid://bf84ik7qatmfj" path="res://assets/trees/stromy  V2/strom11.png" id="18_y7y77"]
 [ext_resource type="Texture2D" uid="uid://brgp8v3hbth07" path="res://assets/trees/stromy  V2/strom7.png" id="19_amkvd"]
 [ext_resource type="Texture2D" uid="uid://drkcafq7y5ewm" path="res://assets/trees/stromy  V2/strom9.png" id="20_kuaba"]
-[ext_resource type="PackedScene" uid="uid://bcody6b1gnyp1" path="res://scenes/ingame_elements/decoration/ground/groun2.tscn" id="20_otwy8"]
-[ext_resource type="PackedScene" uid="uid://cgw7ak08tlvds" path="res://scenes/ingame_elements/decoration/ground/ground.tscn" id="21_wfq4a"]
-[ext_resource type="PackedScene" uid="uid://bd050qtlwkevh" path="res://scenes/ingame_elements/decoration/ground/ground6.tscn" id="22_jw5to"]
-[ext_resource type="PackedScene" uid="uid://do43kvn4cfc5k" path="res://scenes/ingame_elements/decoration/ground/ground7.tscn" id="23_et5te"]
-[ext_resource type="PackedScene" uid="uid://c13ksoack3k5t" path="res://scenes/ingame_elements/decoration/ground/ground8.tscn" id="24_s7xj0"]
-[ext_resource type="PackedScene" uid="uid://dm202lhxerk7f" path="res://scenes/ingame_elements/decoration/ground/ground5.tscn" id="25_jxuky"]
-[ext_resource type="PackedScene" uid="uid://eq1pa601aymt" path="res://scenes/ingame_elements/decoration/ground/ground3.tscn" id="26_wa16u"]
-[ext_resource type="PackedScene" uid="uid://bcejg6uxc0tve" path="res://scenes/ingame_elements/decoration/ground/ground4.tscn" id="27_iytg5"]
-[ext_resource type="PackedScene" uid="uid://dh3ry4hsrw28n" path="res://scenes/ingame_elements/enemy_spawner.tscn" id="28_phcl6"]
+[ext_resource type="PackedScene" uid="uid://bcody6b1gnyp1" path="res://scenes/ingame_elements/decoration/collision/ground/groun2.tscn" id="20_otwy8"]
+[ext_resource type="PackedScene" uid="uid://cgw7ak08tlvds" path="res://scenes/ingame_elements/decoration/collision/ground/ground.tscn" id="21_wfq4a"]
+[ext_resource type="PackedScene" uid="uid://bd050qtlwkevh" path="res://scenes/ingame_elements/decoration/collision/ground/ground6.tscn" id="22_jw5to"]
+[ext_resource type="PackedScene" uid="uid://do43kvn4cfc5k" path="res://scenes/ingame_elements/decoration/collision/ground/ground7.tscn" id="23_et5te"]
+[ext_resource type="PackedScene" uid="uid://c13ksoack3k5t" path="res://scenes/ingame_elements/decoration/collision/ground/ground8.tscn" id="24_s7xj0"]
+[ext_resource type="PackedScene" uid="uid://dm202lhxerk7f" path="res://scenes/ingame_elements/decoration/collision/ground/ground5.tscn" id="25_jxuky"]
+[ext_resource type="PackedScene" uid="uid://eq1pa601aymt" path="res://scenes/ingame_elements/decoration/collision/ground/ground3.tscn" id="26_wa16u"]
+[ext_resource type="PackedScene" uid="uid://bcejg6uxc0tve" path="res://scenes/ingame_elements/decoration/collision/ground/ground4.tscn" id="27_iytg5"]
+[ext_resource type="PackedScene" uid="uid://dh3ry4hsrw28n" path="res://scenes/ingame_elements/spawners/enemy_spawner.tscn" id="28_phcl6"]
 [ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="29_fjh07"]
-[ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/plant_spawner.tscn" id="30_jafld"]
-[ext_resource type="PackedScene" uid="uid://dhca608dgy1ex" path="res://scenes/ingame_elements/decoration/kamene/kameň7.tscn" id="31_otwy8"]
+[ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/spawners/plant_spawner.tscn" id="30_jafld"]
+[ext_resource type="PackedScene" uid="uid://dhca608dgy1ex" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň7.tscn" id="31_otwy8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xb47h"]
 texture = ExtResource("4_ayido")
@@ -147,7 +147,7 @@ player_spawn = 118
 position = Vector2(56, 67)
 
 [node name="from_les_16" type="Marker2D" parent="."]
-position = Vector2(1273.86, -2861.59)
+position = Vector2(1175.12, -1923.61)
 
 [node name="door_back" parent="." instance=ExtResource("8_exhem")]
 position = Vector2(1294.26, -1898.4)

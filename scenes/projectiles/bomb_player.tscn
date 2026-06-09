@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ce8ubsraxvra3"]
+[gd_scene load_steps=8 format=3 uid="uid://ce8ubsraxvra3"]
 
 [ext_resource type="Script" uid="uid://dof1t0psthrn8" path="res://scripts/bomb_player.gd" id="1_fsulc"]
 [ext_resource type="Texture2D" uid="uid://blmdeu5lf25ia" path="res://assets/enemies/mage/bomb_mage/bomb.png" id="2_cropr"]
@@ -9,6 +9,16 @@ radius = 24.0208
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a1u2q"]
 radius = 22.5732
+
+[sub_resource type="Gradient" id="Gradient_fsulc"]
+offsets = PackedFloat32Array(0, 0.765432, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.233925, 0.233925, 0.233925, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fsulc"]
+gradient = SubResource("Gradient_fsulc")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
 
 [node name="BOMB" type="Area2D"]
 scale = Vector2(0.7, 0.7)
@@ -37,6 +47,11 @@ visible = false
 position = Vector2(11.4286, 8.57143)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("3_fsulc")
+
+[node name="PointLight2D" type="PointLight2D" parent="explosion"]
+position = Vector2(-5.7143, -4)
+scale = Vector2(2.575, 2.575)
+texture = SubResource("GradientTexture2D_fsulc")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

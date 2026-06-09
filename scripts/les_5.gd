@@ -17,6 +17,23 @@ var ch = get_children()
 @export var minimap_picture = Texture
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	'''
+	if level_name == 'les_16':
+		print('--------------------------------------------------------------')
+		var local_points = PackedVector2Array()
+		for point in $ground46/Polygon2D10.polygon:
+			local_points.append(to_local(point))  # wrong approach if parent has offset
+		var overlay = Polygon2D.new()
+		overlay.polygon = $ground46/Polygon2D10.polygon
+		overlay.position = $ground46/Polygon2D10.global_position - global_position
+		overlay.color = Color(0.5, 0.5, 0.5, 0.8)
+		overlay.z_index = 2
+		add_child(overlay)
+		print("Overlay polygon points: ", overlay.polygon)
+		print("Overlay position: ", overlay.global_position)
+		print("Overlay visible: ", overlay.visible)
+		
+	'''
 	get_child(0).update_minimap_map(minimap_picture, x_offset, y_offset)
 	deadlist = GameManager.npc_deadlist(level_name)
 	treasures = GameManager.treasures[level_name]
@@ -153,7 +170,8 @@ func _ready() -> void:
 		spawn_position = $from_kvetiny.position
 	if spawn == 162:
 		spawn_position = $from_les_19.position
-	
+	if spawn == 163:
+		spawn_position = $from_les_14_water.position
 	
 	
 		
@@ -220,3 +238,9 @@ func wisdom_found(wis):
 		#print(wis)
 		if level_wisdom[i] == wis:
 			GameManager.register_wisdom(level_name, i)
+
+
+
+
+func _on_cave_detector_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.

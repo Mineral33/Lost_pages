@@ -287,18 +287,19 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fnw7"]
-size = Vector2(65.8212, 273.928)
+size = Vector2(65.8212, 259.649)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l07ke"]
 size = Vector2(782.476, 534.9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvb7o"]
-size = Vector2(11.3465, 189.871)
+size = Vector2(11.3465, 171.145)
 
 [node name="Prazosin" type="CharacterBody2D" groups=["Enemies"]]
 scale = Vector2(0.7, 0.7)
 collision_layer = 2
 collision_mask = 4
+safe_margin = 8.0
 script = ExtResource("1_3l8af")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -379,7 +380,7 @@ position = Vector2(9.30961, -41.109)
 scale = Vector2(-1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
-position = Vector2(-0.234387, 6.13675)
+position = Vector2(-0.234387, -1.00277)
 shape = SubResource("RectangleShape2D_1fnw7")
 
 [node name="ground_detection_raycast" type="RayCast2D" parent="."]
@@ -413,7 +414,7 @@ position = Vector2(-71.9008, -257.851)
 [node name="FireTimer" type="Timer" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(14.52, 36.741)
+position = Vector2(14.52, 30.5417)
 scale = Vector2(4.08, 0.662096)
 shape = SubResource("RectangleShape2D_hvb7o")
 
@@ -427,7 +428,26 @@ offset_top = -27.0602
 offset_right = 45.3896
 offset_bottom = 47.9398
 
+[node name="JumpTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="JumpDurationTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Spike_Timer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[node name="floor_marker" type="Marker2D" parent="."]
+position = Vector2(8.39631, 87.1774)
+scale = Vector2(1.42857, 1.42857)
+
 [connection signal="area_entered" from="Node2D/lava/lava_hit_box" to="." method="_on_lava_hit_box_area_entered"]
 [connection signal="area_exited" from="Node2D/lava/lava_hit_box" to="." method="_on_lava_hit_box_area_exited"]
 [connection signal="area_entered" from="prava/prava_hit_box" to="." method="_on_prava_hit_box_area_entered"]
 [connection signal="area_exited" from="prava/prava_hit_box" to="." method="_on_prava_hit_box_area_exited"]
+[connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
+[connection signal="timeout" from="JumpDurationTimer" to="." method="_on_jump_duration_timer_timeout"]
+[connection signal="timeout" from="Spike_Timer" to="." method="_on_spike_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://1v3luxwapoo4"]
+[gd_scene load_steps=54 format=3 uid="uid://1v3luxwapoo4"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_hedf2"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="1_msb5c"]
@@ -16,35 +16,41 @@
 [ext_resource type="Texture2D" uid="uid://cg0w5pxqjmmga" path="res://assets/trees/stromy  V2/strom4.png" id="13_58kb5"]
 [ext_resource type="Texture2D" uid="uid://ceiowfpltxjqk" path="res://assets/trees/stromy  V2/strom8.png" id="14_6ywpd"]
 [ext_resource type="Texture2D" uid="uid://dtgleewfyt35a" path="res://assets/trees/stromy  V2/strom1.png" id="15_lb18m"]
-[ext_resource type="PackedScene" uid="uid://dlomnh578qhg3" path="res://scenes/ingame_elements/wooden_spike.tscn" id="16_iglcv"]
-[ext_resource type="PackedScene" uid="uid://rf4bcebqxyx2" path="res://scenes/ingame_elements/wooden_spike_poisoned.tscn" id="17_2qelh"]
+[ext_resource type="PackedScene" uid="uid://dlomnh578qhg3" path="res://scenes/ingame_elements/damage_trap/wooden_spike.tscn" id="16_iglcv"]
+[ext_resource type="PackedScene" uid="uid://rf4bcebqxyx2" path="res://scenes/ingame_elements/damage_trap/wooden_spike_poisoned.tscn" id="17_2qelh"]
 [ext_resource type="Texture2D" uid="uid://ciccohemu5646" path="res://assets/pozadie/jaskyna.png" id="18_isfiu"]
-[ext_resource type="PackedScene" uid="uid://5ls8070prhca" path="res://scenes/ingame_elements/wisdom.tscn" id="19_f1xk7"]
+[ext_resource type="PackedScene" uid="uid://5ls8070prhca" path="res://scenes/ingame_elements/one_time_collectable/wisdom.tscn" id="19_f1xk7"]
 [ext_resource type="PackedScene" uid="uid://bujkufxxdick4" path="res://scenes/ingame_elements/decoration/poleno.tscn" id="21_58kb5"]
-[ext_resource type="PackedScene" uid="uid://cgypk0ao6bu88" path="res://scenes/ingame_elements/truhlica.tscn" id="22_6ywpd"]
-[ext_resource type="PackedScene" uid="uid://bcody6b1gnyp1" path="res://scenes/ingame_elements/decoration/ground/groun2.tscn" id="22_p0us2"]
-[ext_resource type="PackedScene" uid="uid://c13ksoack3k5t" path="res://scenes/ingame_elements/decoration/ground/ground8.tscn" id="23_8ukt5"]
-[ext_resource type="PackedScene" uid="uid://eq1pa601aymt" path="res://scenes/ingame_elements/decoration/ground/ground3.tscn" id="24_rljiq"]
-[ext_resource type="PackedScene" uid="uid://bd050qtlwkevh" path="res://scenes/ingame_elements/decoration/ground/ground6.tscn" id="25_sxru8"]
-[ext_resource type="PackedScene" uid="uid://cgw7ak08tlvds" path="res://scenes/ingame_elements/decoration/ground/ground.tscn" id="26_h0mcq"]
-[ext_resource type="PackedScene" uid="uid://bcejg6uxc0tve" path="res://scenes/ingame_elements/decoration/ground/ground4.tscn" id="27_m2ebi"]
-[ext_resource type="PackedScene" uid="uid://do43kvn4cfc5k" path="res://scenes/ingame_elements/decoration/ground/ground7.tscn" id="28_olatx"]
-[ext_resource type="PackedScene" uid="uid://dm202lhxerk7f" path="res://scenes/ingame_elements/decoration/ground/ground5.tscn" id="29_j280v"]
-[ext_resource type="PackedScene" uid="uid://cgq1r2oefma8f" path="res://scenes/ingame_elements/decoration/kamene/kameň6.tscn" id="30_t71th"]
-[ext_resource type="PackedScene" uid="uid://w2khfgc5fb46" path="res://scenes/ingame_elements/decoration/kamene/kameň5.tscn" id="31_lssnf"]
-[ext_resource type="PackedScene" uid="uid://c3l5ided4vydc" path="res://scenes/ingame_elements/decoration/kamene/kameň4.tscn" id="32_nnys3"]
-[ext_resource type="PackedScene" uid="uid://cgomlw6hp5elx" path="res://scenes/ingame_elements/decoration/kamene/kameň2.tscn" id="33_80ok1"]
-[ext_resource type="PackedScene" uid="uid://dhca608dgy1ex" path="res://scenes/ingame_elements/decoration/kamene/kameň7.tscn" id="34_6lnsv"]
-[ext_resource type="PackedScene" uid="uid://uq0tr4piqmsx" path="res://scenes/ingame_elements/decoration/kamene/kameň8.tscn" id="35_66uyx"]
-[ext_resource type="PackedScene" uid="uid://d3wlmuwyf2hy6" path="res://scenes/ingame_elements/decoration/kamene/kameň.tscn" id="36_kwl1j"]
-[ext_resource type="PackedScene" uid="uid://du3cooawdjahx" path="res://scenes/ingame_elements/decoration/kamene/kameň3.tscn" id="37_e8efj"]
-[ext_resource type="PackedScene" uid="uid://whb5k7e66wwu" path="res://scenes/ingame_elements/decoration/kamene/kameň9.tscn" id="38_8s4j0"]
-[ext_resource type="PackedScene" uid="uid://c8kyo7bcxrytj" path="res://scenes/ingame_elements/decoration/kamene/kameň10.tscn" id="39_i8axp"]
+[ext_resource type="PackedScene" uid="uid://cgypk0ao6bu88" path="res://scenes/ingame_elements/one_time_collectable/truhlica.tscn" id="22_6ywpd"]
+[ext_resource type="PackedScene" uid="uid://bcody6b1gnyp1" path="res://scenes/ingame_elements/decoration/collision/ground/groun2.tscn" id="22_p0us2"]
+[ext_resource type="PackedScene" uid="uid://c13ksoack3k5t" path="res://scenes/ingame_elements/decoration/collision/ground/ground8.tscn" id="23_8ukt5"]
+[ext_resource type="PackedScene" uid="uid://eq1pa601aymt" path="res://scenes/ingame_elements/decoration/collision/ground/ground3.tscn" id="24_rljiq"]
+[ext_resource type="PackedScene" uid="uid://bd050qtlwkevh" path="res://scenes/ingame_elements/decoration/collision/ground/ground6.tscn" id="25_sxru8"]
+[ext_resource type="PackedScene" uid="uid://cgw7ak08tlvds" path="res://scenes/ingame_elements/decoration/collision/ground/ground.tscn" id="26_h0mcq"]
+[ext_resource type="PackedScene" uid="uid://bcejg6uxc0tve" path="res://scenes/ingame_elements/decoration/collision/ground/ground4.tscn" id="27_m2ebi"]
+[ext_resource type="PackedScene" uid="uid://do43kvn4cfc5k" path="res://scenes/ingame_elements/decoration/collision/ground/ground7.tscn" id="28_olatx"]
+[ext_resource type="PackedScene" uid="uid://dm202lhxerk7f" path="res://scenes/ingame_elements/decoration/collision/ground/ground5.tscn" id="29_j280v"]
+[ext_resource type="PackedScene" uid="uid://cgq1r2oefma8f" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň6.tscn" id="30_t71th"]
+[ext_resource type="PackedScene" uid="uid://w2khfgc5fb46" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň5.tscn" id="31_lssnf"]
+[ext_resource type="PackedScene" uid="uid://c3l5ided4vydc" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň4.tscn" id="32_nnys3"]
+[ext_resource type="PackedScene" uid="uid://cgomlw6hp5elx" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň2.tscn" id="33_80ok1"]
+[ext_resource type="PackedScene" uid="uid://dhca608dgy1ex" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň7.tscn" id="34_6lnsv"]
+[ext_resource type="PackedScene" uid="uid://uq0tr4piqmsx" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň8.tscn" id="35_66uyx"]
+[ext_resource type="PackedScene" uid="uid://d3wlmuwyf2hy6" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň.tscn" id="36_kwl1j"]
+[ext_resource type="PackedScene" uid="uid://du3cooawdjahx" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň3.tscn" id="37_e8efj"]
+[ext_resource type="PackedScene" uid="uid://whb5k7e66wwu" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň9.tscn" id="38_8s4j0"]
+[ext_resource type="PackedScene" uid="uid://c8kyo7bcxrytj" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň10.tscn" id="39_i8axp"]
 [ext_resource type="Texture2D" uid="uid://csloc36qx26tu" path="res://assets/decoration/kamene/kameň7.png" id="40_4dcrv"]
 [ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="42_rljiq"]
-[ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/plant_spawner.tscn" id="43_m2ebi"]
-[ext_resource type="PackedScene" uid="uid://dh3ry4hsrw28n" path="res://scenes/ingame_elements/enemy_spawner.tscn" id="44_olatx"]
-[ext_resource type="PackedScene" uid="uid://df6fhcghbeyyj" path="res://scenes/ingame_elements/rock_spawn.tscn" id="45_j280v"]
+[ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/spawners/plant_spawner.tscn" id="43_m2ebi"]
+[ext_resource type="PackedScene" uid="uid://dh3ry4hsrw28n" path="res://scenes/ingame_elements/spawners/enemy_spawner.tscn" id="44_olatx"]
+[ext_resource type="PackedScene" uid="uid://df6fhcghbeyyj" path="res://scenes/ingame_elements/spawners/rock_spawn.tscn" id="45_j280v"]
+[ext_resource type="PackedScene" uid="uid://ntyqxpkxmioq" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň15.tscn" id="46_lssnf"]
+[ext_resource type="PackedScene" uid="uid://co0sqftjiij6d" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň13.tscn" id="47_nnys3"]
+[ext_resource type="PackedScene" uid="uid://7o2qhrltrbis" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň14.tscn" id="48_80ok1"]
+[ext_resource type="PackedScene" uid="uid://cb4tksyco6wgd" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň12.tscn" id="49_6lnsv"]
+[ext_resource type="PackedScene" uid="uid://bmwadf6ray34c" path="res://scenes/ingame_elements/decoration/torch.tscn" id="50_80ok1"]
+[ext_resource type="Script" uid="uid://cxx8uauqaqsh5" path="res://scripts/cave_detection.gd" id="51_6lnsv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_g7d7y")
@@ -138,6 +144,10 @@ minimap_picture = ExtResource("2_0va2h")
 [node name="Player" parent="." instance=ExtResource("2_ujvro")]
 position = Vector2(3982, -186)
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(877, 325)
+scale = Vector2(5, 5)
+
 [node name="Pozadie-HoryALes" type="Sprite2D" parent="."]
 z_index = -380
 position = Vector2(877, 325)
@@ -186,7 +196,7 @@ path_to_level = "res://scenes/levely/les_3.tscn"
 player_spawn = 126
 
 [node name="from_les_9" type="Marker2D" parent="."]
-position = Vector2(534, 1532)
+position = Vector2(387, 1921)
 
 [node name="Strom6" type="Sprite2D" parent="."]
 position = Vector2(-6, -662)
@@ -323,7 +333,7 @@ position = Vector2(4421, 1423)
 type = "fab"
 
 [node name="poleno" parent="." instance=ExtResource("21_58kb5")]
-position = Vector2(1358, 106)
+position = Vector2(1124, 283)
 
 [node name="wooden_spike4" parent="." instance=ExtResource("16_iglcv")]
 position = Vector2(1422, 364)
@@ -565,7 +575,7 @@ position = Vector2(-919, 2092)
 rotation = 2.61799
 
 [node name="kameň6" parent="." instance=ExtResource("33_80ok1")]
-position = Vector2(-696, 1902)
+position = Vector2(-658, 1887)
 rotation = 2.29012
 
 [node name="kameň7" parent="." instance=ExtResource("34_6lnsv")]
@@ -666,12 +676,9 @@ rotation = -1.83259
 position = Vector2(1205, 452)
 rotation = 0.261799
 
-[node name="kameň22" parent="." instance=ExtResource("37_e8efj")]
-position = Vector2(440, 242)
-
 [node name="kameň34" parent="." instance=ExtResource("33_80ok1")]
-position = Vector2(266, 439)
-rotation = -1.309
+position = Vector2(233, 473)
+rotation = -1.0472
 
 [node name="kameň35" parent="." instance=ExtResource("31_lssnf")]
 position = Vector2(-171, 359)
@@ -679,10 +686,6 @@ rotation = 1.57079
 
 [node name="kameň36" parent="." instance=ExtResource("34_6lnsv")]
 position = Vector2(-127, 441)
-
-[node name="kameň37" parent="." instance=ExtResource("32_nnys3")]
-position = Vector2(-178, 607)
-rotation = 3.14159
 
 [node name="kameň38" parent="." instance=ExtResource("35_66uyx")]
 position = Vector2(-45, 723)
@@ -767,7 +770,7 @@ rotation = 1.0472
 position = Vector2(-1005, 1294)
 
 [node name="Kameň7" type="Sprite2D" parent="."]
-position = Vector2(-263, 76)
+position = Vector2(-263, 114)
 texture = ExtResource("40_4dcrv")
 
 [node name="kameň62" parent="." instance=ExtResource("31_lssnf")]
@@ -893,76 +896,60 @@ position = Vector2(1311, 1387)
 position = Vector2(1383, 1263)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(-1978, -635)
+z_index = -1
+texture_repeat = 2
+position = Vector2(-1960, -657)
 texture = ExtResource("18_isfiu")
-texture_scale = Vector2(0.4, 0.4)
-polygon = PackedVector2Array(462.702, 2849.73, 872.203, 2853.65, 1145.3, 2571.21, 1388.14, 2392.07, 1481.1, 2325.34, 1615.41, 2244.75, 1767.63, 2182.07, 1937.77, 2235.8, 1762.34, 2642.87, 2060.9, 2702.58, 2709.78, 2698.6, 2789.4, 2543.35, 3131.75, 2204.97, 3310.89, 2025.83, 3316.73, 1823.9, 3448.89, 1681.61, 3477.98, 1377.04, 3230.52, 1317.31, 2923.32, 1274.64, 2692.92, 1240.5, 2295.77, 1161.99, 2453.99, 856.503, 3236.97, 1125.99, 3631.58, 997.611, 3779.92, 530.585, 3895.48, 369.484, 4118.1, 459.761, 3880.3, 1831.66, 3441.29, 2526.75, 2541.66, 3010.87, 399.154, 3010.87)
-
-[node name="Polygon2D2" type="Polygon2D" parent="."]
-position = Vector2(-4078, -287)
-texture = ExtResource("18_isfiu")
-texture_scale = Vector2(0.45, 0.45)
-polygon = PackedVector2Array(2690.47, 1210.87, 2823.15, 1360.79, 2873.13, 1610.67, 3035.54, 1623.16, 3272.92, 1660.64, 3582.39, 1619.04, 3627.74, 1694.62, 2554.41, 1770.21, 2418.35, 1498.1, 2539.29, 848.053, 2759, 853)
-
-[node name="Polygon2D3" type="Polygon2D" parent="."]
-position = Vector2(-2727, -682)
-texture = ExtResource("18_isfiu")
-texture_scale = Vector2(0.45, 0.45)
-polygon = PackedVector2Array(1917.15, 1735.35, 1862.84, 1556.92, 1917.15, 1386.25, 2095.74, 1261.42, 2441.68, 1226.39, 2691.28, 1423.44, 2787.62, 1528.54, 3194.86, 1581.08, 3387.53, 1581.08, 3483.87, 1778.14, 3008.78, 1897.02, 2326.43, 1644.99)
-
-[node name="Polygon2D4" type="Polygon2D" parent="."]
-position = Vector2(-3383, -1442)
-texture = ExtResource("18_isfiu")
-texture_scale = Vector2(0.45, 0.45)
-polygon = PackedVector2Array(3178, 1573, 3182, 1805, 3008.78, 1897.02, 2752, 1986, 2580, 1743, 2815, 1502)
+polygon = PackedVector2Array(462.702, 2849.73, 872.203, 2853.65, 1145.3, 2571.21, 1388.14, 2392.07, 1481.1, 2325.34, 1260, 2192, 606, 2032, 251, 1648, 312, 1414, 707, 1416, 1454, 817, 1419, 671, 1570, 457, 1832, 286, 2143, 50, 3567, 103, 3805, 442, 3895.48, 369.484, 4118.1, 459.761, 3880.3, 1831.66, 3441.29, 2526.75, 2541.66, 3010.87, 399.154, 3010.87)
 
 [node name="Polygon2D5" type="Polygon2D" parent="."]
-position = Vector2(-3959, -1054)
+z_index = -1
+texture_repeat = 2
+position = Vector2(-3969, -1057)
 texture = ExtResource("42_rljiq")
-texture_scale = Vector2(0.45, 0.45)
-polygon = PackedVector2Array(3263, 1391, 3343, 1570, 3083, 1780, 2605, 1731, 2633, 1620, 2827, 1549, 2924, 1429, 3084, 1412, 3174, 1348, 3233, 1363)
+polygon = PackedVector2Array(3439, 1191, 3467, 1238, 2763, 1821, 2612, 1847, 2311, 1822, 2345, 1595, 2633, 1620, 2827, 1549, 2924, 1429, 3084, 1412, 3174, 1348, 3363, 1142)
 
 [node name="Polygon2D6" type="Polygon2D" parent="."]
+texture_repeat = 2
 position = Vector2(-2813, -1978)
 texture = ExtResource("42_rljiq")
-texture_scale = Vector2(0.45, 0.45)
 polygon = PackedVector2Array(3615, 1523, 3697, 1332, 3834, 1268, 3765, 1626, 3516, 1650, 3336, 1617, 3030, 1499, 2789, 1617, 2579, 1775, 2419, 1787, 2575, 1692, 2813, 1407, 2968, 1315, 3242, 1336, 3343, 1358, 3412, 1464, 3458, 1519)
 
 [node name="Polygon2D8" type="Polygon2D" parent="."]
+texture_repeat = 2
 position = Vector2(-1047.17, -1766.94)
 scale = Vector2(0.953357, 0.917148)
 texture = ExtResource("42_rljiq")
-texture_scale = Vector2(0.45, 0.45)
 polygon = PackedVector2Array(3713.37, 2087.93, 3892.74, 2180.61, 4165.46, 2518.62, 4548.32, 2710.51, 4652.16, 2691.98, 4929.08, 3056.15, 5097.96, 3132.48, 5361.24, 3447.58, 5762.97, 3660.2, 6122.75, 3663.47, 5931.85, 3791.04, 5461.93, 3708.17, 5224.88, 3563.16, 5086.42, 3390.88, 4672.09, 3011.45, 4266.16, 2769.39, 3678.76, 2268.93, 3140.66, 1896.03, 2986.47, 1746.66, 2789, 1617, 2659.2, 1366.13, 2616.2, 1166.6, 2741.02, 1269.09, 2832.28, 1390.12, 2964.44, 1531.86, 3145.91, 1640.9, 3335.76, 1712.86, 3465.83, 1761.92)
 
 [node name="Polygon2D7" type="Polygon2D" parent="."]
+texture_repeat = 2
 position = Vector2(-1870, -1933)
 texture = ExtResource("42_rljiq")
-texture_scale = Vector2(0.45, 0.45)
 polygon = PackedVector2Array(3071, 1417, 3048, 1338, 3150, 1339, 3134, 1377, 3106.79, 1421.93)
 
 [node name="Polygon2D10" type="Polygon2D" parent="."]
+texture_repeat = 2
 position = Vector2(-6616, -17)
 texture = ExtResource("42_rljiq")
-texture_scale = Vector2(0.45, 0.45)
 polygon = PackedVector2Array(2912, 1314, 2836, 1251, 3574, 1247, 3498, 1309, 3285, 1284)
 
 [node name="Polygon2D12" type="Polygon2D" parent="."]
+texture_repeat = 2
 position = Vector2(-6464, 729)
 texture = ExtResource("42_rljiq")
-texture_scale = Vector2(0.45, 0.45)
 polygon = PackedVector2Array(2955, 1170, 2873, 1012, 3280, 1181, 3339.18, 1194.28, 3715, 1188, 4085, 1342, 4236, 1507, 4595, 1492, 4916, 1471, 4976, 1502, 4904, 1632, 4735, 1623, 4217, 1602, 4098, 1659, 3864, 1342, 3498, 1309, 3285, 1284)
 
 [node name="Polygon2D11" type="Polygon2D" parent="."]
+texture_repeat = 2
 position = Vector2(-5592, -54)
 texture = ExtResource("42_rljiq")
-texture_scale = Vector2(0.45, 0.45)
-polygon = PackedVector2Array(2912, 1314, 2836, 1251, 3139, 1087, 3412, 777, 3572, 692, 3703, 528, 4060, 560, 4014, 865, 3767, 688, 3568, 805, 3296, 1054)
+polygon = PackedVector2Array(2912, 1314, 2836, 1251, 3139, 1087, 3412, 777, 3572, 692, 3703, 528, 4090, 575, 4014, 865, 3767, 688, 3568, 805, 3296, 1054)
 
 [node name="Polygon2D9" type="Polygon2D" parent="."]
+texture_repeat = 2
 position = Vector2(606, -1126)
 texture = ExtResource("42_rljiq")
-texture_scale = Vector2(0.45, 0.45)
 polygon = PackedVector2Array(2366, 1397, 2286, 1322, 3014, 1312, 3188, 1201, 3561, 1225, 3698, 1055, 3600, 1358, 3252, 1324, 3106.79, 1421.93)
 
 [node name="kameň93" parent="." instance=ExtResource("31_lssnf")]
@@ -1142,3 +1129,94 @@ position = Vector2(1259, 1041)
 
 [node name="rock_spawn14" parent="." instance=ExtResource("45_j280v")]
 position = Vector2(1304, 1044)
+
+[node name="kameň96" parent="." instance=ExtResource("46_lssnf")]
+position = Vector2(322, 1304)
+rotation = -2.61799
+
+[node name="kameň97" parent="." instance=ExtResource("47_nnys3")]
+position = Vector2(60, 1202)
+
+[node name="kameň98" parent="." instance=ExtResource("48_80ok1")]
+position = Vector2(-191, 1183)
+
+[node name="kameň99" parent="." instance=ExtResource("49_6lnsv")]
+position = Vector2(-433, 1024)
+rotation = -2.55804
+
+[node name="kameň37" parent="." instance=ExtResource("35_66uyx")]
+position = Vector2(-249, 794)
+rotation = 1.57079
+
+[node name="kameň22" parent="." instance=ExtResource("48_80ok1")]
+position = Vector2(609, 499)
+rotation = -1.06908
+
+[node name="kameň100" parent="." instance=ExtResource("37_e8efj")]
+position = Vector2(384, 750)
+rotation = -2.09439
+
+[node name="kameň101" parent="." instance=ExtResource("37_e8efj")]
+position = Vector2(-210, 37)
+rotation = -0.261799
+scale = Vector2(-1, 1)
+
+[node name="torch" parent="." instance=ExtResource("50_80ok1")]
+position = Vector2(333, 276)
+
+[node name="torch2" parent="." instance=ExtResource("50_80ok1")]
+position = Vector2(1512, 253)
+
+[node name="torch3" parent="." instance=ExtResource("50_80ok1")]
+position = Vector2(-134, -14)
+
+[node name="torch4" parent="." instance=ExtResource("50_80ok1")]
+position = Vector2(497, -189)
+
+[node name="torch5" parent="." instance=ExtResource("50_80ok1")]
+position = Vector2(-128, 811)
+
+[node name="torch6" parent="." instance=ExtResource("50_80ok1")]
+position = Vector2(-635, 1066)
+
+[node name="torch7" parent="." instance=ExtResource("50_80ok1")]
+position = Vector2(-1165, 848)
+
+[node name="torch8" parent="." instance=ExtResource("50_80ok1")]
+position = Vector2(331, 1033)
+
+[node name="torch9" parent="." instance=ExtResource("50_80ok1")]
+position = Vector2(834, 1214)
+
+[node name="torch10" parent="." instance=ExtResource("50_80ok1")]
+position = Vector2(145, 1477)
+
+[node name="torch11" parent="." instance=ExtResource("50_80ok1")]
+position = Vector2(-526, 1584)
+
+[node name="torch12" parent="." instance=ExtResource("50_80ok1")]
+position = Vector2(63, 1906)
+
+[node name="torch13" parent="." instance=ExtResource("50_80ok1")]
+position = Vector2(561, 1914)
+
+[node name="torch14" parent="." instance=ExtResource("50_80ok1")]
+position = Vector2(1062, 1541)
+
+[node name="torch15" parent="." instance=ExtResource("50_80ok1")]
+position = Vector2(1316, 983)
+
+[node name="torch16" parent="." instance=ExtResource("50_80ok1")]
+position = Vector2(849, 130)
+
+[node name="torch17" parent="." instance=ExtResource("50_80ok1")]
+position = Vector2(385, 652)
+
+[node name="cave_detector" type="Area2D" parent="."]
+script = ExtResource("51_6lnsv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="cave_detector"]
+polygon = PackedVector2Array(970, -548, 1498, -524, 1874, -6, 1515, 1427, 746, 2203, -639, 2186, -791, 1334, -1322, 1330, -1505, 771, -880, 395, -459, 108, -218, -255, 152, -579, 790, -382)
+
+[connection signal="area_entered" from="cave_detector" to="cave_detector" method="_on_area_entered"]
+[connection signal="area_exited" from="cave_detector" to="cave_detector" method="_on_area_exited"]

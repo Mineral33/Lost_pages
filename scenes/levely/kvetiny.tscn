@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://m056iosrwitm"]
+[gd_scene load_steps=23 format=3 uid="uid://m056iosrwitm"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_14y8x"]
 [ext_resource type="Texture2D" uid="uid://cuce25oncoqnm" path="res://assets/UI/minimapy/les_5.png" id="2_cpbgs"]
@@ -8,10 +8,18 @@
 [ext_resource type="Texture2D" uid="uid://cxa0jdx7220w0" path="res://assets/pozadie/tileset_grass_stone.png" id="6_brjc4"]
 [ext_resource type="PackedScene" uid="uid://14jbjx0enb5v" path="res://scenes/dvere/door_back.tscn" id="7_bae2c"]
 [ext_resource type="PackedScene" uid="uid://iumuytf2u5fd" path="res://scenes/enemies/motyl.tscn" id="7_jgppp"]
-[ext_resource type="PackedScene" uid="uid://c3y1rsf7vb1a" path="res://scenes/ingame_elements/decoration/kvetina.tscn" id="9_0sqha"]
-[ext_resource type="PackedScene" uid="uid://b6t1vonix371l" path="res://scenes/ingame_elements/decoration/list.tscn" id="10_21mdk"]
-[ext_resource type="PackedScene" uid="uid://da6d41bivj41m" path="res://scenes/ingame_elements/decoration/list_2.tscn" id="11_3o2qr"]
-[ext_resource type="PackedScene" uid="uid://drq5wnxgk5hmp" path="res://scenes/ingame_elements/decoration/list_3.tscn" id="12_65cv7"]
+[ext_resource type="PackedScene" uid="uid://c3y1rsf7vb1a" path="res://scenes/ingame_elements/decoration/collision/list/kvetina.tscn" id="9_0sqha"]
+[ext_resource type="PackedScene" uid="uid://b6t1vonix371l" path="res://scenes/ingame_elements/decoration/collision/list/list.tscn" id="10_21mdk"]
+[ext_resource type="PackedScene" uid="uid://da6d41bivj41m" path="res://scenes/ingame_elements/decoration/collision/list/list_2.tscn" id="11_3o2qr"]
+[ext_resource type="PackedScene" uid="uid://drq5wnxgk5hmp" path="res://scenes/ingame_elements/decoration/collision/list/list_3.tscn" id="12_65cv7"]
+[ext_resource type="PackedScene" uid="uid://bcody6b1gnyp1" path="res://scenes/ingame_elements/decoration/collision/ground/groun2.tscn" id="13_14y8x"]
+[ext_resource type="PackedScene" uid="uid://eq1pa601aymt" path="res://scenes/ingame_elements/decoration/collision/ground/ground3.tscn" id="14_cpbgs"]
+[ext_resource type="PackedScene" uid="uid://c13ksoack3k5t" path="res://scenes/ingame_elements/decoration/collision/ground/ground8.tscn" id="15_la282"]
+[ext_resource type="PackedScene" uid="uid://do43kvn4cfc5k" path="res://scenes/ingame_elements/decoration/collision/ground/ground7.tscn" id="16_iajbs"]
+[ext_resource type="PackedScene" uid="uid://bcejg6uxc0tve" path="res://scenes/ingame_elements/decoration/collision/ground/ground4.tscn" id="17_txjwq"]
+[ext_resource type="PackedScene" uid="uid://bd050qtlwkevh" path="res://scenes/ingame_elements/decoration/collision/ground/ground6.tscn" id="18_brjc4"]
+[ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/spawners/plant_spawner.tscn" id="19_bae2c"]
+[ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="20_6tbjp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mavpd"]
 texture = ExtResource("6_brjc4")
@@ -83,7 +91,7 @@ texture = ExtResource("6_brjc4")
 6:10/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_mlscp"]
-physics_layer_0/collision_layer = 4
+physics_layer_0/collision_layer = 0
 physics_layer_0/collision_mask = 5
 sources/1 = SubResource("TileSetAtlasSource_mavpd")
 
@@ -93,6 +101,7 @@ level_name = "kvetiny"
 x_offset = 3500
 y_offset = 1000
 minimap_picture = ExtResource("2_cpbgs")
+metadata/_edit_horizontal_guides_ = [365.0, 366.0]
 
 [node name="UImanager" parent="." instance=ExtResource("3_la282")]
 
@@ -101,11 +110,12 @@ position = Vector2(3982, -186)
 
 [node name="Pozadie-HoryALes" type="Sprite2D" parent="."]
 z_index = -380
-position = Vector2(252, -450)
+position = Vector2(262, -302)
 scale = Vector2(5, 5)
 texture = ExtResource("5_txjwq")
 
 [node name="TileMap" type="TileMap" parent="." groups=["Wall"]]
+visible = false
 z_index = 1
 tile_set = SubResource("TileSet_mlscp")
 format = 2
@@ -121,28 +131,26 @@ path_to_level = "res://scenes/levely/mesto_na_lanach.tscn"
 player_spawn = 161
 
 [node name="motyl" parent="." instance=ExtResource("7_jgppp")]
-position = Vector2(-1545, 616)
-
-[node name="motyl2" parent="." instance=ExtResource("7_jgppp")]
-position = Vector2(-725, 458)
+position = Vector2(-1679, 475)
 
 [node name="motyl5" parent="." instance=ExtResource("7_jgppp")]
 position = Vector2(-202, 622)
 
 [node name="motyl6" parent="." instance=ExtResource("7_jgppp")]
-position = Vector2(665, 479)
+position = Vector2(580, 556)
 
 [node name="motyl3" parent="." instance=ExtResource("7_jgppp")]
 position = Vector2(3008, 539)
 
 [node name="motyl7" parent="." instance=ExtResource("7_jgppp")]
-position = Vector2(-1412, 554)
+position = Vector2(-1541, 363)
+type = 2
 
 [node name="motyl4" parent="." instance=ExtResource("7_jgppp")]
 position = Vector2(1764, 566)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("9_0sqha")]
-position = Vector2(390, 277)
+position = Vector2(411, 397)
 kvetina = 0
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("9_0sqha")]
@@ -157,10 +165,10 @@ position = Vector2(1794, 282)
 kvetina = 0
 
 [node name="StaticBody2D5" parent="." instance=ExtResource("9_0sqha")]
-position = Vector2(2008, 601)
+position = Vector2(2053, 550)
 
 [node name="StaticBody2D6" parent="." instance=ExtResource("9_0sqha")]
-position = Vector2(2321, 245)
+position = Vector2(2282, 312)
 kvetina = 0
 
 [node name="StaticBody2D7" parent="." instance=ExtResource("9_0sqha")]
@@ -171,10 +179,10 @@ kvetina = 0
 position = Vector2(2741, 278)
 
 [node name="StaticBody2D9" parent="." instance=ExtResource("9_0sqha")]
-position = Vector2(2866, 603)
+position = Vector2(2921, 554)
 
 [node name="StaticBody2D10" parent="." instance=ExtResource("9_0sqha")]
-position = Vector2(3335, 243)
+position = Vector2(3405, 354)
 kvetina = 0
 
 [node name="StaticBody2D11" parent="." instance=ExtResource("9_0sqha")]
@@ -195,44 +203,44 @@ position = Vector2(-463, 509)
 kvetina = 0
 
 [node name="StaticBody2D16" parent="." instance=ExtResource("9_0sqha")]
-position = Vector2(1029, 333)
+position = Vector2(1041, 265)
 
 [node name="StaticBody2D17" parent="." instance=ExtResource("9_0sqha")]
 position = Vector2(-1683, 530)
 kvetina = 0
 
 [node name="StaticBody2D18" parent="." instance=ExtResource("9_0sqha")]
-position = Vector2(-1454, 282)
+position = Vector2(-1487, 487)
 kvetina = 0
 
 [node name="StaticBody2D19" parent="." instance=ExtResource("9_0sqha")]
-position = Vector2(-1231, 413)
+position = Vector2(-1238, 566)
 kvetina = 0
 
 [node name="StaticBody2D20" parent="." instance=ExtResource("9_0sqha")]
-position = Vector2(-939, 685)
+position = Vector2(-988, 518)
 
 [node name="StaticBody2D21" parent="." instance=ExtResource("9_0sqha")]
-position = Vector2(-748, 305)
+position = Vector2(-709, 340)
 
 [node name="StaticBody2D22" parent="." instance=ExtResource("9_0sqha")]
-position = Vector2(68, 410)
+position = Vector2(151, 408)
 kvetina = 0
 
 [node name="list" parent="." instance=ExtResource("10_21mdk")]
-position = Vector2(-1516, 428)
+position = Vector2(-1549, 633)
 
 [node name="list2" parent="." instance=ExtResource("10_21mdk")]
 position = Vector2(-1769, 760)
 
 [node name="list3" parent="." instance=ExtResource("10_21mdk")]
-position = Vector2(-842, 558)
+position = Vector2(-803, 593)
 
 [node name="list4" parent="." instance=ExtResource("10_21mdk")]
-position = Vector2(-2, 541)
+position = Vector2(81, 539)
 
 [node name="list5" parent="." instance=ExtResource("10_21mdk")]
-position = Vector2(316, 680)
+position = Vector2(337, 800)
 
 [node name="list6" parent="." instance=ExtResource("10_21mdk")]
 position = Vector2(1409, 365)
@@ -241,16 +249,16 @@ position = Vector2(1409, 365)
 position = Vector2(1703, 567)
 
 [node name="list8" parent="." instance=ExtResource("10_21mdk")]
-position = Vector2(2240, 458)
+position = Vector2(2201, 525)
 
 [node name="list9" parent="." instance=ExtResource("10_21mdk")]
 position = Vector2(2656, 583)
 
 [node name="list10" parent="." instance=ExtResource("10_21mdk")]
-position = Vector2(3267, 353)
+position = Vector2(3337, 464)
 
 [node name="list11" parent="." instance=ExtResource("10_21mdk")]
-position = Vector2(2392, 526)
+position = Vector2(2353, 593)
 scale = Vector2(-1, 1)
 
 [node name="list12" parent="." instance=ExtResource("10_21mdk")]
@@ -265,77 +273,95 @@ scale = Vector2(-1, 1)
 position = Vector2(3721, 495)
 
 [node name="list15" parent="." instance=ExtResource("11_3o2qr")]
-position = Vector2(3255, 558)
+position = Vector2(3325, 669)
 
 [node name="list16" parent="." instance=ExtResource("11_3o2qr")]
-position = Vector2(2243, 325)
+position = Vector2(2204, 392)
 
 [node name="list17" parent="." instance=ExtResource("11_3o2qr")]
 position = Vector2(1409, 631)
+
+[node name="list62" parent="." instance=ExtResource("11_3o2qr")]
+position = Vector2(1984, 678)
 
 [node name="list18" parent="." instance=ExtResource("11_3o2qr")]
 position = Vector2(648, 650)
 
 [node name="list19" parent="." instance=ExtResource("11_3o2qr")]
-position = Vector2(456, 600)
+position = Vector2(477, 720)
 scale = Vector2(-1, 1)
 
 [node name="list20" parent="." instance=ExtResource("11_3o2qr")]
-position = Vector2(152, 481)
+position = Vector2(235, 479)
 scale = Vector2(-1, 1)
 
 [node name="list21" parent="." instance=ExtResource("11_3o2qr")]
-position = Vector2(-672, 678)
+position = Vector2(-625, 657)
 rotation = 0.0523599
 scale = Vector2(-1, 1)
 
 [node name="list22" parent="." instance=ExtResource("11_3o2qr")]
-position = Vector2(-1306, 717)
+position = Vector2(-1313, 870)
 
 [node name="list23" parent="." instance=ExtResource("12_65cv7")]
 position = Vector2(-1746, 640)
 
 [node name="list24" parent="." instance=ExtResource("12_65cv7")]
-position = Vector2(-1528, 568)
+position = Vector2(-1583, 780)
 
 [node name="list25" parent="." instance=ExtResource("12_65cv7")]
-position = Vector2(-1390, 486)
+position = Vector2(-1397, 687)
 scale = Vector2(-1, 1)
 
 [node name="list26" parent="." instance=ExtResource("12_65cv7")]
-position = Vector2(-1130, 497)
+position = Vector2(-1137, 650)
 scale = Vector2(-1, 1)
 
 [node name="list27" parent="." instance=ExtResource("12_65cv7")]
-position = Vector2(-648, 435)
+position = Vector2(-609, 470)
+scale = Vector2(-1, 1)
+
+[node name="list64" parent="." instance=ExtResource("12_65cv7")]
+position = Vector2(-1399, 857)
 scale = Vector2(-1, 1)
 
 [node name="list28" parent="." instance=ExtResource("12_65cv7")]
-position = Vector2(-260, 709)
+position = Vector2(-263, 691)
+
+[node name="list68" parent="." instance=ExtResource("12_65cv7")]
+position = Vector2(-522, 665)
 
 [node name="list29" parent="." instance=ExtResource("10_21mdk")]
 position = Vector2(-370, 582)
+scale = Vector2(-1, 1)
+
+[node name="list65" parent="." instance=ExtResource("10_21mdk")]
+position = Vector2(-1607, 862)
+scale = Vector2(-1, 1)
+
+[node name="list66" parent="." instance=ExtResource("10_21mdk")]
+position = Vector2(-1158, 823)
 scale = Vector2(-1, 1)
 
 [node name="list30" parent="." instance=ExtResource("10_21mdk")]
 position = Vector2(-531, 570)
 
 [node name="list31" parent="." instance=ExtResource("11_3o2qr")]
-position = Vector2(-6, 683)
+position = Vector2(77, 681)
 
 [node name="list32" parent="." instance=ExtResource("12_65cv7")]
-position = Vector2(148, 622)
+position = Vector2(231, 620)
 scale = Vector2(-1, 1)
 
 [node name="list33" parent="." instance=ExtResource("12_65cv7")]
-position = Vector2(339, 362)
+position = Vector2(360, 482)
 
 [node name="list34" parent="." instance=ExtResource("12_65cv7")]
-position = Vector2(483, 460)
+position = Vector2(504, 580)
 scale = Vector2(-1, 1)
 
 [node name="list35" parent="." instance=ExtResource("10_21mdk")]
-position = Vector2(492, 379)
+position = Vector2(513, 499)
 scale = Vector2(-1, 1)
 
 [node name="list36" parent="." instance=ExtResource("10_21mdk")]
@@ -343,20 +369,20 @@ position = Vector2(808, 540)
 scale = Vector2(-1, 1)
 
 [node name="list37" parent="." instance=ExtResource("12_65cv7")]
-position = Vector2(955, 399)
+position = Vector2(967, 331)
 
 [node name="list38" parent="." instance=ExtResource("10_21mdk")]
-position = Vector2(959, 719)
+position = Vector2(971, 651)
 
 [node name="list39" parent="." instance=ExtResource("12_65cv7")]
-position = Vector2(1103, 645)
+position = Vector2(1115, 577)
 scale = Vector2(-1, 1)
 
 [node name="list40" parent="." instance=ExtResource("11_3o2qr")]
-position = Vector2(949, 573)
+position = Vector2(961, 505)
 
 [node name="list41" parent="." instance=ExtResource("11_3o2qr")]
-position = Vector2(1125, 506)
+position = Vector2(1137, 438)
 scale = Vector2(-1, 1)
 
 [node name="list42" parent="." instance=ExtResource("12_65cv7")]
@@ -371,15 +397,15 @@ position = Vector2(1889, 480)
 scale = Vector2(-1, 1)
 
 [node name="list45" parent="." instance=ExtResource("10_21mdk")]
-position = Vector2(2088, 657)
+position = Vector2(2133, 606)
 scale = Vector2(-1, 1)
 
 [node name="list46" parent="." instance=ExtResource("11_3o2qr")]
-position = Vector2(2949, 668)
+position = Vector2(3004, 619)
 scale = Vector2(-1, 1)
 
 [node name="list47" parent="." instance=ExtResource("12_65cv7")]
-position = Vector2(3421, 448)
+position = Vector2(3491, 559)
 scale = Vector2(-1, 1)
 
 [node name="list48" parent="." instance=ExtResource("12_65cv7")]
@@ -391,7 +417,7 @@ position = Vector2(3878, 420)
 scale = Vector2(-1, 1)
 
 [node name="list50" parent="." instance=ExtResource("10_21mdk")]
-position = Vector2(3429, 649)
+position = Vector2(3499, 760)
 scale = Vector2(-1, 1)
 
 [node name="list51" parent="." instance=ExtResource("12_65cv7")]
@@ -408,22 +434,29 @@ position = Vector2(2426, 653)
 position = Vector2(2456, 479)
 
 [node name="list55" parent="." instance=ExtResource("12_65cv7")]
-position = Vector2(2415, 358)
+position = Vector2(2376, 425)
 scale = Vector2(-1, 1)
 
 [node name="list56" parent="." instance=ExtResource("11_3o2qr")]
-position = Vector2(-814, 412)
+position = Vector2(-775, 447)
+
+[node name="list67" parent="." instance=ExtResource("11_3o2qr")]
+position = Vector2(-1065, 736)
 
 [node name="list57" parent="." instance=ExtResource("10_21mdk")]
-position = Vector2(-857, 751)
+position = Vector2(-897, 627)
+scale = Vector2(-1, 1)
+
+[node name="list63" parent="." instance=ExtResource("10_21mdk")]
+position = Vector2(-396, 770)
 scale = Vector2(-1, 1)
 
 [node name="list58" parent="." instance=ExtResource("12_65cv7")]
-position = Vector2(-1147, 742)
+position = Vector2(-1154, 895)
 scale = Vector2(-1, 1)
 
 [node name="list59" parent="." instance=ExtResource("10_21mdk")]
-position = Vector2(-1305, 621)
+position = Vector2(-1312, 774)
 
 [node name="StaticBody2D23" parent="." instance=ExtResource("9_0sqha")]
 position = Vector2(1268, 475)
@@ -434,3 +467,139 @@ scale = Vector2(-1, 1)
 
 [node name="list61" parent="." instance=ExtResource("11_3o2qr")]
 position = Vector2(1214, 658)
+
+[node name="ground2" parent="." instance=ExtResource("13_14y8x")]
+position = Vector2(4150, 717)
+
+[node name="ground3" parent="." instance=ExtResource("13_14y8x")]
+position = Vector2(2946, 722)
+
+[node name="ground4" parent="." instance=ExtResource("14_cpbgs")]
+position = Vector2(3316, 744)
+
+[node name="ground5" parent="." instance=ExtResource("14_cpbgs")]
+position = Vector2(3789, 740)
+scale = Vector2(-1, 1)
+
+[node name="ground6" parent="." instance=ExtResource("15_la282")]
+position = Vector2(3548, 854)
+
+[node name="ground7" parent="." instance=ExtResource("15_la282")]
+position = Vector2(2700, 696)
+
+[node name="ground8" parent="." instance=ExtResource("16_iajbs")]
+position = Vector2(2561, 710)
+
+[node name="ground9" parent="." instance=ExtResource("13_14y8x")]
+position = Vector2(2303, 803)
+
+[node name="ground10" parent="." instance=ExtResource("13_14y8x")]
+position = Vector2(1921, 803)
+
+[node name="ground12" parent="." instance=ExtResource("13_14y8x")]
+position = Vector2(1390, 722)
+
+[node name="ground13" parent="." instance=ExtResource("13_14y8x")]
+position = Vector2(1012, 722)
+
+[node name="ground11" parent="." instance=ExtResource("16_iajbs")]
+position = Vector2(1679, 711)
+scale = Vector2(-1, 1)
+
+[node name="ground14" parent="." instance=ExtResource("16_iajbs")]
+position = Vector2(737, 710)
+
+[node name="ground15" parent="." instance=ExtResource("16_iajbs")]
+position = Vector2(587, 786)
+
+[node name="ground16" parent="." instance=ExtResource("13_14y8x")]
+position = Vector2(333, 877)
+
+[node name="ground17" parent="." instance=ExtResource("17_txjwq")]
+position = Vector2(-33, 761)
+
+[node name="ground18" parent="." instance=ExtResource("14_cpbgs")]
+position = Vector2(-484, 769)
+
+[node name="ground19" parent="." instance=ExtResource("15_la282")]
+position = Vector2(-253, 878)
+
+[node name="ground20" parent="." instance=ExtResource("15_la282")]
+position = Vector2(-718, 720)
+
+[node name="ground21" parent="." instance=ExtResource("16_iajbs")]
+position = Vector2(-857, 735)
+
+[node name="ground23" parent="." instance=ExtResource("16_iajbs")]
+position = Vector2(-1148, 968)
+
+[node name="ground22" parent="." instance=ExtResource("18_brjc4")]
+position = Vector2(-994, 852)
+
+[node name="ground24" parent="." instance=ExtResource("15_la282")]
+position = Vector2(-1264, 1033)
+
+[node name="ground25" parent="." instance=ExtResource("14_cpbgs")]
+position = Vector2(-1497, 923)
+
+[node name="ground26" parent="." instance=ExtResource("15_la282")]
+position = Vector2(-1729, 867)
+
+[node name="plant_spawner" parent="." instance=ExtResource("19_bae2c")]
+position = Vector2(-1700, 890)
+
+[node name="plant_spawner2" parent="." instance=ExtResource("19_bae2c")]
+position = Vector2(-1779, 888)
+
+[node name="plant_spawner3" parent="." instance=ExtResource("19_bae2c")]
+position = Vector2(-1403, 1015)
+
+[node name="plant_spawner4" parent="." instance=ExtResource("19_bae2c")]
+position = Vector2(-1264, 1052)
+
+[node name="plant_spawner5" parent="." instance=ExtResource("19_bae2c")]
+position = Vector2(-687, 739)
+
+[node name="plant_spawner6" parent="." instance=ExtResource("19_bae2c")]
+position = Vector2(-265, 900)
+
+[node name="plant_spawner7" parent="." instance=ExtResource("19_bae2c")]
+position = Vector2(45, 752)
+
+[node name="plant_spawner8" parent="." instance=ExtResource("19_bae2c")]
+position = Vector2(449, 871)
+
+[node name="plant_spawner9" parent="." instance=ExtResource("19_bae2c")]
+position = Vector2(931, 716)
+
+[node name="plant_spawner10" parent="." instance=ExtResource("19_bae2c")]
+position = Vector2(1333, 716)
+
+[node name="plant_spawner11" parent="." instance=ExtResource("19_bae2c")]
+position = Vector2(1953, 797)
+
+[node name="plant_spawner12" parent="." instance=ExtResource("19_bae2c")]
+position = Vector2(1982, 797)
+
+[node name="plant_spawner13" parent="." instance=ExtResource("19_bae2c")]
+position = Vector2(2725, 719)
+
+[node name="plant_spawner14" parent="." instance=ExtResource("19_bae2c")]
+position = Vector2(2780, 718)
+
+[node name="plant_spawner15" parent="." instance=ExtResource("19_bae2c")]
+position = Vector2(3161, 728)
+
+[node name="plant_spawner16" parent="." instance=ExtResource("19_bae2c")]
+position = Vector2(4305, 713)
+
+[node name="plant_spawner17" parent="." instance=ExtResource("19_bae2c")]
+position = Vector2(3584, 875)
+
+[node name="Polygon2D10" type="Polygon2D" parent="plant_spawner17"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-15470, -5944)
+scale = Vector2(5, 5)
+texture = ExtResource("20_6tbjp")
+polygon = PackedVector2Array(2737.2, 1181.8, 2872.8, 1181.8, 2901, 1165.4, 3005.8, 1170.4, 3090.6, 1197.4, 3171.2, 1166, 3240.6, 1164.8, 3173, 1208.4, 3066.4, 1247.4, 2915.6, 1204, 2695.05, 1226.82, 2617.4, 1190.4, 2533.23, 1250.81, 2412.8, 1218.8, 2273, 1233.6, 2225.2, 1194.8, 2161.8, 1242, 2083.8, 1269, 2022.6, 1212, 2039.2, 1200.6, 2126, 1240.6, 2163.8, 1213, 2189, 1186, 2219.6, 1168, 2237.6, 1172.2, 2307.8, 1199.8, 2326.8, 1196.4, 2395, 1195.2, 2472.6, 1198, 2537.6, 1165.4, 2690.8, 1159.4)

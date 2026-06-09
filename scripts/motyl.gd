@@ -11,7 +11,7 @@ var base_y
 var base_x
 var active = 1
 var default_marker_position
-
+@export var type = 1
 var bolts =[ preload("res://assets/enemies/motyl/blesk_motyl/blesk_motyl0000.png"),preload("res://assets/enemies/motyl/blesk_motyl/blesk_motyl0001.png"),preload("res://assets/enemies/motyl/blesk_motyl/blesk_motyl0002.png"),preload("res://assets/enemies/motyl/blesk_motyl/blesk_motyl0003.png"),preload("res://assets/enemies/motyl/blesk_motyl/blesk_motyl0004.png"),preload("res://assets/enemies/motyl/blesk_motyl/blesk_motyl0005.png"),preload("res://assets/enemies/motyl/blesk_motyl/blesk_motyl0006.png")]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,7 +31,12 @@ func _process(delta: float) -> void:
 		#for bolt in (get_tree().get_nodes_in_group("bolt")):
 		#	bolt.queue_free()
 		attack_timer = 0
-		var opt = [2,3,5,4,7,8].pick_random()
+		var opt = 1
+		match type:
+			1: opt = [2,3,5,4,7,8].pick_random()
+			2: opt = [4].pick_random()
+			
+			
 		if opt == 1: #
 			$AnimationPlayer2.play("charge1")
 			await get_tree().create_timer(1).timeout

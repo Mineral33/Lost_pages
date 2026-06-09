@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://biqinu1w3rq4u"]
+
+[ext_resource type="Texture2D" uid="uid://cvy8jm8jpkbae" path="res://assets/decoration/most/most_left.png" id="1_76dm5"]
+
+[node name="most_middle" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_76dm5")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-198.13, -1.44832)
+polygon = PackedVector2Array(35.8804, 43.8605, 118.63, 65.9101, 118.36, 80.5042, 22.8225, 56.7213, 18.2281, 48.3432, 22.2662, 43.8605)

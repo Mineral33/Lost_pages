@@ -34,12 +34,13 @@ func _ready() -> void:
 	$enemy_health_component.max_shield = max_shield
 	#health= max_health
 	$AnimationPlayer.play("idle")
-	area_ref = $attack_area
+	#area_ref = $attack_area
 #	get_node("Healthbar").update_healthbar(health,max_health,shield,max_shield,true)
 func _process(delta: float) -> void:
 	#print(fall_attack,' ',jump_bool)
 	#print(jump_timer - attack_timer)
 	#print(player)
+	#print(player , active , !fall_attack)
 	pass
 func get_up():
 	if is_on_floor():
@@ -66,18 +67,17 @@ func _physics_process(delta: float) -> void:
 	
 	if active:
 		attack_timer += delta
-	if attack_timer > jump_timer :
-			jump()
-			jump_timer = randf_range(5, 6)
-			attack_timer = 0
+		
+		
+
 	if jump_bool:
 		velocity.y -= 450
 		jump_bool = false
-	
+	#print(ref)
 	if  ref == get_parent().get_child(1) and !is_on_floor() and  fly_follow_timer < 0.7:
+		
 		fly_follow_timer += delta
 		dir = ref.global_position.x - global_position.x
-		#print(dir)
 		if dir > 5:
 			velocity.x = 350
 			scale.x = abs(scale.x)
@@ -92,21 +92,14 @@ func _physics_process(delta: float) -> void:
 			$Hitbox.scale.x = -1
 			$Sprite2D.scale.x = -0.4
 			$Hitbox_II.scale.x = -1
-			
 		else:
 			velocity.x = 0
-			
-		#velocity.x = dir * SPEED
-		#print(velocity.x)
-		#print('here')
 	else:
 		velocity.x = 0
-
+		
 	if ref == get_parent().get_child(1) and active && !attaking && is_on_floor() :
 		if !fall_attack:
 			$AnimationPlayer.play('walk')
-	
-			
 		dir = ref.global_position.x - global_position.x
 		if dir > 5:
 			dir = 1
@@ -114,54 +107,34 @@ func _physics_process(delta: float) -> void:
 			$attack_area.scale.x = 1
 			$Hitbox.scale.x = 1
 			$Sprite2D.scale.x = 0.4
-			
 		elif dir <-5:
 			dir = -1
 			scale.x = abs(scale.x)
 			$attack_area.scale.x = -1
 			$Hitbox.scale.x = -1
 			$Sprite2D.scale.x = -0.4
-
-			
 		elif is_on_floor():
 			dir= 0
 			$AnimationPlayer.play("idle")
-		
+
 		velocity.x = dir * SPEED
 	elif is_on_floor():
 		dir = 0
 		velocity.x = 0
-			
-			
-#	velocity.x = dir * SPEED
-	#dddddprint(dir)
-	#print('last v.x ', velocity.x)
 	move_and_slide()
-
-
-#func attak_reset():
-	
-	#if player is Player && !fall_attack && active:
-#		await get_tree().create_timer(1).timeout
-#		$AnimationPlayer.play("hand_attak")
 	
 func atack_action():
-	
 	var bodies  = $Hitbox.get_overlapping_bodies()
-	
 	for body in bodies:
-		
 		if body == player && !dead && can_attak:
 			body.take_damage(randf_range(41,53),'m',' asi to neni len hrad', 5)
+			
 func atack_action_II():
-	
 	var bodies  = $Hitbox_II.get_overlapping_bodies()
-	
 	for body in bodies:
 		if body == player && !dead && can_attak:
 			print('ATTACK II')
 			body.take_damage(randf_range(32,38),'m',' asi to neni len hrad', 5)
-			
 			
 func attack_action_fall():
 	var bodies  = $jump_area.get_overlapping_bodies()
@@ -171,29 +144,22 @@ func attack_action_fall():
 	fall_attack = false
 	active = 0
 	fly_follow_timer = 0
+	
 func die():
 	dead = true
 	GameManager.update_log_info('Walking fortress defeated + 750 gold')
 	SPEED = 0
-	#GameManager.score += 5000
 	GameManager.gold += 750
-	
-	#get_parent().npc_died(self)
-	#print('info to level '+ str(get_parent().name))# tell game manager that this died
-	#$AnimationPlayer.play("die")
-	#var coin_instance = coin.instantiate()
-	#get_parent().add_child(coin_instance)
-	#coin_instance.global_position = global_position
-	#no
 	self.queue_free()
 	
 	
 func _on_attack_area_area_entered(area: Area2D) -> void:
+#	print(area.get_parent())
 	if area != null:
 		if area.get_parent() is Player && !dead : 	
-			print("in")
+			#print("-------------------------in----------------------------")
 			player = area.get_parent()
-			area_ref =area
+			area_ref = area
 			while player and active  && !fall_attack:
 				if [0,1].pick_random() == 1:
 					$AnimationPlayer.play("hand_attak")
@@ -205,12 +171,18 @@ func _on_attack_area_area_entered(area: Area2D) -> void:
 					attaking = true
 					await get_tree().create_timer(1.5).timeout
 					attaking = false
+					
 func _on_attack_area_area_exited(area: Area2D) -> void:
-	print('out')
+	#print('out')
 	if active && !fall_attack:
 		$AnimationPlayer.play('walk')
-	player = null
-	area_ref = null
+		
+	if area.get_parent() is Player:
+		#print(area.get_parent(), ' ', area)
+		player = null
+		#area_ref = null
+	
+	
 func jump():
 	jump_bool = true
 	$AnimationPlayer.play('jump')
@@ -226,5 +198,14 @@ func jump():
 func _on_player_follow_area_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		ref = area.get_parent()
+		
+		
 func _on_player_follow_area_area_exited(area: Area2D) -> void:
-	ref=  null
+	#ref=  null
+	pass
+
+func _on_jump_timer_timeout() -> void:
+			if active:
+				jump()
+				$JumpTimer.start(randf_range(7, 8))
+			

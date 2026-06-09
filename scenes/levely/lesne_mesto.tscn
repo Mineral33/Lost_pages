@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://cce1jflnm52it" path="res://assets/budovy/brana_do_lesneho_mesta.png" id="11_a4fet"]
 [ext_resource type="PackedScene" uid="uid://biqpiu8y6736i" path="res://scenes/postavy/smuggler_end.tscn" id="12_xcttd"]
 [ext_resource type="Texture2D" uid="uid://bwaph72k1a0k6" path="res://assets/pozadie/pozadie - hory a les.png" id="13_ganao"]
-[ext_resource type="PackedScene" uid="uid://cgypk0ao6bu88" path="res://scenes/ingame_elements/truhlica.tscn" id="14_7wco0"]
-[ext_resource type="PackedScene" uid="uid://5ls8070prhca" path="res://scenes/ingame_elements/wisdom.tscn" id="15_nkgwf"]
+[ext_resource type="PackedScene" uid="uid://cgypk0ao6bu88" path="res://scenes/ingame_elements/one_time_collectable/truhlica.tscn" id="14_7wco0"]
+[ext_resource type="PackedScene" uid="uid://5ls8070prhca" path="res://scenes/ingame_elements/one_time_collectable/wisdom.tscn" id="15_nkgwf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pwu31"]
 texture = ExtResource("3_3mfqf")

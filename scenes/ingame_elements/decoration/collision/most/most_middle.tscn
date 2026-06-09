@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://pwumdovdi8n1"]
+
+[ext_resource type="Texture2D" uid="uid://bfme2xi6xwtju" path="res://assets/decoration/most/most_middle.png" id="1_0v8aj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00ays"]
+size = Vector2(178.058, 14.8898)
+
+[node name="most_middle" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0v8aj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.06131, 70.5388)
+shape = SubResource("RectangleShape2D_00ays")
