@@ -29,7 +29,7 @@ func _on_life_timer_timeout() -> void:
 	queue_free()
 	
 func _on_body_entered(body: Node2D) -> void:
-	#print(body)
+	##print(body)
 	if body.is_in_group('Wall'):
 		$explosion.show()
 		explode = true
@@ -48,7 +48,7 @@ func _on_area_entered(area: Area2D) -> void:
 
 
 func _on_timer_timeout() -> void:
-	#print(in_explosion,' ',explode)
+	##print(in_explosion,' ',explode)
 	
 	var areas =  $Area2D.get_overlapping_areas()
 	for area in areas:

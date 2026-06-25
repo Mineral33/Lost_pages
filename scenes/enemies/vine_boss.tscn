@@ -1,0 +1,123 @@
+[gd_scene load_steps=9 format=3 uid="uid://nih1sl65tqf8"]
+
+[ext_resource type="Texture2D" uid="uid://p8175q1p8m8r" path="res://assets/enemies/vine_boss/liana_boss_head.png" id="1_dwph0"]
+[ext_resource type="Script" uid="uid://x7cvhmyw72u5" path="res://scripts/vine_boss.gd" id="1_sjwq7"]
+[ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="2_iu1qk"]
+[ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="3_sjwq7"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="4_vkgyu"]
+[ext_resource type="Texture2D" uid="uid://8xpxsh2ceapg" path="res://assets/enemies/vine_boss/liana_boss_head_around.png" id="6_iu1qk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vkgyu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iu1qk"]
+radius = 13.6276
+
+[node name="vine_boss" type="CharacterBody2D" groups=["Enemies"]]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_sjwq7")
+
+[node name="head" type="Sprite2D" parent="."]
+texture = ExtResource("1_dwph0")
+
+[node name="Healthbar" parent="." instance=ExtResource("2_iu1qk")]
+offset_left = -13.0
+offset_top = -108.0
+offset_right = -13.0
+offset_bottom = -108.0
+scale = Vector2(3, 1)
+
+[node name="enemy_health_component" parent="." instance=ExtResource("3_sjwq7")]
+
+[node name="damage_number_display" parent="." instance=ExtResource("4_vkgyu")]
+offset_left = -98.0
+offset_top = -57.0
+offset_right = 97.0
+offset_bottom = 56.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-0.975758, -2.61804)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_iu1qk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vkgyu")
+
+[node name="hurtbox" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hurtbox"]
+visible = false
+polygon = PackedVector2Array(-57.9364, -69.023, -91.8642, -25.7651, -105.011, 27.2471, -89.3196, 65.4159, -35.4593, 69.2328, 10.3433, 70.5051, 59.1145, 70.081, 92.6182, 54.3894, 98.5556, 3.07358, 82.864, -46.5458, 33.6686, -75.3845)
+
+[node name="attack_area" type="Area2D" parent="."]
+collision_mask = 17
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="attack_area"]
+visible = false
+polygon = PackedVector2Array(-93.1965, 30.7309, -46.5458, -51.3898, 4.34589, -60.2573, 71.4304, -13.9921, 92.6353, 32.2731, 77.5991, 55.0201, 32.4905, 31.502, -19.9434, 14.5381, -54.2567, 37.2851, -84.7146, 52.7068)
+
+[node name="Marker1" type="Marker2D" parent="."]
+position = Vector2(-40.4958, -57.0248)
+
+[node name="Marker2" type="Marker2D" parent="."]
+position = Vector2(-82.6446, -9.91739)
+
+[node name="Marker3" type="Marker2D" parent="."]
+position = Vector2(-11.5702, 41.3223)
+
+[node name="Marker4" type="Marker2D" parent="."]
+position = Vector2(43.8017, -47.1075)
+
+[node name="Marker5" type="Marker2D" parent="."]
+position = Vector2(2.8209, -62.6305)
+
+[node name="Marker6" type="Marker2D" parent="."]
+position = Vector2(87.2662, 25.5403)
+
+[node name="Marker7" type="Marker2D" parent="."]
+position = Vector2(-77.8989, 37.9587)
+
+[node name="proj_marker" type="Marker2D" parent="."]
+position = Vector2(-12.1, -6.04999)
+
+[node name="ProjectileTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="instakill_mouth" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="instakill_mouth"]
+position = Vector2(-1.15665, -2.69881)
+shape = SubResource("CircleShape2D_iu1qk")
+
+[node name="VineTimer1" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="VineTimer2" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="VineTimer3" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="VineTimer4" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="SpeedUpTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Attachment_vine_cleansing_timer" type="Timer" parent="."]
+wait_time = 30.0
+
+[connection signal="area_entered" from="attack_area" to="." method="_on_attack_area_area_entered"]
+[connection signal="area_exited" from="attack_area" to="." method="_on_attack_area_area_exited"]
+[connection signal="timeout" from="ProjectileTimer" to="." method="_on_projectile_timer_timeout"]
+[connection signal="area_entered" from="instakill_mouth" to="." method="_on_instakill_mouth_area_entered"]
+[connection signal="timeout" from="SpeedUpTimer" to="." method="_on_speed_up_timer_timeout"]
+[connection signal="timeout" from="Attachment_vine_cleansing_timer" to="." method="_on_attachment_vine_cleansing_timer_timeout"]

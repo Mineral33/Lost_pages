@@ -14,8 +14,8 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	#print(self)
-	#print(!opened_bool)
+	##print(self)
+	##print(!opened_bool)
 	if (Input.is_action_just_pressed("go_to")  or Input.is_action_pressed("go_to")) and is_here and !opened_bool:
 		get_parent().get_child(0).riddle_init(key, self, text)
 		

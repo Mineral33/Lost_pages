@@ -31,7 +31,7 @@ func _ready() -> void:
 		match_enemy(type)
 				
 func match_enemy(type):
-	print('spawning: ',type)
+	#print('spawning: ',type)
 	match type:
 			'tolper':
 				inst = tolper.instantiate()
@@ -50,4 +50,4 @@ func match_enemy(type):
 func _process(delta: float) -> void:
 	if inst:
 		pass
-		#print(inst.global_position)
+		##print(inst.global_position)

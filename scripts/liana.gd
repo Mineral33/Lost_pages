@@ -45,8 +45,8 @@ func _physics_process(delta: float) -> void:
 				$Sprite2D.scale.x = abs($Sprite2D.scale.x)
 				$HitBox.scale.x = abs($HitBox.scale.x)
 				facing_right = true
-				$up_autostep_raycat.scale.x = abs($up_autostep_raycat.scale.x)
-				$"down_autostep raycast".scale.x = abs($"down_autostep raycast".scale.x)
+			#	$up_autostep_raycat.scale.x = abs($up_autostep_raycat.scale.x)
+				#$"down_autostep raycast".scale.x = abs($"down_autostep raycast".scale.x)
 				#$hurtbox.scale.x = abs($hurtbox.scale.x)
 			
 			elif dir <-10:
@@ -54,8 +54,8 @@ func _physics_process(delta: float) -> void:
 				$Sprite2D.scale.x = -abs($Sprite2D.scale.x)
 				$HitBox.scale.x = -abs($HitBox.scale.x)
 				facing_right = false
-				$up_autostep_raycat.scale.x = -abs($up_autostep_raycat.scale.x)
-				$"down_autostep raycast".scale.x = -abs($"down_autostep raycast".scale.x)
+			#	$up_autostep_raycat.scale.x = -abs($up_autostep_raycat.scale.x)
+			#	$"down_autostep raycast".scale.x = -abs($"down_autostep raycast".scale.x)
 			else:
 				dir= 0
 			velocity.x = dir * SPEED
@@ -70,15 +70,15 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 			$AnimationPlayer.play("idle")
 
 func attak_reset():
-	#print(player)
+	##print(player)
 	if player is Player:
 		$AnimationPlayer.play("attak")
 
 		
 func atack_action():
-	#print('attack action active')
+	##print('attack action active')
 	if player is Player && !dead && can_attak: 
-		#print('attack action suc')
+		##print('attack action suc')
 		player.take_damage(10,'m',' zamotaný do lian',5)
 	
 func die():
@@ -89,7 +89,7 @@ func die():
 	#GameManager.score += 5
 	GameManager.drop_earth[1] += loot
 	#get_parent().npc_died(self)
-	#print('info to level '+ str(get_parent().name))# tell game manager that this died
+	##print('info to level '+ str(get_parent().name))# tell game manager that this died
 	$AnimationPlayer.play("die")
 	queue_free()
 	#var coin_instance = coin.instantiate()

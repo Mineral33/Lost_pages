@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://gb61oydqd27p"]
+[gd_scene load_steps=52 format=3 uid="uid://gb61oydqd27p"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_on1hv"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_2j6iw"]
@@ -47,6 +47,8 @@
 [ext_resource type="Texture2D" uid="uid://ciccohemu5646" path="res://assets/pozadie/jaskyna.png" id="44_kkqdh"]
 [ext_resource type="PackedScene" uid="uid://whb5k7e66wwu" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň9.tscn" id="45_p18oq"]
 [ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="46_b2prr"]
+[ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="48_e6jch"]
+[ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="49_paqst"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ossu"]
 texture = ExtResource("5_53jcd")
@@ -141,7 +143,7 @@ position = Vector2(3722, -827)
 
 [node name="PozadieLes" type="Sprite2D" parent="."]
 z_index = -370
-position = Vector2(-256, -783)
+position = Vector2(-265, -791)
 scale = Vector2(5.4, 5.4)
 texture = ExtResource("4_on1hv")
 
@@ -529,6 +531,11 @@ rotation = 1.57079
 position = Vector2(-909, 174)
 
 [node name="kameň21" parent="." instance=ExtResource("39_jyorl")]
+z_index = -21
+position = Vector2(-827, 51)
+rotation = -1.83259
+
+[node name="kameň52" parent="." instance=ExtResource("39_jyorl")]
 position = Vector2(-2316, 587)
 rotation = 1.57079
 
@@ -824,6 +831,32 @@ position = Vector2(2014, -151)
 
 [node name="kameň50" parent="." instance=ExtResource("30_6iobe")]
 position = Vector2(3376, -686)
+
+[node name="kameň51" parent="." instance=ExtResource("45_p18oq")]
+z_index = -21
+position = Vector2(-3251, 223)
+rotation = -0.523598
+
+[node name="Barrel" parent="." instance=ExtResource("48_e6jch")]
+position = Vector2(-1880, -423)
+
+[node name="Barrel2" parent="." instance=ExtResource("48_e6jch")]
+position = Vector2(-1274, -261)
+
+[node name="fly" parent="." instance=ExtResource("49_paqst")]
+position = Vector2(-1571, -396)
+
+[node name="fly2" parent="." instance=ExtResource("49_paqst")]
+position = Vector2(-430, -308)
+
+[node name="fly3" parent="." instance=ExtResource("49_paqst")]
+position = Vector2(1407, -1164)
+
+[node name="fly4" parent="." instance=ExtResource("49_paqst")]
+position = Vector2(3170, -941)
+
+[node name="fly5" parent="." instance=ExtResource("49_paqst")]
+position = Vector2(-3786, 262)
 
 [connection signal="area_entered" from="cave_detector" to="cave_detector" method="_on_area_entered"]
 [connection signal="area_exited" from="cave_detector" to="cave_detector" method="_on_area_exited"]

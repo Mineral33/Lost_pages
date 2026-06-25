@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://di5ya6xc1ym0f"]
+
+[ext_resource type="Texture2D" uid="uid://bqtjpskgac3vk" path="res://assets/pozadie/stena_lv.png" id="1_wke7x"]
+
+[node name="lv_obst" type="StaticBody2D" groups=["Wall"]]
+collision_layer = 20
+collision_mask = 20
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-168.326, -3.87967, -207.802, 9.75693, -205.322, 33.3151, -173.272, 46.175, -1.64832, 49.5858, 27.9843, 34.9288, 27.7156, 8.1507, 0.34201, -3.41559)
+one_way_collision = true
+one_way_collision_margin = 8.0
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture_repeat = 3
+position = Vector2(1.86603, 70.9091)
+texture = ExtResource("1_wke7x")
+polygon = PackedVector2Array(-0.213348, -74.479, 25.2325, -62.1801, 26.4369, -35.3431, -4.15161, -21.0047, -173.345, -24.5096, -207.438, -37.2549, -209.35, -62.7453, -170.701, -74.9031)

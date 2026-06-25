@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://c3udfg10i87u"]
+[gd_scene load_steps=47 format=3 uid="uid://c3udfg10i87u"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_28bq3"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_6oyub"]
@@ -34,8 +34,10 @@
 [ext_resource type="PackedScene" uid="uid://d3wlmuwyf2hy6" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň.tscn" id="33_dh5sf"]
 [ext_resource type="PackedScene" uid="uid://du3cooawdjahx" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň3.tscn" id="34_7uion"]
 [ext_resource type="PackedScene" uid="uid://cgypk0ao6bu88" path="res://scenes/ingame_elements/one_time_collectable/truhlica.tscn" id="35_tttn6"]
+[ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="36_aimpn"]
 [ext_resource type="Texture2D" uid="uid://ciccohemu5646" path="res://assets/pozadie/jaskyna.png" id="36_o61or"]
 [ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="37_0x070"]
+[ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="37_nt6gr"]
 [ext_resource type="Script" uid="uid://cxx8uauqaqsh5" path="res://scripts/cave_detection.gd" id="38_b67o4"]
 [ext_resource type="PackedScene" uid="uid://bmwadf6ray34c" path="res://scenes/ingame_elements/decoration/torch.tscn" id="39_wp7di"]
 [ext_resource type="PackedScene" uid="uid://bujkufxxdick4" path="res://scenes/ingame_elements/decoration/poleno.tscn" id="40_aimpn"]
@@ -769,6 +771,24 @@ texture_repeat = 2
 position = Vector2(-4167, -3146)
 texture = ExtResource("36_o61or")
 polygon = PackedVector2Array(2375, 3085, 3320, 2870, 4087, 2872, 4212, 3165, 4370, 3194, 4702, 3132, 4689, 3495, 4835, 3724, 3688, 4270, 2836, 4571, 1614, 4576, 390, 3861, 70, 3119, 378, 2748, 788, 2831, 1229, 3041, 1792, 2986)
+
+[node name="Barrel" parent="kameň24" instance=ExtResource("36_aimpn")]
+position = Vector2(-3628, -485)
+
+[node name="Barrel2" parent="kameň24" instance=ExtResource("36_aimpn")]
+position = Vector2(-3683, -482)
+
+[node name="fly" parent="kameň24" instance=ExtResource("37_nt6gr")]
+position = Vector2(-3493, -642)
+
+[node name="fly2" parent="kameň24" instance=ExtResource("37_nt6gr")]
+position = Vector2(-2741, -703)
+
+[node name="fly3" parent="kameň24" instance=ExtResource("37_nt6gr")]
+position = Vector2(-2031, -536)
+
+[node name="fly4" parent="kameň24" instance=ExtResource("37_nt6gr")]
+position = Vector2(124, -270)
 
 [node name="Polygon2D10" type="Polygon2D" parent="."]
 z_index = -1

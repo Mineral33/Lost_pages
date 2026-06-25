@@ -71,7 +71,7 @@ func _physics_process(delta: float) -> void:
 				elif !facing_right:
 					velocity.x = -50
 				
-				#print('mid slow')
+				##print('mid slow')
 			if dir > 10:
 				dir = 1
 				scale.x = abs(scale.x)
@@ -100,20 +100,20 @@ func _physics_process(delta: float) -> void:
 				
 				
 			if slow == 1:
-				#print(SPEED)
+				##print(SPEED)
 				velocity.x += dir * SPEED/40
-				#print('not slowed') 
+				##print('not slowed') 
 			if slow != 1:
 				if facing_right:
 					velocity.x = slow 
 				elif !facing_right:
 					velocity.x = -slow 
-				#print('slowed')
+				##print('slowed')
 		
 		else:
 			if !$ground_detection_raycast.is_colliding():
 				pass
-				#print('activated')
+				##print('activated')
 
 			
 	if stop:
@@ -143,7 +143,7 @@ func die():
 	GameManager.drop_earth[0] += loot
 	
 	#get_parent().npc_died(self)
-	#print('info to level '+ str(get_parent().name))# tell game manager that this died
+	##print('info to level '+ str(get_parent().name))# tell game manager that this died
 	queue_free()
 	#var coin_instance = coin.instantiate()
 	#get_parent().add_child(coin_instance)
@@ -158,4 +158,4 @@ func _on_hit_box_area_exited(area: Area2D) -> void:
 func _on_player_follow_area_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		stop = 1
-		#print("stop")
+		##print("stop")

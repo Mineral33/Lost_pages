@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmh7isof5f2h4"]
+[gd_scene load_steps=15 format=3 uid="uid://bmh7isof5f2h4"]
 
 [ext_resource type="Script" uid="uid://bhw543cj7mru" path="res://scripts/tutorial.gd" id="1_o67v8"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="1_xg8qw"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://q8fmv57ixbwn" path="res://assets/decoration/hospital/postel_2.png" id="8_wk6xj"]
 [ext_resource type="Texture2D" uid="uid://crg8wuyaxen78" path="res://assets/decoration/hospital/postel_3.png" id="9_kjruk"]
 [ext_resource type="PackedScene" uid="uid://bhavhpyhqs0e5" path="res://scenes/postavy/doktor.tscn" id="10_x5ai3"]
+[ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="11_kjruk"]
+[ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="12_aqpl1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uhyyf"]
 texture = ExtResource("4_4ysux")
@@ -125,3 +127,12 @@ texture = ExtResource("8_wk6xj")
 
 [node name="doctor" parent="." instance=ExtResource("10_x5ai3")]
 position = Vector2(-1281, 119)
+
+[node name="Barrel" parent="." instance=ExtResource("11_kjruk")]
+position = Vector2(-3393, 133)
+
+[node name="Barrel2" parent="." instance=ExtResource("11_kjruk")]
+position = Vector2(-3453, 134)
+
+[node name="fly" parent="." instance=ExtResource("12_aqpl1")]
+position = Vector2(-3571, 111)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://x70wc075imvq"]
+[gd_scene load_steps=56 format=3 uid="uid://x70wc075imvq"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_gsy2e"]
 [ext_resource type="Texture2D" uid="uid://5xvyv88pknd4" path="res://assets/UI/minimapy/les_18.png" id="2_8beia"]
@@ -44,7 +44,9 @@
 [ext_resource type="PackedScene" uid="uid://c3l5ided4vydc" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň4.tscn" id="41_r3tvx"]
 [ext_resource type="Script" uid="uid://cxx8uauqaqsh5" path="res://scripts/cave_detection.gd" id="42_l7e4a"]
 [ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="43_xpxl8"]
+[ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="45_emcfp"]
 [ext_resource type="PackedScene" uid="uid://bmwadf6ray34c" path="res://scenes/ingame_elements/decoration/torch.tscn" id="45_t62iw"]
+[ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="46_adv6k"]
 [ext_resource type="PackedScene" uid="uid://df6fhcghbeyyj" path="res://scenes/ingame_elements/spawners/rock_spawn.tscn" id="46_fjao8"]
 [ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/spawners/plant_spawner.tscn" id="47_8qpf8"]
 [ext_resource type="PackedScene" uid="uid://c6svn8k5jcqnx" path="res://scenes/enemies/ice_shotgun_mage.tscn" id="48_emcfp"]
@@ -511,11 +513,6 @@ position = Vector2(-4561, -40.0001)
 rotation = -3.14159
 scale = Vector2(1, -1)
 
-[node name="kameň36" parent="." instance=ExtResource("41_r3tvx")]
-position = Vector2(-4547, -226)
-rotation = -3.14159
-scale = Vector2(1, -1)
-
 [node name="ground9" parent="." instance=ExtResource("37_kdr1y")]
 position = Vector2(-2128, -221)
 scale = Vector2(-1, 1)
@@ -549,7 +546,7 @@ polygon = PackedVector2Array(1012, -710, 1492, -324, 1923, 21, 2683, 532, 2769, 
 texture_repeat = 2
 position = Vector2(1295, -345)
 texture = ExtResource("43_xpxl8")
-polygon = PackedVector2Array(1556, 1282, 1523, 1124, 1657, 1060, 2903, 1044, 3830, 1050, 3770, 1214, 2402, 1179)
+polygon = PackedVector2Array(1556, 1282, 1523, 1124, 1657, 1060, 2903, 1044, 3830, 1050, 3770, 1214, 2855.44, 1190.6, 2402, 1179)
 
 [node name="Polygon2D9" type="Polygon2D" parent="cave_detector/CollisionPolygon2D/Polygon2D9"]
 texture_repeat = 2
@@ -563,6 +560,30 @@ texture_repeat = 2
 position = Vector2(871, 1243)
 texture = ExtResource("17_rc2bd")
 polygon = PackedVector2Array(1439, 2119, 1244, 1188, 1273, 557, 1229, 179, 1317, 142, 1533, 61, 2136, -38, 3039, -59, 3530, 147, 3805, 442, 4488, 988, 4888, 1148, 5097, 1720, 4229, 1776, 3880.3, 1831.66, 3441.29, 2526.75, 3270, 2921, 1938, 2854, 1965, 2448)
+
+[node name="Barrel" parent="cave_detector/CollisionPolygon2D/Polygon2D9/Polygon2D9" instance=ExtResource("45_emcfp")]
+position = Vector2(2996, 1081)
+
+[node name="Barrel2" parent="cave_detector/CollisionPolygon2D/Polygon2D9/Polygon2D9" instance=ExtResource("45_emcfp")]
+position = Vector2(3056, 1082)
+
+[node name="Barrel3" parent="cave_detector/CollisionPolygon2D/Polygon2D9/Polygon2D9" instance=ExtResource("45_emcfp")]
+position = Vector2(3108, 1079)
+
+[node name="fly" parent="cave_detector/CollisionPolygon2D/Polygon2D9/Polygon2D9" instance=ExtResource("46_adv6k")]
+position = Vector2(2670, 920)
+
+[node name="fly2" parent="cave_detector/CollisionPolygon2D/Polygon2D9/Polygon2D9" instance=ExtResource("46_adv6k")]
+position = Vector2(3120, 1014)
+
+[node name="fly3" parent="cave_detector/CollisionPolygon2D/Polygon2D9/Polygon2D9" instance=ExtResource("46_adv6k")]
+position = Vector2(4792, 1512)
+
+[node name="fly4" parent="cave_detector/CollisionPolygon2D/Polygon2D9/Polygon2D9" instance=ExtResource("46_adv6k")]
+position = Vector2(6050, 2483)
+
+[node name="fly5" parent="cave_detector/CollisionPolygon2D/Polygon2D9/Polygon2D9" instance=ExtResource("46_adv6k")]
+position = Vector2(7300, 2496)
 
 [node name="kameň39" parent="." instance=ExtResource("32_emcfp")]
 position = Vector2(-2499, 1438)

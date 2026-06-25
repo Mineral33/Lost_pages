@@ -20,17 +20,13 @@ position = Vector2(67.1046, -170.654)
 polygon = PackedVector2Array(-116.741, 297.109, -116.741, 195.29, -112.826, 192.867, -12.7808, 192.732, -9.41559, 196.322, -13.1046, 296.199)
 
 [node name="trava" parent="." instance=ExtResource("2_jpdwo")]
-visible = false
 position = Vector2(16.3902, -1.0417)
 
 [node name="trava4" parent="." instance=ExtResource("2_jpdwo")]
-visible = false
 position = Vector2(44.1494, -1.42724)
 
 [node name="trava2" parent="." instance=ExtResource("2_jpdwo")]
-visible = false
 position = Vector2(-6.95142, 0.651989)
 
 [node name="trava3" parent="." instance=ExtResource("2_jpdwo")]
-visible = false
 position = Vector2(-31.9838, 0.663006)

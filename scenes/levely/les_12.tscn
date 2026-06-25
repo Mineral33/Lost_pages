@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cg85p2cvapptu"]
+[gd_scene load_steps=57 format=3 uid="uid://cg85p2cvapptu"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_sx10a"]
 [ext_resource type="Texture2D" uid="uid://vpttqyjgo5p0" path="res://assets/UI/minimapy/les_12.png" id="2_1vv4x"]
@@ -52,6 +52,8 @@
 [ext_resource type="PackedScene" uid="uid://b8q1g5wte8n1g" path="res://scenes/enemies/wind_sniper_mage.tscn" id="50_o2lxq"]
 [ext_resource type="PackedScene" uid="uid://dhca608dgy1ex" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň7.tscn" id="51_gyo04"]
 [ext_resource type="PackedScene" uid="uid://d3wlmuwyf2hy6" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň.tscn" id="52_to6yr"]
+[ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="53_o2lxq"]
+[ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="54_gyo04"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_abnkh")
@@ -628,6 +630,48 @@ position = Vector2(-1112.59, 81.6612)
 
 [node name="kameň14" parent="." instance=ExtResource("52_to6yr")]
 position = Vector2(1123.27, 95.2728)
+
+[node name="Barrel" parent="." instance=ExtResource("53_o2lxq")]
+position = Vector2(-600.748, 252.639)
+
+[node name="Barrel2" parent="." instance=ExtResource("53_o2lxq")]
+position = Vector2(-398.949, 313.489)
+
+[node name="Barrel3" parent="." instance=ExtResource("53_o2lxq")]
+position = Vector2(-57.4421, 179.991)
+
+[node name="Barrel4" parent="." instance=ExtResource("53_o2lxq")]
+position = Vector2(145.599, 136.526)
+
+[node name="Barrel5" parent="." instance=ExtResource("53_o2lxq")]
+position = Vector2(481.517, 315.352)
+
+[node name="Barrel6" parent="." instance=ExtResource("53_o2lxq")]
+position = Vector2(701.324, 292.998)
+
+[node name="Barrel7" parent="." instance=ExtResource("53_o2lxq")]
+position = Vector2(-819.976, 208.298)
+
+[node name="fly" parent="." instance=ExtResource("54_gyo04")]
+position = Vector2(-963.136, -222.063)
+
+[node name="fly2" parent="." instance=ExtResource("54_gyo04")]
+position = Vector2(-1326.26, 221.231)
+
+[node name="fly3" parent="." instance=ExtResource("54_gyo04")]
+position = Vector2(-229.814, -7.48999)
+
+[node name="fly4" parent="." instance=ExtResource("54_gyo04")]
+position = Vector2(364.389, 70.3224)
+
+[node name="fly5" parent="." instance=ExtResource("54_gyo04")]
+position = Vector2(413.906, 91.5439)
+
+[node name="fly6" parent="." instance=ExtResource("54_gyo04")]
+position = Vector2(1067.06, 82.1122)
+
+[node name="fly7" parent="." instance=ExtResource("54_gyo04")]
+position = Vector2(350.241, -556.892)
 
 [connection signal="area_entered" from="cave_detector" to="cave_detector" method="_on_area_entered"]
 [connection signal="area_exited" from="cave_detector" to="cave_detector" method="_on_area_exited"]

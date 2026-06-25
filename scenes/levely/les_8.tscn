@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://1v3luxwapoo4"]
+[gd_scene load_steps=56 format=3 uid="uid://1v3luxwapoo4"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_hedf2"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="1_msb5c"]
@@ -51,6 +51,8 @@
 [ext_resource type="PackedScene" uid="uid://cb4tksyco6wgd" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň12.tscn" id="49_6lnsv"]
 [ext_resource type="PackedScene" uid="uid://bmwadf6ray34c" path="res://scenes/ingame_elements/decoration/torch.tscn" id="50_80ok1"]
 [ext_resource type="Script" uid="uid://cxx8uauqaqsh5" path="res://scripts/cave_detection.gd" id="51_6lnsv"]
+[ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="52_66uyx"]
+[ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="53_kwl1j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_g7d7y")
@@ -1217,6 +1219,42 @@ script = ExtResource("51_6lnsv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="cave_detector"]
 polygon = PackedVector2Array(970, -548, 1498, -524, 1874, -6, 1515, 1427, 746, 2203, -639, 2186, -791, 1334, -1322, 1330, -1505, 771, -880, 395, -459, 108, -218, -255, 152, -579, 790, -382)
+
+[node name="Barrel" parent="." instance=ExtResource("52_66uyx")]
+position = Vector2(-2217, 2157)
+
+[node name="Barrel2" parent="." instance=ExtResource("52_66uyx")]
+position = Vector2(-2126, 2154)
+
+[node name="Barrel3" parent="." instance=ExtResource("52_66uyx")]
+position = Vector2(-2073, 2154)
+
+[node name="Barrel4" parent="." instance=ExtResource("52_66uyx")]
+position = Vector2(-1982, 2154)
+
+[node name="Barrel5" parent="." instance=ExtResource("52_66uyx")]
+position = Vector2(-1931, 2156)
+
+[node name="Barrel6" parent="." instance=ExtResource("52_66uyx")]
+position = Vector2(-1876, 2158)
+
+[node name="Barrel7" parent="." instance=ExtResource("52_66uyx")]
+position = Vector2(-1775, 2156)
+
+[node name="fly" parent="." instance=ExtResource("53_kwl1j")]
+position = Vector2(-1468, 211)
+
+[node name="fly2" parent="." instance=ExtResource("53_kwl1j")]
+position = Vector2(236, -829)
+
+[node name="fly3" parent="." instance=ExtResource("53_kwl1j")]
+position = Vector2(2178, -349)
+
+[node name="fly4" parent="." instance=ExtResource("53_kwl1j")]
+position = Vector2(-2998, 1756)
+
+[node name="fly5" parent="." instance=ExtResource("53_kwl1j")]
+position = Vector2(-1962, 2061)
 
 [connection signal="area_entered" from="cave_detector" to="cave_detector" method="_on_area_entered"]
 [connection signal="area_exited" from="cave_detector" to="cave_detector" method="_on_area_exited"]

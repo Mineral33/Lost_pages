@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cwhnhdfdvsd7i"]
+[gd_scene load_steps=29 format=3 uid="uid://cwhnhdfdvsd7i"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_6gwul"]
 [ext_resource type="Texture2D" uid="uid://cxefc10q6fa5l" path="res://assets/UI/minimapy/les_14.png" id="2_wlt0d"]
@@ -22,6 +22,10 @@
 [ext_resource type="PackedScene" uid="uid://ds06rao6y36xo" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň11.tscn" id="20_6a6ce"]
 [ext_resource type="PackedScene" uid="uid://7o2qhrltrbis" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň14.tscn" id="21_liyrt"]
 [ext_resource type="PackedScene" uid="uid://uq0tr4piqmsx" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň8.tscn" id="22_yix0y"]
+[ext_resource type="PackedScene" uid="uid://5ls8070prhca" path="res://scenes/ingame_elements/one_time_collectable/wisdom.tscn" id="23_fxuh1"]
+[ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="24_lhay7"]
+[ext_resource type="Texture2D" uid="uid://ciccohemu5646" path="res://assets/pozadie/jaskyna.png" id="25_5ymwc"]
+[ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="26_5ymwc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("6_twyky")
@@ -301,3 +305,31 @@ position = Vector2(498, 1836)
 [node name="kameň14" parent="." instance=ExtResource("19_lnoad")]
 position = Vector2(519, 1640)
 rotation = 1.57079
+
+[node name="wisdom" parent="." instance=ExtResource("23_fxuh1")]
+position = Vector2(-583, 2605)
+
+[node name="Polygon2D9" type="Polygon2D" parent="."]
+texture_repeat = 2
+position = Vector2(-5568, 657)
+texture = ExtResource("24_lhay7")
+polygon = PackedVector2Array(1688, 1147, 1637, 948, 2022, 951, 2164, 1025, 2513.05, 1033.97, 2681, 871, 3053, 874, 3187, 1016, 3565, 1031, 3840, 1148, 3766, 1315, 3334, 1557, 2855.44, 1190.6, 2402, 1179)
+
+[node name="Polygon2D" type="Polygon2D" parent="Polygon2D9"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(3353, -1583)
+texture = ExtResource("25_5ymwc")
+polygon = PackedVector2Array(2695, 2682, 3320, 2870, 1945, 3816, 390, 3861, 70, 3119, 378, 2748, 747, 2736, 1389, 2713, 1991, 2715)
+
+[node name="fly" parent="." instance=ExtResource("26_5ymwc")]
+position = Vector2(-3455, 1518)
+
+[node name="fly2" parent="." instance=ExtResource("26_5ymwc")]
+position = Vector2(-2800, 1355)
+
+[node name="fly3" parent="." instance=ExtResource("26_5ymwc")]
+position = Vector2(-2294, 1535)
+
+[node name="fly4" parent="." instance=ExtResource("26_5ymwc")]
+position = Vector2(-194, 1632)

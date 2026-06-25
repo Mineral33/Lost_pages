@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://blb3mpb81uiri"]
+[gd_scene load_steps=38 format=3 uid="uid://blb3mpb81uiri"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_qcc6k"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_dj8oo"]
@@ -31,6 +31,10 @@
 [ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="29_fjh07"]
 [ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/spawners/plant_spawner.tscn" id="30_jafld"]
 [ext_resource type="PackedScene" uid="uid://dhca608dgy1ex" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň7.tscn" id="31_otwy8"]
+[ext_resource type="PackedScene" uid="uid://donb1fwbuxkml" path="res://scenes/postavy/caje.tscn" id="32_jw5to"]
+[ext_resource type="PackedScene" uid="uid://ctlb1qynwdplm" path="res://scenes/postavy/vykup_drop.tscn" id="33_et5te"]
+[ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="34_s7xj0"]
+[ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="35_jxuky"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xb47h"]
 texture = ExtResource("4_ayido")
@@ -711,3 +715,33 @@ polygon = PackedVector2Array(443.618, 932.088, 805.344, 915.711, 986.167, 1024.7
 
 [node name="kameň" parent="polygons" instance=ExtResource("31_otwy8")]
 position = Vector2(3944.36, -828.205)
+
+[node name="caj" parent="." instance=ExtResource("32_jw5to")]
+position = Vector2(5396.09, 160.584)
+
+[node name="vykup_drop" parent="." instance=ExtResource("33_et5te")]
+position = Vector2(5725.37, 111.489)
+
+[node name="Barrel" parent="." instance=ExtResource("34_s7xj0")]
+position = Vector2(1166.01, -1780.13)
+
+[node name="Barrel2" parent="." instance=ExtResource("34_s7xj0")]
+position = Vector2(1578.8, -796.9)
+
+[node name="Barrel3" parent="." instance=ExtResource("34_s7xj0")]
+position = Vector2(195, 81.9998)
+
+[node name="fly" parent="." instance=ExtResource("35_jxuky")]
+position = Vector2(-218.6, -32.4002)
+
+[node name="fly2" parent="." instance=ExtResource("35_jxuky")]
+position = Vector2(2093.21, -1261.7)
+
+[node name="fly3" parent="." instance=ExtResource("35_jxuky")]
+position = Vector2(1273.68, -2001.72)
+
+[node name="fly4" parent="." instance=ExtResource("35_jxuky")]
+position = Vector2(4209.32, -637.876)
+
+[node name="fly5" parent="." instance=ExtResource("35_jxuky")]
+position = Vector2(5591.52, 89.9171)

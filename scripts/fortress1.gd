@@ -37,10 +37,10 @@ func _ready() -> void:
 	#area_ref = $attack_area
 #	get_node("Healthbar").update_healthbar(health,max_health,shield,max_shield,true)
 func _process(delta: float) -> void:
-	#print(fall_attack,' ',jump_bool)
-	#print(jump_timer - attack_timer)
-	#print(player)
-	#print(player , active , !fall_attack)
+	##print(fall_attack,' ',jump_bool)
+	##print(jump_timer - attack_timer)
+	##print(player)
+	##print(player , active , !fall_attack)
 	pass
 func get_up():
 	if is_on_floor():
@@ -48,7 +48,7 @@ func get_up():
 		await get_tree().create_timer(1).timeout
 		active = 1
 		_on_attack_area_area_entered(area_ref)
-		#print('get up complete')
+		##print('get up complete')
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 
@@ -73,7 +73,7 @@ func _physics_process(delta: float) -> void:
 	if jump_bool:
 		velocity.y -= 450
 		jump_bool = false
-	#print(ref)
+	##print(ref)
 	if  ref == get_parent().get_child(1) and !is_on_floor() and  fly_follow_timer < 0.7:
 		
 		fly_follow_timer += delta
@@ -133,7 +133,7 @@ func atack_action_II():
 	var bodies  = $Hitbox_II.get_overlapping_bodies()
 	for body in bodies:
 		if body == player && !dead && can_attak:
-			print('ATTACK II')
+			#print('ATTACK II')
 			body.take_damage(randf_range(32,38),'m',' asi to neni len hrad', 5)
 			
 func attack_action_fall():
@@ -147,17 +147,18 @@ func attack_action_fall():
 	
 func die():
 	dead = true
-	GameManager.update_log_info('Walking fortress defeated + 750 gold')
+	GameManager.update_log_info('Walking fortress defeated + 750 gold, antimonite bar')
 	SPEED = 0
 	GameManager.gold += 750
+	GameManager.smelted_bars[2] += 1
 	self.queue_free()
 	
 	
 func _on_attack_area_area_entered(area: Area2D) -> void:
-#	print(area.get_parent())
+#	#print(area.get_parent())
 	if area != null:
 		if area.get_parent() is Player && !dead : 	
-			#print("-------------------------in----------------------------")
+			##print("-------------------------in----------------------------")
 			player = area.get_parent()
 			area_ref = area
 			while player and active  && !fall_attack:
@@ -173,12 +174,12 @@ func _on_attack_area_area_entered(area: Area2D) -> void:
 					attaking = false
 					
 func _on_attack_area_area_exited(area: Area2D) -> void:
-	#print('out')
+	##print('out')
 	if active && !fall_attack:
 		$AnimationPlayer.play('walk')
 		
 	if area.get_parent() is Player:
-		#print(area.get_parent(), ' ', area)
+		##print(area.get_parent(), ' ', area)
 		player = null
 		#area_ref = null
 	

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2oonvdu3shl1"]
+
+[ext_resource type="Script" uid="uid://m5hsl8v816ab" path="res://scripts/vine_projectile.gd" id="1_s15iq"]
+[ext_resource type="Texture2D" uid="uid://yqp58rvrihyo" path="res://assets/enemies/vine_boss/vine_projectile_1.png" id="2_s15iq"]
+
+[node name="vine_projectile" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_s15iq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_s15iq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0.245697, 0.245689)
+polygon = PackedVector2Array(-54.8134, -15.3723, -15.5027, -6.036, -4.93799, -19.0577, 17.9113, -16.8464, 25.2821, -30.3595, 46.4116, -28.8853, 76.386, -36.9932, 72.2092, -3.82478, 50.5884, 11.6538, 22.5795, 0.1063, -1.00691, 10.1797, -25.3304, 18.0418, -62.4299, 9.68828)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

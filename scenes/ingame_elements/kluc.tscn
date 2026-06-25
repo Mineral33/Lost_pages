@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb6y7k7hbbw1m"]
+
+[ext_resource type="Script" uid="uid://bgmae4w71gvg4" path="res://scripts/kluc.gd" id="1_04k1w"]
+[ext_resource type="Texture2D" uid="uid://bhmmjxfkh41wp" path="res://assets/interactable/breakable/kluc.png" id="2_42qx0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gem5"]
+size = Vector2(51, 35)
+
+[node name="kluc" type="Area2D"]
+script = ExtResource("1_04k1w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_3gem5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_42qx0")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

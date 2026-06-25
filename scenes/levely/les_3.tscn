@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://bf57lnuujjdtn"]
+[gd_scene load_steps=61 format=3 uid="uid://bf57lnuujjdtn"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_7005g"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="3_s1j6g"]
@@ -25,8 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://donb1fwbuxkml" path="res://scenes/postavy/caje.tscn" id="25_8acx7"]
 [ext_resource type="PackedScene" uid="uid://bnje82pu2x5ls" path="res://scenes/postavy/olej.tscn" id="26_npe6r"]
 [ext_resource type="PackedScene" uid="uid://dj7bkknklb4qo" path="res://scenes/postavy/alcohol.tscn" id="27_pjirx"]
-[ext_resource type="PackedScene" uid="uid://mpsqfrito0t1" path="res://scenes/postavy/klenotnik.tscn" id="28_3633m"]
-[ext_resource type="PackedScene" uid="uid://dlelumqquagmr" path="res://scenes/postavy/kovac.tscn" id="29_3633m"]
 [ext_resource type="PackedScene" uid="uid://dh3ry4hsrw28n" path="res://scenes/ingame_elements/spawners/enemy_spawner.tscn" id="30_0sxma"]
 [ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="30_d6evl"]
 [ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="31_0sxma"]
@@ -34,7 +32,6 @@
 [ext_resource type="PackedScene" uid="uid://j22rj2ocfh7s" path="res://scenes/enemies/bomb_mage.tscn" id="33_saefq"]
 [ext_resource type="PackedScene" uid="uid://b8q1g5wte8n1g" path="res://scenes/enemies/wind_sniper_mage.tscn" id="34_25xvh"]
 [ext_resource type="PackedScene" uid="uid://c6svn8k5jcqnx" path="res://scenes/enemies/ice_shotgun_mage.tscn" id="36_gjy5g"]
-[ext_resource type="PackedScene" uid="uid://ctlb1qynwdplm" path="res://scenes/postavy/vykup_drop.tscn" id="37_un18y"]
 [ext_resource type="PackedScene" uid="uid://d3wlmuwyf2hy6" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň.tscn" id="39_qf2pv"]
 [ext_resource type="PackedScene" uid="uid://bcody6b1gnyp1" path="res://scenes/ingame_elements/decoration/collision/ground/groun2.tscn" id="39_tj77j"]
 [ext_resource type="PackedScene" uid="uid://cgw7ak08tlvds" path="res://scenes/ingame_elements/decoration/collision/ground/ground.tscn" id="40_1ywsw"]
@@ -154,7 +151,7 @@ position = Vector2(-2432, 1114)
 
 [node name="PozadieLes" type="Sprite2D" parent="."]
 z_index = -325
-position = Vector2(382, 342)
+position = Vector2(98.0001, 84)
 scale = Vector2(5, 5)
 texture = ExtResource("4_xfm8t")
 
@@ -222,15 +219,15 @@ position = Vector2(-1932, -148)
 texture = ExtResource("14_58bdw")
 
 [node name="Strom4" type="Sprite2D" parent="."]
-position = Vector2(-1632, -146)
+position = Vector2(-1540, -208)
 texture = ExtResource("15_ilou2")
 
 [node name="Strom5" type="Sprite2D" parent="."]
-position = Vector2(-1314, -71)
+position = Vector2(-1276, -95)
 texture = ExtResource("16_k7w0u")
 
 [node name="Strom8" type="Sprite2D" parent="."]
-position = Vector2(-1099, 54)
+position = Vector2(-989, 98)
 texture = ExtResource("14_58bdw")
 
 [node name="Strom10" type="Sprite2D" parent="."]
@@ -298,29 +295,15 @@ position = Vector2(739, -422)
 position = Vector2(2157, -475)
 scale = Vector2(-1, 1)
 
-[node name="caj" parent="." instance=ExtResource("25_8acx7")]
-z_index = -21
-position = Vector2(-1972, 1159)
-scale = Vector2(0.7, 0.7)
-
 [node name="olej" parent="." instance=ExtResource("26_npe6r")]
 z_index = -1
-position = Vector2(-1616, 1153)
+position = Vector2(-1978, 1161)
 scale = Vector2(0.7, 0.7)
 
 [node name="alcohol_shop" parent="." instance=ExtResource("27_pjirx")]
 z_index = -1
-position = Vector2(-1321, 1148)
+position = Vector2(-1997, -211)
 scale = Vector2(0.7, 0.7)
-
-[node name="klenotnik" parent="." instance=ExtResource("28_3633m")]
-z_index = -1
-position = Vector2(-2694, 986)
-scale = Vector2(0.7, 0.7)
-
-[node name="kovac" parent="." instance=ExtResource("29_3633m")]
-position = Vector2(-444, 179)
-scale = Vector2(0.5, 0.5)
 
 [node name="Barrel" parent="." instance=ExtResource("30_d6evl")]
 position = Vector2(-835, 163)
@@ -533,7 +516,7 @@ position = Vector2(2358, 457)
 position = Vector2(954, -62)
 
 [node name="syry_shop" parent="." instance=ExtResource("31_wwv7j")]
-position = Vector2(-1686, -221)
+position = Vector2(-2628, 1010)
 
 [node name="Tolper" parent="." instance=ExtResource("12_n0q0v")]
 position = Vector2(-3233, 525)
@@ -546,9 +529,6 @@ position = Vector2(-3071, 571)
 
 [node name="Tolper4" parent="." instance=ExtResource("12_n0q0v")]
 position = Vector2(-2991, 613)
-
-[node name="vykup_drop" parent="." instance=ExtResource("37_un18y")]
-position = Vector2(-4342, 462)
 
 [node name="kameň" parent="." instance=ExtResource("39_qf2pv")]
 position = Vector2(-3525, 121)
@@ -1156,6 +1136,37 @@ position = Vector2(891, -43)
 
 [node name="torch14" parent="." instance=ExtResource("61_nhviw")]
 position = Vector2(1355, 87)
+
+[node name="caj" parent="." instance=ExtResource("25_8acx7")]
+position = Vector2(-1192, 1162)
+
+[node name="Barrel4" parent="." instance=ExtResource("30_d6evl")]
+position = Vector2(-1776, 1209)
+
+[node name="Barrel5" parent="." instance=ExtResource("30_d6evl")]
+position = Vector2(-1712, 1214)
+
+[node name="Barrel6" parent="." instance=ExtResource("30_d6evl")]
+position = Vector2(-1653, 1213)
+
+[node name="fly25" parent="." instance=ExtResource("31_0sxma")]
+position = Vector2(-3030, 808)
+
+[node name="fly26" parent="." instance=ExtResource("31_0sxma")]
+position = Vector2(-1099, -302)
+offset = Vector2(-3862, 2220)
+
+[node name="fly27" parent="." instance=ExtResource("31_0sxma")]
+position = Vector2(-1454, 956)
+offset = Vector2(-3152, -296)
+
+[node name="fly28" parent="." instance=ExtResource("31_0sxma")]
+position = Vector2(-1506, 1370)
+offset = Vector2(-3048, -1124)
+
+[node name="fly29" parent="." instance=ExtResource("31_0sxma")]
+position = Vector2(-1506, 1370)
+offset = Vector2(-3048, -1124)
 
 [connection signal="area_entered" from="cave_detector" to="cave_detector" method="_on_area_entered"]
 [connection signal="area_exited" from="cave_detector" to="cave_detector" method="_on_area_exited"]

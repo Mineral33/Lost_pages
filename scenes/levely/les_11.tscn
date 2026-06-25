@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://m36vw7ymv4ss"]
+[gd_scene load_steps=35 format=3 uid="uid://m36vw7ymv4ss"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_gsy2e"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_ewm1q"]
@@ -28,6 +28,8 @@
 [ext_resource type="PackedScene" uid="uid://c13ksoack3k5t" path="res://scenes/ingame_elements/decoration/collision/ground/ground8.tscn" id="26_41i30"]
 [ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/spawners/plant_spawner.tscn" id="27_62thb"]
 [ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="28_s2tn7"]
+[ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="29_2les1"]
+[ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="30_vfyqe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ky5a"]
 texture = ExtResource("5_ewm1q")
@@ -400,3 +402,12 @@ texture_repeat = 2
 position = Vector2(2660.45, -1414.45)
 texture = ExtResource("28_s2tn7")
 polygon = PackedVector2Array(3159.91, 1178.7, 3068.91, 961.7, 3293.91, 1222.7, 3497.91, 1345.7, 3716.91, 1398.7, 3809.91, 1430.7, 3938.91, 1501.7, 3974.91, 1499.7, 4101.91, 1666.7, 4197.91, 1685.7, 4434.91, 1825.7, 4663.91, 1814.7, 4816.91, 1846.7, 4597.91, 1936.7, 4152.91, 1779.7, 3906.91, 1545.7, 3656.91, 1460.7, 3662.71, 1442.94, 3285, 1284)
+
+[node name="Barrel" parent="." instance=ExtResource("29_2les1")]
+position = Vector2(-2450.82, 915.727)
+
+[node name="fly" parent="." instance=ExtResource("30_vfyqe")]
+position = Vector2(-2502.64, 821.182)
+
+[node name="fly2" parent="." instance=ExtResource("30_vfyqe")]
+position = Vector2(-379.834, 114.847)

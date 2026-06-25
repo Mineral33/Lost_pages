@@ -48,7 +48,7 @@ var staff= [preload("res://assets/player/staffs/staff4.png"),preload("res://asse
 var stamina = 100
 var fear = 0
 var wisdom = 0
-var fly_time = 1.8
+var fly_time = 1.3
 var current_fly_time = 0
 var damage_fly_time = 0
 var land_damage_rate = 20
@@ -97,6 +97,7 @@ var magic_change = false
 
 var ab_ui_active = true
 var charge_meele_passive = false
+var last_velocity = 0
 func _ready():
 	floor_stop_on_slope = true
 	motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
@@ -107,7 +108,7 @@ func _ready():
 	#invisibility_activate()
 #	GameManager.autosave()
 	
-	#print('caje ', GameManager.caje)
+	##print('caje ', GameManager.caje)
 	
 	A = GameManager.meele_variables[0]
 	F = GameManager.meele_variables[1]
@@ -123,19 +124,19 @@ func _ready():
 	#$RegenTimer.start()
 	var S = GameManager.load_save()
 	#magic_weapeon_equip(S[0],magic_upgrade[magic_element-1])
-	#print('equim=pment ',GameManager.equiped_meele, GameManager.equiped_necklace, GameManager.equiped_staff)
-	#print('active weapeom : ',S[1])
+	##print('equim=pment ',GameManager.equiped_meele, GameManager.equiped_necklace, GameManager.equiped_staff)
+	##print('active weapeom : ',S[1])
 	
-	
+	#critical_invincibility()
 	neckleace_equip(GameManager.equiped_necklace)
 	magic_weapeon_equip(GameManager.equiped_staff)
 	meele_weapeon_equip(GameManager.equiped_meele)
-	#print(S[0])
+	##print(S[0])
 	
 	health = S[3]
 	shield = S[4]
 	meele = S[5]
-#	print('me/ku: ', meele)
+#	#print('me/ku: ', meele)
 	if !meele and magic_unlocked:
 		
 		animation.play('kuzlo_idle')
@@ -150,21 +151,21 @@ func _ready():
 	update_stats()
 	#$Camera2D.limit_bottom = 1000
 	#meele_weapeon_equip(meele_weapeon)
-	#print(max_shield)
+	##print(max_shield)
 	#if	GameManager.player_position_save != null:
-	#	print(GameManager.player_position_save)
+	#	#print(GameManager.player_position_save)
 	#	position = GameManager.player_position_save
 		
-	#print("ready done: ", name)
+	##print("ready done: ", name)
 func _input(event: InputEvent) -> void:
 	#if event is InputEventMouseButton and event.pressed:
-		#print(get_viewport().gui_get_focus_owner())
-		#print(get_viewport().get_mouse_position())
+		##print(get_viewport().gui_get_focus_owner())
+		##print(get_viewport().get_mouse_position())
 		#
 		#var mouse = get_viewport().get_mouse_position()
-		#print(get_tree().root.get_child_count())
+		##print(get_tree().root.get_child_count())
 		#for child in get_tree().root.get_children():
-		#	print(child.name)
+		#	#print(child.name)
 		#if get_viewport().gui_is_dragging():
 		#	return
 		pass
@@ -174,7 +175,7 @@ func _unhandled_input(event):
 	if event.is_action_pressed("ability_2"):
 		match equiped_necklace: 
 			5:invisibility_activate()
-			6:critical_invincibility()
+			#6:critical_invincibility()
 		
 	
 	
@@ -183,27 +184,29 @@ func _unhandled_input(event):
 	
 var i = 0
 func _process(delta):
-	#print(get_stack())
-	#print( !dead ,' ',  GameManager.magic_unlocked ,' ', !meele)
-#   print(meele)
-#	print(equiped_necklace,' ',in_air_passive,' ',perfeciton)
-	#print(perfeciton)
-	#print(equiped_necklace)
-	#print($ruka/weapeon.visible)
-	#print(block_time)
-	#print(projectile_damage,' ',fire_rate,' ', pr_speed,' ',A,' ',F,' ',h,' ',sigma)
-	#print(stab_finished)
-	#print($IsFightingTimer.time_left)
-	#print($IsFightingTimer.is_stopped())
+	#print(current_fly_time,' ', damage_fly_time)
+	#print(invincibility,' ', $SecondaryAbility_Timer.time_left,' ',equiped_necklace)
+	##print(get_stack())
+	##print( !dead ,' ',  GameManager.magic_unlocked ,' ', !meele)
+#   #print(meele)
+#	#print(equiped_necklace,' ',in_air_passive,' ',perfeciton)
+	##print(perfeciton)
+	##print(equiped_necklace)
+	##print($ruka/weapeon.visible)
+	##print(block_time)
+	##print(projectile_damage,' ',fire_rate,' ', pr_speed,' ',A,' ',F,' ',h,' ',sigma)
+	##print(stab_finished)
+	##print($IsFightingTimer.time_left)
+	##print($IsFightingTimer.is_stopped())
 	# $AnimationPlayer.seek($AnimationPlayer.current_animation_position + 1.0 / fps, true)
-	#print(meele)
-	#print(water)
-	#print(meele)
+	##print(meele)
+	##print(water)
+	##print(meele)
 	#if i < 30:
 	#	i += 1
 	#if i == 30:
 	#	i = 0
-	#	print($AB_Timer.time_left)
+	#	#print($AB_Timer.time_left)
 	if ab_ui_active:
 		get_parent().get_child(0).update_ab_cd($AB_Timer.time_left, ab_cd)
 		if $AB_Timer.is_stopped():
@@ -211,7 +214,7 @@ func _process(delta):
 			
 	if position.y > 2500 and !water:
 		get_parent().get_node('UImanager').blackout(2, delta)
-		#print('above 2500')
+		##print('above 2500')
 	elif position.y < 2500 and !water:
 		get_parent().get_node('UImanager').undo_blackout(2, delta)
 	
@@ -225,7 +228,7 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("Switch") and $Timer_switch.is_stopped() :
 		meele = !meele
-	#	print('switched meele ',meele)
+	#	#print('switched meele ',meele)
 		if meele:
 			meele_weapeon_equip(meele_element)
 			$ruka/weapeon.hide()
@@ -246,11 +249,11 @@ func _process(delta):
 					animation.play('wind_meele_idle')
 		#elif !meele and GameManager.magic_unlocked:
 			#magic_upgrade = [GameManager.magic_ice_upgrade,GameManager.magic_earth_upgrade,GameManager.magic_fire_upgrade, GameManager.magic_wind_upgrade]
-			#print(magic_element)
-			#print(magic_upgrade[magic_element-1])
-			#print(magic_element,magic_upgrade[magic_element-1])
-			#print(magic_element)
-		#	print('proces mage equip')
+			##print(magic_element)
+			##print(magic_upgrade[magic_element-1])
+			##print(magic_element,magic_upgrade[magic_element-1])
+			##print(magic_element)
+		#	#print('proces mage equip')
 			#magic_weapeon_equip(magic_element)
 		#	animation.play('kuzlo_idle')
 			#$ruka/weapeon.show()
@@ -260,7 +263,7 @@ func _process(delta):
 			animation.play('kuzlo_idle')
 		$Timer_switch.start(5)
 	if meele and !dead and attak_bool:	
-		#print("meele ",meele_weapeon)
+		##print("meele ",meele_weapeon)
 		if Input.is_action_pressed('block'):
 			if not blocked:
 				match meele_element:
@@ -308,7 +311,7 @@ func _process(delta):
 				charge_time = 0.0
 			else:
 				charge_time += delta
-				#print(charge_time)
+				##print(charge_time)
 				if charge_time > 0.3:
 					start_charge_animation()
 				if charge_meele_passive and charge_time > 1.5:
@@ -325,7 +328,7 @@ func _process(delta):
 				momentum = calcutale_momentum_sd_p(charge_time)
 			else:
 				momentum = calculate_momentum(charge_time)
-		#	print(stab_finished)
+		#	#print(stab_finished)
 			if charge_time >minimum_charge:
 				attak()
 			elif stab_finished:
@@ -338,14 +341,14 @@ func _process(delta):
 		var element = GameManager.equiped_staff
 		$ruka/weapeon.show()
 		animation.play('kuzlo_idle')
-		#print(meele)
+		##print(meele)
 		if element == 0:
 			$ruka/weapeon.hide()
 		if Input.is_action_pressed('attack') and fire_rate_timer.is_stopped():
 			if fire_rate and projectile_damage and pr_speed:
 				projektil()
 				fire_rate_timer.start() 
-		#print('here')		
+		##print('here')		
 		if Input.is_action_just_pressed('block') and AB_timer_b:
 			match element:
 				1:
@@ -404,7 +407,7 @@ func vytriezvi():
 		
 func projektil():
 	invisibility_deactivate()
-#	print(GameManager.magic_ice_upgrade)
+#	#print(GameManager.magic_ice_upgrade)
 	if magic_element == 0:
 		$ruka/weapeon.hide()
 		return
@@ -416,7 +419,7 @@ func projektil():
 	project.type(magic_element)
 	project.global_position = $ruka/AttakArea/SwordTip.global_position
 	project.element = magic_element
-	#print("kuzlo")
+	##print("kuzlo")
 	project.range = 300 
 	if pierce_ab_b:
 		project.pierce = 4
@@ -454,7 +457,7 @@ var up_drunk =1
 var drunk_movement_switch = false
 var drunk_movement_switch_last = false
 func _physics_process(delta: float) -> void:
-	#print($AB_Timer.time_left)
+	##print($AB_Timer.time_left)
 	if (Input.is_action_pressed("left") or  Input.is_action_pressed("right") ) and !slow_down_charge:
 		SPEED +=25
 		if SPEED > 400:
@@ -466,7 +469,7 @@ func _physics_process(delta: float) -> void:
 		SPEED +=25
 		if SPEED > max_slow_down_SPEED:
 			SPEED = max_slow_down_SPEED
-	#	print(max_slow_down_SPEED)
+	#	#print(max_slow_down_SPEED)
 	else:
 		SPEED = 0
 	if Input.is_action_pressed("down"):
@@ -515,12 +518,12 @@ func _physics_process(delta: float) -> void:
 	
 
 	if direction and can_move:
-	#	print('moving')
+	#	#print('moving')
 		if water:
 			velocity.x = lerp(velocity.x, direction * SPEED*0.3, ACCELERATION * delta*0.3)
 		elif drunk:
 			
-			#print('movement mult ',drunk_movement, 'up', up_drunk,'low',low_drunk)
+			##print('movement mult ',drunk_movement, 'up', up_drunk,'low',low_drunk)
 			if drunk_movement > up_drunk :
 				drunk_movement -= delta
 				drunk_movement_switch = true
@@ -543,16 +546,18 @@ func _physics_process(delta: float) -> void:
 	if !is_on_floor() and !water:
 		current_fly_time += delta
 		if current_fly_time > fly_time:
-			#print('fly time ', current_fly_time, ' ', fly_time)
+			##print('fly time ', current_fly_time, ' ', fly_time)
 			damage_fly_time += delta 
 			fall_damage_bool = true
-		
+			last_velocity = velocity.y
 			
 	elif fall_damage_bool:
 		fall_damage_bool = false
 		current_fly_time = 0
-		take_damage(max_health * inverse_lerp(0,0.5,damage_fly_time),"m",'Fell')
-	#	print('fly damage il : ', inverse_lerp(0,0.5,damage_fly_time))
+		#print(  last_velocity,' -950)/5 = ' ,(last_velocity-950)/5)
+		take_damage( (last_velocity-950)/5 ,"m",'Fell')
+	#	print(max_health * last_velocity/1500 )
+	#	#print('fly damage il : ', inverse_lerp(0,0.5,damage_fly_time))
 		damage_fly_time = 0
 	else:
 			current_fly_time = 0
@@ -616,7 +621,7 @@ func start_slash():
 func attack_action():
 	invisibility_deactivate()
 	
-	#print(slash_hit)
+	##print(slash_hit)
 	$IsFightingTimer.start()
 	if in_air_passive:
 		check_in_air_passive()
@@ -626,10 +631,10 @@ func attack_action():
 		for area in overlapping_objects:
 	
 			var parent = area.get_parent()
-			#print('yes')
+			##print('yes')
 			if parent.is_in_group("Enemies") and area.name == 'hurtbox':
 				var meele_damage = round((momentum + F + food_me_F)*perfeciton *in_air_passive_multiliper)
-				#print("Hit: " + parent.name+ " dmg  "+str(momentum)+' + '+ str(F) )
+				##print("Hit: " + parent.name+ " dmg  "+str(momentum)+' + '+ str(F) )
 				if parent.get_parent().name== 'červ':
 					parent = parent.get_parent()
 				match meele_element:
@@ -649,7 +654,7 @@ func attack_action():
 							var effect = bolt.instantiate()
 							effect.global_position = parent.global_position
 							get_tree().current_scene.add_child(effect)
-						#	print('charges '+str(bolt_counter)+' *3 = '+str(bolt_counter*3))
+						#	#print('charges '+str(bolt_counter)+' *3 = '+str(bolt_counter*3))
 							bolt_counter = 0
 			
 				slash_hit = true
@@ -664,14 +669,14 @@ func stab_action():
 	if in_air_passive:
 		check_in_air_passive()
 	for area in overlapping_objects:
-	#	print(area.get_parent())	
+	#	#print(area.get_parent())	
 		var parent = area.get_parent()
 		if parent.get_parent().name== 'červ':
 					parent = parent.get_parent()
 		if parent.is_in_group("Enemies") and area.name == 'hurtbox':
-		#	print("Hit: " + parent.name+ " dmg  "+str(F)) 
+		#	#print("Hit: " + parent.name+ " dmg  "+str(F)) 
 			var meele_damage = round((F+food_me_F) *perfeciton *in_air_passive_multiliper)
-		#	print(meele_element)
+		#	#print(meele_element)
 			match meele_element:
 				0,1,2,5,6:
 					parent.find_child("enemy_health_component", true, false).take_damage_enemy(meele_damage, 'm')
@@ -698,12 +703,12 @@ func calculate_momentum(t):
 func calculate_momentum_ch_p(t):
 	return (3*t)**2  
 func calcutale_momentum_sd_p(t):
-	#print((A+food_me_A+5)* exp(-pow(t*0.2 -1.4, 2) / (2 * pow(sigma-0.5, 2))))
+	##print((A+food_me_A+5)* exp(-pow(t*0.2 -1.4, 2) / (2 * pow(sigma-0.5, 2))))
 	return (A+food_me_A+5)* exp(-pow(t*0.2 -1.4, 2) / (2 * pow(sigma-0.5, 2)))
 func update_animation():
 	#if attaking or charging:
 		#return  # Don't interrupt attack
-	#print(direction)
+	##print(direction)
 
 	if velocity.y < 0:
 		$walk.play("jump")
@@ -716,7 +721,7 @@ func update_animation():
 
 func take_damage(damage_amount: int, type,cause, enemy_momentum:=INF, bypass:=''):
 	# kazdy frame nieco dava 0 dmg
-	#print('take damege ',damage_amount,' ', type,' ', enemy_momentum)
+	##print('take damege ',damage_amount,' ', type,' ', enemy_momentum)
 	if invincibility and !bypass:
 		return
 	$IsFightingTimer.start()
@@ -727,9 +732,9 @@ func take_damage(damage_amount: int, type,cause, enemy_momentum:=INF, bypass:=''
 	if type == 'm':	
 		if blocked:
 		#	
-		#	print('take damage: self '+str(self_momentum)+' enemy '+str(enemy_momentum))
-		#	print(damage_amount)
-			# print(clamp(inverse_lerp(0,2,block_time)/2,0,0.5))
+		#	#print('take damage: self '+str(self_momentum)+' enemy '+str(enemy_momentum))
+		#	#print(damage_amount)
+			# #print(clamp(inverse_lerp(0,2,block_time)/2,0,0.5))
 			iframes()
 			health -= damage_amount - damage_amount * clamp(inverse_lerp(0,2,block_time)/2,0,0.5)
 		elif can_take_damege:
@@ -740,7 +745,7 @@ func take_damage(damage_amount: int, type,cause, enemy_momentum:=INF, bypass:=''
 			damage_amount = damage_amount*0.2
 		
 		if shield - damage_amount > 0 :
-			#print('shield damaged')
+			##print('shield damaged')
 			if !ice_ab_b:
 				
 				$shield_damaged.play('shied_damaged')
@@ -767,7 +772,9 @@ func take_damage(damage_amount: int, type,cause, enemy_momentum:=INF, bypass:=''
 			hit = true
 			
 	check_if_perfection()
-	check_for_invincibility_triger()
+	if equiped_necklace == 6 :
+		check_for_invincibility_triger()
+#	print('player: ',health,' ',max_health,' ',shield,' ',max_shield)
 	$damage_number_display.display_took_damage_player(damage_amount)
 	get_node("Healthbar").update_healthbar(health,max_health,shield,max_shield,shd)
 	get_parent().get_child(0).get_child(9).update_healthbar(health,max_health,shield,max_shield,shd)
@@ -790,9 +797,9 @@ func die(cause):
 	
 
 func magic_weapeon_equip(magic_weapeon_local: int):
-	#print($ruka.visible)
+	##print($ruka.visible)
 	var level =0
-	print(' new equip mag ', magic_weapeon_local)
+	#print(' new equip mag ', magic_weapeon_local)
 	#$ruka/weapeon.show()
 	magic_element = magic_weapeon_local
 	if magic_element == 0:
@@ -804,7 +811,7 @@ func magic_weapeon_equip(magic_weapeon_local: int):
 		animation.play('kuzlo_idle')
 		$ruka/weapeon.show()
 		
-#	print(magic_element)
+#	#print(magic_element)
 	match magic_element:
 		1:
 			$ruka/weapeon.texture = preload("res://assets/player/staffs/staff4.png")
@@ -824,7 +831,7 @@ func magic_weapeon_equip(magic_weapeon_local: int):
 	get_parent().get_node('UImanager').update_ab_icon(magic_element)
 func meele_weapeon_equip(me):
 #	
-	print(' meele equip ', me)
+	#print(' meele equip ', me)
 	meele_element = me
 	charge_meele_passive = false
 	match meele_element:
@@ -862,7 +869,7 @@ func meele_weapeon_equip(me):
 		animation.play('kuzlo_idle')
 	update_stats()
 func neckleace_equip(type):
-	#print(type)
+	##print(type)
 	equiped_necklace = type
 	if type == 0:
 		$necklace.hide()
@@ -889,6 +896,8 @@ func neckleace_equip(type):
 	elif type == 5:
 		$necklace.texture = preload("res://assets/player/necklaces/necklace - ice gold.png")
 		reset_multipliers()
+		await get_tree().create_timer(1).timeout
+		invisibility_activate()
 	elif type == 6:
 		$necklace.texture = preload("res://assets/player/necklaces/necklace - earth gold.png")
 		reset_multipliers()
@@ -928,7 +937,7 @@ func reset_multipliers():
 # maps, random gen(?), nice look, world building, stroytelling
 
 func _on_regen_timer_timeout() -> void:
-	#print('yes')
+	##print('yes')
 	if $IsFightingTimer.is_stopped() and !dead:
 		if health < max_health:
 			heal(max_health/12)
@@ -1026,7 +1035,7 @@ func out_water():
 			await get_tree().create_timer(1).timeout
 			$oxbar.hide()
 func heal(amount):
-	#print('heal')
+	##print('heal')
 	amount =  floor(amount)
 	health +=  amount
 	if health > max_health:
@@ -1036,7 +1045,7 @@ func heal(amount):
 	check_if_perfection()
 	$damage_number_display.display_took_heal(amount)
 func heal_shield(amount):
-#	print('shd heal')
+#	#print('shd heal')
 	amount =  floor(amount)
 	shield += amount
 	if shield > max_shield:
@@ -1076,7 +1085,7 @@ func kurca():
 	update_food_kuz()
 var koleno_HP = 0
 func koleno():
-#	print('koleno')
+#	#print('koleno')
 	koleno_HP = 50
 	update_food_hp()
 var mlieko_SHD = 0
@@ -1100,7 +1109,7 @@ func update_food_shd():
 	update_stats()
 	return food_shd
 func update_food_hp():
-	#print('cak hp ',caj_hp, 'vlocky ',vlocky_HP,' koleno ', koleno_HP, 'neck',health_armor_multiplyier)
+	##print('cak hp ',caj_hp, 'vlocky ',vlocky_HP,' koleno ', koleno_HP, 'neck',health_armor_multiplyier)
 	food_hp = (caj_hp+ vlocky_HP +koleno_HP)    *health_armor_multiplyier
 	update_stats()
 	return food_hp
@@ -1176,7 +1185,7 @@ func _on_ab_timer_timeout() -> void:
 	AB_timer_b = true
 	
 func reset_ab_timer():
-#	print('reseting timer ', GameManager.AB_time_left)
+#	#print('reseting timer ', GameManager.AB_time_left)
 	$AB_Timer.wait_time = GameManager.AB_time_left
 	$AB_Timer.start()
 	update_ab_ui()
@@ -1293,7 +1302,7 @@ func randomize_bindings():
 			key_index += 1
 			InputMap.action_add_event(action, event)
 		
-		#print(action, " -> ", InputMap.action_get_events(action))
+		##print(action, " -> ", InputMap.action_get_events(action))
 func restore_bindings():
 	var defaults = {
 		"left":   [KEY_A],
@@ -1317,10 +1326,10 @@ func restore_bindings():
 				var event = InputEventKey.new()
 				event.keycode = key
 				InputMap.action_add_event(action, event)
-	#	print(action, " -> ", InputMap.action_get_events(action))
+	#	#print(action, " -> ", InputMap.action_get_events(action))
 		
 #	for i in range((ab_cd+2)*50):
-		#print($AB_Timer.time_left)
+		##print($AB_Timer.time_left)
 #		get_parent().get_child(0).update_ab_cd($AB_Timer.time_left ,ab_cd)
 #		await get_tree().create_timer(1/50).timeout
 	#while $AB_Timer.time_left:
@@ -1331,31 +1340,39 @@ func charge_damage(t):
 		take_damage(round((t)**2) ,'m','lets go',INF,'bypass')
 		last_t = t
 var invincibility = false
+var Ab_b_sec = true
 func check_for_invincibility_triger():
 	if float(health)/float(max_health) < 0.2:
 		critical_invincibility()
+		
 func critical_invincibility():
-	invincibility = true
-	for j in range(2):
-		for i in range(25):
-			$ruka.modulate.a = move_toward($ruka.modulate.a,0.50,0.02)
-			$ruka/weapeon.modulate.a = move_toward($ruka.modulate.a,0.50,0.02)
-			$necklace.modulate.a = move_toward($ruka.modulate.a,0.50,0.02)
-			$nohy.modulate.a = move_toward($ruka.modulate.a,0.50,0.02)
-			$telo.modulate.a = move_toward($ruka.modulate.a,0.50,0.02)
-			$other_hand.modulate.a = move_toward($ruka.modulate.a,0.50,0.02)
-			await get_tree().create_timer(0.01).timeout
-		for i in range(25):
-			$ruka.modulate.a = move_toward($ruka.modulate.a,1,0.02)
-			$ruka/weapeon.modulate.a = move_toward($ruka.modulate.a,0.75,0.02)
-			$necklace.modulate.a = move_toward($ruka.modulate.a,1,0.02)
-			$nohy.modulate.a = move_toward($ruka.modulate.a,1,0.02)
-			$telo.modulate.a = move_toward($ruka.modulate.a,1,0.02)
-			$other_hand.modulate.a = move_toward($ruka.modulate.a,1,0.02)
-			await get_tree().create_timer(0.01).timeout
-		heal(5)
-		heal_shield(10)
-	invincibility = false
+	#print(dead)
+	if Ab_b_sec:
+		Ab_b_sec = false
+		$SecondaryAbility_Timer.start(30)
+		await get_tree().process_frame
+		if !dead:
+			invincibility = true
+			for j in range(5):
+				for i in range(25):
+					$ruka.modulate.a = move_toward($ruka.modulate.a,0.50,0.02)
+					$ruka/weapeon.modulate.a = move_toward($ruka.modulate.a,0.50,0.02)
+					$necklace.modulate.a = move_toward($ruka.modulate.a,0.50,0.02)
+					$nohy.modulate.a = move_toward($ruka.modulate.a,0.50,0.02)
+					$telo.modulate.a = move_toward($ruka.modulate.a,0.50,0.02)
+					$other_hand.modulate.a = move_toward($ruka.modulate.a,0.50,0.02)
+					await get_tree().create_timer(0.01).timeout
+				for i in range(25):
+					$ruka.modulate.a = move_toward($ruka.modulate.a,1,0.02)
+					$ruka/weapeon.modulate.a = move_toward($ruka.modulate.a,0.75,0.02)
+					$necklace.modulate.a = move_toward($ruka.modulate.a,1,0.02)
+					$nohy.modulate.a = move_toward($ruka.modulate.a,1,0.02)
+					$telo.modulate.a = move_toward($ruka.modulate.a,1,0.02)
+					$other_hand.modulate.a = move_toward($ruka.modulate.a,1,0.02)
+					await get_tree().create_timer(0.01).timeout
+				heal(15)
+				heal_shield(25)
+			invincibility = false
 
 var  invisibility = false
 func invisibility_activate():
@@ -1369,6 +1386,7 @@ func invisibility_activate():
 		$nohy.modulate.a = move_toward($ruka.modulate.a,0.50,0.02)
 		$telo.modulate.a = move_toward($ruka.modulate.a,0.50,0.02)
 		$other_hand.modulate.a = move_toward($ruka.modulate.a,0.50,0.02)
+		
 func invisibility_deactivate():
 	invisibility = false
 	for i in range(25):
@@ -1386,18 +1404,18 @@ var perfecition_active = false
 func perfection_bonus():
 	perfeciton = 1.25
 	perfecition_active = true
-	#print('perfection bonus')
+	##print('perfection bonus')
 func perfection_unbonus():
 	perfeciton = 0.9
 	
-#	print('perfection unbonus')
+#	#print('perfection unbonus')
 func perfection_nonactive():
 	perfeciton = 1
 	perfecition_active = false
-#	print('perfection nonactive')
+#	#print('perfection nonactive')
 			
 func check_if_perfection():
-	#print('h/mh ',health,' ',max_health,' ',float(health)/float(max_health))
+	##print('h/mh ',health,' ',max_health,' ',float(health)/float(max_health))
 	if perfecition_active:
 		if float(health)/float(max_health) < 0.9:
 			
@@ -1409,7 +1427,7 @@ var in_air_passive = false
 func check_in_air_passive():
 	if !is_on_floor():
 		in_air_passive_multiliper = 1.2 + current_fly_time
-	#	print(current_fly_time)
+	#	#print(current_fly_time)
 		
 	else:
 		in_air_passive_multiliper = 1
@@ -1424,3 +1442,7 @@ func slow_down_charge_activate():
 func slow_down_charge_deactivate():
 	slow_down_charge = false
 	
+
+
+func _on_secondary_ability_timer_timeout() -> void:
+	Ab_b_sec = true

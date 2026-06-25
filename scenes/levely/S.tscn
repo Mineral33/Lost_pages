@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://wjgb7pshpcbr"]
+[gd_scene load_steps=31 format=3 uid="uid://wjgb7pshpcbr"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_8yggg"]
 [ext_resource type="Texture2D" uid="uid://b5ef3minkuklg" path="res://assets/UI/minimapy/S.png" id="2_42u46"]
@@ -24,8 +24,10 @@
 [ext_resource type="PackedScene" uid="uid://eq1pa601aymt" path="res://scenes/ingame_elements/decoration/collision/ground/ground3.tscn" id="22_igqh1"]
 [ext_resource type="PackedScene" uid="uid://c13ksoack3k5t" path="res://scenes/ingame_elements/decoration/collision/ground/ground8.tscn" id="23_iomkt"]
 [ext_resource type="PackedScene" uid="uid://do43kvn4cfc5k" path="res://scenes/ingame_elements/decoration/collision/ground/ground7.tscn" id="24_bweyt"]
+[ext_resource type="PackedScene" uid="uid://5ls8070prhca" path="res://scenes/ingame_elements/one_time_collectable/wisdom.tscn" id="26_igqh1"]
 [ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/spawners/plant_spawner.tscn" id="26_ta000"]
-[ext_resource type="PackedScene" uid="uid://bd050qtlwkevh" path="res://scenes/ingame_elements/decoration/collision/ground/ground6.tscn" id="26_uuw51"]
+[ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="27_iomkt"]
+[ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="28_bweyt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_n54h5")
@@ -121,7 +123,7 @@ position = Vector2(3982, -186)
 
 [node name="Pozadie-HoryALes" type="Sprite2D" parent="."]
 z_index = -380
-position = Vector2(-111, 181)
+position = Vector2(-148, 198)
 scale = Vector2(5, 5)
 texture = ExtResource("4_t7vxn")
 
@@ -220,7 +222,7 @@ texture = ExtResource("17_igqh1")
 
 [node name="Strom17" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(391, 1413)
+position = Vector2(362, 1520)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("17_igqh1")
 
@@ -232,7 +234,7 @@ texture = ExtResource("11_42u46")
 
 [node name="Strom18" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(557, 1325)
+position = Vector2(541, 1414)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("11_42u46")
 
@@ -244,7 +246,7 @@ texture = ExtResource("10_dw5ww")
 
 [node name="Strom19" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(819, 1338)
+position = Vector2(760, 1436)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_dw5ww")
 
@@ -303,14 +305,14 @@ position = Vector2(-1530, 1600)
 position = Vector2(-963, 1601)
 scale = Vector2(-1, 1)
 
-[node name="ground14" parent="." instance=ExtResource("26_uuw51")]
-position = Vector2(305, 1565)
-
 [node name="ground15" parent="." instance=ExtResource("24_bweyt")]
-position = Vector2(440, 1445)
+position = Vector2(298, 1610)
+
+[node name="ground17" parent="." instance=ExtResource("24_bweyt")]
+position = Vector2(452, 1525)
 
 [node name="ground16" parent="." instance=ExtResource("21_ta000")]
-position = Vector2(721, 1457)
+position = Vector2(719, 1539)
 
 [node name="ground12" parent="." instance=ExtResource("21_ta000")]
 position = Vector2(-1252, 1611)
@@ -322,10 +324,10 @@ position = Vector2(-113, 1691)
 position = Vector2(104, 1687)
 
 [node name="plant_spawner3" parent="." instance=ExtResource("26_ta000")]
-position = Vector2(660, 1453)
+position = Vector2(670, 1538)
 
 [node name="plant_spawner4" parent="." instance=ExtResource("26_ta000")]
-position = Vector2(668, 1453)
+position = Vector2(636, 1537)
 
 [node name="plant_spawner5" parent="." instance=ExtResource("26_ta000")]
 position = Vector2(-718, 1690)
@@ -350,3 +352,27 @@ position = Vector2(-3540, 1681)
 
 [node name="plant_spawner12" parent="." instance=ExtResource("26_ta000")]
 position = Vector2(-3540, 1681)
+
+[node name="wisdom" parent="." instance=ExtResource("26_igqh1")]
+position = Vector2(871, 1505)
+
+[node name="fly" parent="." instance=ExtResource("27_iomkt")]
+position = Vector2(-689, 1465)
+
+[node name="fly2" parent="." instance=ExtResource("27_iomkt")]
+position = Vector2(-3187, 1345)
+
+[node name="fly3" parent="." instance=ExtResource("27_iomkt")]
+position = Vector2(-1575, 1186)
+
+[node name="Polygon2D9" type="Polygon2D" parent="fly3"]
+texture_repeat = 2
+position = Vector2(-5078, 588)
+texture = ExtResource("28_bweyt")
+polygon = PackedVector2Array(1688, 1147, 1090, 492, 2588, 508, 3408, 196, 4372, 490, 5040, 482, 5420, 294, 6168, 330, 6504, 482, 8758, 478, 9310, 156, 10058, 160, 9686, 476, 8378, 724, 7234, 822, 6420, 692, 5398, 674, 4534, 946, 3334, 1557, 2855.44, 1190.6, 2402, 1179)
+
+[node name="fly" parent="fly3" instance=ExtResource("27_iomkt")]
+position = Vector2(-2226, 578)
+
+[node name="fly2" parent="fly3" instance=ExtResource("27_iomkt")]
+position = Vector2(1504, 476)

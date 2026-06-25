@@ -86,7 +86,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			if !$ground_detection_raycast.is_colliding():
 				pass
-				#print('activated')
+				##print('activated')
 				#flip()
 			
 			
@@ -188,7 +188,7 @@ func die():
 	GameManager.drop_earth[0]+=loot
 
 	await get_tree().create_timer(0.2).timeout
-	#print('info to level '+ str(get_parent().name))# tell game manager that this died
+	##print('info to level '+ str(get_parent().name))# tell game manager that this died
 	queue_free()
 	#var coin_instance = coin.instantiate()
 	#get_parent().add_child(coin_instance)

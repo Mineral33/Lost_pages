@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bqm5i8ve5jq52"]
+[gd_scene load_steps=52 format=3 uid="uid://bqm5i8ve5jq52"]
 
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="1_4pdbj"]
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_n02pm"]
@@ -45,6 +45,8 @@
 [ext_resource type="Script" uid="uid://cxx8uauqaqsh5" path="res://scripts/cave_detection.gd" id="43_tmu0c"]
 [ext_resource type="PackedScene" uid="uid://bmwadf6ray34c" path="res://scenes/ingame_elements/decoration/torch.tscn" id="44_6pqox"]
 [ext_resource type="Texture2D" uid="uid://ciccohemu5646" path="res://assets/pozadie/jaskyna.png" id="45_k7uve"]
+[ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="46_k7uve"]
+[ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="47_0k6sy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_e1olp")
@@ -959,6 +961,23 @@ texture_repeat = 2
 position = Vector2(-1565, 3)
 texture = ExtResource("45_k7uve")
 polygon = PackedVector2Array(3029, 2393, 2741, 2816, 2018, 2664, 1101, 2564, 1047, 2227, 1752, 2279, 2248, 2375)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="Barrel" parent="." instance=ExtResource("46_k7uve")]
+position = Vector2(4639, 78)
+
+[node name="fly" parent="." instance=ExtResource("47_0k6sy")]
+position = Vector2(4474, 41)
+
+[node name="fly2" parent="." instance=ExtResource("47_0k6sy")]
+position = Vector2(3457, 585)
+
+[node name="fly3" parent="." instance=ExtResource("47_0k6sy")]
+position = Vector2(607, 2092)
+
+[node name="fly4" parent="." instance=ExtResource("47_0k6sy")]
+position = Vector2(-1951, 35)
 
 [connection signal="area_entered" from="cave_detector" to="cave_detector" method="_on_area_entered"]
 [connection signal="area_exited" from="cave_detector" to="cave_detector" method="_on_area_exited"]

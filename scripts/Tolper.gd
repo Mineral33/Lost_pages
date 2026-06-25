@@ -66,7 +66,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		if !$ground_detection_raycast.is_colliding():
 			pass
-			#print('activated')
+			##print('activated')
 			#flip()
 			
 			
@@ -102,7 +102,7 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 		player = area.get_parent()
 
 func attak_reset():
-	#print(player)
+	##print(player)
 	if player is Player:
 		$AnimationPlayer.play("atak")
 
@@ -119,7 +119,7 @@ func die():
 	GameManager.score += 5
 	GameManager.gold += 15
 	get_parent().npc_died(self)
-	#print('info to level '+ str(get_parent().name))# tell game manager that this died
+	##print('info to level '+ str(get_parent().name))# tell game manager that this died
 	$AnimationPlayer.play("die")
 	#var coin_instance = coin.instantiate()
 	#get_parent().add_child(coin_instance)

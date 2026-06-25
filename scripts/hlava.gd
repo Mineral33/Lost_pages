@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 			current_dir = current_dir.lerp(target_dir, turn_speed  * delta).normalized()
 			velocity = current_dir * speed *2
 		
-		print(opt)
+		#print(opt)
 		timer = false
 		move_and_slide()
 func _on_timer_timeout() -> void:

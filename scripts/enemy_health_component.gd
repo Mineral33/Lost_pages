@@ -14,8 +14,8 @@ func _ready() -> void:
 	max_shield = get_parent().max_shield
 	momentum = get_parent().get("momentum")
 	#if momentum != null:
-		#print(momentum)
-	print(get_parent().name, get_parent().max_shield)
+		##print(momentum)
+	#print(get_parent().name, get_parent().max_shield)
 	
 	if max_shield > 0:
 		get_parent().get_node("Healthbar").update_healthbar(health,max_health,shield,max_shield,true)
@@ -25,7 +25,7 @@ func _ready() -> void:
 
 
 func take_damage_enemy(damage_amount,type, player_momentum := INF):
-	#print(self.get_parent().active)
+	##print(self.get_parent().active)
 	
 	if !self.get_parent().get('active'):
 		self.get_parent().get_up()
@@ -97,7 +97,7 @@ func take_damage_enemy(damage_amount,type, player_momentum := INF):
 		elif shield <= 0:
 			health -= damage_amount
 		
-	#print(health,' ',max_health)
+	##print(health,' ',max_health)
 	if max_shield > 0:
 		get_parent().get_node("Healthbar").update_healthbar(health,max_health,shield,max_shield,true)
 	else:

@@ -66,7 +66,7 @@ func die():
 
 func _on_attack_area_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player && !dead && can_attak: 	
-	#	print(area.get_parent())
+	#	#print(area.get_parent())
 		
 		player = area.get_parent()
 

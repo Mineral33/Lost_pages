@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cok61d6qfieir"]
+[gd_scene load_steps=31 format=3 uid="uid://cok61d6qfieir"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_4iynu"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_rs0qt"]
@@ -22,6 +22,12 @@
 [ext_resource type="Texture2D" uid="uid://d1nu083fahs1v" path="res://assets/pozadie/obloha.png" id="20_46io3"]
 [ext_resource type="PackedScene" uid="uid://ckkin1m8635a3" path="res://scenes/ingame_elements/decoration/collision/mestska_dlazka.tscn" id="21_n5iae"]
 [ext_resource type="Texture2D" uid="uid://ciccohemu5646" path="res://assets/pozadie/jaskyna.png" id="22_f1kei"]
+[ext_resource type="PackedScene" uid="uid://mpsqfrito0t1" path="res://scenes/postavy/klenotnik.tscn" id="23_je0kp"]
+[ext_resource type="PackedScene" uid="uid://ctlb1qynwdplm" path="res://scenes/postavy/vykup_drop.tscn" id="24_lakmq"]
+[ext_resource type="PackedScene" uid="uid://dlelumqquagmr" path="res://scenes/postavy/kovac.tscn" id="25_h6fek"]
+[ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="26_l107q"]
+[ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="27_1ck53"]
+[ext_resource type="PackedScene" uid="uid://donb1fwbuxkml" path="res://scenes/postavy/caje.tscn" id="28_5wvel"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ttgkj"]
 texture = ExtResource("4_26wic")
@@ -136,7 +142,7 @@ position = Vector2(-3672, -167)
 texture = ExtResource("6_dmicl")
 
 [node name="StenaDrotaverinuu" type="Sprite2D" parent="."]
-z_index = 510
+z_index = 4000
 position = Vector2(-112, -1712)
 texture = ExtResource("7_26wic")
 
@@ -147,14 +153,14 @@ texture = ExtResource("8_fe3yd")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 z_index = -180
-position = Vector2(-6900, -1747)
+position = Vector2(-6883, -1718)
 rotation = 3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("8_fe3yd")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-z_index = 290
-position = Vector2(-7172, -1770)
+z_index = 4000
+position = Vector2(-7180, -1712)
 rotation = -3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("7_26wic")
@@ -224,8 +230,8 @@ position = Vector2(-5325, 21)
 
 [node name="Obloha" type="Sprite2D" parent="."]
 z_index = -429
-position = Vector2(-3672, -396)
-scale = Vector2(8.28672, 1.2875)
+position = Vector2(-3698.25, -99.2499)
+scale = Vector2(8.2457, 2.11181)
 texture = ExtResource("20_46io3")
 
 [node name="mestska_dlazka" parent="." instance=ExtResource("21_n5iae")]
@@ -333,3 +339,49 @@ position = Vector2(745, 114)
 
 [node name="mestska_dlazka29" parent="." instance=ExtResource("21_n5iae")]
 position = Vector2(1042, 114)
+
+[node name="klenotnik" parent="." instance=ExtResource("23_je0kp")]
+position = Vector2(-2777, -13)
+
+[node name="vykup_drop" parent="." instance=ExtResource("24_lakmq")]
+position = Vector2(-2505, -14)
+scale = Vector2(0.5, 0.5)
+
+[node name="kovac" parent="." instance=ExtResource("25_h6fek")]
+position = Vector2(-4908, -51)
+
+[node name="Barrel" parent="." instance=ExtResource("26_l107q")]
+position = Vector2(-3502, 31)
+
+[node name="Barrel2" parent="." instance=ExtResource("26_l107q")]
+position = Vector2(-3446, 37)
+
+[node name="fly" parent="." instance=ExtResource("27_1ck53")]
+position = Vector2(-4695, -109)
+
+[node name="fly2" parent="." instance=ExtResource("27_1ck53")]
+position = Vector2(-4654, -22)
+
+[node name="fly3" parent="." instance=ExtResource("27_1ck53")]
+position = Vector2(-4429, -114)
+
+[node name="fly4" parent="." instance=ExtResource("27_1ck53")]
+position = Vector2(-4319, -45)
+
+[node name="fly5" parent="." instance=ExtResource("27_1ck53")]
+position = Vector2(-2067, -8)
+
+[node name="fly6" parent="." instance=ExtResource("27_1ck53")]
+position = Vector2(-1778, -36)
+
+[node name="fly7" parent="." instance=ExtResource("27_1ck53")]
+position = Vector2(-1479, -36)
+
+[node name="fly8" parent="." instance=ExtResource("27_1ck53")]
+position = Vector2(-1479, -36)
+
+[node name="fly9" parent="." instance=ExtResource("27_1ck53")]
+position = Vector2(-5794, -127)
+
+[node name="caj" parent="." instance=ExtResource("28_5wvel")]
+position = Vector2(-6105, -4)

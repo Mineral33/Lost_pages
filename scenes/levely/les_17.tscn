@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://0bqpklu2tt5o"]
+[gd_scene load_steps=38 format=3 uid="uid://0bqpklu2tt5o"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_7wfp6"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_8mqf6"]
@@ -32,6 +32,8 @@
 [ext_resource type="PackedScene" uid="uid://bmwadf6ray34c" path="res://scenes/ingame_elements/decoration/torch.tscn" id="30_rlgie"]
 [ext_resource type="PackedScene" uid="uid://c13ksoack3k5t" path="res://scenes/ingame_elements/decoration/collision/ground/ground8.tscn" id="30_yifgx"]
 [ext_resource type="PackedScene" uid="uid://cgypk0ao6bu88" path="res://scenes/ingame_elements/one_time_collectable/truhlica.tscn" id="32_xh6lo"]
+[ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="33_k4e68"]
+[ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="34_qsqui"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_40im8")
@@ -165,7 +167,7 @@ path_to_level = "res://scenes/levely/les_16.tscn"
 player_spawn = 138
 
 [node name="from_les_16" type="Marker2D" parent="."]
-position = Vector2(4348, -691)
+position = Vector2(2402, 318)
 
 [node name="Strom6" type="Sprite2D" parent="."]
 position = Vector2(-3641, -53.5)
@@ -888,10 +890,10 @@ position = Vector2(253, 812)
 position = Vector2(-1642, 327)
 
 [node name="enemy_spawner6" parent="cave_detector" instance=ExtResource("28_87ub4")]
-position = Vector2(-2067, 357)
+position = Vector2(-2085, 724)
 
 [node name="enemy_spawner7" parent="cave_detector" instance=ExtResource("28_87ub4")]
-position = Vector2(-1951, 351)
+position = Vector2(-1906, 709)
 
 [node name="enemy_spawner8" parent="cave_detector" instance=ExtResource("28_87ub4")]
 position = Vector2(2616, 802)
@@ -978,7 +980,7 @@ position = Vector2(365, 1208)
 rotation = -0.0127576
 
 [node name="torch8" parent="." instance=ExtResource("30_rlgie")]
-position = Vector2(731, 1450)
+position = Vector2(750, 1503)
 rotation = -0.0127576
 
 [node name="torch4" parent="." instance=ExtResource("30_rlgie")]
@@ -991,6 +993,24 @@ scale = Vector2(-1, 1)
 
 [node name="truhlica" parent="." instance=ExtResource("32_xh6lo")]
 position = Vector2(875, 1771)
+
+[node name="Barrel" parent="." instance=ExtResource("33_k4e68")]
+position = Vector2(522, 513)
+
+[node name="Barrel2" parent="." instance=ExtResource("33_k4e68")]
+position = Vector2(599, 508)
+
+[node name="fly" parent="." instance=ExtResource("34_qsqui")]
+position = Vector2(448, 382)
+
+[node name="fly2" parent="." instance=ExtResource("34_qsqui")]
+position = Vector2(961, 333)
+
+[node name="fly3" parent="." instance=ExtResource("34_qsqui")]
+position = Vector2(-3330, -16)
+
+[node name="fly4" parent="." instance=ExtResource("34_qsqui")]
+position = Vector2(-2168, -415)
 
 [connection signal="area_entered" from="cave_detector" to="cave_detector" method="_on_area_entered"]
 [connection signal="area_exited" from="cave_detector" to="cave_detector" method="_on_area_exited"]

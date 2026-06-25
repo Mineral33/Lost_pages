@@ -7,7 +7,7 @@ var player : Player
 
 var pause_menu
 var paused = false
-var necklaces_bought =[true,true,true,true,true,true,true,true] # [false,false,false,false,false,false,false,false]
+var necklaces_bought = [false,false,false,false,false,false,false,false] #[true,true,true,true,true,true,true,true] #
 var equiped_staff : int = 0
 #var meele_weapeon  : int = 0
 var armor : int = 0
@@ -48,12 +48,13 @@ var deadlist = {'les':[1,1,1,1,1],
 'S':[1,1,1,1,1,1,1],
 'lianova_veza':[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,],
 'lianova_veza_II':[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,],
+'LV_III':[0,0,0,0,0],'SM':[0,0,0,0,0],
 'kvetiny':[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]}
-var deepfrost : int =1500
-var livingwood : int =1500
-var ash : int =1500
-var windsteel : int=1500
-var gold = 10000
+var deepfrost : int =0
+var livingwood : int =0
+var ash : int =0
+var windsteel : int=0
+var gold = 0
 var magic_fire_upgrade = 0
 var magic_ice_upgrade = 0
 var magic_earth_upgrade = 0
@@ -66,15 +67,15 @@ var wisdom = {'les':[0]}
 #var equiped_staff = [0,0,0,0]
 var current_level_path = "res://scenes/levely/tutorial.tscn"
 var meele_element = 0
-var meele_bought = [0,0,1,0,1,1]
-var magic_bought = [0,0,0,0,1,1,1]
-var food_bought = [1,1,1,1,0,0,0,0,0]#[0,0,0,0]
+var meele_bought = [0,0,0,0,0,0]
+var magic_bought = [0,0,0,0,0,0,0]
+var food_bought = [0,0,0,0,0,0,0,0,0]#[0,0,0,0]
 
 var food_bought_def = [0,0,0,0,0,0,0,0,0]#[0,0,0,0]
 
 var equiped_meele = 0
 var equiped_necklace = 0
-var wisdom_points = 10000
+var wisdom_points = 0
 var meele_variables = [8,5,2.5,1.1] #A,F,h,sigma
 var wisdom_upgrade = 0
 var wisdom_upgrade_level = 0
@@ -122,6 +123,8 @@ var treasures = {'les':[0,0,0,0,0],
 'S':[0,0,0,0,0],
 'lianova_veza':[0,0,0,0,0],
 'lianova_veza_II':[0,0,0,0,0],
+'LV_III':[0,0,0,0,0],
+'SM':[0,0,0,0,0],
 'kvetiny':[0,0,0]}
 
 var collected_wisdom = {'les':[0,0,0,0,0],
@@ -154,6 +157,8 @@ var collected_wisdom = {'les':[0,0,0,0,0],
 'S':[0,0,0,0,0],
 'lianova_veza':[0,0,0,0,0],
 'lianova_veza_II':[0,0,0,0,0],
+'LV_III':[0,0,0,0,0],
+'SM':[0,0,0,0,0],
 'kvetiny':[0,0,0]}
 
 
@@ -207,7 +212,7 @@ var fab_count = [0,0,0,0,0,0,0,0,0,0]
 var plants = {'mata':0,'salvia':0,'divozel':0,'slez':0,'mak':0,'skorocel':0,'pupava':0,'nevadza':0,'cakanka':0,'hluchavka':0,'alchemilka':0,'zihlava':0,'trezalka':0,'marinka':0,'prvosienky':0,'cesnak':0,'konvalinka':0,'jesienka':0}
 var sutre = {'bauxit':     0,'hematite':   0,'malachite':  0,'azurite':    0,'antimonite': 0,'gold':       0,'silver':     0,'zincite':    0,'uvarovite':  0,'opal':       0,}
 
-var solution = [1,1,1]
+var solution = [0,0,0]
 
 var empty_plant_dict =  {'mata':0,'salvia':0,'divozel':0,'slez':0,'mak':0,'skorocel':0,'pupava':0,'nevadza':0,'cakanka':0,'hluchavka':0,'alchemilka':0,'zihlava':0,'trezalka':0,'marinka':0,'prvosienky':0,'cesnak':0,'konvalinka':0,'jesienka':0}
 var extract_voda = {'mata':0,'salvia':0,'divozel':0,'slez':0,'mak':0,'skorocel':0,'pupava':0,'nevadza':0,'cakanka':0,'hluchavka':0,'alchemilka':0,'zihlava':0,'trezalka':0,'marinka':0,'prvosienky':0,'cesnak':0,'konvalinka':0,'jesienka':0}
@@ -217,7 +222,7 @@ var extract_olej = {'mata':0,'salvia':0,'divozel':0,'slez':0,'mak':0,'skorocel':
 var alcohol= 0
 var purified_water = 0
 var oil = 0
-var caje =[1,1,1,1] #[0,0,0,0]
+var caje = [0,0,0,0]
 
 var AB_time_left = 0
 var wind_ab_b = false
@@ -229,34 +234,35 @@ var drop_wind = [0,0,0]
 
 var smelted_bars = [0,0,0,0,0]
 func _process(delta: float) -> void:
+	##print(treasures['lianova_veza'])
 #	pr#int(plants)
-	#print(treasures['les_9'])
-	#print('MU'+(str(magic_unlocked)))
-	#print(meele_bought)
-	#print(content_to_save['level'])
-	#print(necklaces_bought," ",meele_bought," ", magic_ice_upgrade," ",magic_earth_upgrade," ",magic_fire_upgrade," ",magic_wind_upgrade)
-	#print(collected_wisdom['les_8'])
-	#print(meele_variables)
-	#print(folk_count)
-	#print(plants)
-	#print(purified_water,alcohol,oil)
-	#print(caje)
-	#print(necklaces_bought)
-	#print(wind_ab_b)
-	#print(AB_time_left)
-	#print(sutre)
-	#print(smelted_bars)
+	##print(treasures['les_9'])
+	##print('MU'+(str(magic_unlocked)))
+	##print(meele_bought)
+	##print(content_to_save['level'])
+	##print(necklaces_bought," ",meele_bought," ", magic_ice_upgrade," ",magic_earth_upgrade," ",magic_fire_upgrade," ",magic_wind_upgrade)
+	##print(collected_wisdom['les_8'])
+	##print(meele_variables)
+	##print(folk_count)
+	##print(plants)
+	##print(purified_water,alcohol,oil)
+	##print(caje)
+	##print(necklaces_bought)
+	##print(wind_ab_b)
+	##print(AB_time_left)
+	##print(sutre)
+	##print(smelted_bars)
 #	pr#int(meele_bought)
-#	print(GameManager.food_bought)
-	#print(magic_bought)
+#	#print(GameManager.food_bought)
+	##print(magic_bought)
 	pass
 func _ready() -> void:
-	for name in plants:
-		plants[name] = 1000
-	for name in sutre:
-		sutre[name] += 100
+#	for name in plants:
+#		plants[name] = 1000
+#	for name in sutre:
+#		sutre[name] += 100
 	for i in range(5,21):
-		#print('les_%s'%str(i))
+		##print('les_%s'%str(i))
 		deadlist['les_%s'%str(i)] = range(25).map(func(_i): return 1)
 	ui_manager = get_tree().current_scene.get_child(0)
 	options =  [ui_manager.get_node('ItemCount'),ui_manager.get_node('health_ui'),ui_manager.get_node('equipment2'),ui_manager.get_node('log'),ui_manager.get_node('Upgrade_wisdom'),ui_manager.get_node('minimap'),ui_manager.get_node('world_map')]
@@ -272,14 +278,14 @@ func register_dead_npc(level,pos,respawn_time):
 	#await get_tree().create_timer(respawn_time).timeout
 	#deadlist[str(level)][pos]= 1
 func register_treasure(level, pos):
-	#print(treasures[str(level)])
+	##print(treasures[str(level)])
 	treasures[str(level)][pos] = 1
-	#print(treasures[str(level)])
+	##print(treasures[str(level)])
 func register_wisdom(level,pos):
 	collected_wisdom[str(level)][pos] = 1
 	
 func respawn_player(path):
-	print(path)
+	#print(path)
 	get_tree().change_scene_to_file(path)
 	health = player.max_health*0.05
 	shield = player.max_shield*0.05
@@ -295,7 +301,7 @@ func autosave():
 		await get_tree().create_timer(10).timeout
 		#save()
 		_save()
-		#print("works")
+		##print("works")
 '''
 func save(ab_time_left):
 	
@@ -315,13 +321,13 @@ func save(ab_time_left):
 	content_to_save['options_visible'] = opened_options
 	if player:
 		AB_time_left = ab_time_left
-		print('gm tl ', ab_time_left)
+		#print('gm tl ', ab_time_left)
 func load_save():
 	var magic_upgrades_total = [magic_ice_upgrade,magic_earth_upgrade,magic_fire_upgrade,magic_wind_upgrade]
 	var UImanager = get_tree().current_scene.get_child(0)
 	for i in range(4):
-		#print('load')
-		#print(magic_upgrades_total[i])
+		##print('load')
+		##print(magic_upgrades_total[i])
 		if magic_upgrades_total[i] == 1:
 			UImanager.get_child(2).get_child(0).get_child(i).get_child(1).color = 'e6c46d'
 		elif magic_upgrades_total[i] == 2:
@@ -352,11 +358,11 @@ func load_save():
 	if get_parent().name != 'main':
 		player = get_tree().current_scene.get_node('Player')
 	if player:
-		#print('load ab time reset')
+		##print('load ab time reset')
 		player.AB_timer_b = false
 		player.reset_ab_timer()
 	var S= [equiped_staff, equiped_meele, equiped_necklace, health, shield, weapreon_type, opened_options ] # opened options for ui
-	#print('save '+str(S))
+	##print('save '+str(S))
 	return S
 	
 func enter_level(level_path):
@@ -369,7 +375,7 @@ func enter_level(level_path):
 #func gain_coins(coins_gained: int):
 #	coins += coins_gained
 	#emit_signal("gained_coins", coins_gained)
-	#print(coins)
+	##print(coins)
 	#var scene_ui_node = get_tree().get_child("UIManager")
 	#scene_ui_node.get_child(0).text = coins
 
@@ -402,7 +408,7 @@ func quit():
 func update_log_info(text):
 	get_tree().current_scene.get_child(0).update_log_info(text)
 
-	#print(total_wisdom)
+	##print(total_wisdom)
 
 var save_location = "user://SaveFile.json"
 
@@ -474,8 +480,8 @@ func _reset():
 	'base_health':50,
 	'base_shield':200,
 	'package':false,
-	'treasures':  {'les':[0,0,0,0,0],'les_2':[0,0,0,0,0],'Drotaverin':[0,0,0,0,0],'les_3':[0,0,0,0,0],'les_4':[0,0,0,0,0],'strom':[0,0,0,0,0],'lad':[0,0,0,0,0], 'ice_phase_2':[0,0,0,0,0],'lad_2':[0,0,0,0,0],"tutorial":[0,0,0,0,0],'les_5':[0,0,0,0,0],'les_6':[0,0,0,0,0],'les_7':[0,0,0,0,0],'les_8':[0,0,0,0,0],'les_9':[0,0,0,0,0],'les_10':[0,0,0,0,0],'les_11':[0,0,0,0,0],'les_12':[0,0,0,0,0],'les_13':[0,0,0,0,0],'les_14':[0,0,0,0,0],'les_15':[0,0,0,0,0],'les_16':[0,0,0,0,0],'les_17':[0,0,0,0,0],'les_18':[0,0,0,0,0],'les_19':[0,0,0,0,0],'les_20':[0,0,0,0,0],'F1':[0,0,0,0,0],'S':[0,0,0,0,0],'lianova_veza':[0,0,0,0,0],'lianova_veza_II':[0,0,0,0,0],'kvetiny':[0,0,0]},
-	'collected_wisdom':  {'les':[0,0,0,0,0],'les_2':[0,0,0,0,0],'Drotaverin':[0,0,0,0,0],'les_3':[0,0,0,0,0],'les_4':[0,0,0,0,0],'strom':[0,0,0,0,0],'lad':[0,0,0,0,0], 'ice_phase_2':[0,0,0,0,0],'lad_2':[0,0,0,0,0],"tutorial":[0,0,0,0,0],'les_5':[0,0,0,0,0],'les_6':[0,0,0,0,0],'les_7':[0,0,0,0,0],'les_8':[0,0,0,0,0],'les_9':[0,0,0,0,0],'les_10':[0,0,0,0,0],'les_11':[0,0,0,0,0],'les_12':[0,0,0,0,0],'les_13':[0,0,0,0,0],'les_14':[0,0,0,0,0],'les_15':[0,0,0,0,0],'les_16':[0,0,0,0,0],'les_17':[0,0,0,0,0],'les_18':[0,0,0,0,0],'les_19':[0,0,0,0,0],'les_20':[0,0,0,0,0],'F1':[0,0,0,0,0],'S':[0,0,0,0,0],'lianova_veza':[0,0,0,0,0],'lianova_veza_II':[0,0,0,0,0],'kvetiny':[0,0,0]},
+	'treasures':  {'les':[0,0,0,0,0],'les_2':[0,0,0,0,0],'Drotaverin':[0,0,0,0,0],'les_3':[0,0,0,0,0],'les_4':[0,0,0,0,0],'strom':[0,0,0,0,0],'lad':[0,0,0,0,0], 'ice_phase_2':[0,0,0,0,0],'lad_2':[0,0,0,0,0],"tutorial":[0,0,0,0,0],'les_5':[0,0,0,0,0],'les_6':[0,0,0,0,0],'les_7':[0,0,0,0,0],'les_8':[0,0,0,0,0],'les_9':[0,0,0,0,0],'les_10':[0,0,0,0,0],'les_11':[0,0,0,0,0],'les_12':[0,0,0,0,0],'les_13':[0,0,0,0,0],'les_14':[0,0,0,0,0],'les_15':[0,0,0,0,0],'les_16':[0,0,0,0,0],'les_17':[0,0,0,0,0],'les_18':[0,0,0,0,0],'les_19':[0,0,0,0,0],'les_20':[0,0,0,0,0],'F1':[0,0,0,0,0],'S':[0,0,0,0,0],'lianova_veza':[0,0,0,0,0],'lianova_veza_II':[0,0,0,0,0],'LV_III':[0,0,0,0,0],'SM':[0,0,0,0,0],'kvetiny':[0,0,0]},
+	'collected_wisdom':  {'les':[0,0,0,0,0],'les_2':[0,0,0,0,0],'Drotaverin':[0,0,0,0,0],'les_3':[0,0,0,0,0],'les_4':[0,0,0,0,0],'strom':[0,0,0,0,0],'lad':[0,0,0,0,0], 'ice_phase_2':[0,0,0,0,0],'lad_2':[0,0,0,0,0],"tutorial":[0,0,0,0,0],'les_5':[0,0,0,0,0],'les_6':[0,0,0,0,0],'les_7':[0,0,0,0,0],'les_8':[0,0,0,0,0],'les_9':[0,0,0,0,0],'les_10':[0,0,0,0,0],'les_11':[0,0,0,0,0],'les_12':[0,0,0,0,0],'les_13':[0,0,0,0,0],'les_14':[0,0,0,0,0],'les_15':[0,0,0,0,0],'les_16':[0,0,0,0,0],'les_17':[0,0,0,0,0],'les_18':[0,0,0,0,0],'les_19':[0,0,0,0,0],'les_20':[0,0,0,0,0],'F1':[0,0,0,0,0],'S':[0,0,0,0,0],'lianova_veza':[0,0,0,0,0],'lianova_veza_II':[0,0,0,0,0],'LV_III':[0,0,0,0,0],'SM':[0,0,0,0,0],'kvetiny':[0,0,0]},
 	'folk_count' : [0,0,0,0,0,0,0,0,0,0,0],
  	'reg_count' : [0,0,0,0,0,0,0,0,0,0],
  	'oth_count' : [0,0,0,0,0,0,0,0,0,0],
@@ -547,20 +553,20 @@ func _load():
 		magic_earth_upgrade = save_data['staff_levels'][1]
 		magic_fire_upgrade = save_data['staff_levels'][2]
 		magic_wind_upgrade = save_data['staff_levels'][3]
-	#	magic_unlocked = save_data['magic_unlocked']
+		magic_unlocked = save_data['magic_unlocked']
 		weapreon_type = save_data['weapreon_type']
 		#necklaces_bought = save_data['necklaces']
 		current_level_path = save_data['level']
-	#	meele_bought = save_data['meele']
-		#magic_bought = save_data['magic_bought']
+		meele_bought = save_data['meele']
+		magic_bought = save_data['magic_bought']
 		
 		wisdom_points = save_data['wisdom_points']
 		meele_variables = save_data['meele_variables']
 		wisdom_upgrade = save_data['upgrades']
 		wisdom_upgrade_level = save_data['total_upgrades']
 		magic_variables = save_data['magic_variables']
-		#opened_options = save_data['options_visible']
-	#	options_positions = save_data['options_positions']
+		opened_options = save_data['options_visible']
+		options_positions = save_data['options_positions']
 		player_spawn = save_data['last_spawn']
 		equiped_meele = save_data['meele_in_use']
 		equiped_staff = save_data['magic_in_use']
@@ -574,20 +580,20 @@ func _load():
 		reg_count = save_data['reg_count']
 		oth_count = save_data['oth_count']
 		fab_count = save_data['fab_count']
-		#plants = save_data['plants']		
-		#sutre= save_data['sutre']
+		plants = save_data['plants']		
+		sutre= save_data['sutre']
 		extract_voda= save_data['extrakty'][0]
 		extract_alc= save_data['extrakty'][1]
 		extract_olej = save_data['extrakty'][2]
-	#	caje = save_data['caje']
-	#	food_bought = save_data['food_bought']
-		#drop_ice = save_data['drop_ice']
-		#drop_earth  =save_data['drop_earth']
-		#drop_fire= save_data['drop_fire']
-		#drop_wind =save_data['drop_wind']
-		#smelted_bars = save_data['smelted_bars'] 
+		caje = save_data['caje']
+		food_bought = save_data['food_bought']
+		drop_ice = save_data['drop_ice']
+		drop_earth  =save_data['drop_earth']
+		drop_fire= save_data['drop_fire']
+		drop_wind =save_data['drop_wind']
+		smelted_bars = save_data['smelted_bars'] 
 		
-		#print(player_position_save)
+		##print(player_position_save)
 		load_save()
 		return save_data
 		
@@ -605,7 +611,7 @@ func register_count(type, pos):
 		fab_count[pos] = 1
 
 func equip_magic_to_player():
-#	print(player)
+#	#print(player)
 	player.magic_weapeon_equip(equiped_staff)
 	
 	

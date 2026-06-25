@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 			scale.y = 0.5
 			init = true
 			var areas = $player_follow_area.get_overlapping_areas()
-		#print('init and fol')
+		##print('init and fol')
 			for area in areas:
 				if area.get_parent() is Player:
 					_on_player_follow_area_area_entered(area)
@@ -54,7 +54,7 @@ func _physics_process(delta: float) -> void:
 		
 	if init and following:
 		var areas = $player_follow_area.get_overlapping_areas()
-		#print('init and fol')
+		##print('init and fol')
 		for area in areas:
 			if area.get_parent() is Player:
 	
@@ -92,7 +92,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(delta: float) -> void:
-#	print(	'land ', land,' jump ',jump, ' init ',init,' following ',following )
+#	#print(	'land ', land,' jump ',jump, ' init ',init,' following ',following )
 	if init:
 		pass
 	
@@ -120,7 +120,7 @@ func _on_player_follow_area_area_entered(area: Area2D) -> void:
 			var sum = abs(distance.x) + abs(distance.y)
 			
 			var option = [0].pick_random()
-			print(sum)
+			#print(sum)
 			if sum > 200 or sum <-200:
 				teleport()
 			else:
@@ -156,10 +156,10 @@ func dash_at():
 func swoosh():
 	if facing_right:
 		$AnimationPlayer.play('swoosh_attack_right')
-		print('swoosh right')
+		#print('swoosh right')
 	else: 
 		$AnimationPlayer.play("swoosh_attack_left")
-		print('swoosh left')
+		#print('swoosh left')
 	pass
 
 
@@ -235,7 +235,7 @@ func dash_damage_left():
 
 func teleport():
 	p = get_parent().get_node('Player')
-	#print(p)
+	##print(p)
 	var project = kamen.instantiate()
 	project.parent = self
 	project.global_position = global_position

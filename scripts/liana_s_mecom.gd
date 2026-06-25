@@ -28,12 +28,12 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	if !$up_autostep_raycat.is_colliding() && $"down_autostep raycast".is_colliding():
-		position.y -= 17
-		if facing_right:
-			position.x += 2
-		else:
-			position.x -= 2
+	#if !$up_autostep_raycat.is_colliding() && $"down_autostep raycast".is_colliding():
+		#position.y -= 17
+	#	if facing_right:
+		#	position.x += 2
+		#else:
+		#	position.x -= 2
 	var refs = $Player_follow_area.get_overlapping_areas()
 	
 	for  ref in refs:
@@ -45,8 +45,8 @@ func _physics_process(delta: float) -> void:
 				$Sprite2D.scale.x = abs($Sprite2D.scale.x)
 				$HitBox.scale.x = abs($HitBox.scale.x)
 				facing_right = true
-				$up_autostep_raycat.scale.x = abs($up_autostep_raycat.scale.x)
-				$"down_autostep raycast".scale.x = abs($"down_autostep raycast".scale.x)
+				#$up_autostep_raycat.scale.x = abs($up_autostep_raycat.scale.x)
+			#	$"down_autostep raycast".scale.x = abs($"down_autostep raycast".scale.x)
 				#$hurtbox.scale.x = abs($hurtbox.scale.x)
 			
 			elif dir <-10:
@@ -54,8 +54,8 @@ func _physics_process(delta: float) -> void:
 				$Sprite2D.scale.x = -abs($Sprite2D.scale.x)
 				$HitBox.scale.x = -abs($HitBox.scale.x)
 				facing_right = false
-				$up_autostep_raycat.scale.x = -abs($up_autostep_raycat.scale.x)
-				$"down_autostep raycast".scale.x = -abs($"down_autostep raycast".scale.x)
+				#$up_autostep_raycat.scale.x = -abs($up_autostep_raycat.scale.x)
+			#	$"down_autostep raycast".scale.x = -abs($"down_autostep raycast".scale.x)
 				#$hurtbox.scale.x = -abs($hurtbox.scale.x)
 			else:
 				dir= 0
@@ -66,7 +66,7 @@ func _physics_process(delta: float) -> void:
 		#else:
 			#if !$ground_detection_raycast.is_colliding():
 				#pass
-				#print('activated')
+				##print('activated')
 				#flip()
 				
 				
@@ -86,9 +86,9 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 
 		
 func atack_action():
-	#print('attack action active')
+	##print('attack action active')
 	if player is Player && !dead && can_attak: 
-		#print('attack action suc')
+		##print('attack action suc')
 		player.take_damage(25,'m',' zamotaný do lian', 5)
 	
 	
@@ -100,7 +100,7 @@ func die():
 	#GameManager.score += 5
 	GameManager.drop_earth[1] += loot
 #	get_parent().npc_died(self)
-	#print('info to level '+ str(get_parent().name))# tell game manager that this died
+	##print('info to level '+ str(get_parent().name))# tell game manager that this died
 	$AnimationPlayer.play("die")
 	queue_free()
 	#var coin_instance = coin.instantiate()
@@ -115,5 +115,5 @@ func _on_hit_box_area_exited(area: Area2D) -> void:
 		#$AnimationPlayer.play("idle")
 		
 func _process(delta: float) -> void:
-	#print(player)
+	##print(player)
 	pass

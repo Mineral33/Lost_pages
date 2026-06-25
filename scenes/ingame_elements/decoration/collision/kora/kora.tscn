@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0d38qoofoygw"]
+
+[ext_resource type="Texture2D" uid="uid://d2lwubai51six" path="res://assets/decoration/kora/kora.png" id="1_h7t88"]
+
+[node name="kora" type="StaticBody2D" groups=["Wall"]]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h7t88")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(14, -12)
+polygon = PackedVector2Array(-97, 53, -91, 50, 67, 50, 77, 52, 76, 56, 65, 59, -89, 59, -96, 57)

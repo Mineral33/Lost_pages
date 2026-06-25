@@ -50,7 +50,7 @@ func _ready() -> void:
 	#var sum = 0.0
 	#for name in plant_chances:
 	#	sum += plant_chances[name]
-	#print(sum)
+	##print(sum)
 	
 
 	if randf() < chance:
@@ -134,7 +134,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		match type:
 			"zihlava":    
 				while is_here:
-					print(get_parent().get_node('Player'),' ',get_parent())
+					#print(get_parent().get_node('Player'),' ',get_parent())
 					get_parent().get_node('Player').take_damage(2,'m','Uprhleny zaživa')
 					await get_tree().create_timer(0.5).timeout
 

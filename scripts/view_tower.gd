@@ -12,8 +12,8 @@ func _process(delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	#print(self)
-	#print(!opened_bool)
+	##print(self)
+	##print(!opened_bool)
 	if (Input.is_action_just_pressed("go_to")  or Input.is_action_pressed("go_to")) and is_here:
 		get_parent().get_child(0).show_view(wiew_image)
 func _on_area_2d_area_entered(area: Area2D) -> void:

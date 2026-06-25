@@ -20,7 +20,7 @@ func _process(delta):
 	c += delta * 2
 	distance_traveled += x
 	var y = sin(c)
-	#print(distance_traveled)
+	##print(distance_traveled)
 	if distance_traveled > limit:
 		x = -abs(x_init)
 	elif distance_traveled < -limit:

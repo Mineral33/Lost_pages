@@ -63,23 +63,24 @@ func _ready() :
 	$caje_shop/sell/vzacne/Label15/own10.text = str(GameManager.plants['trezalka'])
 	$caje_shop/sell/special/Label17/own11.text = str(GameManager.plants['jesienka'])
 	$caje_shop/sell/special/Label18/own12.text = str(GameManager.plants['konvalinka'])
-	
+	#await  get_tree().create_timer(0.25).timeout
 	var opened = GameManager.load_save()[6]
-	#print(opened)
-	if opened[0]:
-		item_count_switch = true
-	if opened[1]:
-		health_switch = true
-	if opened[2]:
-		eqipment_switch = true
-	if opened[3]:
-		log_switch = true
-	if opened[4]:
-		wisdom_switch = true
-	if opened[5]:
-		mimimap_switch = true
-	if opened[6]:
-		wm_switch = true
+	print(opened)
+	if opened:
+		if opened[0]:
+			item_count_switch = true
+		if opened[1]:
+			health_switch = true
+		if opened[2]:
+			eqipment_switch = true
+		if opened[3]:
+			log_switch = true
+		if opened[4]:
+			wisdom_switch = true
+		if opened[5]:
+			mimimap_switch = true
+		if opened[6]:
+			wm_switch = true
 	GameManager.pause_menu = $pauseMenu
 	
 	update_world_ui(GameManager.current_level_path)
@@ -238,7 +239,7 @@ func _process(delta: float) -> void:
 		
 	
 func update_coin_display(gained_coins):
-	#print(GameManager.coins)
+	##print(GameManager.coins)
 	$CoinDaaisplay.text = str(GameManager.coins)
 func _input(event):
 	if Input.is_action_just_pressed("pause"):
@@ -247,7 +248,7 @@ func _input(event):
 	if Input.is_action_just_pressed("go_to") and view_bool:
 		$view.hide()
 	#if event is InputEventMouseButton:
-		#print(get_viewport().gui_get_focus_owner())
+		##print(get_viewport().gui_get_focus_owner())
 	#get_viewport().set_input_as_handled()
 	#if event is InputEventMouseButton and event.pressed:
 		#get_viewport().set_input_as_handled()
@@ -279,7 +280,7 @@ func shop_face(state):
 		$Shop/Shop_face.texture = preload("res://assets/postavy/predavač0002.png")
 func show_barrel_ui():
 	$Shop/notenough.hide()
-	#print(weapeon_menu_active)
+	##print(weapeon_menu_active)
 	$Shop.show()
 	shop_face(0)
 	if weapeon_menu_active == 1:
@@ -686,9 +687,9 @@ func _on_levels_pressed() -> void:
 func _on_load_pressed() -> void:
 	await get_tree().create_timer(0.02).timeout
 	var loaded_data =  GameManager._load()
-	print(loaded_data['level'])
+	#print(loaded_data['level'])
 	get_tree().change_scene_to_file(loaded_data['level'])
-	print('after')
+	#print('after')
 func _on_info_pressed() -> void:
 	$infotext.show()
 	$MainMenu/quit.hide()
@@ -888,7 +889,7 @@ func _on_ic_ore_button_pressed() -> void:
 func _on_health_button_pressed() -> void:
 
 	health_switch = !health_switch
-	#print(health_switch)
+	##print(health_switch)
 	if health_switch:
 		$health_ui.show()
 	else:
@@ -923,15 +924,15 @@ func _on_equip_button_pressed() -> void:
 		match opened_eq_type:
 			
 			'meele':
-				print(eq_idex_selected)
+				#print(eq_idex_selected)
 				player.meele_weapeon_equip(eq_idex_selected)
 				GameManager.equiped_meele = eq_idex_selected
 			'mage':
-				print('ui mage equip ' , eq_idex_selected)
+				#print('ui mage equip ' , eq_idex_selected)
 				player.magic_weapeon_equip( eq_idex_selected)
 				GameManager.equiped_staff = eq_idex_selected
 			'neck':
-				print(eq_idex_selected)
+				#print(eq_idex_selected)
 				player.neckleace_equip( eq_idex_selected)
 				GameManager.equiped_necklace = eq_idex_selected	
 				
@@ -942,11 +943,11 @@ func _on_deequip_button_pressed() -> void:
 				player.meele_weapeon_equip(0)
 				GameManager.equiped_meele = 0
 			'mage':
-				print('ui mage equip ' , 0)
+				#print('ui mage equip ' , 0)
 				player.magic_weapeon_equip( 0)
 				GameManager.equiped_staff = 0
 			'neck':
-				print(eq_idex_selected)
+				#print(eq_idex_selected)
 				player.neckleace_equip( 0)
 				GameManager.equiped_necklace = 0	
 				
@@ -958,7 +959,7 @@ func meele_equpmet_item_generation():
 
 	for i in range(len(GameManager.meele_bought)):
 		if GameManager.meele_bought[i] :
-			#print(i,swords_items_icons[i])
+			##print(i,swords_items_icons[i])
 			var slot = item_slot.instantiate()
 			slot.position = item_position
 			
@@ -985,7 +986,7 @@ func mage_equpmet_item_generation():
 	
 	for i in range(len(GameManager.magic_bought)):
 		if GameManager.magic_bought[i] :
-			#print(i,swords_items_icons[i])
+			##print(i,swords_items_icons[i])
 			var slot = item_slot.instantiate()
 			#slot.position = item_position
 			
@@ -1018,7 +1019,7 @@ func neck_equpmet_item_generation():
 	await get_tree().process_frame 
 	for i in range(len(GameManager.necklaces_bought)):
 		if GameManager.necklaces_bought[i] :
-			#print(i,swords_items_icons[i])
+			##print(i,swords_items_icons[i])
 			var slot = item_slot.instantiate()
 			#slot.position = item_position
 			$equipment2/ScrollContainer/MarginContainer/GridContainer
@@ -1029,7 +1030,7 @@ func neck_equpmet_item_generation():
 			$equipment2/ScrollContainer/MarginContainer/GridContainer.add_child(slot)
 
 	#for child in $equipment2/ScrollContainer/MarginContainer/GridContainer.get_children():
-		#print(child.name, " size: ", child.size)
+		##print(child.name, " size: ", child.size)
 
 func _on_item_pressed_neck_eq(i):
 	$equipment2/eq_description.text = neck_eq_description[i]
@@ -1052,7 +1053,7 @@ func food_equpmet_item_generation():
 	await get_tree().process_frame
 	for i in range(len(GameManager.food_bought)):
 		if GameManager.food_bought[i] :
-			#print(i,swords_items_icons[i])
+			##print(i,swords_items_icons[i])
 			var slot = item_slot.instantiate()
 			#slot.position = item_position
 			slot.get_node('item_name').text = food_items_names[i]
@@ -1063,7 +1064,7 @@ func food_equpmet_item_generation():
 	
 	for i in range(len(GameManager.caje)):
 		if GameManager.caje[i] :
-			#print(i,swords_items_icons[i])
+			##print(i,swords_items_icons[i])
 			var slot = item_slot.instantiate()
 		#	slot.position = item_position
 			slot.get_node('item_name').text = caje_items_names[i]
@@ -1073,7 +1074,7 @@ func food_equpmet_item_generation():
 			$equipment2/ScrollContainer/MarginContainer/GridContainer.add_child(slot)
 	
 	#await get_tree().process_frame
-	#print("slots in grid: ", $equipment2/ScrollContainer/MarginContainer/GridContainer.get_child_count())
+	##print("slots in grid: ", $equipment2/ScrollContainer/MarginContainer/GridContainer.get_child_count())
 	
 	
 	
@@ -1083,12 +1084,12 @@ func food_equpmet_item_generation():
 	
 func _on_item_pressed_food_eq(i):
 		var p = get_parent().get_node('Player')
-		$equipment2/eq_description.text ='All food bonuses are added together.\n HP '+str(p.update_food_hp())+'\n SHD '+str(p.update_food_shd())+'\n P '+str(p.update_food_kuz())+ '\n A '+str(p.update_food_me_A())+'\n F '+str(p.update_dood_me_F())+' \n selected gives '+ food_eq_description[i]
+		$equipment2/eq_description.text ='All food bonuses are added together.\n HP '+str(p.update_food_hp())+'\n SHD '+str(p.update_food_shd())+'\n P '+str(p.update_food_kuz())+ '\n A '+str(p.update_food_me_A())+'\n F '+str(p.update_food_me_F())+' \n selected gives '+ food_eq_description[i]
 		eq_idex_selected = null
 	
 func _on_item_pressed_caje_eq(i):
 		var p = get_parent().get_node('Player')
-		$equipment2/eq_description.text ='All food bonuses are added together.\n HP '+str(p.update_food_hp())+'\n SHD '+str(p.update_food_shd())+'\n P '+str(p.update_food_kuz())+ '\n A '+str(p.update_food_me_A())+'\n F '+str(p.update_dood_me_F())+' \n selected gives '+ caje_eq_description[i]
+		$equipment2/eq_description.text ='All food bonuses are added together.\n HP '+str(p.update_food_hp())+'\n SHD '+str(p.update_food_shd())+'\n P '+str(p.update_food_kuz())+ '\n A '+str(p.update_food_me_A())+'\n F '+str(p.update_food_me_F())+' \n selected gives '+ caje_eq_description[i]
 		eq_idex_selected = null
 	
 	
@@ -1125,7 +1126,7 @@ func _on_eq_food_buton_pressed() -> void:
 	
 	
 func _on_eq_wind_but_pressed() -> void:
-	#print(GameManager.magic_wind_upgrade)
+	##print(GameManager.magic_wind_upgrade)
 	if 	GameManager.magic_wind_upgrade != 0:
 		GameManager.equiped_staff = 4
 		
@@ -1307,7 +1308,7 @@ func level_transition_cutscene(path_to_level, slide, type):
 	get_tree().paused = GameManager.paused
 	path = path_to_level
 	if slide < cutscene_length:
-		print( slide, cutscene_length)
+		#print( slide, cutscene_length)
 		$cutscene_background/cutscene.texture = current_cutscene[slide]
 	elif slide >= cutscene_length:
 		$Options.show()
@@ -1315,7 +1316,7 @@ func level_transition_cutscene(path_to_level, slide, type):
 		GameManager.resume()
 		count = 0
 		GameManager.enter_level(path_to_level)
-	#print(slide)
+	##print(slide)
 func cutscene(slide):
 	cutscene_type = 0
 	$Options.hide()
@@ -1360,9 +1361,9 @@ func wisdom_lockdown(type,points):
 	
 	wisdom_text = selected_wisdom[index]
 	while true:	
-		print(count)
+		#print(count)
 		if not 0 in count:
-			print('all used')
+			#print('all used')
 			wisdom_text = 'how did this happen, no more elements'
 			points = -GameManager.wisdom_points
 			break
@@ -1508,8 +1509,8 @@ func konverzácia(i):
 	if current_faces == [preload("res://assets/postavy/smugler_end_face.png")] and conversation_progres == 3 and GameManager.package:
 		update_log_info('you recieved 500 gold')
 		GameManager.gold += 500
-	print(i)
-	print(current_conversation)
+	#print(i)
+	#print(current_conversation)
 		
 		
 		
@@ -1611,7 +1612,7 @@ func _on_w_convert_pressed() -> void:
 	
 func _on_w_meele_a_but_pressed() -> void:
 	if GameManager.wisdom_upgrade > 0:
-		print('upgrade')
+		#print('upgrade')
 		GameManager.meele_variables[0] += 0.3
 		$Upgrade_wisdom/w_meele_class/A/A_value.text = 'A = '+str(GameManager.meele_variables[0])
 		player.A += 0.3
@@ -1620,7 +1621,7 @@ func _on_w_meele_a_but_pressed() -> void:
 		$Upgrade_wisdom/wisdom_points_counter.text = str(GameManager.wisdom_upgrade)
 func _on_w_meele_a_but_2_pressed() -> void:
 	if GameManager.wisdom_upgrade >= 10:
-		print('upgrade')
+		#print('upgrade')
 		GameManager.meele_variables[0] += 3
 		$Upgrade_wisdom/w_meele_class/A/A_value.text = 'A = '+str(GameManager.meele_variables[0])
 		player.A += 3
@@ -1649,7 +1650,7 @@ func _on_w_meele_h_but_2_pressed() -> void:
 		
 func _on_w_meele_f_but_pressed() -> void:
 	if GameManager.wisdom_upgrade > 0:
-		print('upgrade')
+		#print('upgrade')
 		GameManager.meele_variables[1] += 0.2
 		$Upgrade_wisdom/w_meele_class/F/F_value.text = 'F = '+str(GameManager.meele_variables[1])
 		player.F += 0.2
@@ -1658,7 +1659,7 @@ func _on_w_meele_f_but_pressed() -> void:
 		$Upgrade_wisdom/wisdom_points_counter.text = str(GameManager.wisdom_upgrade)
 func _on_w_meele_f_but_2_pressed() -> void:
 	if GameManager.wisdom_upgrade >= 10:
-		print('upgrade')
+		#print('upgrade')
 		GameManager.meele_variables[1] += 2
 		$Upgrade_wisdom/w_meele_class/F/F_value.text = 'F = '+str(GameManager.meele_variables[1])
 		player.F += 2
@@ -1690,7 +1691,7 @@ func calculate_needed_points_10():
 	var sum = 0
 	for i in range(0,10):
 		sum += round(PI*exp(1)*log(sqrt(pow(GameManager.wisdom_upgrade_level+i,3)+1)))
-	print('10 points: ',sum)
+	#print('10 points: ',sum)
 	return sum
 func _on_convert_pressed() -> void:
 	var points_needed = calculate_needed_points()
@@ -1864,33 +1865,26 @@ func _on_w_other_shield_but_2_pressed() -> void:
 			GameManager.spent_upgrades += 10
 			$Upgrade_wisdom/wisdom_points_counter.text = str(GameManager.wisdom_upgrade)
 			player.update_stats()
-func _on_ws_option_1_pressed() -> void:
-	
-	
-	
+func _on_ws_option_1_pressed() -> void:	
 	if GameManager.gold > ws_cost_1:
 		wisdom_lockdown('folk',ws_cost_1)
 		GameManager.gold -= ws_cost_1
-		ws_cost_1 =randi_range(75,200)
+		ws_cost_1 = round(rng.randfn(375,150))
 		$Wisdom_shop/ws_option_1/ws_cost_1.text = 'Cost: '+str(ws_cost_1)
 func _on_ws_exit_pressed() -> void:
 	$Wisdom_shop.hide()
-
+var rng = RandomNumberGenerator.new()
 func _on_ws_option_2_pressed() -> void:
-	
-	
 	if GameManager.gold > ws_cost_2:
 		wisdom_lockdown('oth',ws_cost_2)
 		GameManager.gold -= ws_cost_2
-		ws_cost_2 =randi_range(75,200)
+		ws_cost_2 = round(rng.randfn(375,150))
 		$Wisdom_shop/ws_option_2/ws_cost_2.text = 'Cost: '+str(ws_cost_2)
 func _on_ws_option_3_pressed() -> void:
-	
-	
 	if GameManager.gold > ws_cost_3:
 		wisdom_lockdown('fab',ws_cost_3)
 		GameManager.gold -= ws_cost_3
-		ws_cost_3 =randi_range(75,200)
+		ws_cost_3 = round(rng.randfn(375,150))
 		$Wisdom_shop/ws_option_3/ws_cost_3.text = 'Cost: '+str(ws_cost_3)
 		
 func open_wisdom_shop():
@@ -1925,7 +1919,7 @@ func choose_story(type):
 		return ''
 
 func blackout(speed,delta):
-	print('blackout show')
+	#print('blackout show')
 	$Blackout.color.a = move_toward($Blackout.color.a, 1, speed*delta)
 	
 	
@@ -2587,11 +2581,11 @@ preload("res://assets/UI/icony/icon_AoE_ab.png"),
 func update_ab_cd( time,max_time):
 	var perc =-snappedf(time / max_time,0.01)
 	if perc < 0:
-	#	print(time,' /  ', max_time,' ',perc)
+	#	#print(time,' /  ', max_time,' ',perc)
 		$ability_icon/ColorRect.scale.y = perc
 
 func update_ab_icon(texture_id):
-	print('icon ab change ',texture_id)
+	#print('icon ab change ',texture_id)
 	if texture_id in [0]:
 		$ability_icon.hide()
 	else:
@@ -2642,31 +2636,31 @@ func _on_drink_alcohol_pressed() -> void:
 
 
 func _on_bauxite_smelt_pressed() -> void:
-	if GameManager.gold >= 150 and GameManager.sutre['bauxit'] >= 25:
+	if GameManager.gold >= 150 and GameManager.sutre['bauxit'] >= 10:
 		GameManager.gold -= 150
 		GameManager.smelted_bars[0] += 1
-		GameManager.sutre['bauxit'] -= 25
+		GameManager.sutre['bauxit'] -= 10
 		$kovac/smelt_cat/Label6.text ='Smelted!'
 	else:
 		$kovac/smelt_cat/Label6.text ='Not enough resources.'
 func _on_iron_smelt_pressed() -> void:
-	if GameManager.gold >= 150 and  GameManager.sutre['hematite'] >= 25:
+	if GameManager.gold >= 150 and  GameManager.sutre['hematite'] >= 10:
 		GameManager.gold -= 150
 		GameManager.smelted_bars[1] += 1
-		GameManager.sutre['hematite'] -= 25
+		GameManager.sutre['hematite'] -= 10
 		$kovac/smelt_cat/Label6.text ='Smelted!'
 	else:
 		$kovac/smelt_cat/Label6.text ='Not enough resources.'
 func _on_antimonite_smelt_pressed() -> void:
-	if GameManager.gold >= 250 and  GameManager.sutre['antimonite'] >= 25:
+	if GameManager.gold >= 250 and  GameManager.sutre['antimonite'] >= 10:
 		GameManager.gold -= 250
 		GameManager.smelted_bars[2] += 1
-		GameManager.sutre['antimonite'] -= 25
+		GameManager.sutre['antimonite'] -= 10
 		$kovac/smelt_cat/Label6.text ='Smelted!'
 	else:
 		$kovac/smelt_cat/Label6.text ='Not enough resources.'
 func _on_silver_smelt_pressed() -> void:
-	if GameManager.gold >= 250  and GameManager.sutre['silver'] >= 25:
+	if GameManager.gold >= 250  and GameManager.sutre['silver'] >= 10:
 		GameManager.gold -= 250
 		GameManager.smelted_bars[3] += 1
 		GameManager.sutre['silver'] -= 10		
@@ -2674,7 +2668,7 @@ func _on_silver_smelt_pressed() -> void:
 	else:
 		$kovac/smelt_cat/Label6.text ='Not enough resources.'
 func _on_gold_smelt_pressed() -> void:
-	if GameManager.gold >= 500  and GameManager.sutre['gold'] >= 25:
+	if GameManager.gold >= 500  and GameManager.sutre['gold'] >= 10:
 		GameManager.gold -= 500
 		GameManager.smelted_bars[4] += 1
 		GameManager.sutre['gold'] -= 10	
@@ -2781,11 +2775,11 @@ func _on_ko_exit_pressed() -> void:
 
 
 func _on_buy_ice_sword_pressed() -> void:
-	if !GameManager.meele_bought[0] and GameManager.gold >= 1000 and GameManager.sutre['azurite'] >= 5 and GameManager.plants['mata'] >=200 and GameManager.smelted_bars[3] >= 2:
+	if !GameManager.meele_bought[0] and GameManager.gold >= 1000 and GameManager.sutre['azurite'] >= 1 and GameManager.plants['mata'] >=50 and GameManager.smelted_bars[3] >= 1:
 		GameManager.gold -= 1000 
-		GameManager.sutre['azurite'] -= 5
-		GameManager.smelted_bars[3] -= 2
-		GameManager.plants['mata'] -= 200
+		GameManager.sutre['azurite'] -= 1
+		GameManager.smelted_bars[3] -= 1
+		GameManager.plants['mata'] -= 50
 		GameManager.meele_bought[0] = 1
 		$kovac/smith_cat/Label.hide()
 		$kovac/smith_cat/Label.text = 'bought'
@@ -2794,11 +2788,11 @@ func _on_buy_ice_sword_pressed() -> void:
 	else:
 		$kovac/smith_cat/Label.text = 'Not enough resoureces'
 func _on_buy_earth_sword_pressed() -> void:
-	if !GameManager.meele_bought[1] and GameManager.gold >= 1000 and GameManager.sutre['uvarovite'] >= 5 and GameManager.plants['cesnak'] >=200 and GameManager.smelted_bars[3] >= 2:
+	if !GameManager.meele_bought[1] and GameManager.gold >= 1000 and GameManager.sutre['uvarovite'] >= 1 and GameManager.plants['cesnak'] >=50 and GameManager.smelted_bars[3] >= 1:
 		GameManager.gold -= 1000 
-		GameManager.sutre['uvarovite'] -= 5
-		GameManager.smelted_bars[3] -= 2
-		GameManager.plants['cesnak'] -= 200
+		GameManager.sutre['uvarovite'] -= 1
+		GameManager.smelted_bars[3] -= 1
+		GameManager.plants['cesnak'] -= 50
 		GameManager.meele_bought[1] = 1
 		$kovac/smith_cat/Label.text = 'bought'
 	elif GameManager.meele_bought[1]:
@@ -2806,11 +2800,11 @@ func _on_buy_earth_sword_pressed() -> void:
 	else:
 		$kovac/smith_cat/Label.text = 'Not enough resoureces'
 func _on_buy_fire_sword_pressed() -> void:
-	if  !GameManager.meele_bought[2] and GameManager.gold >= 1000 and GameManager.sutre['zincite'] >= 5 and GameManager.plants['zihlava'] >=200 and GameManager.smelted_bars[3] >= 2:
+	if  !GameManager.meele_bought[2] and GameManager.gold >= 1000 and GameManager.sutre['zincite'] >= 1 and GameManager.plants['zihlava'] >=50 and GameManager.smelted_bars[3] >= 1:
 		GameManager.gold -= 1000 
-		GameManager.sutre['zincite'] -= 5
-		GameManager.smelted_bars[3] -= 2
-		GameManager.plants['zihlava'] -= 200
+		GameManager.sutre['zincite'] -= 1
+		GameManager.smelted_bars[3] -= 1
+		GameManager.plants['zihlava'] -= 50
 		GameManager.meele_bought[2] = 1
 		$kovac/smith_cat/Label.text = 'bought'
 	elif GameManager.meele_bought[2]:
@@ -2818,11 +2812,11 @@ func _on_buy_fire_sword_pressed() -> void:
 	else:
 		$kovac/smith_cat/Label.text = 'Not enough resoureces'
 func _on_buy_wind_sword_pressed() -> void:
-	if  !GameManager.meele_bought[3] and GameManager.gold >= 1000 and GameManager.sutre['opal'] >= 5 and GameManager.plants['pupava'] >=200 and GameManager.smelted_bars[3] >= 2:
+	if  !GameManager.meele_bought[3] and GameManager.gold >= 1000 and GameManager.sutre['opal'] >= 1 and GameManager.plants['pupava'] >=50 and GameManager.smelted_bars[3] >= 1:
 		GameManager.gold -= 1000 
-		GameManager.sutre['opal'] -= 5
-		GameManager.smelted_bars[3] -= 2
-		GameManager.plants['pupava'] -= 200
+		GameManager.sutre['opal'] -= 1
+		GameManager.smelted_bars[3] -= 1
+		GameManager.plants['pupava'] -= 50
 		GameManager.meele_bought[3] = 1
 		$kovac/smith_cat/Label.text = 'bought'
 	elif GameManager.meele_bought[3]:
@@ -2997,3 +2991,109 @@ func _on_ds_wind_pressed() -> void:
 	$drop_sell/earth_drops.hide()
 	$drop_sell/fire_drops.hide()
 	$drop_sell/wind_drops.show()
+
+func jumpscare(jumpscare_type):
+	match jumpscare_type:
+		1: 
+			$jump_scare.show()
+			for i in range(100):
+				if not is_instance_valid(self) or not is_inside_tree():
+					return
+				$jump_scare.scale += Vector2(0.07,0.07)
+				$jump_scare.position -= Vector2(9.5,9.5)
+				await get_tree().process_frame
+			$jump_scare.hide()
+
+
+func _on_buycharger_pressed() -> void:
+	if GameManager.gold >= 1500:
+		GameManager.gold-=1500
+		GameManager.meele_bought[4]= 1
+
+
+func _on_buysd_pressed() -> void:
+	if GameManager.gold >= 500:
+			GameManager.gold-=500
+			GameManager.meele_bought[5]= 1
+
+
+func _on_kl_buy_ice_2_pressed() -> void:
+	if GameManager.magic_bought[0] ==  1:
+		$klenotnik_shop/staff/Label.text = 'Already bought'
+	elif GameManager.gold >= 500:
+			GameManager.magic_bought[0] =  1
+			$klenotnik_shop/staff/Label.text = 'bought'
+	else:
+		$klenotnik_shop/staff/Label.text = 'Not enough resources'
+func _on_kl_buy_ice_3_pressed() -> void:
+	if GameManager.magic_bought[1] ==  1:
+		$klenotnik_shop/staff/Label.text = 'Already bought'
+	elif GameManager.gold >= 500 :
+			GameManager.gold-=500
+		
+			GameManager.magic_bought[1] =  1
+			$klenotnik_shop/staff/Label.text = 'bought'
+	else:
+		$klenotnik_shop/staff/Label.text = 'Not enough resources'
+func _on_kl_buy_ice_4_pressed() -> void:
+	if GameManager.magic_bought[2] ==  1:
+		$klenotnik_shop/staff/Label.text = 'Already bought'
+	elif GameManager.gold >= 500 :
+			GameManager.gold-=500
+
+			GameManager.magic_bought[2] =  1
+			$klenotnik_shop/staff/Label.text = 'bought'
+	else:
+		$klenotnik_shop/staff/Label.text = 'Not enough resources'
+func _on_kl_buy_ice_8_pressed() -> void:
+	if GameManager.magic_bought[3] ==  1:
+		$klenotnik_shop/staff/Label.text = 'Already bought'
+	elif GameManager.gold >= 500 :
+			GameManager.gold-=500
+			
+			GameManager.magic_bought[3] =  1
+			$klenotnik_shop/staff/Label.text = 'bought'
+	else:
+		$klenotnik_shop/staff/Label.text = 'Not enough resources'
+			
+
+
+func _on_kl_buy_ice_5_pressed() -> void:
+	if GameManager.magic_bought[4] ==  1:
+		$klenotnik_shop/staff/Label.text = 'Already bought'
+	elif GameManager.gold >= 2000 and GameManager.smelted_bars[2] >= 1:
+			GameManager.gold-=2000
+			GameManager.smelted_bars[2] -= 1
+			GameManager.magic_bought[4] =  1
+			$klenotnik_shop/staff/Label.text = 'bought'
+	else:
+		$klenotnik_shop/staff/Label.text = 'Not enough resources'
+func _on_kl_buy_ice_6_pressed() -> void:
+	if GameManager.magic_bought[5] ==  1:
+		$klenotnik_shop/staff/Label.text = 'Already bought'
+	elif GameManager.gold >= 2000 and GameManager.smelted_bars[2] >= 1:
+			GameManager.gold-=2000
+			GameManager.smelted_bars[2] -= 1
+			GameManager.magic_bought[5] =  1
+			$klenotnik_shop/staff/Label.text = 'bought'
+	else:
+		$klenotnik_shop/staff/Label.text = 'Not enough resources'
+func _on_kl_buy_ice_7_pressed() -> void:
+	if GameManager.magic_bought[6] ==  1:
+		$klenotnik_shop/staff/Label.text = 'Already bought'
+	elif GameManager.gold >= 2000 and GameManager.smelted_bars[2] >= 1:
+			GameManager.gold-=2000
+			GameManager.smelted_bars[2] -= 1
+			GameManager.magic_bought[6] =  1
+			$klenotnik_shop/staff/Label.text = 'bought'
+	else:
+		$klenotnik_shop/staff/Label.text = 'Not enough resources'
+
+
+func _on_kl_exit_2_pressed() -> void:
+	$klenotnik_shop/staff.hide()
+	$klenotnik_shop/neck.show()
+
+func _on_kl_exit_3_pressed() -> void:
+	$klenotnik_shop/staff.show()
+	$klenotnik_shop/neck.hide()

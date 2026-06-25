@@ -13,9 +13,9 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print(area)
+	#print(area)
 	if area.get_parent() is Player:
-		print('player in ')
+		#print('player in ')
 		plr = area.get_parent()
 		while plr is Player:
 			area.get_parent().take_damage(damage, 'm', 'au')
@@ -24,5 +24,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Player:
-		print('player out')
+		#print('player out')
 		plr = null

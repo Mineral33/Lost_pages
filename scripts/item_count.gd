@@ -42,7 +42,7 @@ func update_healthbar(health,max_health, shield := 0, max_shield:=1,shd := false
 func _ready() -> void:
 
 	if name== 'minimap' and get_parent().get_parent().name != 'main':
-		print(get_parent().get_parent().get_child(1))
+		#print(get_parent().get_parent().get_child(1))
 		player = get_parent().get_parent().get_child(1)
 			
 func _process(_delta):

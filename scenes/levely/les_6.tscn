@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bojbk0v67svqs"]
+[gd_scene load_steps=37 format=3 uid="uid://bojbk0v67svqs"]
 
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="1_0pumk"]
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_oi7wl"]
@@ -30,6 +30,10 @@
 [ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="28_6bvws"]
 [ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/spawners/plant_spawner.tscn" id="29_efk0g"]
 [ext_resource type="PackedScene" uid="uid://dh3ry4hsrw28n" path="res://scenes/ingame_elements/spawners/enemy_spawner.tscn" id="30_k3mxh"]
+[ext_resource type="PackedScene" uid="uid://5ls8070prhca" path="res://scenes/ingame_elements/one_time_collectable/wisdom.tscn" id="31_xvqeu"]
+[ext_resource type="PackedScene" uid="uid://ctlb1qynwdplm" path="res://scenes/postavy/vykup_drop.tscn" id="32_480y1"]
+[ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="33_01x6p"]
+[ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="34_luhhd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_pnche")
@@ -708,3 +712,48 @@ position = Vector2(-841, -109)
 
 [node name="enemy_spawner19" parent="ground62" instance=ExtResource("30_k3mxh")]
 position = Vector2(-368, -105)
+
+[node name="wisdom" parent="." instance=ExtResource("31_xvqeu")]
+position = Vector2(-4321, 662)
+
+[node name="vykup_drop" parent="." instance=ExtResource("32_480y1")]
+position = Vector2(-2197, -163)
+
+[node name="Barrel" parent="." instance=ExtResource("33_01x6p")]
+position = Vector2(-469, 1416)
+
+[node name="Barrel2" parent="." instance=ExtResource("33_01x6p")]
+position = Vector2(-402, 1412)
+
+[node name="Barrel3" parent="." instance=ExtResource("33_01x6p")]
+position = Vector2(1456, -581)
+
+[node name="fly" parent="." instance=ExtResource("34_luhhd")]
+position = Vector2(3603, -306)
+
+[node name="fly2" parent="." instance=ExtResource("34_luhhd")]
+position = Vector2(3073, -523)
+
+[node name="fly3" parent="." instance=ExtResource("34_luhhd")]
+position = Vector2(2433, -699)
+
+[node name="fly4" parent="." instance=ExtResource("34_luhhd")]
+position = Vector2(296, -333)
+
+[node name="fly5" parent="." instance=ExtResource("34_luhhd")]
+position = Vector2(-1029, -170)
+
+[node name="fly6" parent="." instance=ExtResource("34_luhhd")]
+position = Vector2(-3530, -103)
+
+[node name="fly7" parent="." instance=ExtResource("34_luhhd")]
+position = Vector2(-829, 1185)
+
+[node name="fly8" parent="." instance=ExtResource("34_luhhd")]
+position = Vector2(1606, 1422)
+
+[node name="fly9" parent="." instance=ExtResource("34_luhhd")]
+position = Vector2(2968, 2243)
+
+[node name="fly10" parent="." instance=ExtResource("34_luhhd")]
+position = Vector2(2739, 2199)

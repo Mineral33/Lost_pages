@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://brmbcbsmqgnpg"]
+[gd_scene load_steps=34 format=3 uid="uid://brmbcbsmqgnpg"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_as6df"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="1_vytdl"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://uq0tr4piqmsx" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň8.tscn" id="28_hcb1e"]
 [ext_resource type="PackedScene" uid="uid://cgq1r2oefma8f" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň6.tscn" id="29_43ul7"]
 [ext_resource type="PackedScene" uid="uid://d3wlmuwyf2hy6" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň.tscn" id="30_xjiva"]
+[ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="31_bavru"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_tp21u")
@@ -634,3 +635,9 @@ position = Vector2(735, -1045)
 
 [node name="kameň64" parent="." instance=ExtResource("30_xjiva")]
 position = Vector2(264, -936)
+
+[node name="Barrel" parent="." instance=ExtResource("31_bavru")]
+position = Vector2(2326, 289)
+
+[node name="Barrel2" parent="." instance=ExtResource("31_bavru")]
+position = Vector2(-1776, 1967)

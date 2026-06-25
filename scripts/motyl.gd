@@ -25,7 +25,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 
-	#print(get_tree().get_nodes_in_group("bolt").size())
+	##print(get_tree().get_nodes_in_group("bolt").size())
 	attack_timer += delta
 	if ($enemy_health_component.health != max_health or $enemy_health_component.shield != max_shield) and attack_timer > 5 :
 		#for bolt in (get_tree().get_nodes_in_group("bolt")):
@@ -100,8 +100,8 @@ func _process(delta: float) -> void:
 				await get_tree().create_timer(0.2).timeout
 			bolt_attack_7()
 func _physics_process(delta: float) -> void:
-	#print(c,PI, c>PI)
-	#print(direction)
+	##print(c,PI, c>PI)
+	##print(direction)
 	
 	c += delta
 	
@@ -212,11 +212,11 @@ func bolt_attak_target(dir,inaccuracy):
 		offset += 45.0
 func get_angle_to_player():
 	var player = get_parent().get_child(1)
-	#print(player)
+	##print(player)
 	var direction = (player.global_position - $attack_marker.global_position).normalized()
 	var angle_rad = direction.angle()
 	var angle_deg = rad_to_deg(angle_rad)
-	#print(angle_deg)
+	##print(angle_deg)
 	return direction
 	
 func bolt_attack_1():

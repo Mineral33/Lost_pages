@@ -37,7 +37,7 @@ var is_following
 var lock = false
 var time_to_move = 0
 var dir_lock
-var spike = preload('res://scenes/ingame_elements/wooden_spike.tscn')
+var spike = preload("res://scenes/ingame_elements/damage_trap/wooden_spike.tscn")
 func _ready() -> void:
 	$enemy_health_component.max_health = max_health
 	$enemy_health_component.max_shield = max_shield
@@ -56,7 +56,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 
-#	print(SPEED)
+#	#print(SPEED)
 	pass	
 		
 func _physics_process(delta: float) -> void:
@@ -104,7 +104,7 @@ func die():
 	SPEED = 0
 	GameManager.gold += 1500
 	get_parent().npc_died(self)
-	#print('info to level '+ str(get_parent().name))# tell game manager that this died
+	##print('info to level '+ str(get_parent().name))# tell game manager that this died
 	await get_tree().create_timer(1).timeout
 	queue_free()
 	#var coin_instance = coin.instantiate()
@@ -207,6 +207,6 @@ func _on_jump_duration_timer_timeout() -> void:
 func _on_spike_timer_timeout() -> void:
 	var spike_inst = spike.instantiate()
 	spike_inst.global_position = $floor_marker.global_position #floor
-	#print('spike created at ',spike_inst.global_position)
+	##print('spike created at ',spike_inst.global_position)
 	get_parent().add_child(spike_inst)
 	

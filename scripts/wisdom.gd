@@ -7,16 +7,16 @@ var is_here = false
 
 func _ready() -> void:
 	$AnimationPlayer.play("idle")
-
+	type = ['folk','reg','oth','fab'].pick_random()
 
 
 
 func _input(event: InputEvent) -> void:
-	#print(self)
-	#print(!opened_bool)
+	##print(self)
+	##print(!opened_bool)
 	if (Input.is_action_just_pressed("go_to")  or Input.is_action_pressed("go_to")) and is_here and !opened_bool:
-		print('wl activate:' ,!opened_bool)
-		get_parent().get_child(0).wisdom_lockdown(type,randi_range(200,250))
+		#print('wl activate:' ,!opened_bool)
+		get_parent().get_child(0).wisdom_lockdown(type,randi_range(700,1000))
 		$AnimationPlayer.play("empty")
 		get_parent().wisdom_found(self)
 		GameManager.update_log_info('Lost page found')

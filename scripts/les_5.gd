@@ -19,7 +19,7 @@ var ch = get_children()
 func _ready() -> void:
 	'''
 	if level_name == 'les_16':
-		print('--------------------------------------------------------------')
+		#print('--------------------------------------------------------------')
 		var local_points = PackedVector2Array()
 		for point in $ground46/Polygon2D10.polygon:
 			local_points.append(to_local(point))  # wrong approach if parent has offset
@@ -29,13 +29,14 @@ func _ready() -> void:
 		overlay.color = Color(0.5, 0.5, 0.5, 0.8)
 		overlay.z_index = 2
 		add_child(overlay)
-		print("Overlay polygon points: ", overlay.polygon)
-		print("Overlay position: ", overlay.global_position)
-		print("Overlay visible: ", overlay.visible)
+		#print("Overlay polygon points: ", overlay.polygon)
+		#print("Overlay position: ", overlay.global_position)
+		#print("Overlay visible: ", overlay.visible)
 		
 	'''
 	get_child(0).update_minimap_map(minimap_picture, x_offset, y_offset)
 	deadlist = GameManager.npc_deadlist(level_name)
+	
 	treasures = GameManager.treasures[level_name]
 	wisdom = GameManager.collected_wisdom[level_name]
 	get_tree().current_scene.get_child(0).get_child(5).hide()
@@ -43,8 +44,8 @@ func _ready() -> void:
 	kill_dead()
 	open_known_treasures()
 	open_known_wisdom()
-	print(level_name)
-	print('spawn = ',spawn)
+	#print(level_name)
+	#print('spawn = ',spawn)
 	# každý level mohol mať vlastné id a všeky markery z neho von by sa volali rovnako
 	if spawn == 101:
 		spawn_position = $spawn_down.position
@@ -172,6 +173,10 @@ func _ready() -> void:
 		spawn_position = $from_les_19.position
 	if spawn == 163:
 		spawn_position = $from_les_14_water.position
+	if spawn == 164:
+		spawn_position = $from_lianova_veza_II.position
+	if spawn == 165:
+		spawn_position = $from_lianova_veza_III.position
 	
 	
 		
@@ -181,7 +186,7 @@ func _ready() -> void:
 		player.position = spawn_position
 	
 #func _process(delta: float) -> void:
-#	print(spawn_position)
+#	#print(spawn_position)
 
 func kill_dead():
 	var ch = get_children()
@@ -189,32 +194,36 @@ func kill_dead():
 		
 		if i.is_in_group("Enemies"):
 			level_enemies.append(i)
-	#print('level enemeies: '+ str(level_enemies))
+	##print('level enemeies: '+ str(level_enemies))
 	#for i in range(level_enemies.size()):
 	#	if !deadlist[i]:
-		#	print(level_enemies[i])
+		#	#print(level_enemies[i])
 	#		level_enemies[i].die()
 			
 func npc_died(npc):
 	for i in level_enemies.size():
 		if level_enemies[i] == npc:
-		#	print('in level: '+str(level_enemies[i])+' '+str(npc))
+		#	#print('in level: '+str(level_enemies[i])+' '+str(npc))
 			GameManager.register_dead_npc(level_name,i, respawn_time)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func open_known_treasures():
 	var ch = get_children()
+	#print(get_node('truhlica') )
 	for i in ch:
-		if i.is_in_group('treasures'):
+		if i.is_in_group('tresures'):
 			level_treasures.append(i)
+		#	#print('treasure - ',i)
+	##print('level treasures - ',level_treasures)
 	for i in range(level_treasures.size()):
 				if treasures[i]:
 					level_treasures[i].opened()
 			
 func treasure_found(trs):
+	
 	for i in level_treasures.size():
-		#print(level_treasures[i])
-		#print(trs)
+		
+		##print(trs)
 		if level_treasures[i] == trs:
 			
 			GameManager.register_treasure(level_name, i)
@@ -224,9 +233,9 @@ func open_known_wisdom():
 	for i in ch:
 		if i.is_in_group('wisdom'):
 			level_wisdom.append(i)
-#	print('level widom size: ', level_wisdom.size())
-#	print('wisdom gm: ', wisdom)
-#	print(GameManager.collected_wisdom)
+#	#print('level widom size: ', level_wisdom.size())
+#	#print('wisdom gm: ', wisdom)
+#	#print(GameManager.collected_wisdom)
 	for i in range(level_wisdom.size()):
 				if wisdom[i]:
 					level_wisdom[i].opened()
@@ -234,8 +243,8 @@ func open_known_wisdom():
 func wisdom_found(wis):
 	
 	for i in level_wisdom.size():
-		#print(level_wisdom[i])
-		#print(wis)
+		##print(level_wisdom[i])
+		##print(wis)
 		if level_wisdom[i] == wis:
 			GameManager.register_wisdom(level_name, i)
 
@@ -244,3 +253,14 @@ func wisdom_found(wis):
 
 func _on_cave_detector_area_entered(area: Area2D) -> void:
 	pass # Replace with function body.
+
+func unlock_barier(index):
+	for c in get_children():
+		if c.is_in_group('Unlockable_barier') and c.index == index:
+			c.open()
+			return
+			
+	
+	
+	
+	

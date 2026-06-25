@@ -20,81 +20,61 @@ position = Vector2(2.14704, 4.34644)
 polygon = PackedVector2Array(-187.9, 143.384, -186.147, 139.416, -177.326, 135.159, -172.963, 134.824, -128.886, 72.7391, -112.246, 60.6778, -87.4534, 40.4641, -74.2824, 32.5362, -50.3763, 7.74242, -36.9649, -1.03185, -19.4893, -10.1287, -5.12574, -19.2256, 0.140873, -18.9863, 10.7322, -27.0119, 41.0769, -25.4498, 56.1586, -18.7469, 79.1019, -13.4882, 111.408, 3.79205, 182.783, 98.4577, 203.463, 152.817, 208.234, 165.508, 149.725, 158.563, -185.98, 145.223)
 
 [node name="trava" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(-175.583, 125.339)
 
 [node name="trava2" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(-153.149, 107.909)
 
 [node name="trava3" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(-134.261, 82.7621)
 
 [node name="trava4" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(-114.848, 55.4327)
 
 [node name="trava5" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(-90.0858, 33.3855)
 
 [node name="trava6" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(-39.0686, -2.36125)
 
 [node name="trava7" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(-65.2971, 17.8271)
 
 [node name="trava8" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(-12.258, -19.1526)
 
 [node name="trava9" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(128.842, 2.13203)
 
 [node name="trava15" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(145.381, 25.4574)
 
 [node name="trava16" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(161.497, 46.2382)
 
 [node name="trava17" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(173.796, 65.3226)
 
 [node name="trava18" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(191.184, 84.8311)
 
 [node name="trava19" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(198.818, 116.638)
 
 [node name="trava20" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(213.237, 143.357)
 
 [node name="trava11" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(108.406, -12.1794)
 
 [node name="trava12" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(83.4438, -23.4656)
 
 [node name="trava13" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(57.7871, -30.5605)
 
 [node name="trava14" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(33.8283, -35.2865)
 
 [node name="trava10" parent="." instance=ExtResource("2_mr7gy")]
-visible = false
 position = Vector2(12.3036, -35.3012)

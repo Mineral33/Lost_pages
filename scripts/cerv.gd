@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 			var front = segments[i - 1]
 			var seg = segments[i]
 			var diff = seg.global_position - front.global_position
-		#	print(front.name, ' ',seg.name,' ', diff)
+		#	#print(front.name, ' ',seg.name,' ', diff)
 			if diff.length() > segment_spacing:
 				seg.global_position = front.global_position + diff.normalized() * segment_spacing
 			seg.rotation = (front.global_position - seg.global_position).angle()
@@ -68,5 +68,5 @@ func die():
 	GameManager.update_log_info('červ defeated + 500 gold')
 	GameManager.gold += 500
 	get_parent().npc_died(self)
-	#print('info to level '+ str(get_parent().name))# tell game manager that this died
+	##print('info to level '+ str(get_parent().name))# tell game manager that this died
 	queue_free()

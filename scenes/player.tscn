@@ -1811,7 +1811,10 @@ collision_mask = 0
 position = Vector2(0.111688, -16.305)
 shape = SubResource("CircleShape2D_ccnn6")
 
+[node name="SecondaryAbility_Timer" type="Timer" parent="."]
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]
 [connection signal="timeout" from="ChargeTimer" to="." method="_on_charge_timer_timeout"]
 [connection signal="timeout" from="AB_Timer" to="." method="_on_ab_timer_timeout"]
+[connection signal="timeout" from="SecondaryAbility_Timer" to="." method="_on_secondary_ability_timer_timeout"]

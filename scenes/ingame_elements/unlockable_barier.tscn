@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dycdvoq2ctixg"]
+
+[ext_resource type="Script" uid="uid://b38tlgx6whbyb" path="res://scripts/unlockable_barier.gd" id="1_5silx"]
+[ext_resource type="Texture2D" uid="uid://detd6vgpxqgn2" path="res://assets/interactable/breakable/prekažka_unlockable.png" id="2_5silx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twv00"]
+size = Vector2(32, 178)
+
+[node name="unlockable_barier" type="StaticBody2D" groups=["Unlockable_barier"]]
+collision_layer = 31
+collision_mask = 31
+script = ExtResource("1_5silx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -1)
+shape = SubResource("RectangleShape2D_twv00")
+
+[node name="PrekažkaBreakable" type="Sprite2D" parent="."]
+position = Vector2(5, -6)
+texture = ExtResource("2_5silx")

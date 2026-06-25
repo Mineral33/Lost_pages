@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://1olbr6w5wmmt"]
+[gd_scene load_steps=32 format=3 uid="uid://1olbr6w5wmmt"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_x17ib"]
 [ext_resource type="Texture2D" uid="uid://mlv73dph5td7" path="res://assets/UI/minimapy/les_13.png" id="2_5w205"]
@@ -27,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://bcejg6uxc0tve" path="res://scenes/ingame_elements/decoration/collision/ground/ground4.tscn" id="24_yunpp"]
 [ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/spawners/plant_spawner.tscn" id="25_qfd1d"]
 [ext_resource type="PackedScene" uid="uid://c8kyo7bcxrytj" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň10.tscn" id="26_pk1x4"]
+[ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="28_qfd1d"]
+[ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="29_ekpo7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_53qbl")
@@ -458,3 +460,21 @@ texture_repeat = 2
 position = Vector2(-2434.16, -909.1)
 texture = ExtResource("6_0145d")
 polygon = PackedVector2Array(2995.65, 1179.16, 2591.73, 1159.67, 2265.76, 1423.64, 1835.83, 1441.77, 1509.47, 1573.58, 1154.52, 1735.65, 762.142, 1631.69, 677.225, 1466.25, 194.071, 1678.54, 0.809998, 1671.22, -59.2181, 1562.88, -3.48798, 1576.87, 34.4843, 1558.49, 186.595, 1595.06, 274.597, 1576.06, 351.884, 1551.25, 409.294, 1498.46, 464.93, 1432.58, 583.522, 1397.44, 760.678, 1431.11, 959.796, 1535.06, 1207.23, 1574.59, 1644.93, 1414.49, 1841.29, 1310.86, 2200.22, 1315.57, 2400.4, 1226.99, 2520.87, 1069.33, 2882.27, 1081.73, 3332.24, 1242.94, 3626.32, 1241.17, 3535.97, 1358.09, 3285, 1284)
+
+[node name="Barrel" parent="." instance=ExtResource("28_qfd1d")]
+position = Vector2(159.078, 2058.88)
+
+[node name="Barrel2" parent="." instance=ExtResource("28_qfd1d")]
+position = Vector2(-1693.01, 1807.64)
+
+[node name="fly" parent="." instance=ExtResource("29_ekpo7")]
+position = Vector2(-2981.98, 1604.31)
+
+[node name="fly2" parent="." instance=ExtResource("29_ekpo7")]
+position = Vector2(-2536.32, 1510.16)
+
+[node name="fly3" parent="." instance=ExtResource("29_ekpo7")]
+position = Vector2(-1419.04, 804.012)
+
+[node name="fly4" parent="." instance=ExtResource("29_ekpo7")]
+position = Vector2(-857.26, 1930.71)

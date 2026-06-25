@@ -36,5 +36,5 @@ func _on_body_entered(body: Node) -> void:
 func _on_life_timer_timeout() -> void:
 	queue_free()
 #func _process(delta: float) -> void:
-	#print(self, ' ',$LifeTimer.time_left)
+	##print(self, ' ',$LifeTimer.time_left)
 	

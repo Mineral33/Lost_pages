@@ -15,11 +15,11 @@ var textures_opal =       [preload("res://assets/decoration/sutre/opal/opal_1.pn
 
 var textures = []
 var stone_chances = {
-	'bauxit':0.35, # orange
-	'hematite':0.3,# do cervena .5
+	'bauxit':0.32, # orange
+	'hematite':0.28,# do cervena .5
 	'malachite':0.02,# zelena
 	'azurite':0.02,# modra
-	'antimonite':0.05,# ....59
+	'antimonite':0.1,# ....59
 	'gold':0.07,#
 	'silver':0.13,# .79
 	'zincite':0.02, # red
@@ -35,7 +35,7 @@ func _ready() -> void:
 	#var sum = 0.0
 	#for name in stone_chances:
 	#	sum += stone_chances[name]
-	#print(sum)
+	##print(sum)
 	
 
 	if randf() < chance:
@@ -73,7 +73,7 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	#print(is_here, torn_off, Input.is_action_just_pressed("go_to"))
+	##print(is_here, torn_off, Input.is_action_just_pressed("go_to"))
 	if (Input.is_action_just_pressed("go_to")  or Input.is_action_pressed("go_to")) and is_here and !torn_off:
 		torn_off = true
 		GameManager.sutre[type] += 1

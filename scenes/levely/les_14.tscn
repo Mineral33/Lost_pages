@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://b41kt1dpqsm2x"]
+[gd_scene load_steps=47 format=3 uid="uid://b41kt1dpqsm2x"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_8mhm4"]
 [ext_resource type="Texture2D" uid="uid://cxefc10q6fa5l" path="res://assets/UI/minimapy/les_14.png" id="2_j6sq8"]
@@ -42,6 +42,8 @@
 [ext_resource type="PackedScene" uid="uid://df6fhcghbeyyj" path="res://scenes/ingame_elements/spawners/rock_spawn.tscn" id="40_gqc5u"]
 [ext_resource type="PackedScene" uid="uid://dh3ry4hsrw28n" path="res://scenes/ingame_elements/spawners/enemy_spawner.tscn" id="41_e3s0e"]
 [ext_resource type="PackedScene" uid="uid://bp7lehtusy0gq" path="res://scenes/enemies/list_gulomet_mage.tscn" id="42_oaecu"]
+[ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="43_e3s0e"]
+[ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="44_oaecu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_ym7i5")
@@ -641,6 +643,39 @@ position = Vector2(2289, 993)
 
 [node name="Mage_gulomet2" parent="." instance=ExtResource("42_oaecu")]
 position = Vector2(-1640, 1131)
+
+[node name="Barrel" parent="." instance=ExtResource("43_e3s0e")]
+position = Vector2(303, 1162)
+
+[node name="Barrel2" parent="." instance=ExtResource("43_e3s0e")]
+position = Vector2(137, 1167)
+
+[node name="Barrel3" parent="." instance=ExtResource("43_e3s0e")]
+position = Vector2(2041, 1008)
+
+[node name="Barrel4" parent="." instance=ExtResource("43_e3s0e")]
+position = Vector2(2112, 1008)
+
+[node name="Barrel5" parent="." instance=ExtResource("43_e3s0e")]
+position = Vector2(2185, 1012)
+
+[node name="fly" parent="." instance=ExtResource("44_oaecu")]
+position = Vector2(348, 1032)
+
+[node name="fly2" parent="." instance=ExtResource("44_oaecu")]
+position = Vector2(2111, 1550)
+
+[node name="fly3" parent="." instance=ExtResource("44_oaecu")]
+position = Vector2(1035, 1705)
+
+[node name="fly4" parent="." instance=ExtResource("44_oaecu")]
+position = Vector2(-3143, 1355)
+
+[node name="fly5" parent="." instance=ExtResource("44_oaecu")]
+position = Vector2(-1515, 965)
+
+[node name="fly6" parent="." instance=ExtResource("44_oaecu")]
+position = Vector2(133, 931)
 
 [connection signal="area_entered" from="cave_detector" to="cave_detector" method="_on_area_entered"]
 [connection signal="area_exited" from="cave_detector" to="cave_detector" method="_on_area_exited"]

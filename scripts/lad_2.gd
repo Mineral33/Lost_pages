@@ -17,7 +17,7 @@ func _ready() -> void:
 	if spawn == 202:
 		spawn_position = $begin.position
 	
-	print(spawn_position)
+	##print(spawn_position)
 	player.position = spawn_position
 	
 func kill_dead():
@@ -28,10 +28,10 @@ func kill_dead():
 		
 		if i.is_in_group("Enemies"):
 			level_enemies.append(i)
-	print('level enemeies: '+ str(level_enemies))
+	##print('level enemeies: '+ str(level_enemies))
 	for i in range(level_enemies.size()):
 		if !deadlist[i]:
-			print(level_enemies[i])
+			##print(level_enemies[i])
 			level_enemies[i].die()
 			
 func npc_died(npc):
@@ -39,7 +39,7 @@ func npc_died(npc):
 	for i in level_enemies.size():
 		
 		if level_enemies[i] == npc:
-			print('in level: '+str(level_enemies[i])+' '+str(npc))
+			##print('in level: '+str(level_enemies[i])+' '+str(npc))
 			GameManager.register_dead_npc(level,i, respawn_time)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

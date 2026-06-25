@@ -11,7 +11,7 @@ func _ready() -> void:
 	
 	
 func _on_area_entered(area: Area2D) -> void:
-	print(area)
+	#print(area)
 	if area.get_parent() is Player:
 		var damage = [10,12,15].pick_random()
 		area.get_parent().take_damage(damage,'p',' bzzzzz')
@@ -30,12 +30,12 @@ func ground():
 	
 	#$RayCast2D.force_raycast_update()
 	#var areas = get_overlapping_areas()
-	##print(areas)
+	###print(areas)
 	#return $RayCast2D.is_colliding()
 	
 	#var areas = get_overlapping_bodies()
 	#for area in areas:
-	#	print(area)
+	#	#print(area)
 #		if area.get_parent().is_in_group('Wall'):
 	#		return true
 	#	if area is TileMap or area is TileMapLayer:

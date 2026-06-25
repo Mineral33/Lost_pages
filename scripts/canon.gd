@@ -37,9 +37,9 @@ func die():
 	spawned_debris.get_child(1).play("Crumble")
 	get_tree().get_root().get_child(1).add_child(spawned_debris)
 	var loot = randi_range(80,120)
-	GameManager.update_log_info('Canon was defeated +'+str(loot)+' money')
+	GameManager.update_log_info('Canon was defeated +'+str(loot)+' money, antimonite ore 10 ')
 	GameManager.gold += loot
-	
+	GameManager.sutre['antimonite'] += 10
 	queue_free()
 	
 	

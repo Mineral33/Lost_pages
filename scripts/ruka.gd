@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 		#var max_angle = deg_to_rad(90)
 		#angle = clamp(angle, min_angle, max_angle)
 				#var min_angle = deg_to_rad(90)
-		#print(angle)
+		##print(angle)
 		#var max_angle = deg#_to_rad(270)
 		#angle = clamp(angle, min_angle, max_angle)
 		

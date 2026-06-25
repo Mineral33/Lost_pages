@@ -28,7 +28,7 @@ func _on_life_timer_timeout() -> void:
 	queue_free()
 	
 func _on_body_entered(body: Node2D) -> void:
-	#print(body)
+	##print(body)
 	if body.is_in_group('Wall') or body.is_in_group('Player'):
 		$explosion.show()
 		explode = true
@@ -47,7 +47,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 
 func _on_timer_timeout() -> void:
-	#print(in_explosion,' ',explode)
+	##print(in_explosion,' ',explode)
 	if  in_explosion and explode:
 			get_parent().get_node('Player').take_damage(damage,'p','boom')
 	

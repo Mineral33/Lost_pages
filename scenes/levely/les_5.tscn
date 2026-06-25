@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bdvix1tss223v"]
+[gd_scene load_steps=39 format=3 uid="uid://bdvix1tss223v"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_oaxix"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="1_vrthh"]
@@ -34,6 +34,8 @@
 [ext_resource type="PackedScene" uid="uid://c8kyo7bcxrytj" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň10.tscn" id="32_rb1sv"]
 [ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="33_igptq"]
 [ext_resource type="PackedScene" uid="uid://b8q1g5wte8n1g" path="res://scenes/enemies/wind_sniper_mage.tscn" id="34_rb1sv"]
+[ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="35_rla8p"]
+[ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="36_nitx8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_nwbeu")
@@ -221,7 +223,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_vjgj2")
 
 [node name="wisdom" parent="." instance=ExtResource("17_l373s")]
-position = Vector2(-2224, -408)
+position = Vector2(-2233, -444)
 
 [node name="Node2D" parent="." instance=ExtResource("18_n36ne")]
 position = Vector2(149, -796)
@@ -685,3 +687,42 @@ position = Vector2(-1025, -892)
 
 [node name="Mage_sniper2" parent="." instance=ExtResource("34_rb1sv")]
 position = Vector2(203, -752)
+
+[node name="wisdom2" parent="." instance=ExtResource("17_l373s")]
+position = Vector2(-2156, -444)
+
+[node name="Barrel" parent="." instance=ExtResource("35_rla8p")]
+position = Vector2(276, -754)
+
+[node name="Barrel2" parent="." instance=ExtResource("35_rla8p")]
+position = Vector2(333, -754)
+
+[node name="Barrel3" parent="." instance=ExtResource("35_rla8p")]
+position = Vector2(-1944, -430)
+
+[node name="Barrel4" parent="." instance=ExtResource("35_rla8p")]
+position = Vector2(-1886, -438)
+
+[node name="Barrel5" parent="." instance=ExtResource("35_rla8p")]
+position = Vector2(-1835, -456)
+
+[node name="Barrel6" parent="." instance=ExtResource("35_rla8p")]
+position = Vector2(-1787, -483)
+
+[node name="Barrel7" parent="." instance=ExtResource("35_rla8p")]
+position = Vector2(155, 678)
+
+[node name="fly" parent="." instance=ExtResource("36_nitx8")]
+position = Vector2(-133, 591)
+
+[node name="fly2" parent="." instance=ExtResource("36_nitx8")]
+position = Vector2(1821, 249)
+
+[node name="fly3" parent="." instance=ExtResource("36_nitx8")]
+position = Vector2(-735, -939)
+
+[node name="fly4" parent="." instance=ExtResource("36_nitx8")]
+position = Vector2(-279, -744)
+
+[node name="fly5" parent="." instance=ExtResource("36_nitx8")]
+position = Vector2(844, -834)

@@ -16,7 +16,7 @@ var can_attak = true
 @onready var coin
 var player
 var dir = Vector2.ZERO
-@export var max_health = 1000
+@export var max_health = 150
 @export var max_shield = 100
 var active = 1
 var momentum = 4
@@ -76,7 +76,7 @@ func _physics_process(delta: float) -> void:
 		if !$ground_detection_raycast.is_colliding():
 			$nohy_player.play('idle')
 			pass
-			#print('activated')
+			##print('activated')
 			#flip()
 			
 			
@@ -169,7 +169,7 @@ func die():
 	GameManager.score += 5
 	GameManager.gold += 50
 	get_parent().npc_died(self)
-	#print('info to level '+ str(get_parent().name))# tell game manager that this died
+	##print('info to level '+ str(get_parent().name))# tell game manager that this died
 	$nohy.hide()
 	$AnimationPlayer.play("die")
 	#var coin_instance = coin.instantiate()
@@ -186,11 +186,11 @@ func _on_attack_area_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player && !dead && can_attak: 	
 		$AnimationPlayer.play("atak")
 		player = area.get_parent()
-	#	print(player)
+	#	#print(player)
 
 
 func _on_attack_area_area_exited(area: Area2D) -> void:
 	#$AnimationPlayer.play('run')
 	player = null
-	#print(area)
+	##print(area)
 	

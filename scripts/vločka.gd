@@ -37,21 +37,21 @@ func _on_area_entered(area: Area2D) -> void:
 	pierce_active = get_parent().get_node('Player').pierce_ab_b
 	for are in overlapping_objects:
 		var parent = are.get_parent()
-		#print("Hit: " + parent.name)
-		#print(are.get_parent())
-		#print(are.name)
+		##print("Hit: " + parent.name)
+		##print(are.get_parent())
+		##print(are.name)
 		
 		#if parent.is_in_group('Wall') and !pierce_active :
-			#print('pierce active ',pierce_active)
+			##print('pierce active ',pierce_active)
 			#queue_free() 
 		if parent.is_in_group("Enemies") and are.name =='hurtbox' and len(pierced_enemies) < pierce and parent not in pierced_enemies:
-			#print(element)
-			#print(parent.get_parent())
+			##print(element)
+			##print(parent.get_parent())
 			if parent.get_parent().name== 'červ':
 					parent = parent.get_parent()
-					#print('act')
-			#print(parent)
-			#ddprint(parent.get_parent())
+					##print('act')
+			##print(parent)
+			#dd#print(parent.get_parent())
 			match element:
 				1:
 					parent.find_child("enemy_health_component", true, false).take_damage_enemy(projectile_damage,'i')
@@ -67,7 +67,7 @@ func _on_area_entered(area: Area2D) -> void:
 					elif player.health < player.max_health and player.health + earth_heal > player.max_health:
 						player.health = player.max_health
 				3:
-				#	print(parent)
+				#	#print(parent)
 					parent.find_child("enemy_health_component", true, false).take_damage_enemy(projectile_damage,'f')
 				4:
 					parent.find_child("enemy_health_component", true, false).take_damage_enemy(projectile_damage,'w')
@@ -82,7 +82,7 @@ func _on_area_entered(area: Area2D) -> void:
 		elif parent is Barrel and parent not in pierced_enemies:
 			parent.destroy()
 			pierced_enemies.append(parent)
-			#print(parent,' ',pierced_enemies)
+			##print(parent,' ',pierced_enemies)
 			if len(pierced_enemies) == pierce:
 				queue_free()
 			return 
@@ -92,7 +92,7 @@ func type(magic_weapeon):
 		2:$Sprite2D.texture = leaf
 		3:$Sprite2D.texture = fire
 		4:
-		#	print(GameManager.wind_ab_b)
+		#	#print(GameManager.wind_ab_b)
 			if GameManager.wind_ab_b:
 				$Sprite2D.texture = tornado_ab
 			else:
@@ -106,7 +106,7 @@ func type(magic_weapeon):
 
 
 func _on_wall_body_entered(body: Node2D) -> void:
-	#	print(body.name, body.is_in_group('Wall'))
+	#	#print(body.name, body.is_in_group('Wall'))
 		pierce_active = get_parent().get_node('Player').pierce_ab_b
 		
 		if body.is_in_group("Wall") and !pierce_active:
