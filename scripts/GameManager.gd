@@ -54,7 +54,7 @@ var deepfrost : int =0
 var livingwood : int =0
 var ash : int =0
 var windsteel : int=0
-var gold = 0
+var gold = 10000
 var magic_fire_upgrade = 0
 var magic_ice_upgrade = 0
 var magic_earth_upgrade = 0
@@ -75,7 +75,7 @@ var food_bought_def = [0,0,0,0,0,0,0,0,0]#[0,0,0,0]
 
 var equiped_meele = 0
 var equiped_necklace = 0
-var wisdom_points = 0
+var wisdom_points = 10000
 var meele_variables = [8,5,2.5,1.1] #A,F,h,sigma
 var wisdom_upgrade = 0
 var wisdom_upgrade_level = 0
@@ -257,10 +257,10 @@ func _process(delta: float) -> void:
 	##print(magic_bought)
 	pass
 func _ready() -> void:
-#	for name in plants:
-#		plants[name] = 1000
-#	for name in sutre:
-#		sutre[name] += 100
+	for name in plants:
+		plants[name] = 500
+	for name in sutre:
+		sutre[name] += 500
 	for i in range(5,21):
 		##print('les_%s'%str(i))
 		deadlist['les_%s'%str(i)] = range(25).map(func(_i): return 1)

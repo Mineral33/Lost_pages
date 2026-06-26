@@ -759,36 +759,36 @@ rotation = 1.309
 [node name="ground13" parent="." instance=ExtResource("18_ki1qu")]
 position = Vector2(415, 427)
 
-[node name="truhlica" parent="." instance=ExtResource("35_tttn6")]
-position = Vector2(-3627, 118)
-
-[node name="kameň24" parent="." instance=ExtResource("29_aimpn")]
-position = Vector2(-104, 597)
-
-[node name="Polygon2D" type="Polygon2D" parent="kameň24"]
+[node name="Polygon2D" type="Polygon2D" parent="."]
 z_index = -1
 texture_repeat = 2
-position = Vector2(-4167, -3146)
+position = Vector2(-4260, -2559)
 texture = ExtResource("36_o61or")
 polygon = PackedVector2Array(2375, 3085, 3320, 2870, 4087, 2872, 4212, 3165, 4370, 3194, 4702, 3132, 4689, 3495, 4835, 3724, 3688, 4270, 2836, 4571, 1614, 4576, 390, 3861, 70, 3119, 378, 2748, 788, 2831, 1229, 3041, 1792, 2986)
 
-[node name="Barrel" parent="kameň24" instance=ExtResource("36_aimpn")]
-position = Vector2(-3628, -485)
+[node name="Barrel" parent="." instance=ExtResource("36_aimpn")]
+position = Vector2(-3721, 102)
 
-[node name="Barrel2" parent="kameň24" instance=ExtResource("36_aimpn")]
-position = Vector2(-3683, -482)
+[node name="Barrel2" parent="." instance=ExtResource("36_aimpn")]
+position = Vector2(-3776, 105)
 
-[node name="fly" parent="kameň24" instance=ExtResource("37_nt6gr")]
-position = Vector2(-3493, -642)
+[node name="fly" parent="." instance=ExtResource("37_nt6gr")]
+position = Vector2(-3586, -55)
 
-[node name="fly2" parent="kameň24" instance=ExtResource("37_nt6gr")]
-position = Vector2(-2741, -703)
+[node name="fly2" parent="." instance=ExtResource("37_nt6gr")]
+position = Vector2(-2834, -116)
 
-[node name="fly3" parent="kameň24" instance=ExtResource("37_nt6gr")]
-position = Vector2(-2031, -536)
+[node name="fly3" parent="." instance=ExtResource("37_nt6gr")]
+position = Vector2(-2124, 51)
 
-[node name="fly4" parent="kameň24" instance=ExtResource("37_nt6gr")]
-position = Vector2(124, -270)
+[node name="fly4" parent="." instance=ExtResource("37_nt6gr")]
+position = Vector2(31, 317)
+
+[node name="kameň24" parent="." instance=ExtResource("29_aimpn")]
+position = Vector2(-129, 622)
+
+[node name="truhlica" parent="." instance=ExtResource("35_tttn6")]
+position = Vector2(-3627, 118)
 
 [node name="Polygon2D10" type="Polygon2D" parent="."]
 z_index = -1
@@ -829,7 +829,7 @@ position = Vector2(-969, 624)
 position = Vector2(-353, 660)
 
 [node name="torch7" parent="cave_detector" instance=ExtResource("39_wp7di")]
-position = Vector2(-50, 863)
+position = Vector2(-85, 865)
 
 [node name="poleno" parent="." instance=ExtResource("40_aimpn")]
 position = Vector2(-1819, 1607)

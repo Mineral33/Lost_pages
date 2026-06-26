@@ -353,6 +353,13 @@ position = Vector2(-3540, 1681)
 [node name="plant_spawner12" parent="." instance=ExtResource("26_ta000")]
 position = Vector2(-3540, 1681)
 
+[node name="Polygon2D9" type="Polygon2D" parent="."]
+texture_repeat = 2
+position = Vector2(-4114, 1480)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("28_bweyt")
+polygon = PackedVector2Array(1688, 1147, 1090, 492, 2588, 508, 3408, 196, 4372, 490, 5040, 482, 5420, 294, 6168, 330, 6504, 482, 8758, 478, 9310, 156, 10058, 160, 9686, 476, 8378, 724, 7234, 822, 6420, 692, 5398, 674, 4534, 946, 3334, 1557, 2855.44, 1190.6, 2402, 1179)
+
 [node name="wisdom" parent="." instance=ExtResource("26_igqh1")]
 position = Vector2(871, 1505)
 
@@ -362,17 +369,13 @@ position = Vector2(-689, 1465)
 [node name="fly2" parent="." instance=ExtResource("27_iomkt")]
 position = Vector2(-3187, 1345)
 
+[node name="fly5" parent="." instance=ExtResource("27_iomkt")]
+position = Vector2(-823, 1424)
+scale = Vector2(0.25, 0.25)
+
+[node name="fly4" parent="." instance=ExtResource("27_iomkt")]
+position = Vector2(-2688, 1475)
+scale = Vector2(0.25, 0.25)
+
 [node name="fly3" parent="." instance=ExtResource("27_iomkt")]
 position = Vector2(-1575, 1186)
-
-[node name="Polygon2D9" type="Polygon2D" parent="fly3"]
-texture_repeat = 2
-position = Vector2(-5078, 588)
-texture = ExtResource("28_bweyt")
-polygon = PackedVector2Array(1688, 1147, 1090, 492, 2588, 508, 3408, 196, 4372, 490, 5040, 482, 5420, 294, 6168, 330, 6504, 482, 8758, 478, 9310, 156, 10058, 160, 9686, 476, 8378, 724, 7234, 822, 6420, 692, 5398, 674, 4534, 946, 3334, 1557, 2855.44, 1190.6, 2402, 1179)
-
-[node name="fly" parent="fly3" instance=ExtResource("27_iomkt")]
-position = Vector2(-2226, 578)
-
-[node name="fly2" parent="fly3" instance=ExtResource("27_iomkt")]
-position = Vector2(1504, 476)

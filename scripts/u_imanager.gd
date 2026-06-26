@@ -849,8 +849,8 @@ func update_plants_count_ui():
 		i += 1
 var item_stone_textures = [
 	preload("res://assets/decoration/sutre/bauxit/bauxit_1.png"),
-	preload("res://assets/decoration/sutre/malachite/malachite_1.png"),
 	preload("res://assets/decoration/sutre/hematite/hematite_1.png"),
+	preload("res://assets/decoration/sutre/malachite/malachite_1.png"),
 	preload("res://assets/decoration/sutre/azurite/azurite_1.png"),
 	preload("res://assets/decoration/sutre/antimonite/antimonite_1.png"),
 	preload("res://assets/decoration/sutre/gold/gold_1.png"),
@@ -859,7 +859,7 @@ var item_stone_textures = [
 	preload("res://assets/decoration/sutre/uvarovite/uvarovite_1.png"),
 	preload("res://assets/decoration/sutre/opal/opal_1.png"),
 ]
-var item_stone_names = ["bauxit","malachite","hematite","azurite","antimonite","gold","silver","zincite","uvarovite","opal"]
+var item_stone_names = ["bauxit","hematite","malachite","azurite","antimonite","gold","silver","zincite","uvarovite","opal"]
 
 func update_ore_count_ui():
 	if $ItemCount/ScrollContainer/GridContainer.get_children():
@@ -2421,148 +2421,147 @@ func klenotnik_init():
 
 func _on_kl_buy_ice_pressed() -> void:
 	if GameManager.necklaces_bought[0]:
-		$klenotnik_shop/bought.show()
-		$"klenotnik_shop/no resources".hide()
-		$klenotnik_shop/bought_now.hide()
+		$klenotnik_shop/neck/bought.show()
+		$"klenotnik_shop/neck/no resources".hide()
+		$klenotnik_shop/neck/bought_now.hide()
 	elif GameManager.sutre['silver'] >=25 and GameManager.sutre['azurite'] >= 5 and GameManager.gold >= 500:
 		GameManager.sutre['silver'] -= 25
 		GameManager.sutre['azurite'] -= 5
 		GameManager.gold -= 500
 		GameManager.necklaces_bought[0] = true
-		$"klenotnik_shop/no resources".hide()
-		$klenotnik_shop/bought.hide()
-		$klenotnik_shop/bought_now.show()
+		$"klenotnik_shop/neck/no resources".hide()
+		$klenotnik_shop/neck/bought.hide()
+		$klenotnik_shop/neck/bought_now.show()
 	else:
-		$"klenotnik_shop/no resources".show()
-		$klenotnik_shop/bought.hide()
-		$klenotnik_shop/bought_now.hide()
+		$"klenotnik_shop/neck/no resources".show()
+		$klenotnik_shop/neck/bought.hide()
+		$klenotnik_shop/neck/bought_now.hide()
 func _on_kl_buy_earth_pressed() -> void:
 	if GameManager.necklaces_bought[1]:
-		$klenotnik_shop/bought.show()
-		$"klenotnik_shop/no resources".hide()
-		$klenotnik_shop/bought_now.hide()
+		$klenotnik_shop/neck/bought.show()
+		$"klenotnik_shop/neck/no resources".hide()
+		$klenotnik_shop/neck/bought_now.hide()
 	elif GameManager.sutre['silver'] >=25 and GameManager.sutre['malachite'] >= 2 and GameManager.sutre['uvarovite'] >= 2 and GameManager.gold >= 500:
 		GameManager.sutre['silver'] -= 25
 		GameManager.sutre['malachite'] -= 2
 		GameManager.sutre['uvarovite'] -=2
 		GameManager.gold -= 500
 		GameManager.necklaces_bought[1] = true
-		$"klenotnik_shop/no resources".hide()
-		$klenotnik_shop/bought.hide()
-		$klenotnik_shop/bought_now.show()
+		$"klenotnik_shop/neck/no resources".hide()
+		$klenotnik_shop/neck/bought.hide()
+		$klenotnik_shop/neck/bought_now.show()
 	else:
-		$"klenotnik_shop/no resources".show()
-		$klenotnik_shop/bought.hide()
-		$klenotnik_shop/bought_now.hide()
+		$"klenotnik_shop/neck/no resources".show()
+		$klenotnik_shop/neck/bought.hide()
+		$klenotnik_shop/neck/bought_now.hide()
 func _on_kl_buy_fire_pressed() -> void:
 	if GameManager.necklaces_bought[2]:
-			$klenotnik_shop/bought.show()
-			$"klenotnik_shop/no resources".hide()
-			$klenotnik_shop/bought_now.hide()
+		$klenotnik_shop/neck/bought.show()
+		$"klenotnik_shop/neck/no resources".hide()
+		$klenotnik_shop/neck/bought_now.hide()
 	elif GameManager.sutre['silver'] >=25 and GameManager.sutre['zincite'] >= 5 and GameManager.gold >= 500:
 		GameManager.sutre['silver'] -= 25
 		GameManager.sutre['zincite'] -= 5
 		GameManager.gold -= 500
 		GameManager.necklaces_bought[2] = true
-		$"klenotnik_shop/no resources".hide()
-		$klenotnik_shop/bought.hide()
-		$klenotnik_shop/bought_now.show()
+		$"klenotnik_shop/neck/no resources".hide()
+		$klenotnik_shop/neck/bought.hide()
+		$klenotnik_shop/neck/bought_now.show()
 	else:
-		$"klenotnik_shop/no resources".show()
-		$klenotnik_shop/bought.hide()
-		$klenotnik_shop/bought_now.hide()
+		$"klenotnik_shop/neck/no resources".show()
+		$klenotnik_shop/neck/bought.hide()
+		$klenotnik_shop/neck/bought_now.hide()
 func _on_kl_buy_wind_pressed() -> void:
 	if GameManager.necklaces_bought[3]:
-		$klenotnik_shop/bought.show()
-		$"klenotnik_shop/no resources".hide()
-		$klenotnik_shop/bought_now.hide()
+		$klenotnik_shop/neck/bought.show()
+		$"klenotnik_shop/neck/no resources".hide()
+		$klenotnik_shop/neck/bought_now.hide()
 	elif GameManager.sutre['silver'] >=25 and GameManager.sutre['opal'] >= 5 and GameManager.gold >= 500:
 		GameManager.sutre['silver'] -= 25
 		GameManager.sutre['opal'] -= 5
 		GameManager.gold -= 500
 		GameManager.necklaces_bought[3] = true
-		$"klenotnik_shop/no resources".hide()
-		$klenotnik_shop/bought.hide()
-		$klenotnik_shop/bought_now.show()
+		$"klenotnik_shop/neck/no resources".hide()
+		$klenotnik_shop/neck/bought.hide()
+		$klenotnik_shop/neck/bought_now.show()
 	else:
-		$"klenotnik_shop/no resources".show()
-		$klenotnik_shop/bought.hide()
-		$klenotnik_shop/bought_now.hide()
+		$"klenotnik_shop/neck/no resources".show()
+		$klenotnik_shop/neck/bought.hide()
+		$klenotnik_shop/neck/bought_now.hide()
 func _on_kl_buy_ice_g_pressed() -> void:
 	if GameManager.necklaces_bought[4]:
-		$klenotnik_shop/bought.show()
-		$"klenotnik_shop/no resources".hide()
-		$klenotnik_shop/bought_now.hide()
+		$klenotnik_shop/neck/bought.show()
+		$"klenotnik_shop/neck/no resources".hide()
+		$klenotnik_shop/neck/bought_now.hide()
 	elif GameManager.sutre['gold'] >=25 and GameManager.sutre['azurite'] >= 15 and GameManager.gold >= 1500:
 		GameManager.sutre['gold'] -= 25
 		GameManager.sutre['azurite'] -= 15
 		GameManager.gold -= 1500
 		GameManager.necklaces_bought[4] = true
-		$"klenotnik_shop/no resources".hide()
-		$klenotnik_shop/bought.hide()
-		$klenotnik_shop/bought_now.show()
+		$"klenotnik_shop/neck/no resources".hide()
+		$klenotnik_shop/neck/bought.hide()
+		$klenotnik_shop/neck/bought_now.show()
 	else:
-		$"klenotnik_shop/no resources".show()
-		$klenotnik_shop/bought.hide()
-		$klenotnik_shop/bought_now.hide()
+		$"klenotnik_shop/neck/no resources".show()
+		$klenotnik_shop/neck/bought.hide()
+		$klenotnik_shop/neck/bought_now.hide()
 func _on_kl_buy_earth_g_pressed() -> void:
 	if GameManager.necklaces_bought[5]:
-		$klenotnik_shop/bought.show()
-		$"klenotnik_shop/no resources".hide()
-		$klenotnik_shop/bought_now.hide()
+		$klenotnik_shop/neck/bought.show()
+		$"klenotnik_shop/neck/no resources".hide()
+		$klenotnik_shop/neck/bought_now.hide()
 	elif GameManager.sutre['gold'] >=25 and GameManager.sutre['malachite'] >= 7 and GameManager.sutre['uvarovite'] and GameManager.gold >= 1500:
 		GameManager.sutre['gold'] -= 25
 		GameManager.sutre['malachite'] -= 7
 		GameManager.sutre['uvarovite'] -=7
 		GameManager.gold -= 1500
 		GameManager.necklaces_bought[5] = true
-		$"klenotnik_shop/no resources".hide()
-		$klenotnik_shop/bought.hide()
-		$klenotnik_shop/bought_now.show()
+		$"klenotnik_shop/neck/no resources".hide()
+		$klenotnik_shop/neck/bought.hide()
+		$klenotnik_shop/neck/bought_now.show()
 	else:
-		$"klenotnik_shop/no resources".show()
-		$klenotnik_shop/bought.hide()
-		$klenotnik_shop/bought_now.hide()
+		$"klenotnik_shop/neck/no resources".show()
+		$klenotnik_shop/neck/bought.hide()
+		$klenotnik_shop/neck/bought_now.hide()
 
 
 func _on_kl_buy_fire_g_pressed() -> void:
 	if GameManager.necklaces_bought[6]:
-		$klenotnik_shop/bought.show()
-		$"klenotnik_shop/no resources".hide()
-		$klenotnik_shop/bought_now.hide()
+		$klenotnik_shop/neck/bought.show()
+		$"klenotnik_shop/neck/no resources".hide()
+		$klenotnik_shop/neck/bought_now.hide()
 	elif GameManager.sutre['gold'] >=25 and GameManager.sutre['zincite'] >= 15 and GameManager.gold >= 1500:
 		GameManager.sutre['gold'] -= 25
 		GameManager.sutre['zincite'] -= 15
 		GameManager.gold -= 1500
 		GameManager.necklaces_bought[6] = true
-		$"klenotnik_shop/no resources".hide()
-		$klenotnik_shop/bought.hide()
-		$klenotnik_shop/bought_now.show()
+		$"klenotnik_shop/neck/no resources".hide()
+		$klenotnik_shop/neck/bought.hide()
+		$klenotnik_shop/neck/bought_now.show()
 	else:
-		$"klenotnik_shop/no resources".show()
-		$klenotnik_shop/bought.hide()
-		$klenotnik_shop/bought_now.hide()
+		$"klenotnik_shop/neck/no resources".show()
+		$klenotnik_shop/neck/bought.hide()
+		$klenotnik_shop/neck/bought_now.hide()
 
 
 
 func _on_kl_buy_wind_g_pressed() -> void:
 	if GameManager.necklaces_bought[7]:
-		$klenotnik_shop/bought.show()
-		$"klenotnik_shop/no resources".hide()
-		$klenotnik_shop/bought_now.hide()
+		$klenotnik_shop/neck/bought.show()
+		$"klenotnik_shop/neck/no resources".hide()
+		$klenotnik_shop/neck/bought_now.hide()
 	elif GameManager.sutre['gold'] >=25 and GameManager.sutre['opal'] >= 15 and GameManager.gold >= 1500:
 		GameManager.sutre['gold'] -= 25
 		GameManager.sutre['opal'] -= 15
 		GameManager.gold -= 1500
 		GameManager.necklaces_bought[7] = true
-		$"klenotnik_shop/no resources".hide()
-		$klenotnik_shop/bought.hide()
-		$klenotnik_shop/bought_now.show()
-
+		$"klenotnik_shop/neck/no resources".hide()
+		$klenotnik_shop/neck/bought.hide()
+		$klenotnik_shop/neck/bought_now.show()
 	else:
-		$"klenotnik_shop/no resources".show()
-		$klenotnik_shop/bought.hide()
-		$klenotnik_shop/bought_now.hide()
+		$"klenotnik_shop/neck/no resources".show()
+		$klenotnik_shop/neck/bought.hide()
+		$klenotnik_shop/neck/bought_now.hide()
 
 
 func _on_kl_exit_pressed() -> void:
@@ -2632,7 +2631,7 @@ func _on_drink_alcohol_pressed() -> void:
 	if GameManager.gold >= 100:
 		GameManager.gold -= 100
 		get_parent().get_node('Player').drink()
-		$"alcohol_shop/item_alcohol drink/drink_count".text = str(get_parent().get_node('Player').inaccuracy / 0.1)
+		$"alcohol_shop/item_alcohol drink/drink_count".text = str((get_parent().get_node('Player').inaccuracy-0.50) / 0.1)
 
 
 func _on_bauxite_smelt_pressed() -> void:
