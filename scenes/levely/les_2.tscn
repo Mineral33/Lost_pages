@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_on1hv"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_2j6iw"]
-[ext_resource type="PackedScene" uid="uid://da28lp31q8oc7" path="res://scenes/player.tscn" id="3_lkfsf"]
 [ext_resource type="Texture2D" uid="uid://bwaph72k1a0k6" path="res://assets/pozadie/pozadie - hory a les.png" id="4_on1hv"]
 [ext_resource type="Texture2D" uid="uid://cxa0jdx7220w0" path="res://assets/pozadie/tileset_grass_stone.png" id="5_53jcd"]
 [ext_resource type="PackedScene" uid="uid://cd5jchxxugydc" path="res://scenes/dvere/stromove_dvere.tscn" id="6_3lp0b"]
@@ -48,6 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://whb5k7e66wwu" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň9.tscn" id="45_p18oq"]
 [ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="46_b2prr"]
 [ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="48_e6jch"]
+[ext_resource type="PackedScene" uid="uid://da28lp31q8oc7" path="res://scenes/player.tscn" id="49_e6jch"]
 [ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="49_paqst"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ossu"]
@@ -138,8 +138,8 @@ y_offset = 500
 
 [node name="UImanager" parent="." instance=ExtResource("2_2j6iw")]
 
-[node name="Player" parent="." instance=ExtResource("3_lkfsf")]
-position = Vector2(3722, -827)
+[node name="Player" parent="." instance=ExtResource("49_e6jch")]
+position = Vector2(-1878, -473)
 
 [node name="PozadieLes" type="Sprite2D" parent="."]
 z_index = -370
@@ -173,13 +173,13 @@ position = Vector2(1898, -355)
 position = Vector2(1468, -224)
 
 [node name="stromove dvere2" parent="." instance=ExtResource("6_3lp0b")]
-position = Vector2(-4110, 371)
+position = Vector2(-4119, 370)
 to_level_name = "Drotaverin"
-path_to_level = "res://scenes/levely/Drotaverin.tscn"
+path_to_level = "res://scenes/levely/drotaverin.tscn"
 player_spawn = 107
 
 [node name="from_drotaverin" type="Marker2D" parent="."]
-position = Vector2(-3975, 361)
+position = Vector2(-3998, 395)
 
 [node name="view_tower" parent="." instance=ExtResource("9_1m5km")]
 position = Vector2(288, -550)
@@ -299,7 +299,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("20_s4i5j")
 
 [node name="riddle_door" parent="." instance=ExtResource("22_4313a")]
-position = Vector2(-3898, 358)
+position = Vector2(-3856, 360)
 
 [node name="truhlica" parent="." instance=ExtResource("22_0y20y")]
 position = Vector2(-1910, -215)

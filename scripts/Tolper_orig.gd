@@ -168,7 +168,7 @@ func die():
 	SPEED = 0
 	GameManager.score += 5
 	GameManager.gold += 50
-	get_parent().npc_died(self)
+#	get_parent().npc_died(self)
 	##print('info to level '+ str(get_parent().name))# tell game manager that this died
 	$nohy.hide()
 	$AnimationPlayer.play("die")

@@ -45,4 +45,4 @@ func npc_died(npc):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func spawn_player():
 	#print('here')
-	
+	pass

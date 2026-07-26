@@ -25,15 +25,15 @@ func _process(delta: float) -> void:
 		#var max_angle = deg_to_rad(70)
 		#angle = clamp(angle, min_angle, max_angle)
 		$".".scale.x = abs($".".scale.x)
-		$"../up_sutostep_raycast".scale.x =abs($"../up_sutostep_raycast".scale.x)
-		$"../down_autostep_raycast".scale.x =abs($"../down_autostep_raycast".scale.x)
+#		$"../up_sutostep_raycast".scale.x =abs($"../up_sutostep_raycast".scale.x)
+		#$"../down_autostep_raycast".scale.x =abs($"../down_autostep_raycast".scale.x)
 		#$weapeon.position.x = abs($weapeon.position.x)
 	
 	else:
 		$".".scale.x = -abs($".".scale.x)
 		#$weapeon.position.x = abs($weapeon.position.x)*-1
-		$"../up_sutostep_raycast".scale.x = abs($"../up_sutostep_raycast".scale.x)*-1
-		$"../down_autostep_raycast".scale.x = abs($"../down_autostep_raycast".scale.x)*-1
+	#	$"../up_sutostep_raycast".scale.x = abs($"../up_sutostep_raycast".scale.x)*-1
+	#	$"../down_autostep_raycast".scale.x = abs($"../down_autostep_raycast".scale.x)*-1
 	
 		
 		angle = PI + angle

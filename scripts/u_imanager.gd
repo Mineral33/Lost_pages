@@ -173,7 +173,7 @@ func _ready() :
 
 func _process(delta: float) -> void:
 	
-
+	#print('fly '+str(GameManager.fly))
 	await get_tree().create_timer(0.15).timeout
 	if GameManager.magic_ice_upgrade == 0:
 		$equipment/eq_ice_but.disabled = true
@@ -1415,6 +1415,43 @@ func gate_guard_init():
 		current_conversation.append('Leave or I throw you to the right.')
 	konverzácia(0)	
 	
+var fly_face = [preload('res://assets/postavy/fly_quest_face.png')]
+var fly_talk = ['Hey! Tough times... Maybe you could help?',
+'Great! There is a great problem, it annoys me day and night',
+'THE FLYIES',
+'I need you to kill them. Kill 25 and I will give you reward, you will not regret']
+var fly_face_order = [0,0,0,0]
+var fly_conversation_length = 4
+func fly_quest_init():
+	$conversation.show()
+	current_conversation =fly_talk
+	current_faces = fly_face
+	current_conversation_length = fly_conversation_length
+	current_face_order = fly_face_order
+	GameManager.fly_quest = true
+	konverzácia(0)
+	
+
+func fly_quest_cont():
+	
+	$conversation.show()
+	if GameManager.fly >= 25:
+		current_conversation =['Great! Here is your 250 moeny','You made this world nicer, I dont mind if you do it again']
+		current_faces = fly_face
+		current_conversation_length = 2
+		current_face_order = [0,0]
+		GameManager.gold +=250
+		update_log_info('Quest complete +250 money')
+		GameManager.fly -= 25
+
+	else:
+		current_conversation =['great, you killed '+str(GameManager.fly)+' flyes']
+		current_faces = fly_face
+		current_conversation_length = 1
+		current_face_order = [0]
+	konverzácia(0)
+	
+	
 	
 var smugler_face = [preload('res://assets/postavy/smugler_face_1.png')]
 var smugler_talk = ['Hello, i would need something, would you help me?',
@@ -1525,6 +1562,7 @@ func konverzácia(i):
 		current_face_order = []
 		return
 	$conversation/conversation_text.text = current_conversation[i]
+#	print( current_faces[current_face_order[i]])
 	$conversation/conversation_face.texture = current_faces[current_face_order[i]]
 
 var conversation_progres = 1
@@ -2015,7 +2053,7 @@ func death_ui(last_cause):
 func update_world_ui(level):
 	reset_world_ui()
 	match level:
-		"res://scenes/levely/drotaverin.tscn":
+		"res://scenes/levely/Drotaverin.tscn":
 			$world_map/wm_levels/drotaverin.color = Color('#b1a061')
 		"res://scenes/levely/les.tscn":
 			$world_map/wm_levels/les.color = Color('#b1a061')
@@ -2065,6 +2103,8 @@ func update_world_ui(level):
 			$world_map/wm_levels/LV_I.color = Color('#b1a061')
 		"res://scenes/levely/lianova_veza_II.tscn":
 			$world_map/wm_levels/LV_II.color = Color('#b1a061')
+		"res://scenes/levely/lianova_veza_III.tscn":
+			$world_map/wm_levels/LV_II.color = Color('#b1a061')
 		"res://scenes/levely/mesto_na_lanach.tscn":
 			$world_map/wm_levels/MNL.color = Color('#b1a061')
 		"res://scenes/levely/S.tscn":
@@ -2092,6 +2132,7 @@ func reset_world_ui():
 	$world_map/wm_levels/les_16.color = Color('#ad9f81')
 	$world_map/wm_levels/les_17.color = Color('#ad9f81')
 	$world_map/wm_levels/les_18.color = Color('#ad9f81')
+	$world_map/wm_levels/les_19.color = Color('#ad9f81')
 	$world_map/wm_levels/S.color = Color('#ad9f81')
 	$world_map/wm_levels/les_2.color = Color('#ad9f81')
 	$world_map/wm_levels/les_4.color = Color('#ad9f81')
@@ -2099,6 +2140,7 @@ func reset_world_ui():
 	$world_map/wm_levels/WF.color = Color('#ad9f81')
 	$world_map/wm_levels/LV_I.color = Color('#ad9f81')
 	$world_map/wm_levels/LV_II.color = Color('#ad9f81')
+	$world_map/wm_levels/LV_III.color = Color('#ad9f81')
 	$world_map/wm_levels/T.color = Color('#ad9f81')
 	$world_map/wm_levels/SM.color = Color('#ad9f81')
 	$world_map/wm_levels/H.color = Color('#ad9f81')

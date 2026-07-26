@@ -319,20 +319,9 @@ position = Vector2(-3394, 1703)
 [node name="Dexamet4" parent="." instance=ExtResource("7_1qvq4")]
 position = Vector2(-2130, 1855)
 
-[node name="wisdom" parent="." instance=ExtResource("19_f1xk7")]
-position = Vector2(4731, 1427)
-type = "oth"
-
 [node name="wisdom2" parent="." instance=ExtResource("19_f1xk7")]
-position = Vector2(4769, 1476)
+position = Vector2(4756, 1491)
 type = "reg"
-
-[node name="wisdom3" parent="." instance=ExtResource("19_f1xk7")]
-position = Vector2(4694, 1479)
-
-[node name="wisdom4" parent="." instance=ExtResource("19_f1xk7")]
-position = Vector2(4421, 1423)
-type = "fab"
 
 [node name="poleno" parent="." instance=ExtResource("21_58kb5")]
 position = Vector2(1124, 283)

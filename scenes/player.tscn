@@ -1740,18 +1740,6 @@ offset_right = -0.211348
 offset_bottom = -29.3233
 scale = Vector2(0.585, 0.215)
 
-[node name="up_sutostep_raycast" type="RayCast2D" parent="."]
-position = Vector2(-0.570044, 7.97848)
-target_position = Vector2(7.75671, -0.178676)
-collision_mask = 4
-collide_with_areas = true
-
-[node name="down_autostep_raycast" type="RayCast2D" parent="."]
-position = Vector2(-0.274197, 22.7688)
-target_position = Vector2(7.81777, 0.354446)
-collision_mask = 4
-collide_with_areas = true
-
 [node name="FireRateTimer" type="Timer" parent="."]
 one_shot = true
 

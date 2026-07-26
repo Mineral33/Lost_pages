@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhw543cj7mru" path="res://scripts/tutorial.gd" id="1_o67v8"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="1_xg8qw"]
-[ext_resource type="PackedScene" uid="uid://da28lp31q8oc7" path="res://scenes/player.tscn" id="2_5ogtw"]
+[ext_resource type="PackedScene" uid="uid://da28lp31q8oc7" path="res://scenes/player.tscn" id="3_kjruk"]
 [ext_resource type="Texture2D" uid="uid://rpkl7mr3jkch" path="res://assets/tilesets/wood_building_tileset.png" id="4_4ysux"]
 [ext_resource type="Texture2D" uid="uid://ct6w3dfxukl8u" path="res://assets/pozadie/pozadie_wooden_house.png" id="5_4ysux"]
 [ext_resource type="PackedScene" uid="uid://14jbjx0enb5v" path="res://scenes/dvere/door_back.tscn" id="7_4ysux"]
@@ -42,8 +42,8 @@ script = ExtResource("1_o67v8")
 
 [node name="UImanager" parent="." instance=ExtResource("1_xg8qw")]
 
-[node name="Player" parent="." instance=ExtResource("2_5ogtw")]
-position = Vector2(-1132, 108)
+[node name="Player" parent="." instance=ExtResource("3_kjruk")]
+position = Vector2(-1191, 116)
 
 [node name="TileMap" type="TileMap" parent="." groups=["Wall"]]
 z_index = -1

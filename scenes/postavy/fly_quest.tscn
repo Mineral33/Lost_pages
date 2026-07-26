@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://br62n7h5tuvek"]
+
+[ext_resource type="Script" uid="uid://cy874i0fjuqld" path="res://scripts/fly_quest.gd" id="1_p4t6u"]
+[ext_resource type="Texture2D" uid="uid://dfciyp2iokpqp" path="res://assets/postavy/fly_quest_person.png" id="2_02yf6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmmwm"]
+size = Vector2(23, 62)
+
+[node name="fly_quest" type="Node2D"]
+script = ExtResource("1_p4t6u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, 12)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_02yf6")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 15)
+shape = SubResource("RectangleShape2D_cmmwm")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -147,7 +147,7 @@ func _ready():
 		animation.play('meele_idle')
 		$ruka/weapeon.hide()
 	#health = max_health
-	GameManager.player = self
+#	GameManager.player = self
 	update_stats()
 	#$Camera2D.limit_bottom = 1000
 	#meele_weapeon_equip(meele_weapeon)

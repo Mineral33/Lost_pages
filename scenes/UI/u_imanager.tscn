@@ -2461,6 +2461,16 @@ offset_bottom = 104.0
 rotation = 1.5708
 color = Color(0.529412, 0.447059, 0.32549, 1)
 
+[node name="path32" type="ColorRect" parent="world_map/paths"]
+z_index = 1
+layout_mode = 0
+offset_left = 880.0
+offset_top = 54.0
+offset_right = 885.0
+offset_bottom = 104.0
+rotation = 1.5708
+color = Color(0.529412, 0.447059, 0.32549, 1)
+
 [node name="path26" type="ColorRect" parent="world_map/paths"]
 z_index = 1
 layout_mode = 0
@@ -3313,6 +3323,32 @@ offset_top = 8.0
 offset_right = 117.0
 offset_bottom = 31.0
 text = "LV II"
+
+[node name="LV_III" type="ColorRect" parent="world_map/wm_levels"]
+z_index = 2
+layout_mode = 0
+offset_left = 884.0
+offset_top = 36.0
+offset_right = 984.0
+offset_bottom = 76.0
+color = Color(0.678431, 0.623529, 0.505882, 1)
+
+[node name="b" type="ColorRect" parent="world_map/wm_levels/LV_III"]
+z_index = -1
+layout_mode = 0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 105.0
+offset_bottom = 45.0
+color = Color(0.529412, 0.447059, 0.32549, 1)
+
+[node name="Label" type="Label" parent="world_map/wm_levels/LV_III"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 8.0
+offset_right = 117.0
+offset_bottom = 31.0
+text = "LV III"
 
 [node name="T" type="ColorRect" parent="world_map/wm_levels"]
 z_index = 2

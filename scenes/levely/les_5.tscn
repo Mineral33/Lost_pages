@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bdvix1tss223v"]
+[gd_scene load_steps=40 format=3 uid="uid://bdvix1tss223v"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_oaxix"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="1_vrthh"]
@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://b8q1g5wte8n1g" path="res://scenes/enemies/wind_sniper_mage.tscn" id="34_rb1sv"]
 [ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="35_rla8p"]
 [ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="36_nitx8"]
+[ext_resource type="PackedScene" uid="uid://br62n7h5tuvek" path="res://scenes/postavy/fly_quest.tscn" id="37_nitx8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_nwbeu")
@@ -726,3 +727,6 @@ position = Vector2(-279, -744)
 
 [node name="fly5" parent="." instance=ExtResource("36_nitx8")]
 position = Vector2(844, -834)
+
+[node name="fly_quest" parent="." instance=ExtResource("37_nitx8")]
+position = Vector2(3619, -283)

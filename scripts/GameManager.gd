@@ -233,6 +233,9 @@ var drop_fire = [0,0,0]
 var drop_wind = [0,0,0]
 
 var smelted_bars = [0,0,0,0,0]
+
+var fly = 0
+var fly_quest = false
 func _process(delta: float) -> void:
 	##print(treasures['lianova_veza'])
 #	pr#int(plants)

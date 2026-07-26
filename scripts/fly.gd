@@ -27,6 +27,8 @@ func _process(delta):
 		x = abs(x_init)
 	position += Vector2(x , y+ randf_range(-2,2))
 func die():
+	if GameManager.fly_quest:
+		GameManager.fly += 1
 	queue_free()
 func take_damage(amount,type,cause):
 	$enemy_health_component.take_damage_enemy(amount,type)
