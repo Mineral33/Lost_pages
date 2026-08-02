@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://14jbjx0enb5v"]
 
 [ext_resource type="Script" uid="uid://c3u0mgc7s1lm0" path="res://scripts/door_back.gd" id="1_dobrb"]
-[ext_resource type="Texture2D" uid="uid://darkq7087stxq" path="res://assets/decoration/door/dvere.png" id="2_g12u8"]
+[ext_resource type="Texture2D" uid="uid://dgchf3lqjjepy" path="res://assets/decoration/door/dvere4d.png" id="2_o8vw5"]
 [ext_resource type="Texture2D" uid="uid://m5dsruw6ddw3" path="res://assets/decoration/sign.png" id="3_o8vw5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x58om"]
-size = Vector2(62, 137)
+size = Vector2(64, 131)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8vw5"]
 size = Vector2(225, 140)
@@ -14,19 +14,21 @@ size = Vector2(225, 140)
 script = ExtResource("1_dobrb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_g12u8")
+position = Vector2(5, 22)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_o8vw5")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 9
 collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(7, 35.5)
+position = Vector2(8, 38.5)
 shape = SubResource("RectangleShape2D_x58om")
 
 [node name="Sign" type="Sprite2D" parent="."]
 z_index = 1440
-position = Vector2(66, 78)
+position = Vector2(66, 83)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_o8vw5")
 

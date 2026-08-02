@@ -9,7 +9,7 @@ var is_here = null
 var texture_alt
 func _ready() -> void:
 	if texture_index == 1:
-		texture_alt = preload("res://assets/decoration/door/dvere.png")
+		texture_alt = preload("res://assets/decoration/door/dvere4d.png")
 	elif texture_index == 2:
 		texture_alt = preload("res://assets/decoration/door/lesne_dvere.png")
 	elif texture_index == 5:

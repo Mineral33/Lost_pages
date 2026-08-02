@@ -390,7 +390,7 @@ position = Vector2(-2849, -48)
 scale = Vector2(-1, 1)
 
 [node name="ground13" parent="." instance=ExtResource("27_6eagr")]
-position = Vector2(-2350, -370)
+position = Vector2(-2351, -369)
 scale = Vector2(-1, 1)
 
 [node name="ground12" parent="." instance=ExtResource("25_wbrm2")]

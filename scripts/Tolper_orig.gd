@@ -151,6 +151,7 @@ func attak_reset():
 	$AnimationPlayer.play("idle")
 	$nohy_player.play("idle")
 	if player is Player:
+		await get_tree().create_timer(randf_range(0,0.15)).timeout
 		$AnimationPlayer.play("atak")
 	
 func atack_action():

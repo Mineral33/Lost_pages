@@ -129,7 +129,7 @@ func _on_hit_box_area_entered(area: Area2D) -> void:
 		player = area.get_parent()
 		while player != null:
 			player.take_damage(damage,'m',' poleno', 5)
-			await get_tree().create_timer(0.5).timeout
+			await get_tree().create_timer(1.5).timeout
 #func atack_action():
 #	if player is Player && !dead && can_attak: 
 #		player.take_damage(10,'m', 5)
