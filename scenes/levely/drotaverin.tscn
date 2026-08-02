@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cok61d6qfieir"]
+[gd_scene load_steps=29 format=3 uid="uid://cok61d6qfieir"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_4iynu"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_rs0qt"]
@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://bch8cj2l80el2" path="res://assets/budovy/domD2.png" id="14_s6avk"]
 [ext_resource type="Texture2D" uid="uid://ceuocul1wc7sk" path="res://assets/budovy/domD3.png" id="15_4iynu"]
 [ext_resource type="PackedScene" uid="uid://bujkufxxdick4" path="res://scenes/ingame_elements/decoration/poleno.tscn" id="16_dmicl"]
-[ext_resource type="PackedScene" uid="uid://b6w2miewds31u" path="res://scenes/postavy/exchange.tscn" id="18_dmicl"]
 [ext_resource type="PackedScene" uid="uid://cr6drwpvtq3mk" path="res://scenes/postavy/wisdom_shop.tscn" id="19_46io3"]
 [ext_resource type="Texture2D" uid="uid://d1nu083fahs1v" path="res://assets/pozadie/obloha.png" id="20_46io3"]
 [ext_resource type="PackedScene" uid="uid://ckkin1m8635a3" path="res://scenes/ingame_elements/decoration/collision/mestska_dlazka.tscn" id="21_n5iae"]
@@ -216,9 +215,6 @@ position = Vector2(-1420, 10)
 
 [node name="poleno2" parent="." instance=ExtResource("16_dmicl")]
 position = Vector2(-4089, 10)
-
-[node name="exchange" parent="." instance=ExtResource("18_dmicl")]
-position = Vector2(-4517, 16)
 
 [node name="wisdom_shop" parent="." instance=ExtResource("19_46io3")]
 position = Vector2(-5325, 21)
