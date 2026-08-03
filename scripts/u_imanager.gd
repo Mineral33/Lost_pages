@@ -1538,6 +1538,41 @@ func doctor_init():
 	current_conversation_length = doctor_conversation_length
 	current_face_order = doctor_face_order
 	konverzácia(0)	
+	
+var lod_face = [preload("res://assets/postavy/námorník_face1.png")]
+var lod_talk = ['Hey! This ship sails to Amlodip island',
+'It is mostly covered with ice.',
+'Ticket costs 300 money.'
+]
+var lod_face_order = [0,0,0]
+var lod_conversation_length = 3
+func lod_init():
+	#print('lod inited')
+	$conversation.show()
+	current_conversation =lod_talk
+	current_faces = lod_face
+	current_conversation_length = lod_conversation_length
+	current_face_order = lod_face_order
+	konverzácia(0)	
+
+var lodb_face = [preload("res://assets/postavy/námorník_face1.png")]
+var lodb_talk = ['Hey! How was your trip?',
+'Kinda chilly here.',
+'Ticket back  also costs 300 money.'
+]
+var lodb_face_order = [0,0,0]
+var lodb_conversation_length = 3
+func lod_init_back():
+	#print('lod inited')
+	$conversation.show()
+	current_conversation =lodb_talk
+	current_faces = lodb_face
+	current_conversation_length = lodb_conversation_length
+	current_face_order = lodb_face_order
+	konverzácia(0)	
+	
+var conv_yes = false
+var conv_no = false
 # univery8lna funkcia pre konverzáciu
 func konverzácia(i):
 	if current_faces == [preload('res://assets/postavy/smugler_face_1.png')] and conversation_progres == 2 && !GameManager.package:
@@ -1546,6 +1581,10 @@ func konverzácia(i):
 	if current_faces == [preload("res://assets/postavy/smugler_end_face.png")] and conversation_progres == 3 and GameManager.package:
 		update_log_info('you recieved 500 gold')
 		GameManager.gold += 500
+	if (current_conversation == lod_talk or current_conversation == lodb_talk) and conversation_progres == 2:
+		$conversation/conv_no.show()
+		$conversation/conv_yes.show()
+		
 	#print(i)
 	#print(current_conversation)
 		
@@ -1573,7 +1612,52 @@ func _on_advance_in_conversation_pressed() -> void:
 func _on_decline_pressed() -> void:
 	conversation_progres = 1
 	$conversation.hide()
-
+	conv_yes = false
+	conv_no = false
+	
+func _on_conv_no_pressed() -> void:
+	conv_no = true
+	_on_decline_pressed()
+	
+func _on_conv_yes_pressed() -> void:
+	conv_yes = true
+	if current_conversation == lod_talk:
+		$timed_view.show()
+		$timed_view.texture = load("res://assets/pozadie/lod_view.png")
+		get_tree().paused = true
+		await  get_tree().create_timer(5).timeout
+		$timed_view.texture = load("res://assets/pozadie/lod_view2.png")
+		await  get_tree().create_timer(5).timeout
+		$timed_view.texture = load("res://assets/pozadie/lod_view3.png")
+		await  get_tree().create_timer(5).timeout
+		GameManager.player_spawn = 166
+		GameManager.save(get_parent().get_node('Player').get_node('AB_Timer').time_left)
+		GameManager.content_to_save['level'] = "res://scenes/levely/lad.tscn"
+		GameManager._save(166)
+		get_parent().get_node('Player').restore_bindings()
+		get_parent().get_node('Player').vytriezvi()
+		
+		$timed_view.hide()
+		get_tree().paused = false
+		GameManager.enter_level("res://scenes/levely/lad.tscn")
+	if current_conversation == lodb_talk:
+		$timed_view.show()
+		$timed_view.texture = load("res://assets/pozadie/lod_view.png")
+		get_tree().paused = true
+		await  get_tree().create_timer(7).timeout
+		$timed_view.texture = load("res://assets/pozadie/lod_view2.png")
+		await  get_tree().create_timer(7).timeout
+	
+		GameManager.player_spawn = 167
+		GameManager.save(get_parent().get_node('Player').get_node('AB_Timer').time_left)
+		GameManager.content_to_save['level'] = "res://scenes/levely/les_19.tscn"
+		GameManager._save(167)
+		get_parent().get_node('Player').restore_bindings()
+		get_parent().get_node('Player').vytriezvi()
+		
+		$timed_view.hide()
+		get_tree().paused = false
+		GameManager.enter_level("res://scenes/levely/les_19.tscn")
 func show_view(view_image):
 	$view.show()
 	$view.texture = view_image

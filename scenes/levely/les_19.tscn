@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cwhnhdfdvsd7i"]
+[gd_scene load_steps=30 format=3 uid="uid://cwhnhdfdvsd7i"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_6gwul"]
 [ext_resource type="Texture2D" uid="uid://cxefc10q6fa5l" path="res://assets/UI/minimapy/les_14.png" id="2_wlt0d"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="24_lhay7"]
 [ext_resource type="Texture2D" uid="uid://ciccohemu5646" path="res://assets/pozadie/jaskyna.png" id="25_5ymwc"]
 [ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="26_5ymwc"]
+[ext_resource type="PackedScene" uid="uid://cjd75fj8i81o1" path="res://scenes/postavy/lod.tscn" id="27_531de"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("6_twyky")
@@ -128,7 +129,7 @@ position = Vector2(2973, 1458)
 
 [node name="Pozadie-HoryALes" type="Sprite2D" parent="."]
 z_index = -380
-position = Vector2(553, 544)
+position = Vector2(120, 583)
 scale = Vector2(5, 5)
 texture = ExtResource("5_wcfan")
 
@@ -151,7 +152,7 @@ position = Vector2(-3566, 1432)
 
 [node name="water" parent="." instance=ExtResource("8_y6kxl")]
 position = Vector2(-515, 2563)
-scale = Vector2(25, 15)
+scale = Vector2(26, 15)
 
 [node name="truhlica" parent="." instance=ExtResource("9_4ufue")]
 position = Vector2(-650, 2631)
@@ -287,24 +288,27 @@ rotation = -2.35619
 [node name="kameň9" parent="." instance=ExtResource("20_6a6ce")]
 position = Vector2(-409, 2597)
 
+[node name="kameň15" parent="." instance=ExtResource("20_6a6ce")]
+position = Vector2(495, 2338)
+
 [node name="kameň10" parent="." instance=ExtResource("21_liyrt")]
 position = Vector2(-97.9999, 2471)
 rotation = -0.785397
 
 [node name="kameň11" parent="." instance=ExtResource("18_8su46")]
-position = Vector2(39, 2229)
-rotation = -0.785397
+position = Vector2(178, 2365)
+rotation = -0.261799
 
 [node name="kameň12" parent="." instance=ExtResource("20_6a6ce")]
-position = Vector2(405, 2083)
-rotation = 2.35619
+position = Vector2(773, 2172)
+rotation = 2.09439
 
 [node name="kameň13" parent="." instance=ExtResource("22_yix0y")]
-position = Vector2(498, 1836)
+position = Vector2(876, 2015)
 
 [node name="kameň14" parent="." instance=ExtResource("19_lnoad")]
-position = Vector2(519, 1640)
-rotation = 1.57079
+position = Vector2(926, 1844)
+rotation = 2.35619
 
 [node name="wisdom" parent="." instance=ExtResource("23_fxuh1")]
 position = Vector2(-583, 2605)
@@ -333,3 +337,9 @@ position = Vector2(-2294, 1535)
 
 [node name="fly4" parent="." instance=ExtResource("26_5ymwc")]
 position = Vector2(-194, 1632)
+
+[node name="back_from_ice" type="Marker2D" parent="."]
+position = Vector2(-138, 1711)
+
+[node name="lod" parent="." instance=ExtResource("27_531de")]
+position = Vector2(327, 1482)

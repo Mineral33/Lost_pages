@@ -15,7 +15,9 @@ func _ready() -> void:
 	elif texture_index == 5:
 		$Sign.hide()
 		texture_alt = preload("res://assets/decoration/door/hidden_door.png")
-
+	elif texture_index == 3:
+		texture_alt = preload("res://assets/postavy/tree_with_door.png")
+		$Sprite2D.position = Vector2(-5,-140)
 	$Sprite2D.texture = texture_alt
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("go_to") && is_here or Input.is_action_just_pressed("go_to") && is_here:

@@ -177,9 +177,13 @@ func _ready() -> void:
 		spawn_position = $from_lianova_veza_II.position
 	if spawn == 165:
 		spawn_position = $from_lianova_veza_III.position
-	
-	
-		
+	if spawn == 166:
+		spawn_position = $lad_begin.position
+	if spawn == 167:
+		spawn_position = $back_from_ice.position
+	if spawn == 168:
+		spawn_position = $fall.position
+		#$Player.velocity.y = 1000
 	player = $Player 
 
 	if spawn_position:

@@ -659,3 +659,9 @@ position = Vector2(-2068, 665)
 
 [node name="fly11" parent="." instance=ExtResource("27_u85jd")]
 position = Vector2(-3172, 935)
+
+[node name="door_back3" parent="." instance=ExtResource("8_7h573")]
+position = Vector2(-502, 97)
+path_to_level = "res://scenes/levely/les_20.tscn"
+player_spawn = 168
+texture_index = 3

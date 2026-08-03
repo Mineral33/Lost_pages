@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjd75fj8i81o1"]
+
+[ext_resource type="Script" uid="uid://cqxmp8eidptyw" path="res://scripts/lod.gd" id="1_ufc8t"]
+[ext_resource type="Texture2D" uid="uid://bsdog642xd5bm" path="res://assets/budovy/LOĎ.png" id="2_ufc8t"]
+[ext_resource type="Texture2D" uid="uid://cifrvqv8usnk" path="res://assets/postavy/námorník.png" id="3_kmxl7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmmwm"]
+size = Vector2(31, 78)
+
+[node name="lod" type="Node2D"]
+script = ExtResource("1_ufc8t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ufc8t")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 31
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-379.5, 239.5)
+shape = SubResource("RectangleShape2D_cmmwm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 21
+collision_mask = 21
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-312, 278, -267, 212, 346, 215, 320, 298, 238, 415, 65, 568, -51, 510, -161, 387, -217, 318, -261, 224, -301, 287)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-380.5, 230.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_kmxl7")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

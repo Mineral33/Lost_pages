@@ -211,7 +211,7 @@ func _process(delta):
 		get_parent().get_child(0).update_ab_cd($AB_Timer.time_left, ab_cd)
 		if $AB_Timer.is_stopped():
 			ab_ui_active = false
-			
+	print(position.y)
 	if position.y > 2500 and !water:
 		get_parent().get_node('UImanager').blackout(2, delta)
 		##print('above 2500')
