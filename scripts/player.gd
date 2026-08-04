@@ -98,6 +98,8 @@ var magic_change = false
 var ab_ui_active = true
 var charge_meele_passive = false
 var last_velocity = 0
+
+var invincibility_activated = false
 func _ready():
 	floor_stop_on_slope = true
 	motion_mode = CharacterBody2D.MOTION_MODE_GROUNDED
@@ -175,7 +177,7 @@ func _unhandled_input(event):
 	if event.is_action_pressed("ability_2"):
 		match equiped_necklace: 
 			5:invisibility_activate()
-			#6:critical_invincibility()
+			6:invincibility_activated = true
 		
 	
 	
@@ -772,7 +774,7 @@ func take_damage(damage_amount: int, type,cause, enemy_momentum:=INF, bypass:=''
 			hit = true
 			
 	check_if_perfection()
-	if equiped_necklace == 6 :
+	if equiped_necklace == 6 and invincibility_activated:
 		check_for_invincibility_triger()
 #	print('player: ',health,' ',max_health,' ',shield,' ',max_shield)
 	$damage_number_display.display_took_damage_player(damage_amount)
@@ -1041,8 +1043,11 @@ func heal(amount):
 	if health > max_health:
 		health = max_health
 	update_stats()
-	check_for_invincibility_triger()
+	if equiped_necklace == 6:
+		check_for_invincibility_triger()
 	check_if_perfection()
+	
+	
 	$damage_number_display.display_took_heal(amount)
 func heal_shield(amount):
 #	#print('shd heal')
@@ -1342,7 +1347,8 @@ func charge_damage(t):
 var invincibility = false
 var Ab_b_sec = true
 func check_for_invincibility_triger():
-	if float(health)/float(max_health) < 0.2:
+	
+	if float(health)/float(max_health) < 0.2 :
 		critical_invincibility()
 		
 func critical_invincibility():

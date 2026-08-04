@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6rvm8yyclyqf"]
+
+[ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_b846f"]
+[ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_8uwoh"]
+[ext_resource type="PackedScene" uid="uid://da28lp31q8oc7" path="res://scenes/player.tscn" id="3_lma53"]
+[ext_resource type="PackedScene" uid="uid://dwnntb3ngvvp4" path="res://scenes/enemies/Tolper.tscn" id="5_cd1bt"]
+[ext_resource type="Texture2D" uid="uid://dbdqi6k6o5ix" path="res://assets/pozadie/ice_groundback.png" id="6_1o1w7"]
+[ext_resource type="PackedScene" uid="uid://14jbjx0enb5v" path="res://scenes/dvere/door_back.tscn" id="7_8ya5p"]
+[ext_resource type="PackedScene" uid="uid://dpkdqawaqh40m" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground7.tscn" id="8_51fnj"]
+[ext_resource type="PackedScene" uid="uid://cb2hqwsb04rhs" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground3.tscn" id="9_gc1xc"]
+
+[node name="lad" type="Node2D"]
+script = ExtResource("1_b846f")
+level_name = "lad_3"
+
+[node name="UImanager" parent="." instance=ExtResource("2_8uwoh")]
+
+[node name="Player" parent="." instance=ExtResource("3_lma53")]
+position = Vector2(-61, 10)
+
+[node name="Tolper" parent="." instance=ExtResource("5_cd1bt")]
+position = Vector2(-704, 11)
+
+[node name="Polygon2D9" type="Polygon2D" parent="."]
+texture_repeat = 2
+position = Vector2(-3156, -785)
+texture = ExtResource("6_1o1w7")
+polygon = PackedVector2Array(1994, 1136, 1692, 930, 1651, 793, 1935, 866, 2681, 871, 3053, 874, 3421, 878, 3381, 1188, 2855.44, 1190.6, 2402, 1179)
+
+[node name="from_lad" type="Marker2D" parent="."]
+position = Vector2(-117, 0)
+
+[node name="door_back" parent="." instance=ExtResource("7_8ya5p")]
+position = Vector2(-222, -30)
+path_to_level = "res://scenes/levely/lad.tscn"
+player_spawn = 172
+
+[node name="ground2" parent="." instance=ExtResource("8_51fnj")]
+position = Vector2(-222, -8)
+
+[node name="ground3" parent="." instance=ExtResource("9_gc1xc")]
+position = Vector2(-523, -8)
+
+[node name="ground4" parent="." instance=ExtResource("9_gc1xc")]
+position = Vector2(81, -9)

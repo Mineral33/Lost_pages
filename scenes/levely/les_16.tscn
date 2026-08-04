@@ -211,11 +211,11 @@ position = Vector2(-1366, -264)
 texture = ExtResource("11_t14gu")
 
 [node name="Strom3" type="Sprite2D" parent="."]
-position = Vector2(-218, -253)
+position = Vector2(-146, 306)
 texture = ExtResource("15_sb7p1")
 
 [node name="Strom15" type="Sprite2D" parent="."]
-position = Vector2(-590, -158)
+position = Vector2(-840, -5)
 texture = ExtResource("13_mn40v")
 
 [node name="ground2" parent="." instance=ExtResource("16_cvb3i")]

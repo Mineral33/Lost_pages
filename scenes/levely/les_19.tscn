@@ -114,7 +114,7 @@ physics_layer_0/collision_layer = 0
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_or7i8")
 
-[node name="les_5" type="Node2D"]
+[node name="les_19" type="Node2D"]
 position = Vector2(-12, -1001)
 script = ExtResource("1_6gwul")
 level_name = "les_19"
@@ -129,7 +129,7 @@ position = Vector2(2973, 1458)
 
 [node name="Pozadie-HoryALes" type="Sprite2D" parent="."]
 z_index = -380
-position = Vector2(120, 583)
+position = Vector2(-1174, 70.0001)
 scale = Vector2(5, 5)
 texture = ExtResource("5_wcfan")
 
@@ -155,7 +155,7 @@ position = Vector2(-515, 2563)
 scale = Vector2(26, 15)
 
 [node name="truhlica" parent="." instance=ExtResource("9_4ufue")]
-position = Vector2(-650, 2631)
+position = Vector2(-407, 2503)
 
 [node name="plant_spawner" parent="." instance=ExtResource("10_qc6mv")]
 position = Vector2(-3496, 1601)
@@ -311,7 +311,7 @@ position = Vector2(926, 1844)
 rotation = 2.35619
 
 [node name="wisdom" parent="." instance=ExtResource("23_fxuh1")]
-position = Vector2(-583, 2605)
+position = Vector2(-332, 2483)
 
 [node name="Polygon2D9" type="Polygon2D" parent="."]
 texture_repeat = 2
@@ -322,7 +322,7 @@ polygon = PackedVector2Array(1688, 1147, 1637, 948, 2022, 951, 2164, 1025, 2513.
 [node name="Polygon2D" type="Polygon2D" parent="Polygon2D9"]
 z_index = -1
 texture_repeat = 2
-position = Vector2(3353, -1583)
+position = Vector2(3366, -1582)
 texture = ExtResource("25_5ymwc")
 polygon = PackedVector2Array(2695, 2682, 3320, 2870, 1945, 3816, 390, 3861, 70, 3119, 378, 2748, 747, 2736, 1389, 2713, 1991, 2715)
 

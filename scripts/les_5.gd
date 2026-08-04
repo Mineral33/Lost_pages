@@ -184,6 +184,22 @@ func _ready() -> void:
 	if spawn == 168:
 		spawn_position = $fall.position
 		#$Player.velocity.y = 1000
+	if spawn == 169:
+		spawn_position = $from_lad.position
+	if spawn == 170:
+		spawn_position = $"from_krčma".position
+	if spawn == 171:
+		spawn_position = $from_lad.position
+	if spawn == 172:
+		spawn_position = $from_lad_3.position	
+	if spawn == 173:
+		spawn_position = $from_lad.position
+	if spawn == 174:
+		spawn_position = $from_lad_4.position	
+	if spawn == 175:
+		spawn_position = $from_lad_4.position
+	if spawn == 176:
+		spawn_position = $from_lad_5.position	
 	player = $Player 
 
 	if spawn_position:

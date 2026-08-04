@@ -13,5 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player and !applied:
-		area.get_parent().take_damage(area.get_parent().max_health*0.8,'m','fell')
+		var player = area.get_parent()
+		
+		player.take_damage(player.health*0.8,'m','fell')
 		applied = true

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt3yryhftax7i"]
+
+[ext_resource type="Texture2D" uid="uid://brregcte0qfkn" path="res://assets/decoration/ice_ground/ice_ground1.png" id="1_lg6lh"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ytclh"]
+friction = 0.0
+rough = true
+absorbent = true
+
+[node name="ice_ground" type="StaticBody2D" groups=["Wall"]]
+collision_layer = 20
+collision_mask = 20
+physics_material_override = SubResource("PhysicsMaterial_ytclh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(14, 69)
+texture = ExtResource("1_lg6lh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(35, 30)
+polygon = PackedVector2Array(-187, 74, -187, 48, -183, 44, 134, 44, 139, 47, 139, 70)

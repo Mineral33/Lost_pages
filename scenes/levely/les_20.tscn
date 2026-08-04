@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bypcbywwssuc8"]
+[gd_scene load_steps=26 format=3 uid="uid://bypcbywwssuc8"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_v1sjb"]
 [ext_resource type="Texture2D" uid="uid://cxefc10q6fa5l" path="res://assets/UI/minimapy/les_14.png" id="2_omx3p"]
@@ -19,7 +19,11 @@
 [ext_resource type="PackedScene" uid="uid://co0sqftjiij6d" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň13.tscn" id="19_08es2"]
 [ext_resource type="PackedScene" uid="uid://ds06rao6y36xo" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň11.tscn" id="20_trg4a"]
 [ext_resource type="PackedScene" uid="uid://7o2qhrltrbis" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň14.tscn" id="21_fvdc4"]
+[ext_resource type="Texture2D" uid="uid://0mjy4u8l1f83" path="res://assets/trees/stromy  V2/strom5.png" id="22_cdpa6"]
+[ext_resource type="Texture2D" uid="uid://q2jgjytp5tgv" path="res://assets/trees/stromy  V2/strom6.png" id="23_cvy2d"]
+[ext_resource type="Texture2D" uid="uid://buuqv0866hxy6" path="res://assets/trees/stromy  V2/strom3.png" id="24_6ywqa"]
 [ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="24_whws5"]
+[ext_resource type="Texture2D" uid="uid://c0fq2hoe8wygj" path="res://assets/decoration/bushes/bush1.png" id="25_cvy2d"]
 [ext_resource type="Texture2D" uid="uid://ciccohemu5646" path="res://assets/pozadie/jaskyna.png" id="25_sqgyq"]
 
 [node name="les_5" type="Node2D"]
@@ -33,12 +37,11 @@ minimap_picture = ExtResource("2_omx3p")
 [node name="UImanager" parent="." instance=ExtResource("3_vv78j")]
 
 [node name="Player" parent="." instance=ExtResource("4_3g0ay")]
-position = Vector2(-2011, 660)
+position = Vector2(-2006, 633)
 
 [node name="Pozadie-HoryALes" type="Sprite2D" parent="."]
-visible = false
 z_index = -380
-position = Vector2(93, 437)
+position = Vector2(-1365, 704)
 scale = Vector2(5, 5)
 texture = ExtResource("5_ujfs3")
 
@@ -46,24 +49,24 @@ texture = ExtResource("5_ujfs3")
 texture_repeat = 2
 position = Vector2(-4538, -130)
 texture = ExtResource("24_whws5")
-polygon = PackedVector2Array(-141, 1214, 837, 324, 2066, 658, 2372, 800, 2565, 793, 2681, 871, 2987, 983, 3966, 1280, 2402, 1179)
+polygon = PackedVector2Array(2035, 585, 2376, 760, 2565, 793, 2681, 871, 2987, 983, 3966, 1280, 2402, 1179, 1783, 1166)
 
 [node name="Polygon2D" type="Polygon2D" parent="Polygon2D9"]
 z_index = -1
 texture_repeat = 2
 position = Vector2(734, -1550)
 texture = ExtResource("25_sqgyq")
-polygon = PackedVector2Array(2695, 2682, 3320, 2870, 3186, 4499, -528, 4536, -2345, 2555, 378, 2748, 747, 2736, 1389, 2713, 1991, 2715)
+polygon = PackedVector2Array(2695, 2682, 3320, 2870, 3186, 4499, -528, 4536, -2345, 2555, 333, 2704, 725, 2644, 1389, 2713, 1991, 2715)
 
 [node name="TreeWithDoor" type="Sprite2D" parent="."]
 position = Vector2(-2023, 349)
 texture = ExtResource("8_kurj0")
 
 [node name="ground3" parent="." instance=ExtResource("14_rtkq0")]
-position = Vector2(-2315, 531)
+position = Vector2(-2352, 439)
 
 [node name="ground4" parent="." instance=ExtResource("14_rtkq0")]
-position = Vector2(-1726, 698)
+position = Vector2(-1718, 717)
 
 [node name="kameň" parent="." instance=ExtResource("21_fvdc4")]
 position = Vector2(-1892, 1459)
@@ -75,7 +78,7 @@ position = Vector2(-1678, 1390)
 position = Vector2(-2262, 1305)
 
 [node name="fall" type="Marker2D" parent="."]
-position = Vector2(-2019, 642)
+position = Vector2(-2007, 634)
 
 [node name="door_back" parent="." instance=ExtResource("7_wtmir")]
 position = Vector2(-3804, 1370)
@@ -106,7 +109,7 @@ position = Vector2(-186, -112)
 position = Vector2(-741, -19)
 
 [node name="torch5" parent="cave_detector/CollisionPolygon2D" instance=ExtResource("16_e0wvf")]
-position = Vector2(655, -502)
+position = Vector2(656, -514)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(-3516, 1516)
@@ -140,7 +143,27 @@ position = Vector2(-1884, 1325)
 position = Vector2(-1743, 1306)
 
 [node name="fall_area" parent="." instance=ExtResource("19_6oufb")]
-position = Vector2(-2702, 1240)
+position = Vector2(-2647, 1272)
+
+[node name="Strom5" type="Sprite2D" parent="."]
+position = Vector2(-2188, 509)
+texture = ExtResource("22_cdpa6")
+
+[node name="Strom10" type="Sprite2D" parent="."]
+position = Vector2(-1795, 684)
+texture = ExtResource("23_cvy2d")
+
+[node name="Strom3" type="Sprite2D" parent="."]
+position = Vector2(-1665, 744)
+texture = ExtResource("24_6ywqa")
+
+[node name="Strom15" type="Sprite2D" parent="."]
+position = Vector2(-2359, 433)
+texture = ExtResource("23_cvy2d")
+
+[node name="Bush1" type="Sprite2D" parent="."]
+position = Vector2(-1562, 750)
+texture = ExtResource("25_cvy2d")
 
 [connection signal="area_entered" from="cave_detector" to="cave_detector" method="_on_area_entered"]
 [connection signal="area_exited" from="cave_detector" to="cave_detector" method="_on_area_exited"]
