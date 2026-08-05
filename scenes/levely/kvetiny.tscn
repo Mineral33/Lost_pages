@@ -128,7 +128,7 @@ layer_0/tile_data = PackedInt32Array(2883847, 65537, 1, 2949383, 65537, 2, 28838
 position = Vector2(3953, 646)
 
 [node name="door_back" parent="." instance=ExtResource("7_bae2c")]
-position = Vector2(4168, 595)
+position = Vector2(4168, 614)
 to_level_name = "mesto na lanach"
 path_to_level = "res://scenes/levely/mesto_na_lanach.tscn"
 player_spawn = 161

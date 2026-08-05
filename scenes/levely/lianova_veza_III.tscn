@@ -206,7 +206,7 @@ position = Vector2(3462, -396)
 position = Vector2(3406, 70)
 
 [node name="door_back" parent="." instance=ExtResource("8_i1trp")]
-position = Vector2(-3070.67, 1525.33)
+position = Vector2(-3058.18, 1539.34)
 to_level_name = "lianova veza II"
 path_to_level = "res://scenes/levely/lianova_veza_II.tscn"
 player_spawn = 165
@@ -324,6 +324,7 @@ position = Vector2(-1559.93, 1260.55)
 script = ExtResource("18_7pcl3")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="cave_detector"]
+visible = false
 position = Vector2(-1957.09, -2413.01)
 polygon = PackedVector2Array(970, -548, 1789.81, -1893.85, 2918.05, -1490.91, 2935.96, 864.074, 3974.66, 1105.84, 4073.16, 3451.87, -162.228, 3398.14, -639, 2186, -1433.74, 2350.49, -1322, 1330, -1505, 771, -880, 395, -459, 108, -218, -255, 152, -579, 790, -382)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://1olbr6w5wmmt"]
+[gd_scene load_steps=38 format=3 uid="uid://1olbr6w5wmmt"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_x17ib"]
 [ext_resource type="Texture2D" uid="uid://mlv73dph5td7" path="res://assets/UI/minimapy/les_13.png" id="2_5w205"]
@@ -29,6 +29,12 @@
 [ext_resource type="PackedScene" uid="uid://c8kyo7bcxrytj" path="res://scenes/ingame_elements/decoration/collision/kamene/kameň10.tscn" id="26_pk1x4"]
 [ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="28_qfd1d"]
 [ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="29_ekpo7"]
+[ext_resource type="Texture2D" uid="uid://cywqdxabgr8f8" path="res://assets/decoration/bushes/bush8.png" id="30_hr8a2"]
+[ext_resource type="Texture2D" uid="uid://clo2ta3h2hwxh" path="res://assets/decoration/bushes/bush4.png" id="31_5geow"]
+[ext_resource type="Texture2D" uid="uid://dnx3k05t1mft4" path="res://assets/decoration/bushes/bush5.png" id="32_vwyo0"]
+[ext_resource type="Texture2D" uid="uid://q3180vhofqf2" path="res://assets/decoration/bushes/bush3.png" id="33_8g5hk"]
+[ext_resource type="Texture2D" uid="uid://co3beq3n08til" path="res://assets/decoration/bushes/bush10.png" id="34_26qj5"]
+[ext_resource type="Texture2D" uid="uid://b5jlia18amyhk" path="res://assets/decoration/bushes/bush7.png" id="35_nejul"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_53qbl")
@@ -478,3 +484,36 @@ position = Vector2(-1419.04, 804.012)
 
 [node name="fly4" parent="." instance=ExtResource("29_ekpo7")]
 position = Vector2(-857.26, 1930.71)
+
+[node name="Bush8" type="Sprite2D" parent="."]
+position = Vector2(307.338, -405.098)
+texture = ExtResource("30_hr8a2")
+
+[node name="Bush4" type="Sprite2D" parent="."]
+position = Vector2(881.87, -404.896)
+texture = ExtResource("31_5geow")
+
+[node name="Bush9" type="Sprite2D" parent="."]
+position = Vector2(-758.417, 457.467)
+texture = ExtResource("30_hr8a2")
+
+[node name="Bush5" type="Sprite2D" parent="."]
+position = Vector2(-1758.31, 1074.96)
+rotation = -0.261799
+texture = ExtResource("32_vwyo0")
+
+[node name="Bush3" type="Sprite2D" parent="."]
+position = Vector2(-2208.45, 1521.96)
+texture = ExtResource("33_8g5hk")
+
+[node name="Bush10" type="Sprite2D" parent="."]
+position = Vector2(-3234.4, 1683.17)
+texture = ExtResource("34_26qj5")
+
+[node name="Bush6" type="Sprite2D" parent="."]
+position = Vector2(-955.347, 1993.74)
+texture = ExtResource("33_8g5hk")
+
+[node name="Bush7" type="Sprite2D" parent="."]
+position = Vector2(317.38, 2008.61)
+texture = ExtResource("35_nejul")

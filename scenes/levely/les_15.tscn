@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://c3udfg10i87u"]
+[gd_scene load_steps=51 format=3 uid="uid://c3udfg10i87u"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_28bq3"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_6oyub"]
@@ -44,6 +44,10 @@
 [ext_resource type="PackedScene" uid="uid://ds3j37akneod5" path="res://scenes/ingame_elements/spawners/plant_spawner.tscn" id="41_b67o4"]
 [ext_resource type="PackedScene" uid="uid://b8q1g5wte8n1g" path="res://scenes/enemies/wind_sniper_mage.tscn" id="42_b67o4"]
 [ext_resource type="PackedScene" uid="uid://df6fhcghbeyyj" path="res://scenes/ingame_elements/spawners/rock_spawn.tscn" id="42_wp7di"]
+[ext_resource type="Texture2D" uid="uid://clo2ta3h2hwxh" path="res://assets/decoration/bushes/bush4.png" id="45_dh5sf"]
+[ext_resource type="Texture2D" uid="uid://hguql0wjd1vh" path="res://assets/decoration/bushes/bush2.png" id="46_cqei3"]
+[ext_resource type="Texture2D" uid="uid://cywqdxabgr8f8" path="res://assets/decoration/bushes/bush8.png" id="47_mdpbb"]
+[ext_resource type="Texture2D" uid="uid://q3180vhofqf2" path="res://assets/decoration/bushes/bush3.png" id="48_1umaw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_m140i")
@@ -155,7 +159,7 @@ layer_0/tile_data = PackedInt32Array(6946565, 196608, 1, 7012101, 196608, 2, 694
 position = Vector2(-2548, -418)
 
 [node name="door_back" parent="." instance=ExtResource("8_4mi7b")]
-position = Vector2(-3784, 584)
+position = Vector2(-3774, 595)
 to_level_name = "les 14"
 path_to_level = "res://scenes/levely/les_14.tscn"
 player_spawn = 145
@@ -164,7 +168,7 @@ player_spawn = 145
 position = Vector2(-3604, 661)
 
 [node name="door_back2" parent="." instance=ExtResource("8_4mi7b")]
-position = Vector2(63, 789)
+position = Vector2(77, 817)
 to_level_name = "S"
 path_to_level = "res://scenes/levely/S.tscn"
 player_spawn = 146
@@ -908,6 +912,22 @@ position = Vector2(-2259, 89)
 
 [node name="Mage_sniper2" parent="." instance=ExtResource("42_b67o4")]
 position = Vector2(-3390, 34)
+
+[node name="Bush4" type="Sprite2D" parent="."]
+position = Vector2(-3856, 64)
+texture = ExtResource("45_dh5sf")
+
+[node name="Bush2" type="Sprite2D" parent="."]
+position = Vector2(77, 425)
+texture = ExtResource("46_cqei3")
+
+[node name="Bush8" type="Sprite2D" parent="."]
+position = Vector2(-1171, 60)
+texture = ExtResource("47_mdpbb")
+
+[node name="Bush3" type="Sprite2D" parent="."]
+position = Vector2(-2431, 62)
+texture = ExtResource("48_1umaw")
 
 [connection signal="area_entered" from="cave_detector" to="cave_detector" method="_on_area_entered"]
 [connection signal="area_exited" from="cave_detector" to="cave_detector" method="_on_area_exited"]

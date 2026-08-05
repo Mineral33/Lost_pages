@@ -1621,7 +1621,8 @@ func _on_conv_no_pressed() -> void:
 	
 func _on_conv_yes_pressed() -> void:
 	conv_yes = true
-	if current_conversation == lod_talk:
+	if current_conversation == lod_talk and GameManager.gold >= 300:
+		GameManager.gold -=300
 		$timed_view.show()
 		$timed_view.texture = load("res://assets/pozadie/lod_view.png")
 		get_tree().paused = true

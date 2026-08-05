@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://x70wc075imvq"]
+[gd_scene load_steps=61 format=3 uid="uid://x70wc075imvq"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_gsy2e"]
 [ext_resource type="Texture2D" uid="uid://5xvyv88pknd4" path="res://assets/UI/minimapy/les_18.png" id="2_8beia"]
@@ -53,6 +53,11 @@
 [ext_resource type="PackedScene" uid="uid://bp7lehtusy0gq" path="res://scenes/enemies/list_gulomet_mage.tscn" id="49_adv6k"]
 [ext_resource type="PackedScene" uid="uid://b8q1g5wte8n1g" path="res://scenes/enemies/wind_sniper_mage.tscn" id="50_bf50u"]
 [ext_resource type="PackedScene" uid="uid://j22rj2ocfh7s" path="res://scenes/enemies/bomb_mage.tscn" id="51_eq2t2"]
+[ext_resource type="Texture2D" uid="uid://cywqdxabgr8f8" path="res://assets/decoration/bushes/bush8.png" id="54_kdr1y"]
+[ext_resource type="Texture2D" uid="uid://dnx3k05t1mft4" path="res://assets/decoration/bushes/bush5.png" id="55_qta8u"]
+[ext_resource type="Texture2D" uid="uid://b5jlia18amyhk" path="res://assets/decoration/bushes/bush7.png" id="56_80r7f"]
+[ext_resource type="Texture2D" uid="uid://bcew8ll7clqhg" path="res://assets/decoration/bushes/bush9.png" id="57_6ity7"]
+[ext_resource type="Texture2D" uid="uid://co3beq3n08til" path="res://assets/decoration/bushes/bush10.png" id="58_r3tvx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_t4sfj")
@@ -168,7 +173,7 @@ position = Vector2(3462, -396)
 position = Vector2(3406, 70)
 
 [node name="door_back" parent="." instance=ExtResource("8_n6n67")]
-position = Vector2(-3748, 1622)
+position = Vector2(-3737, 1629)
 to_level_name = "les 9"
 path_to_level = "res://scenes/levely/les_9.tscn"
 player_spawn = 135
@@ -177,7 +182,7 @@ player_spawn = 135
 position = Vector2(-3543, 1651)
 
 [node name="door_back2" parent="." instance=ExtResource("8_n6n67")]
-position = Vector2(1280, 789)
+position = Vector2(1275, 803)
 to_level_name = "les_17"
 path_to_level = "res://scenes/levely/les_17.tscn"
 player_spawn = 136
@@ -806,6 +811,41 @@ rotation = -1.83259
 
 [node name="kameň53" parent="." instance=ExtResource("33_adv6k")]
 position = Vector2(-2251, 244)
+
+[node name="Bush8" type="Sprite2D" parent="."]
+position = Vector2(1136, 825)
+texture = ExtResource("54_kdr1y")
+
+[node name="Bush5" type="Sprite2D" parent="."]
+position = Vector2(932, 829)
+texture = ExtResource("55_qta8u")
+
+[node name="Bush7" type="Sprite2D" parent="."]
+position = Vector2(-163, 817)
+texture = ExtResource("56_80r7f")
+
+[node name="Bush6" type="Sprite2D" parent="."]
+position = Vector2(-1193, 445)
+rotation = 0.261799
+texture = ExtResource("55_qta8u")
+
+[node name="Bush9" type="Sprite2D" parent="."]
+position = Vector2(-1946, -116)
+rotation = 0.261799
+texture = ExtResource("54_kdr1y")
+
+[node name="Bush10" type="Sprite2D" parent="."]
+position = Vector2(-2691, -644)
+texture = ExtResource("56_80r7f")
+
+[node name="Bush11" type="Sprite2D" parent="."]
+position = Vector2(-3416, -669)
+texture = ExtResource("57_6ity7")
+
+[node name="Bush12" type="Sprite2D" parent="."]
+position = Vector2(-4241, -614)
+rotation = -0.523598
+texture = ExtResource("58_r3tvx")
 
 [connection signal="area_entered" from="cave_detector" to="cave_detector" method="_on_area_entered"]
 [connection signal="area_exited" from="cave_detector" to="cave_detector" method="_on_area_exited"]

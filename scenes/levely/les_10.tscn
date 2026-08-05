@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bcgmxylwk1701"]
+[gd_scene load_steps=25 format=3 uid="uid://bcgmxylwk1701"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_acv70"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_qaumn"]
@@ -19,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://ctlb1qynwdplm" path="res://scenes/postavy/vykup_drop.tscn" id="17_s33yf"]
 [ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="18_g5hli"]
 [ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="19_pelq7"]
+[ext_resource type="Texture2D" uid="uid://deidqymbvbfo1" path="res://assets/decoration/bushes/bush6.png" id="20_eppvk"]
+[ext_resource type="Texture2D" uid="uid://b5jlia18amyhk" path="res://assets/decoration/bushes/bush7.png" id="21_wyplf"]
+[ext_resource type="Texture2D" uid="uid://bcew8ll7clqhg" path="res://assets/decoration/bushes/bush9.png" id="22_03jo2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_j71mg")
@@ -132,7 +135,7 @@ position = Vector2(157, -483)
 position = Vector2(10, -464)
 
 [node name="door_back" parent="." instance=ExtResource("6_sxkcj")]
-position = Vector2(-2804, -440)
+position = Vector2(-2803, -434)
 to_level_name = "F1"
 path_to_level = "res://scenes/levely/F1.tscn"
 player_spawn = 133
@@ -245,3 +248,15 @@ position = Vector2(-1864, -534)
 
 [node name="fly4" parent="." instance=ExtResource("19_pelq7")]
 position = Vector2(-2604, -585)
+
+[node name="Bush6" type="Sprite2D" parent="."]
+position = Vector2(806, -403)
+texture = ExtResource("20_eppvk")
+
+[node name="Bush7" type="Sprite2D" parent="."]
+position = Vector2(918, -397)
+texture = ExtResource("21_wyplf")
+
+[node name="Bush9" type="Sprite2D" parent="."]
+position = Vector2(-1656, -401)
+texture = ExtResource("22_03jo2")

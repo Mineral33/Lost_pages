@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bqm5i8ve5jq52"]
+[gd_scene load_steps=58 format=3 uid="uid://bqm5i8ve5jq52"]
 
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="1_4pdbj"]
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_n02pm"]
@@ -47,6 +47,12 @@
 [ext_resource type="Texture2D" uid="uid://ciccohemu5646" path="res://assets/pozadie/jaskyna.png" id="45_k7uve"]
 [ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="46_k7uve"]
 [ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="47_0k6sy"]
+[ext_resource type="Texture2D" uid="uid://bcew8ll7clqhg" path="res://assets/decoration/bushes/bush9.png" id="48_pxlkw"]
+[ext_resource type="Texture2D" uid="uid://cywqdxabgr8f8" path="res://assets/decoration/bushes/bush8.png" id="49_4qt1k"]
+[ext_resource type="Texture2D" uid="uid://co3beq3n08til" path="res://assets/decoration/bushes/bush10.png" id="50_ftjq8"]
+[ext_resource type="Texture2D" uid="uid://hguql0wjd1vh" path="res://assets/decoration/bushes/bush2.png" id="51_fx5s3"]
+[ext_resource type="Texture2D" uid="uid://c0fq2hoe8wygj" path="res://assets/decoration/bushes/bush1.png" id="52_6spv5"]
+[ext_resource type="Texture2D" uid="uid://clo2ta3h2hwxh" path="res://assets/decoration/bushes/bush4.png" id="53_b3lgp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_e1olp")
@@ -208,13 +214,13 @@ layer_0/tile_data = PackedInt32Array(262183, 327680, 1, 327719, 327680, 2, 39325
 position = Vector2(3987, -161)
 
 [node name="door_back" parent="." instance=ExtResource("6_cm8v4")]
-position = Vector2(4363, 0)
+position = Vector2(4367, 2)
 to_level_name = "les 6"
 path_to_level = "res://scenes/levely/les_6.tscn"
 player_spawn = 123
 
 [node name="door_back2" parent="." instance=ExtResource("6_cm8v4")]
-position = Vector2(-2618, -4)
+position = Vector2(-2619, -13)
 to_level_name = "les 8"
 path_to_level = "res://scenes/levely/les_8.tscn"
 player_spawn = 125
@@ -978,6 +984,47 @@ position = Vector2(607, 2092)
 
 [node name="fly4" parent="." instance=ExtResource("47_0k6sy")]
 position = Vector2(-1951, 35)
+
+[node name="Bush9" type="Sprite2D" parent="."]
+position = Vector2(-2719, 12)
+texture = ExtResource("48_pxlkw")
+
+[node name="Bush8" type="Sprite2D" parent="."]
+position = Vector2(-340, 139)
+texture = ExtResource("49_4qt1k")
+
+[node name="Bush10" type="Sprite2D" parent="."]
+position = Vector2(2763, 30)
+texture = ExtResource("48_pxlkw")
+
+[node name="Bush11" type="Sprite2D" parent="."]
+position = Vector2(1928, -91)
+texture = ExtResource("50_ftjq8")
+
+[node name="Bush2" type="Sprite2D" parent="."]
+position = Vector2(-1344, 802)
+texture = ExtResource("51_fx5s3")
+
+[node name="Bush1" type="Sprite2D" parent="."]
+position = Vector2(508, 2253)
+texture = ExtResource("52_6spv5")
+
+[node name="Bush12" type="Sprite2D" parent="."]
+position = Vector2(792, 2256)
+texture = ExtResource("48_pxlkw")
+
+[node name="Bush13" type="Sprite2D" parent="."]
+position = Vector2(1317, 2255)
+texture = ExtResource("50_ftjq8")
+
+[node name="Bush4" type="Sprite2D" parent="."]
+position = Vector2(2434, 1521)
+rotation = -0.261799
+texture = ExtResource("53_b3lgp")
+
+[node name="Bush14" type="Sprite2D" parent="."]
+position = Vector2(4480, 33)
+texture = ExtResource("49_4qt1k")
 
 [connection signal="area_entered" from="cave_detector" to="cave_detector" method="_on_area_entered"]
 [connection signal="area_exited" from="cave_detector" to="cave_detector" method="_on_area_exited"]

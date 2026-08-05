@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://b41kt1dpqsm2x"]
+[gd_scene load_steps=52 format=3 uid="uid://b41kt1dpqsm2x"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_8mhm4"]
 [ext_resource type="Texture2D" uid="uid://cxefc10q6fa5l" path="res://assets/UI/minimapy/les_14.png" id="2_j6sq8"]
@@ -44,6 +44,11 @@
 [ext_resource type="PackedScene" uid="uid://bp7lehtusy0gq" path="res://scenes/enemies/list_gulomet_mage.tscn" id="42_oaecu"]
 [ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="43_e3s0e"]
 [ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="44_oaecu"]
+[ext_resource type="Texture2D" uid="uid://q3180vhofqf2" path="res://assets/decoration/bushes/bush3.png" id="45_4g4it"]
+[ext_resource type="Texture2D" uid="uid://c0fq2hoe8wygj" path="res://assets/decoration/bushes/bush1.png" id="46_1ty8y"]
+[ext_resource type="Texture2D" uid="uid://b5jlia18amyhk" path="res://assets/decoration/bushes/bush7.png" id="47_bl0sk"]
+[ext_resource type="Texture2D" uid="uid://cywqdxabgr8f8" path="res://assets/decoration/bushes/bush8.png" id="48_uvyk1"]
+[ext_resource type="Texture2D" uid="uid://clo2ta3h2hwxh" path="res://assets/decoration/bushes/bush4.png" id="49_6e4h3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_ym7i5")
@@ -158,7 +163,7 @@ position = Vector2(2453, 1248)
 position = Vector2(2208, 1712)
 
 [node name="door_back" parent="." instance=ExtResource("8_7hnhe")]
-position = Vector2(-3744, 1443)
+position = Vector2(-3745, 1453)
 to_level_name = "les 4"
 path_to_level = "res://scenes/levely/les_4.tscn"
 player_spawn = 143
@@ -167,7 +172,7 @@ player_spawn = 143
 position = Vector2(-3566, 1432)
 
 [node name="door_back3" parent="." instance=ExtResource("8_7hnhe")]
-position = Vector2(1456, 1690)
+position = Vector2(1464, 1699)
 to_level_name = "les 15"
 path_to_level = "res://scenes/levely/les_15.tscn"
 player_spawn = 144
@@ -176,13 +181,13 @@ player_spawn = 144
 position = Vector2(1653, 1708)
 
 [node name="door_back4" parent="." instance=ExtResource("8_7hnhe")]
-position = Vector2(767, 1081)
+position = Vector2(770, 1087)
 to_level_name = "les 19"
 path_to_level = "res://scenes/levely/les_19.tscn"
 player_spawn = 144
 
 [node name="door_back5" parent="." instance=ExtResource("8_7hnhe")]
-position = Vector2(-355, 2358)
+position = Vector2(-363, 2363)
 to_level_name = "les 19"
 path_to_level = "res://scenes/levely/les_19.tscn"
 player_spawn = 163
@@ -507,7 +512,7 @@ position = Vector2(637, 1796)
 position = Vector2(1091, 1717)
 
 [node name="torch8" parent="." instance=ExtResource("38_q5ixg")]
-position = Vector2(1751, 1724)
+position = Vector2(1757, 1724)
 
 [node name="torch9" parent="." instance=ExtResource("38_q5ixg")]
 position = Vector2(171, 2587)
@@ -676,6 +681,36 @@ position = Vector2(-1515, 965)
 
 [node name="fly6" parent="." instance=ExtResource("44_oaecu")]
 position = Vector2(133, 931)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Bush3" type="Sprite2D" parent="."]
+position = Vector2(-3487, 1484)
+texture = ExtResource("45_4g4it")
+
+[node name="Bush1" type="Sprite2D" parent="."]
+position = Vector2(-1739, 1086)
+texture = ExtResource("46_1ty8y")
+
+[node name="Bush7" type="Sprite2D" parent="."]
+position = Vector2(-1561, 1087)
+texture = ExtResource("47_bl0sk")
+
+[node name="Bush4" type="Sprite2D" parent="."]
+position = Vector2(214, 1114)
+texture = ExtResource("45_4g4it")
+
+[node name="Bush8" type="Sprite2D" parent="."]
+position = Vector2(631, 1114)
+texture = ExtResource("48_uvyk1")
+
+[node name="Bush5" type="Sprite2D" parent="."]
+position = Vector2(2538, 957)
+texture = ExtResource("49_6e4h3")
+
+[node name="Bush9" type="Sprite2D" parent="."]
+position = Vector2(1908, 1738)
+texture = ExtResource("48_uvyk1")
 
 [connection signal="area_entered" from="cave_detector" to="cave_detector" method="_on_area_entered"]
 [connection signal="area_exited" from="cave_detector" to="cave_detector" method="_on_area_exited"]

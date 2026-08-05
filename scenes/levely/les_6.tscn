@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bojbk0v67svqs"]
+[gd_scene load_steps=45 format=3 uid="uid://bojbk0v67svqs"]
 
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="1_0pumk"]
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_oi7wl"]
@@ -34,6 +34,14 @@
 [ext_resource type="PackedScene" uid="uid://ctlb1qynwdplm" path="res://scenes/postavy/vykup_drop.tscn" id="32_480y1"]
 [ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="33_01x6p"]
 [ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="34_luhhd"]
+[ext_resource type="Texture2D" uid="uid://hguql0wjd1vh" path="res://assets/decoration/bushes/bush2.png" id="35_eq24h"]
+[ext_resource type="Texture2D" uid="uid://clo2ta3h2hwxh" path="res://assets/decoration/bushes/bush4.png" id="36_yokwa"]
+[ext_resource type="Texture2D" uid="uid://c0fq2hoe8wygj" path="res://assets/decoration/bushes/bush1.png" id="37_2lql6"]
+[ext_resource type="Texture2D" uid="uid://q3180vhofqf2" path="res://assets/decoration/bushes/bush3.png" id="38_n5d40"]
+[ext_resource type="Texture2D" uid="uid://dnx3k05t1mft4" path="res://assets/decoration/bushes/bush5.png" id="39_3e2dq"]
+[ext_resource type="Texture2D" uid="uid://bcew8ll7clqhg" path="res://assets/decoration/bushes/bush9.png" id="40_ld6jy"]
+[ext_resource type="Texture2D" uid="uid://b5jlia18amyhk" path="res://assets/decoration/bushes/bush7.png" id="41_fyyeh"]
+[ext_resource type="Texture2D" uid="uid://deidqymbvbfo1" path="res://assets/decoration/bushes/bush6.png" id="42_a4w16"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_pnche")
@@ -157,7 +165,7 @@ player_spawn = 120
 position = Vector2(-1394, -439)
 
 [node name="door_back2" parent="." instance=ExtResource("6_qi643")]
-position = Vector2(-1500, -343)
+position = Vector2(-1502, -336)
 to_level_name = "les 7 "
 path_to_level = "res://scenes/levely/les_7.tscn"
 player_spawn = 122
@@ -172,7 +180,7 @@ position = Vector2(3556, -231)
 position = Vector2(3278, 2304)
 
 [node name="door_back3" parent="." instance=ExtResource("6_qi643")]
-position = Vector2(3474, 2181)
+position = Vector2(3470, 2193)
 to_level_name = "les_13"
 path_to_level = "res://scenes/levely/les_13.tscn"
 player_spawn = 155
@@ -757,3 +765,59 @@ position = Vector2(2968, 2243)
 
 [node name="fly10" parent="." instance=ExtResource("34_luhhd")]
 position = Vector2(2739, 2199)
+
+[node name="Bush2" type="Sprite2D" parent="."]
+position = Vector2(-4251, 622)
+texture = ExtResource("35_eq24h")
+
+[node name="Bush4" type="Sprite2D" parent="."]
+position = Vector2(-3524, 230)
+texture = ExtResource("36_yokwa")
+
+[node name="Bush1" type="Sprite2D" parent="."]
+position = Vector2(-2309, -139)
+texture = ExtResource("37_2lql6")
+
+[node name="Bush3" type="Sprite2D" parent="."]
+position = Vector2(-430, -82)
+texture = ExtResource("38_n5d40")
+
+[node name="Bush5" type="Sprite2D" parent="."]
+position = Vector2(223, -76)
+texture = ExtResource("39_3e2dq")
+
+[node name="Bush9" type="Sprite2D" parent="."]
+position = Vector2(848, -395)
+texture = ExtResource("40_ld6jy")
+
+[node name="Bush6" type="Sprite2D" parent="."]
+position = Vector2(2620, -504)
+texture = ExtResource("39_3e2dq")
+
+[node name="Bush7" type="Sprite2D" parent="."]
+position = Vector2(3750, -187)
+texture = ExtResource("41_fyyeh")
+
+[node name="Bush8" type="Sprite2D" parent="."]
+position = Vector2(4301, -79)
+texture = ExtResource("39_3e2dq")
+
+[node name="Bush10" type="Sprite2D" parent="."]
+position = Vector2(2651, 2222)
+texture = ExtResource("38_n5d40")
+
+[node name="Bush11" type="Sprite2D" parent="."]
+position = Vector2(3347, 2218)
+texture = ExtResource("36_yokwa")
+
+[node name="Bush12" type="Sprite2D" parent="."]
+position = Vector2(1485, 1683)
+texture = ExtResource("39_3e2dq")
+
+[node name="Bush13" type="Sprite2D" parent="."]
+position = Vector2(-745, 1284)
+texture = ExtResource("42_a4w16")
+
+[node name="Bush14" type="Sprite2D" parent="."]
+position = Vector2(-250, 1369)
+texture = ExtResource("41_fyyeh")

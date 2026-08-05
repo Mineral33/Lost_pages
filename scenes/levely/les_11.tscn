@@ -194,7 +194,7 @@ position = Vector2(-662.084, -133.973)
 position = Vector2(-395.297, -70.5076)
 
 [node name="door_back" parent="." instance=ExtResource("8_n6n67")]
-position = Vector2(-2703.95, 823.192)
+position = Vector2(-2702.58, 834.12)
 to_level_name = "les 4"
 path_to_level = "res://scenes/levely/les_4.tscn"
 player_spawn = 149
@@ -206,7 +206,7 @@ position = Vector2(-2590.75, 857.687)
 position = Vector2(1860.54, 1054.93)
 
 [node name="door_back2" parent="." instance=ExtResource("8_n6n67")]
-position = Vector2(2081.24, 996.898)
+position = Vector2(2064.85, 1014.66)
 to_level_name = "les 12"
 path_to_level = "res://scenes/levely/les_12.tscn"
 player_spawn = 150

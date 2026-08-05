@@ -209,13 +209,13 @@ position = Vector2(3462, -396)
 position = Vector2(3406, 70)
 
 [node name="door_back" parent="." instance=ExtResource("8_1hpfl")]
-position = Vector2(-3042.33, 1524.54)
+position = Vector2(-3042.82, 1537.55)
 to_level_name = "lianova veza"
 path_to_level = "res://scenes/levely/lianova_veza.tscn"
 player_spawn = 159
 
 [node name="door_back2" parent="." instance=ExtResource("8_1hpfl")]
-position = Vector2(-1030.43, -880.537)
+position = Vector2(-1031.58, -867.532)
 to_level_name = "lianova veza III"
 path_to_level = "res://scenes/levely/lianova_veza_III.tscn"
 player_spawn = 164

@@ -60,7 +60,7 @@ texture = ExtResource("5_4ysux")
 position = Vector2(-3663, 103)
 
 [node name="door_back" parent="." instance=ExtResource("7_4ysux")]
-position = Vector2(-3756, 62)
+position = Vector2(-3733, 57)
 to_level_name = "les 2"
 path_to_level = "res://scenes/levely/les_2.tscn"
 player_spawn = 111

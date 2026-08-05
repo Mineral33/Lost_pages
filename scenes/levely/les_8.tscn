@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://1v3luxwapoo4"]
+[gd_scene load_steps=64 format=3 uid="uid://1v3luxwapoo4"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_hedf2"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="1_msb5c"]
@@ -53,6 +53,14 @@
 [ext_resource type="Script" uid="uid://cxx8uauqaqsh5" path="res://scripts/cave_detection.gd" id="51_6lnsv"]
 [ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="52_66uyx"]
 [ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="53_kwl1j"]
+[ext_resource type="Texture2D" uid="uid://deidqymbvbfo1" path="res://assets/decoration/bushes/bush6.png" id="54_h10wr"]
+[ext_resource type="Texture2D" uid="uid://clo2ta3h2hwxh" path="res://assets/decoration/bushes/bush4.png" id="55_74hsx"]
+[ext_resource type="Texture2D" uid="uid://b5jlia18amyhk" path="res://assets/decoration/bushes/bush7.png" id="56_6nfb7"]
+[ext_resource type="Texture2D" uid="uid://dnx3k05t1mft4" path="res://assets/decoration/bushes/bush5.png" id="57_j38nn"]
+[ext_resource type="Texture2D" uid="uid://cywqdxabgr8f8" path="res://assets/decoration/bushes/bush8.png" id="58_6jxm5"]
+[ext_resource type="Texture2D" uid="uid://bcew8ll7clqhg" path="res://assets/decoration/bushes/bush9.png" id="59_55wct"]
+[ext_resource type="Texture2D" uid="uid://q3180vhofqf2" path="res://assets/decoration/bushes/bush3.png" id="60_qx0wu"]
+[ext_resource type="Texture2D" uid="uid://hguql0wjd1vh" path="res://assets/decoration/bushes/bush2.png" id="61_sqeu1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_g7d7y")
@@ -152,7 +160,7 @@ scale = Vector2(5, 5)
 
 [node name="Pozadie-HoryALes" type="Sprite2D" parent="."]
 z_index = -380
-position = Vector2(877, 325)
+position = Vector2(874, 335)
 scale = Vector2(5, 5)
 texture = ExtResource("3_ti2e4")
 
@@ -171,13 +179,13 @@ layer_1/tile_data = PackedInt32Array(786590, 393216, 6, 786589, 393216, 6, 78658
 position = Vector2(3843, -7)
 
 [node name="door_back" parent="." instance=ExtResource("6_l24pw")]
-position = Vector2(3965, -67)
+position = Vector2(3967, -52)
 to_level_name = "les 7"
 path_to_level = "res://scenes/levely/les_7.tscn"
 player_spawn = 124
 
 [node name="door_back2" parent="." instance=ExtResource("6_l24pw")]
-position = Vector2(239, 1897)
+position = Vector2(239, 1934)
 to_level_name = "les 9"
 path_to_level = "res://scenes/levely/les_9.tscn"
 player_spawn = 128
@@ -192,7 +200,7 @@ position = Vector2(3403, 15)
 position = Vector2(4409, 1456)
 
 [node name="door_back3" parent="." instance=ExtResource("6_l24pw")]
-position = Vector2(4573, 1406)
+position = Vector2(4575, 1422)
 to_level_name = "les_3"
 path_to_level = "res://scenes/levely/les_3.tscn"
 player_spawn = 126
@@ -201,19 +209,19 @@ player_spawn = 126
 position = Vector2(387, 1921)
 
 [node name="Strom6" type="Sprite2D" parent="."]
-position = Vector2(-6, -662)
+position = Vector2(-4, -637)
 texture = ExtResource("9_rwe1f")
 
 [node name="Strom5" type="Sprite2D" parent="."]
-position = Vector2(179, -770)
+position = Vector2(178, -728)
 texture = ExtResource("10_isfiu")
 
 [node name="Strom7" type="Sprite2D" parent="."]
-position = Vector2(396, -862)
+position = Vector2(397, -769)
 texture = ExtResource("11_f1xk7")
 
 [node name="Strom8" type="Sprite2D" parent="."]
-position = Vector2(631, -701)
+position = Vector2(681, -524)
 texture = ExtResource("10_isfiu")
 
 [node name="Strom9" type="Sprite2D" parent="."]
@@ -233,7 +241,7 @@ position = Vector2(3678, 1078)
 texture = ExtResource("13_58kb5")
 
 [node name="Strom11" type="Sprite2D" parent="."]
-position = Vector2(4278, 1332)
+position = Vector2(4273, 1382)
 texture = ExtResource("11_f1xk7")
 
 [node name="Strom12" type="Sprite2D" parent="."]
@@ -891,7 +899,7 @@ z_index = -1
 texture_repeat = 2
 position = Vector2(-1960, -657)
 texture = ExtResource("18_isfiu")
-polygon = PackedVector2Array(462.702, 2849.73, 872.203, 2853.65, 1145.3, 2571.21, 1388.14, 2392.07, 1481.1, 2325.34, 1260, 2192, 606, 2032, 251, 1648, 312, 1414, 707, 1416, 1454, 817, 1419, 671, 1570, 457, 1832, 286, 2143, 50, 3567, 103, 3805, 442, 3895.48, 369.484, 4118.1, 459.761, 3880.3, 1831.66, 3441.29, 2526.75, 2541.66, 3010.87, 399.154, 3010.87)
+polygon = PackedVector2Array(462.702, 2849.73, 872.203, 2853.65, 1145.3, 2571.21, 1388.14, 2392.07, 1481.1, 2325.34, 1260, 2192, 606, 2032, 251, 1648, 312, 1414, 707, 1416, 1454, 817, 1419, 671, 1570, 457, 1832, 286, 2143, 50, 2517, 231, 2800, 199, 2936, 29, 3567, 103, 3805, 442, 3895.48, 369.484, 4118.1, 459.761, 3880.3, 1831.66, 3441.29, 2526.75, 2541.66, 3010.87, 399.154, 3010.87)
 
 [node name="Polygon2D5" type="Polygon2D" parent="."]
 z_index = -1
@@ -1244,6 +1252,75 @@ position = Vector2(-2998, 1756)
 
 [node name="fly5" parent="." instance=ExtResource("53_kwl1j")]
 position = Vector2(-1962, 2061)
+
+[node name="Bush6" type="Sprite2D" parent="."]
+position = Vector2(-3553, 1092)
+texture = ExtResource("54_h10wr")
+
+[node name="Bush4" type="Sprite2D" parent="."]
+position = Vector2(-3234, 1096)
+texture = ExtResource("55_74hsx")
+
+[node name="Bush7" type="Sprite2D" parent="."]
+position = Vector2(4765, 1447)
+texture = ExtResource("56_6nfb7")
+
+[node name="Bush5" type="Sprite2D" parent="."]
+position = Vector2(3345, 583)
+texture = ExtResource("57_j38nn")
+
+[node name="Bush8" type="Sprite2D" parent="."]
+position = Vector2(4098, -26)
+texture = ExtResource("58_6jxm5")
+
+[node name="Bush9" type="Sprite2D" parent="."]
+position = Vector2(3490, 56)
+texture = ExtResource("54_h10wr")
+
+[node name="Bush10" type="Sprite2D" parent="."]
+position = Vector2(2632, 88.9999)
+rotation = 0.261799
+texture = ExtResource("55_74hsx")
+
+[node name="Bush11" type="Sprite2D" parent="."]
+position = Vector2(1986, -387)
+rotation = 0.261799
+texture = ExtResource("58_6jxm5")
+
+[node name="Bush12" type="Sprite2D" parent="."]
+position = Vector2(894, -759)
+texture = ExtResource("54_h10wr")
+
+[node name="Bush13" type="Sprite2D" parent="."]
+position = Vector2(306, -755)
+texture = ExtResource("55_74hsx")
+
+[node name="Bush14" type="Sprite2D" parent="."]
+position = Vector2(-968, 262)
+texture = ExtResource("58_6jxm5")
+
+[node name="Bush15" type="Sprite2D" parent="."]
+position = Vector2(-1700, 251)
+texture = ExtResource("59_55wct")
+
+[node name="Bush16" type="Sprite2D" parent="."]
+position = Vector2(-2109, 573)
+rotation = -0.261799
+texture = ExtResource("57_j38nn")
+
+[node name="Bush17" type="Sprite2D" parent="."]
+position = Vector2(-3277, 1723)
+rotation = 0.261799
+texture = ExtResource("56_6nfb7")
+
+[node name="Bush3" type="Sprite2D" parent="."]
+position = Vector2(-2434, 1914)
+rotation = 0.261799
+texture = ExtResource("60_qx0wu")
+
+[node name="Bush2" type="Sprite2D" parent="."]
+position = Vector2(-1642, 2087)
+texture = ExtResource("61_sqeu1")
 
 [connection signal="area_entered" from="cave_detector" to="cave_detector" method="_on_area_entered"]
 [connection signal="area_exited" from="cave_detector" to="cave_detector" method="_on_area_exited"]

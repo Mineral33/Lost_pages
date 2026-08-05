@@ -167,7 +167,7 @@ texture = ExtResource("7_26wic")
 position = Vector2(-8031, -28)
 
 [node name="stromove dvere2" parent="." instance=ExtResource("5_fe3yd")]
-position = Vector2(-8132, -54)
+position = Vector2(-8127, -45)
 to_level_name = "les_3"
 path_to_level = "res://scenes/levely/les_3.tscn"
 player_spawn = 109
@@ -221,7 +221,7 @@ position = Vector2(-5325, 21)
 
 [node name="Obloha" type="Sprite2D" parent="."]
 z_index = -429
-position = Vector2(-3698.25, -99.2499)
+position = Vector2(-3693, -79)
 scale = Vector2(8.2457, 2.11181)
 texture = ExtResource("20_46io3")
 

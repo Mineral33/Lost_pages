@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://0bqpklu2tt5o"]
+[gd_scene load_steps=43 format=3 uid="uid://0bqpklu2tt5o"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_7wfp6"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_8mqf6"]
@@ -34,6 +34,11 @@
 [ext_resource type="PackedScene" uid="uid://cgypk0ao6bu88" path="res://scenes/ingame_elements/one_time_collectable/truhlica.tscn" id="32_xh6lo"]
 [ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="33_k4e68"]
 [ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="34_qsqui"]
+[ext_resource type="Texture2D" uid="uid://clo2ta3h2hwxh" path="res://assets/decoration/bushes/bush4.png" id="35_1ilro"]
+[ext_resource type="Texture2D" uid="uid://q3180vhofqf2" path="res://assets/decoration/bushes/bush3.png" id="36_v3hym"]
+[ext_resource type="Texture2D" uid="uid://deidqymbvbfo1" path="res://assets/decoration/bushes/bush6.png" id="37_rgsoc"]
+[ext_resource type="Texture2D" uid="uid://bcew8ll7clqhg" path="res://assets/decoration/bushes/bush9.png" id="38_t3jud"]
+[ext_resource type="Texture2D" uid="uid://co3beq3n08til" path="res://assets/decoration/bushes/bush10.png" id="39_8illl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_or7i8"]
 texture = ExtResource("5_40im8")
@@ -773,21 +778,6 @@ shape = SubResource("RectangleShape2D_gm6fj")
 one_way_collision = true
 one_way_collision_margin = 4.0
 
-[node name="StaticBody2D31" type="StaticBody2D" parent="."]
-position = Vector2(-3662, -102)
-collision_layer = 4
-collision_mask = 0
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D31"]
-z_index = 45
-texture = ExtResource("7_62jxs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D31"]
-position = Vector2(1, -3)
-shape = SubResource("RectangleShape2D_gm6fj")
-one_way_collision = true
-one_way_collision_margin = 4.0
-
 [node name="ground3" parent="." instance=ExtResource("22_pl2xp")]
 position = Vector2(-3519, -4)
 
@@ -1011,6 +1001,26 @@ position = Vector2(-3330, -16)
 
 [node name="fly4" parent="." instance=ExtResource("34_qsqui")]
 position = Vector2(-2168, -415)
+
+[node name="Bush4" type="Sprite2D" parent="."]
+position = Vector2(-2297, -425)
+texture = ExtResource("35_1ilro")
+
+[node name="Bush3" type="Sprite2D" parent="."]
+position = Vector2(-872, 337)
+texture = ExtResource("36_v3hym")
+
+[node name="Bush6" type="Sprite2D" parent="."]
+position = Vector2(433, 463)
+texture = ExtResource("37_rgsoc")
+
+[node name="Bush9" type="Sprite2D" parent="."]
+position = Vector2(801, 444)
+texture = ExtResource("38_t3jud")
+
+[node name="Bush10" type="Sprite2D" parent="."]
+position = Vector2(2726, 361)
+texture = ExtResource("39_8illl")
 
 [connection signal="area_entered" from="cave_detector" to="cave_detector" method="_on_area_entered"]
 [connection signal="area_exited" from="cave_detector" to="cave_detector" method="_on_area_exited"]
