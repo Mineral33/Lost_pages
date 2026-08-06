@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cok61d6qfieir"]
+[gd_scene load_steps=31 format=3 uid="uid://cok61d6qfieir"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_4iynu"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_rs0qt"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://dlelumqquagmr" path="res://scenes/postavy/kovac.tscn" id="25_h6fek"]
 [ext_resource type="PackedScene" uid="uid://dk68qs5b04n04" path="res://scenes/ingame_elements/barrel.tscn" id="26_l107q"]
 [ext_resource type="PackedScene" uid="uid://cnc5btvumrr63" path="res://scenes/ingame_elements/decoration/fly.tscn" id="27_1ck53"]
+[ext_resource type="Texture2D" uid="uid://dm18lkecd2v50" path="res://assets/postavy/obchod_S_ovocim.png" id="27_l107q"]
+[ext_resource type="PackedScene" uid="uid://cvg8xc003ykdv" path="res://scenes/ingame_elements/decoration/walking_peasant.tscn" id="28_1ck53"]
 [ext_resource type="PackedScene" uid="uid://donb1fwbuxkml" path="res://scenes/postavy/caje.tscn" id="28_5wvel"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ttgkj"]
@@ -376,3 +378,11 @@ position = Vector2(-5794, -127)
 
 [node name="caj" parent="." instance=ExtResource("28_5wvel")]
 position = Vector2(-6105, -4)
+
+[node name="ObchodSOvocim" type="Sprite2D" parent="."]
+position = Vector2(-5792, -9)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("27_l107q")
+
+[node name="walking peasant" parent="." instance=ExtResource("28_1ck53")]
+position = Vector2(-2463, 24)

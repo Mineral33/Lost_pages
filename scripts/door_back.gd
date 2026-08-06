@@ -17,6 +17,8 @@ func _ready() -> void:
 		texture_alt = preload("res://assets/decoration/door/hidden_door.png")
 	elif texture_index == 3:
 		texture_alt = preload("res://assets/postavy/tree_with_door.png")
+	elif texture_index == 4:
+		texture_alt = preload("res://assets/decoration/krčma.png")
 		$Sprite2D.position = Vector2(-5,-140)
 	$Sprite2D.texture = texture_alt
 func _input(event: InputEvent) -> void:

@@ -200,6 +200,12 @@ func _ready() -> void:
 		spawn_position = $from_lad_4.position
 	if spawn == 176:
 		spawn_position = $from_lad_5.position	
+	if spawn == 177:
+		spawn_position = $from_lad_2.position	
+	if spawn == 178:
+		spawn_position = $from_krcma.position
+		
+		
 	player = $Player 
 
 	if spawn_position:

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://da6wqxhkgog5a"]
+
+[ext_resource type="Script" uid="uid://xsl5uwkf85uo" path="res://scripts/krčma.gd" id="1_oxiwv"]
+[ext_resource type="Texture2D" uid="uid://dov6aqy2463ja" path="res://assets/decoration/krčma.png" id="2_g2j5j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w33ga"]
+size = Vector2(69, 99)
+
+[node name="krčma" type="Node2D"]
+script = ExtResource("1_oxiwv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_g2j5j")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 21
+collision_mask = 21
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5.5, 97.5)
+shape = SubResource("RectangleShape2D_w33ga")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

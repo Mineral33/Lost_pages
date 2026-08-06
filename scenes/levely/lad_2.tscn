@@ -1,10 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://cw2ko6xaavt3f"]
+[gd_scene load_steps=14 format=3 uid="uid://cw2ko6xaavt3f"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_4ss1y"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="1_ylswr"]
 [ext_resource type="PackedScene" uid="uid://da28lp31q8oc7" path="res://scenes/player.tscn" id="2_xxatd"]
+[ext_resource type="PackedScene" uid="uid://24swy451owj6" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground8.tscn" id="8_y21f1"]
+[ext_resource type="PackedScene" uid="uid://ch1ev2uix6ngi" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground6.tscn" id="9_n3lmf"]
+[ext_resource type="PackedScene" uid="uid://cyf6r5p8f3m2b" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground4.tscn" id="10_iddpm"]
 [ext_resource type="PackedScene" uid="uid://dpkdqawaqh40m" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground7.tscn" id="11_e05nd"]
+[ext_resource type="PackedScene" uid="uid://b1k5vps1itqxs" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground5.tscn" id="11_lii74"]
 [ext_resource type="Texture2D" uid="uid://dbdqi6k6o5ix" path="res://assets/pozadie/ice_groundback.png" id="12_6wldb"]
+[ext_resource type="Texture2D" uid="uid://d1nu083fahs1v" path="res://assets/pozadie/obloha.png" id="12_n3lmf"]
+[ext_resource type="PackedScene" uid="uid://da6wqxhkgog5a" path="res://scenes/dvere/krčma.tscn" id="13_iddpm"]
 [ext_resource type="PackedScene" uid="uid://cb2hqwsb04rhs" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground3.tscn" id="16_2sad2"]
 [ext_resource type="PackedScene" uid="uid://14jbjx0enb5v" path="res://scenes/dvere/door_back.tscn" id="18_hqqr1"]
 
@@ -24,7 +30,7 @@ position = Vector2(7, 19)
 texture_repeat = 2
 position = Vector2(-3156, -785)
 texture = ExtResource("12_6wldb")
-polygon = PackedVector2Array(1994, 1136, 1692, 930, 1651, 793, 1935, 866, 2681, 871, 3053, 874, 3421, 878, 3381, 1188, 2855.44, 1190.6, 2402, 1179)
+polygon = PackedVector2Array(1994, 1136, 695, 1129, 264, 822, 500, -226, 948, -60, 956, 505, 1050.09, 805.564, 1651, 793, 1935, 866, 2681, 871, 3053, 874, 3421, 878, 3381, 1188, 2855.44, 1190.6, 2402, 1179)
 
 [node name="from_lad" type="Marker2D" parent="."]
 position = Vector2(-117, 0)
@@ -42,3 +48,55 @@ position = Vector2(-523, -8)
 
 [node name="ground4" parent="." instance=ExtResource("16_2sad2")]
 position = Vector2(81, -9)
+
+[node name="ground5" parent="." instance=ExtResource("8_y21f1")]
+position = Vector2(-825, -6)
+
+[node name="ground6" parent="." instance=ExtResource("9_n3lmf")]
+position = Vector2(-1124, -7)
+
+[node name="ground7" parent="." instance=ExtResource("16_2sad2")]
+position = Vector2(-1394, -47)
+rotation = 0.261799
+
+[node name="ground8" parent="." instance=ExtResource("10_iddpm")]
+position = Vector2(-1708, -81)
+
+[node name="ground9" parent="." instance=ExtResource("11_e05nd")]
+position = Vector2(-2011, -82)
+
+[node name="ground10" parent="." instance=ExtResource("11_e05nd")]
+position = Vector2(-2083, -175)
+rotation = 1.309
+
+[node name="ground11" parent="." instance=ExtResource("11_lii74")]
+position = Vector2(-2114, -445)
+rotation = 1.57079
+
+[node name="ground12" parent="." instance=ExtResource("9_n3lmf")]
+position = Vector2(-2115, -728)
+rotation = 1.57079
+
+[node name="Polygon2D13" type="Polygon2D" parent="."]
+modulate = Color(0.804743, 0.804743, 0.804743, 1)
+z_index = -1
+texture_repeat = 2
+position = Vector2(-18257, 517)
+scale = Vector2(3.00312, 2.1037)
+texture = ExtResource("12_6wldb")
+polygon = PackedVector2Array(4466.68, -560.915, 4666.81, -562.342, 4750, -591, 4856.94, -632.218, 4960.5, -629.366, 5005.45, -612.729, 5144.64, -799.542, 5207.24, -1004.89, 5300.48, -1096.64, 5540.89, -1145.12, 5732.03, -1094.74, 5857.56, -965.916, 5915.5, -900.317, 5934.15, -769.12, 6518.89, -455.864, 6271.14, 151.638, 5770.67, 310.405, 5241.55, 220.564, 4374.78, -92.6937)
+
+[node name="from_krcma" type="Marker2D" parent="."]
+position = Vector2(-1714, -62)
+
+[node name="Polygon2D14" type="Polygon2D" parent="."]
+visible = false
+z_index = -100
+texture_repeat = 2
+position = Vector2(-20857, 1530)
+scale = Vector2(3.00312, 2.1037)
+texture = ExtResource("12_n3lmf")
+polygon = PackedVector2Array(5690.07, -1291.53, 7437.92, -1317.68, 7586.1, -433.046, 7140.23, -433.996, 6924.08, -462.684, 6407.35, -451.373, 5808.95, -438.275, 5785.19, -347.007, 5806.62, -146.408, 5576.86, -195.37, 5568.2, -779.102)
+
+[node name="krčma" parent="." instance=ExtResource("13_iddpm")]
+position = Vector2(-1824, -154)
