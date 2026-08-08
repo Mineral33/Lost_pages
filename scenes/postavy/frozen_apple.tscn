@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb2jp5mykeigg"]
+
+[ext_resource type="Script" uid="uid://fyh15kkqgvj6" path="res://scripts/frozen_apple.gd" id="1_a8kdj"]
+[ext_resource type="Texture2D" uid="uid://t7sxio08vaju" path="res://assets/postavy/frozen_apple/frozenapple.png" id="2_a8kdj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmmwm"]
+size = Vector2(31, 78)
+
+[node name="frozen apple" type="Node2D"]
+script = ExtResource("1_a8kdj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_a8kdj")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(10, -3)
+shape = SubResource("RectangleShape2D_cmmwm")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

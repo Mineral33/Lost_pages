@@ -33,7 +33,7 @@ var plant_chances = {
 	"mak":        0.02,
 	"marinka":    0.02,
 	"nevadza":    0.02,
-	"prvosienka": 0.02,
+	"prvosienky": 0.02,
 	"pupava":     0.15,
 	"salvia":     0.04,
 	"skorocel":   0.04,
@@ -75,7 +75,7 @@ func _ready() -> void:
 					"mak":        $Sprite2D.texture = textures_mak.pick_random()
 					"marinka":    $Sprite2D.texture = textures_marinka.pick_random()
 					"nevadza":    $Sprite2D.texture = textures_nevadza.pick_random()
-					"prvosienka": $Sprite2D.texture = textures_prvosienka.pick_random()
+					"prvosienky": $Sprite2D.texture = textures_prvosienka.pick_random()
 					"pupava":     $Sprite2D.texture = textures_pupava.pick_random()
 					"salvia":     $Sprite2D.texture = textures_salvia.pick_random()
 					"skorocel":   $Sprite2D.texture = textures_skorocel.pick_random()

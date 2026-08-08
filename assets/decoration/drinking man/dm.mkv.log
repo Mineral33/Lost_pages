@@ -1,0 +1,21 @@
+C:/Program Files/Krita (x64)/bin/ffmpeg.exe -hide_banner -y -y -r 24 -start_number 0 -start_number_range 1 -i C:/Users/jakub/OneDrive/PoÄÃ­taÄ/Lost-pages___/assety3/krcma/drinking man/drinking mna%04d.png -c:v libopenh264 -b:v 5000k C:/Users/jakub/OneDrive/PoÄÃ­taÄ/Lost-pages___/assety3/krcma/drinking man/dm.mkv
+=====================================================
+Input #0, image2, from 'C:/Users/jakub/OneDrive/Poèítaè/Lost-pages___/assety3/krcma/drinking man/drinking mna%04d.png':
+  Duration: 00:00:00.48, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc), 200x150 [SAR 11811:11811 DAR 4:3], 25 fps, 25 tbr, 25 tbn, 25 tbc
+Stream mapping:
+  Stream #0:0 -> #0:0 (png (native) -> h264 (libopenh264))
+Press [q] to stop, [?] for help
+[libopenh264 @ 000001abe6ab9ec0] Slice count will be set automatically
+[libopenh264 @ 000001abe6ab9ec0] [OpenH264] this = 0x000001ABE6ADD200, Warning:SliceArgumentValidationFixedSliceMode(), unsupported setting with Resolution and uiSliceNum combination under RC on! So uiSliceNum is changed to 4!
+[libopenh264 @ 000001abe6ab9ec0] [OpenH264] this = 0x000001ABE6ADD200, Warning:bEnableFrameSkip = 0,bitrate can't be controlled for RC_QUALITY_MODE,RC_BITRATE_MODE and RC_TIMESTAMP_MODE without enabling skip frame.
+Output #0, matroska, to 'C:/Users/jakub/OneDrive/Poèítaè/Lost-pages___/assety3/krcma/drinking man/dm.mkv':
+  Metadata:
+    encoder         : Lavf58.76.100
+  Stream #0:0: Video: h264 (H264 / 0x34363248), yuv420p(tv, progressive), 200x150 [SAR 1:1 DAR 4:3], q=2-31, 5000 kb/s, 24 fps, 1k tbn
+    Metadata:
+      encoder         : Lavc58.134.100 libopenh264
+    Side data:
+      cpb: bitrate max/min/avg: 5000000/0/5000000 buffer size: 0 vbv_delay: N/A
+frame=    1 fps=0.0 q=-0.0 size=       1kB time=00:00:00.00 bitrate=4760.0kbits/s speed=0.654x    frame=   12 fps=0.0 q=-0.0 Lsize=      10kB time=00:00:00.45 bitrate= 176.6kbits/s speed=6.34x    
+video:9kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 7.673504%

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0d8sh38o56fo"]
+
+[ext_resource type="Script" uid="uid://b1c8f8ritduje" path="res://scripts/barman.gd" id="1_vny5v"]
+[ext_resource type="Texture2D" uid="uid://di7rivgqknd11" path="res://assets/postavy/barman/barman.png" id="2_vny5v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfpil"]
+size = Vector2(130, 151.5)
+
+[node name="barman" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_vny5v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -4)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_vny5v")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-7, 1.75)
+shape = SubResource("RectangleShape2D_xfpil")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -1414,6 +1414,52 @@ func gate_guard_init():
 	else:
 		current_conversation.append('Leave or I throw you to the right.')
 	konverzácia(0)	
+
+var fg_face = [preload("res://assets/postavy/barman/barman_face.png")]
+var fg_talk = ['Want a drink?']
+var fg_face_order = [0]
+var fg_conversation_length = 1
+func bar_init():
+	$conversation.show()
+	current_conversation =fg_talk
+	current_faces = fg_face
+	current_conversation_length = fg_conversation_length
+	current_face_order = fg_face_order
+	$"conversation/item_alcohol drink".show()
+	konverzácia(0)	
+
+var bar_face = [preload("res://assets/postavy/fireguys/fireguy_face.png")]
+var bar_talk = ['Ha ha ha, we burned it prety well!',
+'this place needs much heat.',
+'the lad 5 place is recovered, but we need to do much more.']
+var bar_face_order = [0,0,0]
+var bar_conversation_length = len(bar_face_order)
+func fireguys_init():
+	$conversation.show()
+	current_conversation =bar_talk
+	current_faces = bar_face
+	current_conversation_length = bar_conversation_length
+	current_face_order = bar_face_order
+	konverzácia(0)	
+	
+var fa_face = [preload("res://assets/postavy/frozen_apple/fa_face.png")]
+var fa_talk = ['Want to hear a story?',
+'Do you know why is this place called frozen apple?',
+'Once there was a young thief. He shouted at a villager carrying apples on a carriage, "they would not be good for you". he replied. ',
+'Thief laughed at him, took apples, and with a nasty smile and bit one.',
+'Than he found out why the advice was accurate. The apple was frozen and he spit out 2 tooth. Thanks to this situation villager overpowered him.']
+var fa_face_order = [0,0,0,0,0]
+var fa_conversation_length = 5
+func fa_init():
+	$conversation.show()
+	current_conversation =fa_talk
+	current_faces = fa_face
+	current_conversation_length = fa_conversation_length
+	current_face_order = fa_face_order
+	
+	konverzácia(0)
+	
+	
 	
 var fly_face = [preload('res://assets/postavy/fly_quest_face.png')]
 var fly_talk = ['Hey! Tough times... Maybe you could help?',
@@ -1575,6 +1621,8 @@ var conv_yes = false
 var conv_no = false
 # univery8lna funkcia pre konverzáciu
 func konverzácia(i):
+	if i == 0 and current_faces != [preload("res://assets/postavy/barman/barman_face.png")]:
+		$"conversation/item_alcohol drink".hide()
 	if current_faces == [preload('res://assets/postavy/smugler_face_1.png')] and conversation_progres == 2 && !GameManager.package:
 		update_log_info('Package recieved')
 		GameManager.package = true
@@ -1594,6 +1642,7 @@ func konverzácia(i):
 		
 	if i == current_conversation_length:
 		conversation_progres = 0
+		
 		$conversation.hide()
 		current_conversation = []
 		current_conversation_length = 0

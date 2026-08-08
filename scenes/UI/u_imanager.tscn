@@ -3689,6 +3689,40 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.529412, 0.447059, 0.32549, 1)
 
+[node name="item_alcohol drink" type="TextureRect" parent="conversation"]
+visible = false
+offset_left = 744.0
+offset_top = 52.0
+offset_right = 894.0
+offset_bottom = 202.0
+texture = ExtResource("95_t83gw")
+
+[node name="Label" type="Label" parent="conversation/item_alcohol drink"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = -21.0
+offset_right = 249.0
+offset_bottom = 54.0
+text = " alcohol drink
+    cost: 100
+you had:"
+
+[node name="drink_alcohol" type="Button" parent="conversation/item_alcohol drink"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 67.0
+offset_right = 260.0
+offset_bottom = 107.0
+text = "buy"
+
+[node name="drink_count" type="Label" parent="conversation/item_alcohol drink"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 31.0
+offset_right = 264.0
+offset_bottom = 54.0
+text = "0"
+
 [node name="Wisdom_shop" type="ColorRect" parent="."]
 visible = false
 offset_left = 340.0
@@ -7319,6 +7353,7 @@ texture = ExtResource("130_qiabf")
 [connection signal="pressed" from="conversation/conv_no" to="." method="_on_conv_no_pressed"]
 [connection signal="pressed" from="conversation/conv_yes" to="." method="_on_conv_yes_pressed"]
 [connection signal="pressed" from="conversation/decline" to="." method="_on_decline_pressed"]
+[connection signal="pressed" from="conversation/item_alcohol drink/drink_alcohol" to="." method="_on_drink_alcohol_pressed"]
 [connection signal="pressed" from="Wisdom_shop/ws_option_1" to="." method="_on_ws_option_1_pressed"]
 [connection signal="pressed" from="Wisdom_shop/ws_option_2" to="." method="_on_ws_option_2_pressed"]
 [connection signal="pressed" from="Wisdom_shop/ws_option_3" to="." method="_on_ws_option_3_pressed"]

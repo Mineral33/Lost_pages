@@ -1,0 +1,62 @@
+[gd_scene load_steps=14 format=3 uid="uid://5unvtamo5ic"]
+
+[ext_resource type="Texture2D" uid="uid://bltjgmsdmveii" path="res://assets/decoration/drinking man/drinking mna0000.png" id="1_cacjn"]
+[ext_resource type="Texture2D" uid="uid://bo0l5530k6ac" path="res://assets/decoration/drinking man/drinking mna0001.png" id="2_mjw7s"]
+[ext_resource type="Texture2D" uid="uid://dfmdell2cw402" path="res://assets/decoration/drinking man/drinking mna0002.png" id="3_slhxo"]
+[ext_resource type="Texture2D" uid="uid://nrtgioua6cqx" path="res://assets/decoration/drinking man/drinking mna0003.png" id="4_04w7h"]
+[ext_resource type="Texture2D" uid="uid://c2jb3mlbn6aqx" path="res://assets/decoration/drinking man/drinking mna0004.png" id="5_k1nr8"]
+[ext_resource type="Texture2D" uid="uid://sbqj6dvrkbyi" path="res://assets/decoration/drinking man/drinking mna0005.png" id="6_7ki7t"]
+[ext_resource type="Texture2D" uid="uid://xowgm4j6fkq8" path="res://assets/decoration/drinking man/drinking mna0006.png" id="7_f0bdc"]
+[ext_resource type="Texture2D" uid="uid://ciqfhlk4wrcrt" path="res://assets/decoration/drinking man/drinking mna0007.png" id="8_ln8kg"]
+[ext_resource type="Texture2D" uid="uid://j4t1vk4voipr" path="res://assets/decoration/drinking man/drinking mna0008.png" id="9_o8mbw"]
+[ext_resource type="Texture2D" uid="uid://3o8qco38dnak" path="res://assets/decoration/drinking man/drinking mna0009.png" id="10_momoc"]
+
+[sub_resource type="Animation" id="Animation_8bj2f"]
+resource_name = "drink"
+length = 4.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.333333, 0.433333, 0.8, 1.33333, 2.06667, 2.93333, 4, 4.23333, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_cacjn"), ExtResource("2_mjw7s"), ExtResource("3_slhxo"), ExtResource("4_04w7h"), ExtResource("5_k1nr8"), ExtResource("6_7ki7t"), ExtResource("7_f0bdc"), ExtResource("8_ln8kg"), ExtResource("9_o8mbw"), ExtResource("10_momoc")]
+}
+
+[sub_resource type="Animation" id="Animation_e07qq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_cacjn")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wids2"]
+_data = {
+&"RESET": SubResource("Animation_e07qq"),
+&"drink": SubResource("Animation_8bj2f")
+}
+
+[node name="drinking man" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+&"": SubResource("AnimationLibrary_wids2")
+}
+autoplay = "drink"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cacjn")

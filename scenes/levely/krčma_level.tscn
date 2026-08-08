@@ -1,13 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://cqu17ix4ec5ji"]
+[gd_scene load_steps=15 format=3 uid="uid://cqu17ix4ec5ji"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_ydj5d"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_qww2g"]
 [ext_resource type="PackedScene" uid="uid://da28lp31q8oc7" path="res://scenes/player.tscn" id="3_kqxe5"]
-[ext_resource type="PackedScene" uid="uid://dwnntb3ngvvp4" path="res://scenes/enemies/Tolper.tscn" id="4_rjb2g"]
 [ext_resource type="Texture2D" uid="uid://dbdqi6k6o5ix" path="res://assets/pozadie/ice_groundback.png" id="5_nsx7i"]
+[ext_resource type="PackedScene" uid="uid://cy2yys8yjnhk8" path="res://scenes/ingame_elements/decoration/collision/krcma/krcma_floor.tscn" id="5_ydj5d"]
+[ext_resource type="Texture2D" uid="uid://c5xlp2feopcl7" path="res://assets/decoration/krcma_floor.png" id="6_qww2g"]
 [ext_resource type="PackedScene" uid="uid://14jbjx0enb5v" path="res://scenes/dvere/door_back.tscn" id="6_xhxvv"]
-[ext_resource type="PackedScene" uid="uid://dpkdqawaqh40m" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground7.tscn" id="7_qcvl6"]
-[ext_resource type="PackedScene" uid="uid://cb2hqwsb04rhs" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground3.tscn" id="8_5lfek"]
+[ext_resource type="PackedScene" uid="uid://5unvtamo5ic" path="res://scenes/ingame_elements/decoration/drinking_man.tscn" id="8_kqxe5"]
+[ext_resource type="PackedScene" uid="uid://bb2jp5mykeigg" path="res://scenes/postavy/frozen_apple.tscn" id="8_qww2g"]
+[ext_resource type="Texture2D" uid="uid://30s0xksw0ws3" path="res://assets/postavy/barman/shelf.png" id="10_kqxe5"]
+[ext_resource type="Texture2D" uid="uid://b4nklox5o68om" path="res://assets/decoration/krcma_wall.png" id="10_xhxvv"]
+[ext_resource type="PackedScene" uid="uid://c0d8sh38o56fo" path="res://scenes/postavy/barman.tscn" id="11_rjb2g"]
+[ext_resource type="PackedScene" uid="uid://bbdv83ev56vr1" path="res://scenes/postavy/fireguys.tscn" id="12_nsx7i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjb2g"]
+atlas = ExtResource("6_qww2g")
+region = Rect2(0, 16.2586, 100.224, 33.7414)
 
 [node name="krcma" type="Node2D"]
 script = ExtResource("1_ydj5d")
@@ -18,15 +27,6 @@ level_name = "krcma"
 [node name="Player" parent="." instance=ExtResource("3_kqxe5")]
 position = Vector2(-61, 10)
 
-[node name="Tolper" parent="." instance=ExtResource("4_rjb2g")]
-position = Vector2(-208, -20)
-
-[node name="Polygon2D9" type="Polygon2D" parent="."]
-texture_repeat = 2
-position = Vector2(-3156, -785)
-texture = ExtResource("5_nsx7i")
-polygon = PackedVector2Array(1994, 1136, 1692, 930, 1651, 793, 1935, 866, 2681, 871, 3053, 874, 3421, 878, 3381, 1188, 2855.44, 1190.6, 2402, 1179)
-
 [node name="from_lad" type="Marker2D" parent="."]
 position = Vector2(-117, 0)
 
@@ -36,14 +36,138 @@ to_level_name = "lad_2"
 path_to_level = "res://scenes/levely/lad_2.tscn"
 player_spawn = 178
 
-[node name="ground2" parent="." instance=ExtResource("7_qcvl6")]
-position = Vector2(-222, -8)
-
-[node name="ground3" parent="." instance=ExtResource("8_5lfek")]
-position = Vector2(-523, -8)
-
-[node name="ground4" parent="." instance=ExtResource("8_5lfek")]
-position = Vector2(81, -9)
-
 [node name="from_lad_2" type="Marker2D" parent="."]
 position = Vector2(-463, 0)
+
+[node name="ice_ground" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(-219, 20)
+
+[node name="ice_ground2" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(-319, 20)
+
+[node name="ice_ground3" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(-418, 20)
+
+[node name="ice_ground4" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(-518, 20)
+
+[node name="ice_ground5" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(-618, 20)
+
+[node name="ice_ground6" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(-718, 20)
+
+[node name="ice_ground7" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(-817, 20)
+
+[node name="ice_ground8" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(-917, 20)
+
+[node name="ice_ground9" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(178, 20)
+
+[node name="ice_ground10" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(78, 20)
+
+[node name="ice_ground11" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(-21, 20)
+
+[node name="ice_ground12" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(-121, 20)
+
+[node name="ice_ground13" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(576, 20)
+
+[node name="ice_ground14" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(476, 20)
+
+[node name="ice_ground15" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(377, 20)
+
+[node name="ice_ground17" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(-894, 29)
+rotation = 1.57079
+
+[node name="ice_ground18" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(-894, -71)
+rotation = 1.57079
+
+[node name="ice_ground19" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(-894, -171)
+rotation = 1.57079
+
+[node name="ice_ground20" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(-896, -269)
+rotation = 1.57079
+
+[node name="ice_ground21" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(558, -37)
+rotation = -1.57079
+
+[node name="ice_ground22" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(558, -137)
+rotation = -1.57079
+
+[node name="ice_ground23" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(558, -237)
+rotation = -1.57079
+
+[node name="ice_ground26" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(558, -337)
+rotation = -1.57079
+
+[node name="ice_ground27" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(558, -437)
+rotation = -1.57079
+
+[node name="ice_ground28" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(558, 63)
+rotation = -1.57079
+
+[node name="ice_ground24" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(-896, -369)
+rotation = 1.57079
+
+[node name="ice_ground25" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(-896, -469)
+rotation = 1.57079
+
+[node name="drinking man" parent="." instance=ExtResource("8_kqxe5")]
+position = Vector2(-404, 26)
+scale = Vector2(0.8, 0.8)
+
+[node name="frozen_apple_story" parent="." instance=ExtResource("8_qww2g")]
+position = Vector2(31, 40)
+
+[node name="Polygon2D9" type="Polygon2D" parent="."]
+texture_repeat = 2
+position = Vector2(-2790, -781)
+texture = SubResource("AtlasTexture_rjb2g")
+polygon = PackedVector2Array(1617, 1008, 1562, 288, 1823, 297, 1826, 871, 3421, 878, 3416, 301, 3581, 297, 3560, 1063, 3398.58, 1051.74, 3381, 1188)
+
+[node name="Polygon2D10" type="Polygon2D" parent="Polygon2D9"]
+texture_repeat = 2
+position = Vector2(-202, 141)
+texture = ExtResource("5_nsx7i")
+polygon = PackedVector2Array(1994, 1136, 1574, 1134, 1378, 1025, 1198, 203, 1838, 62, 1935, 866, 2452, 866, 2681, 871, 3053, 874, 3737, 919, 3778, 142, 4385, 92, 4233, 1193, 3823, 1270, 2855.44, 1190.6, 2402, 1179)
+
+[node name="Polygon2D11" type="Polygon2D" parent="Polygon2D9"]
+z_index = -10
+texture_repeat = 2
+position = Vector2(-777, -107)
+texture = ExtResource("10_xhxvv")
+polygon = PackedVector2Array(2214, 1250, 2117, 129, 3778, 142, 4385, 92, 4233, 1193, 3823, 1270, 2855.44, 1190.6)
+
+[node name="ice_ground16" parent="." instance=ExtResource("5_ydj5d")]
+position = Vector2(277, 20)
+
+[node name="Shelf" type="Sprite2D" parent="."]
+position = Vector2(-841, -36)
+texture = ExtResource("10_kqxe5")
+
+[node name="alcohol_shop" parent="." instance=ExtResource("11_rjb2g")]
+position = Vector2(-691, 21)
+scale = Vector2(0.7, 0.7)
+
+[node name="frozen apple" parent="." instance=ExtResource("12_nsx7i")]
+position = Vector2(426, 3)
