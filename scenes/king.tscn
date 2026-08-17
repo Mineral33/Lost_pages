@@ -35,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://c5cjlrmmoslor" path="res://assets/player/effects/heal_ab0004.png" id="132_yh0fo"]
 [ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="133_vipdt"]
 [ext_resource type="PackedScene" uid="uid://bqodnd5gvpcpx" path="res://scenes/UI/oxygen_ui.tscn" id="134_ajgbt"]
-[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="135_7kg32"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="135_7kg32"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1ej7"]
 size = Vector2(11, 49)

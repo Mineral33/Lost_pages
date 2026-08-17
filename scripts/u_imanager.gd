@@ -1327,7 +1327,22 @@ func cutscene(slide):
 		#$cutscene_background/cutscene.texture = preload("res://assets/trees/vstrom/lesne_mesto/budova1.png")
 	#elif slide == 2:
 		#$cutscene_background/cutscene.texture = preload("res://assets/trees/vstrom/lesne_mesto/budova3.png")
-
+func lo_cutscene():
+	$Options.hide()
+	get_tree().paused = true
+	$view.show()
+	$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_1.png")
+	await get_tree().create_timer(5).timeout
+	$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_2.png")
+	await get_tree().create_timer(5).timeout
+	$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_3.png")
+	await get_tree().create_timer(5).timeout
+	get_tree().paused = false
+	$view.hide()
+	$Options.show()
+	
+	
+	
 var count = 0
 func _on_cuscene_advance_pressed() -> void:
 	count +=1

@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://crlo4304noxu3" path="res://assets/enemies/liana_s_mecom/liana_s_mecom0003.png" id="8_x1oxs"]
 [ext_resource type="Texture2D" uid="uid://ddcxeuuuta0be" path="res://assets/enemies/liana_s_mecom/liana_s_mecom0004.png" id="9_jbbwf"]
 [ext_resource type="Texture2D" uid="uid://dtku5iifmjr5i" path="res://assets/enemies/liana_s_mecom/liana_s_mecom0005.png" id="10_kc7v4"]
-[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="13_qj1ls"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="13_qj1ls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvb7o"]
 size = Vector2(7.47099, 112.537)

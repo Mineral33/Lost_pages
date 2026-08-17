@@ -3691,6 +3691,7 @@ color = Color(0.529412, 0.447059, 0.32549, 1)
 
 [node name="item_alcohol drink" type="TextureRect" parent="conversation"]
 visible = false
+layout_mode = 0
 offset_left = 744.0
 offset_top = 52.0
 offset_right = 894.0

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://x7cvhmyw72u5" path="res://scripts/vine_boss.gd" id="1_sjwq7"]
 [ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="2_iu1qk"]
 [ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="3_sjwq7"]
-[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="4_vkgyu"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="4_vkgyu"]
 [ext_resource type="Texture2D" uid="uid://8xpxsh2ceapg" path="res://assets/enemies/vine_boss/liana_boss_head_around.png" id="6_iu1qk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vkgyu"]

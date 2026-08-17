@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://fxlh4vua1ulf" path="res://scripts/wood_breakable.gd" id="1_wp6qp"]
 [ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="2_wp6qp"]
 [ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="4_wp6qp"]
-[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="5_5vkgw"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="5_5vkgw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ax7ui"]
 size = Vector2(38, 175)

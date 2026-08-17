@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bi4vjhtswp0el" path="res://assets/enemies/motyl/motyl_charge_2.0001.png" id="14_oitvb"]
 [ext_resource type="Texture2D" uid="uid://bu7lrtrqrtfdc" path="res://assets/enemies/motyl/motyl_charge_2.0002.png" id="15_ji33q"]
 [ext_resource type="Texture2D" uid="uid://4x2f2hm1cfad" path="res://assets/enemies/motyl/motyl_charge_2.0003.png" id="16_abox5"]
-[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="17_3xcqc"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="17_3xcqc"]
 
 [sub_resource type="Animation" id="Animation_3xcqc"]
 length = 0.001

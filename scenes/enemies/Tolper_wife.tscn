@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://b66drd1rcnl2t" path="res://assets/enemies/Nif/nif/walk/walk0011.png" id="16_s5b08"]
 [ext_resource type="Texture2D" uid="uid://k8bpltlxniky" path="res://assets/enemies/Nif/nif/walk/walk0012.png" id="17_ptolb"]
 [ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="19_wyl0p"]
-[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="20_q1kbi"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="20_q1kbi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvb7o"]
 size = Vector2(7.08821, 259.974)

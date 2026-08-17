@@ -1,3 +1,4 @@
+res://scenes/enemies
 res://scripts
 res://scenes/ingame_elements/decoration
 res://scenes/dvere
@@ -10,7 +11,6 @@ C:/Users/jakub/OneDrive/Dokumenty/pokus/new-game-project
 res://scenes/ingame_elements/decoration/collision/kora
 res://scenes/ingame_elements
 res://scenes/projectiles
-res://scenes/enemies
 res://scenes/ingame_elements/decoration/collision
 res://scenes/effects
 res://scenes/UI

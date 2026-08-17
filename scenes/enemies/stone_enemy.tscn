@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://d0gn8kpouebpg" path="res://assets/enemies/stone_enemy/stone_enemy0018.png" id="11_x042n"]
 [ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="13_ecynn"]
 [ext_resource type="Texture2D" uid="uid://123s8nixfx3e" path="res://assets/enemies/stone_enemy/stone_enemy_dash_prep_right0001.png" id="15_2t3tf"]
-[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="17_pj082"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="17_pj082"]
 [ext_resource type="Texture2D" uid="uid://drwq8sd57vfw1" path="res://assets/enemies/stone_enemy/stone_enemy_dash_prep_left0001.png" id="17_x042n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pj082"]

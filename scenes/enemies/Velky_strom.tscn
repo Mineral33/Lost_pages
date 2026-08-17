@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bjftpc1nh4prx" path="res://assets/enemies/vstrom/prava/attak0000.png" id="20_3l8af"]
 [ext_resource type="Texture2D" uid="uid://dcov17bydy5vs" path="res://assets/enemies/vstrom/walk/walk0005.png" id="20_ceglq"]
 [ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="22_5tkr5"]
-[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="22_xxtpc"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="22_xxtpc"]
 
 [sub_resource type="Animation" id="Animation_mxjmi"]
 length = 0.001

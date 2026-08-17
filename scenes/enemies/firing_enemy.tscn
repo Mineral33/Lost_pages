@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://7s8xgaednlgn" path="res://assets/enemies/strom_firing/strom.png" id="2_sc1rj"]
 [ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="3_1n7ry"]
 [ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="4_1e2vg"]
-[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="5_wplki"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="5_wplki"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tgh78"]
 radius = 1200.0

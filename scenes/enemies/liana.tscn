@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c6pwxihkfk28d" path="res://scripts/liana.gd" id="1_r6ibh"]
 [ext_resource type="Texture2D" uid="uid://cwhagqvf55rfh" path="res://assets/enemies/lianoa/liana0000.png" id="2_3mxin"]
-[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="5_e4cth"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="5_e4cth"]
 [ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="12_tdpmv"]
 [ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="13_u148s"]
 

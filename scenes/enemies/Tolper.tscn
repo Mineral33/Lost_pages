@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dg3cflvdptwmn" path="res://assets/enemies/tolper/run/tolper_walk0001.png" id="10_ddjtm"]
 [ext_resource type="Texture2D" uid="uid://cahdytwg4ugh2" path="res://assets/enemies/tolper/idle_nohy/tolper_idle_hohy0000.png" id="11_yfb3w"]
 [ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="13_ta3d4"]
-[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="14_ddjtm"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="14_ddjtm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvb7o"]
 size = Vector2(7.47099, 112.537)

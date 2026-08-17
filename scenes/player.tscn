@@ -134,7 +134,7 @@
 [ext_resource type="Texture2D" uid="uid://cpkuuqnd8ng88" path="res://assets/player/effects/heal_ab0002.png" id="130_mcvyg"]
 [ext_resource type="Texture2D" uid="uid://bqarbl7rwy36w" path="res://assets/player/effects/heal_ab0003.png" id="131_ealyq"]
 [ext_resource type="Texture2D" uid="uid://c5cjlrmmoslor" path="res://assets/player/effects/heal_ab0004.png" id="132_qms75"]
-[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="135_ccnn6"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="135_ccnn6"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fdfoy"]
 load_path = "res://.godot/imported/necklace - earth.png-2eb2ca2dbf256611601351c367984983.ctex"

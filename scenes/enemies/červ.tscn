@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="5_clei0"]
 [ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="6_eio1b"]
 [ext_resource type="Script" uid="uid://bcm5oywvqvdyi" path="res://scripts/enemy_health_component.gd" id="7_72wgq"]
-[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="9_72wgq"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="9_72wgq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eio1b"]
 

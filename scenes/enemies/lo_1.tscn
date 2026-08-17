@@ -1,0 +1,188 @@
+[gd_scene load_steps=21 format=3 uid="uid://dfh6qcldm1s74"]
+
+[ext_resource type="Script" uid="uid://dodspacs44vvj" path="res://scripts/lo_1.gd" id="1_7bj04"]
+[ext_resource type="Texture2D" uid="uid://dedk7ueqjhy51" path="res://assets/enemies/lo_1/stumb/lo_stumb0000.png" id="2_cpsgl"]
+[ext_resource type="Texture2D" uid="uid://c0a2hwa0yhuxt" path="res://assets/enemies/lo_1/stumb/lo_stumb0001.png" id="3_p8cib"]
+[ext_resource type="Texture2D" uid="uid://bihtxw32kx1b3" path="res://assets/enemies/lo_1/stumb/lo_stumb0002.png" id="4_ai7id"]
+[ext_resource type="Texture2D" uid="uid://n3u4kyh2nwjm" path="res://assets/enemies/lo_1/stumb/lo_stumb0003.png" id="5_8yne4"]
+[ext_resource type="Texture2D" uid="uid://dlqe0rrp102l5" path="res://assets/enemies/lo_1/stumb/lo_stumb0004.png" id="6_wfqm6"]
+[ext_resource type="Texture2D" uid="uid://d30vj5fnvdhpb" path="res://assets/enemies/lo_1/stumb/lo_stumb0005.png" id="7_8os4w"]
+[ext_resource type="Texture2D" uid="uid://luoi41gkwxs2" path="res://assets/enemies/lo_1/stumb/lo_stumb0006.png" id="8_j7otf"]
+[ext_resource type="Texture2D" uid="uid://mfe1eb21bppq" path="res://assets/enemies/lo_1/stumb/lo_stumb0007.png" id="9_wpjjb"]
+[ext_resource type="Texture2D" uid="uid://8jinshtsgw37" path="res://assets/enemies/lo_1/stumb/lo_stumb0008.png" id="10_2q3ia"]
+[ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="11_3rl8w"]
+[ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="12_xn4a3"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="13_na1ce"]
+
+[sub_resource type="Animation" id="Animation_clj8n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_cpsgl")]
+}
+
+[sub_resource type="Animation" id="Animation_hjy05"]
+resource_name = "stumb"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.266667, 0.4, 0.466667, 0.566667, 0.7, 0.8, 0.9, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_cpsgl"), ExtResource("3_p8cib"), ExtResource("4_ai7id"), ExtResource("5_8yne4"), ExtResource("6_wfqm6"), ExtResource("7_8os4w"), ExtResource("8_j7otf"), ExtResource("9_wpjjb"), ExtResource("10_2q3ia"), ExtResource("2_cpsgl")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"damage_player_1"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_emwtd"]
+_data = {
+&"RESET": SubResource("Animation_clj8n"),
+&"stumb": SubResource("Animation_hjy05")
+}
+
+[sub_resource type="Animation" id="Animation_bjfew"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_cpsgl")]
+}
+
+[sub_resource type="Animation" id="Animation_a4148"]
+resource_name = "stumb"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.233333, 0.333333, 0.5, 0.6, 0.733333, 0.833333, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_cpsgl"), ExtResource("3_p8cib"), ExtResource("4_ai7id"), ExtResource("5_8yne4"), ExtResource("6_wfqm6"), ExtResource("7_8os4w"), ExtResource("8_j7otf"), ExtResource("9_wpjjb"), ExtResource("10_2q3ia"), ExtResource("2_cpsgl")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.966667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"damage_player_2"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1rsib"]
+_data = {
+&"RESET": SubResource("Animation_bjfew"),
+&"stumb": SubResource("Animation_a4148")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bj04"]
+size = Vector2(275.75, 61.5)
+
+[node name="lo_1" type="Node2D" groups=["Enemies"]]
+script = ExtResource("1_7bj04")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(600, -3)
+texture = ExtResource("2_cpsgl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("2_cpsgl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_emwtd")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimationPlayer")
+libraries = {
+&"": SubResource("AnimationLibrary_1rsib")
+}
+
+[node name="enemy_health_component" parent="." instance=ExtResource("11_3rl8w")]
+
+[node name="Healthbar" parent="." instance=ExtResource("12_xn4a3")]
+offset_left = 286.0
+offset_top = 180.0
+offset_right = 286.0
+offset_bottom = 180.0
+scale = Vector2(5, 1)
+
+[node name="damage_number_display" parent="." instance=ExtResource("13_na1ce")]
+offset_left = 150.0
+offset_top = 141.0
+offset_right = 451.0
+offset_bottom = 171.0
+
+[node name="hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hurtbox"]
+polygon = PackedVector2Array(-56, 159, 16, 153, 77, 80, 72, -256, 530, -266, 570, 53, 514, 166, 641, 164, 730, 90, 693, 22, 640, 33, 607, -284, 62, -281, -34, -125, -77, 71)
+
+[node name="attack_area" type="Area2D" parent="."]
+collision_layer = 21
+collision_mask = 21
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_area"]
+position = Vector2(606, 212)
+shape = SubResource("RectangleShape2D_7bj04")
+
+[node name="attack_area2" type="Area2D" parent="."]
+collision_layer = 21
+collision_mask = 21
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_area2"]
+position = Vector2(2, 214)
+shape = SubResource("RectangleShape2D_7bj04")
+
+[node name="stump_timer_1" type="Timer" parent="."]
+autostart = true
+
+[node name="stump_timer_2" type="Timer" parent="."]
+autostart = true
+
+[connection signal="area_entered" from="attack_area" to="." method="_on_attack_area_area_entered"]
+[connection signal="area_exited" from="attack_area" to="." method="_on_attack_area_area_exited"]
+[connection signal="area_entered" from="attack_area2" to="." method="_on_attack_area_2_area_entered"]
+[connection signal="area_exited" from="attack_area2" to="." method="_on_attack_area_2_area_exited"]
+[connection signal="timeout" from="stump_timer_1" to="." method="_on_stump_timer_1_timeout"]
+[connection signal="timeout" from="stump_timer_2" to="." method="_on_stump_timer_2_timeout"]

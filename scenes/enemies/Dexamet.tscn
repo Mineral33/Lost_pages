@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://d0virj41qb7fc" path="res://assets/enemies/dexomet/dex0020.png" id="23_bbyft"]
 [ext_resource type="Texture2D" uid="uid://ckjavcpqjrqgm" path="res://assets/enemies/dexomet/dex0021.png" id="24_wku8s"]
 [ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="25_7eeo0"]
-[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="26_boblk"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="26_boblk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ibu68"]
 radius = 11.0454

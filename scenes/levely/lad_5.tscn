@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cxnu6rqm3qnel"]
+[gd_scene load_steps=15 format=3 uid="uid://cxnu6rqm3qnel"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_ut1t3"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_quec0"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://eq1pa601aymt" path="res://scenes/ingame_elements/decoration/collision/ground/ground3.tscn" id="10_3uiok"]
 [ext_resource type="Texture2D" uid="uid://d1nu083fahs1v" path="res://assets/pozadie/obloha.png" id="11_6oer8"]
 [ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="12_bt2ax"]
+[ext_resource type="PackedScene" uid="uid://byd5a7bw8qkhf" path="res://scenes/ingame_elements/decoration/area_cutscene.tscn" id="13_3uiok"]
+[ext_resource type="PackedScene" uid="uid://dfh6qcldm1s74" path="res://scenes/enemies/lo_1.tscn" id="14_6oer8"]
 
 [node name="lad" type="Node2D"]
 script = ExtResource("1_ut1t3")
@@ -96,3 +98,9 @@ texture_repeat = 2
 position = Vector2(2908.31, -1785.9)
 texture = ExtResource("12_bt2ax")
 polygon = PackedVector2Array(2782.77, 2019.3, 2820.4, 1253.98, 3472.74, 1247.55, 3576.95, 1177.92, 3702.48, 1181.25, 3831.02, 1250.18, 4197.63, 1253.03, 4155.35, 1459.33, 3428.43, 1540.62, 3171.37, 1410.85, 3075.14, 2066.83)
+
+[node name="view_tower" parent="." instance=ExtResource("13_3uiok")]
+position = Vector2(-1230, -103)
+
+[node name="lo_1" parent="." instance=ExtResource("14_6oer8")]
+position = Vector2(-3642, -191)

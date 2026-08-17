@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="2_s8x8u"]
 [ext_resource type="Texture2D" uid="uid://id4hl2kn2gih" path="res://assets/enemies/kanon/kanon.png" id="3_y4vr1"]
 [ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="4_lx3fx"]
-[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="5_nk5a2"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="5_nk5a2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8x8u"]
 size = Vector2(106, 79)

@@ -37,7 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://b4njoslpjrdvu" path="res://assets/enemies/legged_fortress_v1/attak_II/attak_II0029.png" id="35_ti121"]
 [ext_resource type="Texture2D" uid="uid://i4e4n1sh38av" path="res://assets/enemies/legged_fortress_v1/attak_II/attak_II0030.png" id="36_g24fo"]
 [ext_resource type="Texture2D" uid="uid://c8864yylbcwyt" path="res://assets/enemies/legged_fortress_v1/attak_II/attak_II0031.png" id="37_dahe1"]
-[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://scenes/UI/damage_number_display.tscn" id="38_0qn20"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="38_0qn20"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvb7o"]
 size = Vector2(32.1435, 450.002)
