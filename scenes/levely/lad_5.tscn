@@ -100,7 +100,7 @@ texture = ExtResource("12_bt2ax")
 polygon = PackedVector2Array(2782.77, 2019.3, 2820.4, 1253.98, 3472.74, 1247.55, 3576.95, 1177.92, 3702.48, 1181.25, 3831.02, 1250.18, 4197.63, 1253.03, 4155.35, 1459.33, 3428.43, 1540.62, 3171.37, 1410.85, 3075.14, 2066.83)
 
 [node name="view_tower" parent="." instance=ExtResource("13_3uiok")]
-position = Vector2(-1230, -103)
+position = Vector2(-1201, -277)
 
 [node name="lo_1" parent="." instance=ExtResource("14_6oer8")]
 position = Vector2(-3642, -191)

@@ -172,7 +172,7 @@ func _ready() :
 
 
 func _process(delta: float) -> void:
-	
+	print('LO timer = ', $CutsceneTimer.time_left, ' lo c =', lo_c_order   )
 	#print('fly '+str(GameManager.fly))
 	await get_tree().create_timer(0.15).timeout
 	if GameManager.magic_ice_upgrade == 0:
@@ -241,15 +241,8 @@ func _process(delta: float) -> void:
 func update_coin_display(gained_coins):
 	##print(GameManager.coins)
 	$CoinDaaisplay.text = str(GameManager.coins)
-func _input(event):
-	if Input.is_action_just_pressed("pause"):
-		GameManager.pause_play()
-		get_tree().paused = GameManager.paused
-	if Input.is_action_just_pressed("go_to") and view_bool:
-		$view.hide()
-	#if event is InputEventMouseButton:
-		##print(get_viewport().gui_get_focus_owner())
-	#get_viewport().set_input_as_handled()
+
+		
 	#if event is InputEventMouseButton and event.pressed:
 		#get_viewport().set_input_as_handled()
 func _on_resume_pressed() -> void:
@@ -1327,21 +1320,42 @@ func cutscene(slide):
 		#$cutscene_background/cutscene.texture = preload("res://assets/trees/vstrom/lesne_mesto/budova1.png")
 	#elif slide == 2:
 		#$cutscene_background/cutscene.texture = preload("res://assets/trees/vstrom/lesne_mesto/budova3.png")
+func _input(event):
+	if Input.is_action_just_pressed("pause"):
+		GameManager.pause_play()
+		get_tree().paused = GameManager.paused
+	if Input.is_action_just_pressed("go_to") and view_bool:
+		$view.hide()
+	
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed and lo_c_active:
+		_on_cutscene_timer_timeout()
+var lo_c_active = false
+var lo_c_order = 0
+func _on_cutscene_timer_timeout() -> void:
+	$CutsceneTimer.start(5)
+	match lo_c_order:
+		0: 
+			$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_1.png")
+		1:
+			$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_2.png")
+		2: 
+			$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_3.png")
+		3:
+			get_tree().paused = false
+			$view.hide()
+			$Options.show()
+			lo_c_order = 0
+			$CutsceneTimer.stop()
+			lo_c_active = false
+	lo_c_order += 1
+	
+	
 func lo_cutscene():
 	$Options.hide()
 	get_tree().paused = true
 	$view.show()
-	$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_1.png")
-	await get_tree().create_timer(5).timeout
-	$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_2.png")
-	await get_tree().create_timer(5).timeout
-	$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_3.png")
-	await get_tree().create_timer(5).timeout
-	get_tree().paused = false
-	$view.hide()
-	$Options.show()
-	
-	
+	lo_c_active = true
+	_on_cutscene_timer_timeout()
 	
 var count = 0
 func _on_cuscene_advance_pressed() -> void:

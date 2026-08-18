@@ -1,5 +1,6 @@
-res://scenes/enemies
+res://scenes/projectiles/lo_1
 res://scripts
+res://scenes/enemies
 res://scenes/ingame_elements/decoration
 res://scenes/dvere
 res://scenes/ingame_elements/damage_trap

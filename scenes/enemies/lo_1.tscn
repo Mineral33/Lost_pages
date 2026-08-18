@@ -156,7 +156,7 @@ offset_bottom = 171.0
 [node name="hurtbox" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hurtbox"]
-polygon = PackedVector2Array(-56, 159, 16, 153, 77, 80, 72, -256, 530, -266, 570, 53, 514, 166, 641, 164, 730, 90, 693, 22, 640, 33, 607, -284, 62, -281, -34, -125, -77, 71)
+polygon = PackedVector2Array(-56, 159, -66, 248, 68, 248, 80, 168, 77, 80, 72, -256, 530, -266, 570, 53, 514, 166, 574, 246, 669, 242, 641, 164, 686, 120, 730, 90, 693, 22, 640, 33, 607, -284, 62, -281, -34, -125, -77, 71)
 
 [node name="attack_area" type="Area2D" parent="."]
 collision_layer = 21
@@ -180,9 +180,38 @@ autostart = true
 [node name="stump_timer_2" type="Timer" parent="."]
 autostart = true
 
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-195, -410)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(-2, -450)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(196, -505)
+
+[node name="Marker2D4" type="Marker2D" parent="."]
+position = Vector2(413, -516)
+
+[node name="Marker2D5" type="Marker2D" parent="."]
+position = Vector2(605, -429)
+
+[node name="Marker2D6" type="Marker2D" parent="."]
+position = Vector2(783, -406)
+
+[node name="Marker2D7" type="Marker2D" parent="."]
+position = Vector2(986, -380)
+
+[node name="Marker2D8" type="Marker2D" parent="."]
+position = Vector2(-440, -373)
+
+[node name="ProjTimer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
 [connection signal="area_entered" from="attack_area" to="." method="_on_attack_area_area_entered"]
 [connection signal="area_exited" from="attack_area" to="." method="_on_attack_area_area_exited"]
 [connection signal="area_entered" from="attack_area2" to="." method="_on_attack_area_2_area_entered"]
 [connection signal="area_exited" from="attack_area2" to="." method="_on_attack_area_2_area_exited"]
 [connection signal="timeout" from="stump_timer_1" to="." method="_on_stump_timer_1_timeout"]
 [connection signal="timeout" from="stump_timer_2" to="." method="_on_stump_timer_2_timeout"]
+[connection signal="timeout" from="ProjTimer" to="." method="_on_proj_timer_timeout"]
