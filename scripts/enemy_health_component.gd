@@ -136,5 +136,27 @@ func heal():
 	else:
 		get_parent().get_node("Healthbar").update_healthbar(health,max_health)
 	
+func heal_hp(ammount):
+	health += ammount
 	
+	if health >= max_health:
+		health = max_health
 	
+	get_parent().get_node('damage_number_display').display_took_heal(ammount)
+	
+	if max_shield > 0:
+		get_parent().get_node("Healthbar").update_healthbar(health,max_health,shield,max_shield,true)
+	else:
+		get_parent().get_node("Healthbar").update_healthbar(health,max_health)
+func heal_shd(ammount):
+	shield += ammount
+	if max_shield > 0:
+		if shield >= max_shield:
+			shield = max_shield
+		else:
+			get_parent().get_node('damage_number_display').display_took_heal_shield(ammount)
+			
+	if max_shield > 0:
+		get_parent().get_node("Healthbar").update_healthbar(health,max_health,shield,max_shield,true)
+
+		

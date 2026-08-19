@@ -16,7 +16,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		match type:
 			'lo1':
 				get_parent().get_child(0).lo_cutscene()
-		
+			'lo2': 
+				get_parent().get_child(0).lo_cutscene_2()
 		
 		triggered = true
 

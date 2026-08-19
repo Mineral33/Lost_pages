@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0hnsc4idy34j"]
+
+[ext_resource type="Script" uid="uid://dhx4fw6omhlj3" path="res://scripts/lo_p_1.gd" id="1_adj4o"]
+[ext_resource type="Texture2D" uid="uid://6l5rbj16giuh" path="res://assets/enemies/lo_1/lo_projectiles/lo2_p_1.png" id="2_adj4o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c7jun"]
+radius = 68.2642
+
+[node name="lo2_p_1" type="Area2D"]
+position = Vector2(0, -1)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_adj4o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_adj4o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_c7jun")
+
+[node name="LifeTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]

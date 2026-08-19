@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6wcwhocntupp"]
+
+[ext_resource type="Script" uid="uid://dlt8qqpycom3t" path="res://scripts/lo_2_p_2.gd" id="1_t3tys"]
+[ext_resource type="Texture2D" uid="uid://dpwcdh3bxfaru" path="res://assets/enemies/lo_1/lo_projectiles/lo2_homing_hp.png" id="2_t3tys"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c7jun"]
+radius = 22.561
+
+[node name="lo2_p_1" type="Area2D"]
+position = Vector2(0, -1)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_t3tys")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_t3tys")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_c7jun")
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 7.0
+autostart = true
+
+[node name="NoChaseTimer" type="Timer" parent="."]
+wait_time = 1.2
+autostart = true
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]
+[connection signal="timeout" from="NoChaseTimer" to="." method="_on_no_chase_timer_timeout"]

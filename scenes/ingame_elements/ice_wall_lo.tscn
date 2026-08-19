@@ -1,0 +1,117 @@
+[gd_scene load_steps=10 format=3 uid="uid://dw5ht7ex1y1hl"]
+
+[ext_resource type="Script" uid="uid://bb705r8nn8hia" path="res://scripts/ice_wall_lo.gd" id="1_dgg7d"]
+[ext_resource type="Texture2D" uid="uid://ctg8qh3hmqibr" path="res://assets/enemies/lo_1/lo_projectiles/lo2_wall.png" id="1_nql1o"]
+[ext_resource type="PackedScene" uid="uid://cuqscf00y3hyu" path="res://scenes/ingame_elements/damage_trap/ice_spike.tscn" id="2_fav44"]
+[ext_resource type="Texture2D" uid="uid://bwohaulyooo2k" path="res://assets/enemies/lo_1/lo_projectiles/lo2_effect_10000.png" id="4_0yih3"]
+[ext_resource type="Texture2D" uid="uid://fpsixhk7hc5x" path="res://assets/enemies/lo_1/lo_projectiles/lo2_effect_10002.png" id="5_kulo5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fav44"]
+size = Vector2(199.777, 49.9442)
+
+[sub_resource type="Animation" id="Animation_0ddhw"]
+resource_name = "shine"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.2, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_0yih3"), ExtResource("4_0yih3"), ExtResource("5_kulo5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D3:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0666667, 0.2, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_0yih3"), ExtResource("4_0yih3"), ExtResource("5_kulo5")]
+}
+
+[sub_resource type="Animation" id="Animation_yhu0s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D3:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aln2u"]
+_data = {
+&"RESET": SubResource("Animation_yhu0s"),
+&"shine": SubResource("Animation_0ddhw")
+}
+
+[node name="ice_wall_lo" type="StaticBody2D" groups=["Wall"]]
+collision_layer = 31
+collision_mask = 31
+script = ExtResource("1_dgg7d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_nql1o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.119167, 0.0769434)
+shape = SubResource("RectangleShape2D_fav44")
+disabled = true
+
+[node name="ice_spiike" parent="." instance=ExtResource("2_fav44")]
+position = Vector2(-71.7995, -50.3056)
+
+[node name="ice_spiike2" parent="." instance=ExtResource("2_fav44")]
+position = Vector2(73.1775, -51.5801)
+
+[node name="ice_spiike3" parent="." instance=ExtResource("2_fav44")]
+position = Vector2(73.4961, 50.0631)
+scale = Vector2(-0.35, -0.35)
+
+[node name="ice_spiike4" parent="." instance=ExtResource("2_fav44")]
+position = Vector2(-73.7113, 51.3376)
+scale = Vector2(-0.35, -0.35)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(43.2579, -0.848183)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-38.5929, 1.2723)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_aln2u")
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

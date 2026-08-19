@@ -1,0 +1,234 @@
+[gd_scene load_steps=17 format=3 uid="uid://b42cl8c6lo1ak"]
+
+[ext_resource type="Script" uid="uid://dpttf14s1tu4g" path="res://scripts/lo_2.gd" id="1_u7jn2"]
+[ext_resource type="Texture2D" uid="uid://d21sp3e1klgo6" path="res://assets/enemies/lo_2/lo_B_20000.png" id="2_u7jn2"]
+[ext_resource type="Texture2D" uid="uid://bp5umqiy01lpn" path="res://assets/enemies/lo_2/lo_B_20001.png" id="3_aa8m7"]
+[ext_resource type="Texture2D" uid="uid://bwohaulyooo2k" path="res://assets/enemies/lo_1/lo_projectiles/lo2_effect_10000.png" id="3_utvje"]
+[ext_resource type="Texture2D" uid="uid://c0widpoeir01g" path="res://assets/enemies/lo_2/lo_B_20002.png" id="4_867eb"]
+[ext_resource type="Texture2D" uid="uid://b65lmgsrbokuq" path="res://assets/enemies/lo_1/lo_projectiles/lo2_effect_10001.png" id="4_tp6qn"]
+[ext_resource type="Texture2D" uid="uid://beko2xru65inp" path="res://assets/enemies/lo_2/lo_B_20003.png" id="5_utvje"]
+[ext_resource type="Texture2D" uid="uid://cva311nkgc27l" path="res://assets/enemies/lo_2/lo_B_20004.png" id="6_tp6qn"]
+[ext_resource type="Texture2D" uid="uid://fpsixhk7hc5x" path="res://assets/enemies/lo_1/lo_projectiles/lo2_effect_10002.png" id="9_6l3tq"]
+[ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="11_17rcj"]
+[ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="12_mym15"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="13_m2e4l"]
+
+[sub_resource type="Animation" id="Animation_clj8n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_u7jn2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_utvje")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D3:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_tp6qn")]
+}
+
+[sub_resource type="Animation" id="Animation_6l3tq"]
+resource_name = "attack"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_u7jn2"), ExtResource("3_aa8m7"), ExtResource("4_867eb"), ExtResource("5_utvje"), ExtResource("6_tp6qn")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1.36667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"show_particles"
+}, {
+"args": [],
+"method": &"fire"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.566667, 0.7, 0.833333, 0.9, 1.03333, 1.13333, 1.26667, 1.4, 1.4667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_utvje"), ExtResource("4_tp6qn"), ExtResource("9_6l3tq"), ExtResource("4_tp6qn"), ExtResource("3_utvje"), ExtResource("4_tp6qn"), ExtResource("9_6l3tq"), ExtResource("4_tp6qn"), ExtResource("4_tp6qn")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D3:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.566667, 0.7, 0.833333, 0.9, 1.03333, 1.13333, 1.26667, 1.36667, 1.43333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_utvje"), ExtResource("4_tp6qn"), ExtResource("9_6l3tq"), ExtResource("4_tp6qn"), ExtResource("3_utvje"), ExtResource("4_tp6qn"), ExtResource("9_6l3tq"), ExtResource("3_utvje"), ExtResource("3_utvje")]
+}
+
+[sub_resource type="Animation" id="Animation_vebkb"]
+resource_name = "back"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.2, 0.366667, 0.566667, 0.766667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_tp6qn"), ExtResource("5_utvje"), ExtResource("4_867eb"), ExtResource("3_aa8m7"), ExtResource("2_u7jn2")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_emwtd"]
+_data = {
+&"RESET": SubResource("Animation_clj8n"),
+&"attack": SubResource("Animation_6l3tq"),
+&"back": SubResource("Animation_vebkb")
+}
+
+[node name="lo_2" type="Node2D" groups=["Enemies"]]
+script = ExtResource("1_u7jn2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(600, 70)
+texture = ExtResource("2_u7jn2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_emwtd")
+}
+
+[node name="enemy_health_component" parent="." instance=ExtResource("11_17rcj")]
+
+[node name="Healthbar" parent="." instance=ExtResource("12_mym15")]
+offset_left = 598.0
+offset_top = -36.0
+offset_right = 598.0
+offset_bottom = -36.0
+scale = Vector2(5, 1)
+
+[node name="damage_number_display" parent="." instance=ExtResource("13_m2e4l")]
+offset_left = 577.0
+offset_top = 50.0
+offset_right = 634.0
+offset_bottom = 229.0
+
+[node name="hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hurtbox"]
+position = Vector2(-25, -10)
+polygon = PackedVector2Array(546, 54, 545, 140, 595, 142, 593, 244, 669, 242, 660, 148, 687, 146, 686, 120, 682, 59, 643, 40, 645, 6, 602, 5, 584, 24, 580, 41)
+
+[node name="ProjTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(594, -77)
+
+[node name="spike_markers" type="Node2D" parent="."]
+
+[node name="Marker2D2" type="Marker2D" parent="spike_markers"]
+position = Vector2(191, 200)
+
+[node name="Marker2D3" type="Marker2D" parent="spike_markers"]
+position = Vector2(241, 200)
+
+[node name="Marker2D8" type="Marker2D" parent="spike_markers"]
+position = Vector2(290, 200)
+
+[node name="Marker2D9" type="Marker2D" parent="spike_markers"]
+position = Vector2(342, 200)
+
+[node name="Marker2D10" type="Marker2D" parent="spike_markers"]
+position = Vector2(394, 200)
+
+[node name="Marker2D11" type="Marker2D" parent="spike_markers"]
+position = Vector2(429, 200)
+
+[node name="Marker2D12" type="Marker2D" parent="spike_markers"]
+position = Vector2(503, 200)
+
+[node name="Marker2D13" type="Marker2D" parent="spike_markers"]
+position = Vector2(573, 200)
+
+[node name="Marker2D14" type="Marker2D" parent="spike_markers"]
+position = Vector2(621, 200)
+
+[node name="Marker2D15" type="Marker2D" parent="spike_markers"]
+position = Vector2(670, 200)
+
+[node name="Marker2D16" type="Marker2D" parent="spike_markers"]
+position = Vector2(735, 200)
+
+[node name="Marker2D17" type="Marker2D" parent="spike_markers"]
+position = Vector2(811, 200)
+
+[node name="Marker2D4" type="Marker2D" parent="spike_markers"]
+position = Vector2(874, 200)
+
+[node name="Marker2D5" type="Marker2D" parent="spike_markers"]
+position = Vector2(940, 200)
+
+[node name="Marker2D6" type="Marker2D" parent="spike_markers"]
+position = Vector2(1008, 200)
+
+[node name="Marker2D7" type="Marker2D" parent="spike_markers"]
+position = Vector2(1069, 200)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(570, -34)
+texture = ExtResource("3_utvje")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(632, -74)
+texture = ExtResource("4_tp6qn")
+
+[connection signal="timeout" from="ProjTimer" to="." method="_on_proj_timer_timeout"]

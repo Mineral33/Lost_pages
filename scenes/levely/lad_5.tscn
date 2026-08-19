@@ -9,11 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://dpkdqawaqh40m" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground7.tscn" id="7_6oer8"]
 [ext_resource type="PackedScene" uid="uid://cb2hqwsb04rhs" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground3.tscn" id="8_bt2ax"]
 [ext_resource type="PackedScene" uid="uid://bcody6b1gnyp1" path="res://scenes/ingame_elements/decoration/collision/ground/groun2.tscn" id="9_4hent"]
-[ext_resource type="PackedScene" uid="uid://eq1pa601aymt" path="res://scenes/ingame_elements/decoration/collision/ground/ground3.tscn" id="10_3uiok"]
 [ext_resource type="Texture2D" uid="uid://d1nu083fahs1v" path="res://assets/pozadie/obloha.png" id="11_6oer8"]
 [ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="12_bt2ax"]
 [ext_resource type="PackedScene" uid="uid://byd5a7bw8qkhf" path="res://scenes/ingame_elements/decoration/area_cutscene.tscn" id="13_3uiok"]
 [ext_resource type="PackedScene" uid="uid://dfh6qcldm1s74" path="res://scenes/enemies/lo_1.tscn" id="14_6oer8"]
+[ext_resource type="PackedScene" uid="uid://b42cl8c6lo1ak" path="res://scenes/enemies/lo_2.tscn" id="15_bt2ax"]
 
 [node name="lad" type="Node2D"]
 script = ExtResource("1_ut1t3")
@@ -60,15 +60,14 @@ position = Vector2(-1232, 61)
 [node name="ground7" parent="." instance=ExtResource("9_4hent")]
 position = Vector2(-1613, 61)
 
-[node name="ground8" parent="." instance=ExtResource("10_3uiok")]
-position = Vector2(-1986, -74)
-
 [node name="ground9" parent="." instance=ExtResource("9_4hent")]
-position = Vector2(-2359, -93)
+position = Vector2(-2717, 65)
 
-[node name="ground10" parent="." instance=ExtResource("10_3uiok")]
-position = Vector2(-2721, -68)
-scale = Vector2(-1, 1)
+[node name="ground10" parent="." instance=ExtResource("9_4hent")]
+position = Vector2(-2334, 66)
+
+[node name="ground16" parent="." instance=ExtResource("9_4hent")]
+position = Vector2(-1973, 62)
 
 [node name="ground11" parent="." instance=ExtResource("9_4hent")]
 position = Vector2(-3097, 66)
@@ -88,7 +87,7 @@ position = Vector2(-4621, 68)
 [node name="Polygon2D14" type="Polygon2D" parent="ground15"]
 z_index = -100
 texture_repeat = 2
-position = Vector2(-17382, 1168)
+position = Vector2(-17433, 1192)
 scale = Vector2(3.00312, 2.1037)
 texture = ExtResource("11_6oer8")
 polygon = PackedVector2Array(5790.98, -1438.42, 7437.92, -1317.68, 7683.68, -886.058, 7586.1, -433.046, 7140.23, -433.996, 6924.08, -462.684, 6407.35, -451.373, 5808.95, -438.275, 5785.19, -347.007, 5806.62, -146.408, 4975.49, -121.69, 4787.35, -1382.33)
@@ -97,10 +96,13 @@ polygon = PackedVector2Array(5790.98, -1438.42, 7437.92, -1317.68, 7683.68, -886
 texture_repeat = 2
 position = Vector2(2908.31, -1785.9)
 texture = ExtResource("12_bt2ax")
-polygon = PackedVector2Array(2782.77, 2019.3, 2820.4, 1253.98, 3472.74, 1247.55, 3576.95, 1177.92, 3702.48, 1181.25, 3831.02, 1250.18, 4197.63, 1253.03, 4155.35, 1459.33, 3428.43, 1540.62, 3171.37, 1410.85, 3075.14, 2066.83)
+polygon = PackedVector2Array(2782.77, 2019.3, 2820.4, 1253.98, 3472.74, 1247.55, 3573.28, 1226.41, 3692.49, 1227.84, 3831.02, 1250.18, 4197.63, 1253.03, 4155.35, 1459.33, 3428.43, 1540.62, 3171.37, 1410.85, 3075.14, 2066.83)
 
 [node name="view_tower" parent="." instance=ExtResource("13_3uiok")]
 position = Vector2(-1201, -277)
 
 [node name="lo_1" parent="." instance=ExtResource("14_6oer8")]
 position = Vector2(-3642, -191)
+
+[node name="lo_2" parent="." instance=ExtResource("15_bt2ax")]
+position = Vector2(-2205, -170)

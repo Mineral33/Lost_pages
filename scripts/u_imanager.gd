@@ -1327,34 +1327,66 @@ func _input(event):
 	if Input.is_action_just_pressed("go_to") and view_bool:
 		$view.hide()
 	
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed and lo_c_active:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed and c_active:
 		_on_cutscene_timer_timeout()
-var lo_c_active = false
+var c_active = false
 var lo_c_order = 0
+var s_cutscene_type = ''
 func _on_cutscene_timer_timeout() -> void:
 	$CutsceneTimer.start(5)
-	match lo_c_order:
-		0: 
-			$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_1.png")
-		1:
-			$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_2.png")
-		2: 
-			$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_3.png")
-		3:
-			get_tree().paused = false
-			$view.hide()
-			$Options.show()
-			lo_c_order = 0
-			$CutsceneTimer.stop()
-			lo_c_active = false
-	lo_c_order += 1
-	
-	
-func lo_cutscene():
+	match  s_cutscene_type:
+		'lo1':	
+			match lo_c_order:
+				0: 
+					$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_1.png")
+				1:
+					$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_2.png")
+				2: 
+					$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_3.png")
+				3:
+					get_tree().paused = false
+					$view.hide()
+					$Options.show()
+					lo_c_order = 0
+					$CutsceneTimer.stop()
+					c_active = false
+			lo_c_order += 1
+		'lo2':
+			match lo_c_order:
+				0: 
+					$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_4.png")
+				1:
+					$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_5.png")
+				2: 
+					$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_6.png")
+				3: 
+					$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_7.png")
+				4:
+					$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_8.png")
+				5: 
+					$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_9.png")
+				6:
+					get_tree().paused = false
+					$view.hide()
+					$Options.show()
+					lo_c_order = 0
+					$CutsceneTimer.stop()
+					c_active = false
+			lo_c_order += 1
+func lo_cutscene_2():
+	s_cutscene_type = 'lo2'
 	$Options.hide()
 	get_tree().paused = true
 	$view.show()
-	lo_c_active = true
+	c_active = true
+	_on_cutscene_timer_timeout()
+	
+func lo_cutscene():
+	s_cutscene_type = 'lo1'
+	$Options.hide()
+	get_tree().paused = true
+	$view.show()
+	c_active = true
 	_on_cutscene_timer_timeout()
 	
 var count = 0

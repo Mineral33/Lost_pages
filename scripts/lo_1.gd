@@ -21,6 +21,8 @@ func _process(delta: float) -> void:
 func die():
 	# instantiate second phase
 	
+	get_parent().get_child(0).lo_cutscene_2()
+	
 	queue_free()
 	
 func _on_stump_timer_1_timeout() -> void:
