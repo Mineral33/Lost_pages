@@ -204,6 +204,8 @@ func _ready() -> void:
 		spawn_position = $from_lad_2.position	
 	if spawn == 178:
 		spawn_position = $from_krcma.position
+	match spawn:
+		179: spawn_position = $from_lo_2.position
 		
 		
 	player = $Player 

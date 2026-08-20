@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6rvm8yyclyqf"]
+[gd_scene load_steps=8 format=3 uid="uid://b6rvm8yyclyqf"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_b846f"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_8uwoh"]
 [ext_resource type="PackedScene" uid="uid://da28lp31q8oc7" path="res://scenes/player.tscn" id="3_lma53"]
-[ext_resource type="PackedScene" uid="uid://dwnntb3ngvvp4" path="res://scenes/enemies/Tolper.tscn" id="5_cd1bt"]
 [ext_resource type="Texture2D" uid="uid://dbdqi6k6o5ix" path="res://assets/pozadie/ice_groundback.png" id="6_1o1w7"]
 [ext_resource type="PackedScene" uid="uid://14jbjx0enb5v" path="res://scenes/dvere/door_back.tscn" id="7_8ya5p"]
 [ext_resource type="PackedScene" uid="uid://dpkdqawaqh40m" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground7.tscn" id="8_51fnj"]
@@ -17,9 +16,6 @@ level_name = "lad_3"
 
 [node name="Player" parent="." instance=ExtResource("3_lma53")]
 position = Vector2(-61, 10)
-
-[node name="Tolper" parent="." instance=ExtResource("5_cd1bt")]
-position = Vector2(-704, 11)
 
 [node name="Polygon2D9" type="Polygon2D" parent="."]
 texture_repeat = 2

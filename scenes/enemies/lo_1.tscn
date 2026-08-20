@@ -208,6 +208,9 @@ position = Vector2(-440, -373)
 wait_time = 0.3
 autostart = true
 
+[node name="SpawnMarker" type="Marker2D" parent="."]
+position = Vector2(278, 253)
+
 [connection signal="area_entered" from="attack_area" to="." method="_on_attack_area_area_entered"]
 [connection signal="area_exited" from="attack_area" to="." method="_on_attack_area_area_exited"]
 [connection signal="area_entered" from="attack_area2" to="." method="_on_attack_area_2_area_entered"]

@@ -18,6 +18,7 @@ position = Vector2(1, 1)
 shape = SubResource("CircleShape2D_c7jun")
 
 [node name="LifeTimer" type="Timer" parent="."]
+wait_time = 11.0
 autostart = true
 
 [connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]

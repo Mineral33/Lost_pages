@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://13nspplvq1f6"]
+[gd_scene load_steps=4 format=3 uid="uid://c0xucwrk01mmh"]
 
 [ext_resource type="Script" uid="uid://dhx4fw6omhlj3" path="res://scripts/lo_p_1.gd" id="1_x3wbl"]
 [ext_resource type="Texture2D" uid="uid://3jd23e8sqdgl" path="res://assets/enemies/lo_1/lo_projectiles/lo1_projectile_1.png" id="2_pa5fl"]

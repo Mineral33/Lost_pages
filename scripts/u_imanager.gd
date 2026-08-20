@@ -1373,6 +1373,43 @@ func _on_cutscene_timer_timeout() -> void:
 					$CutsceneTimer.stop()
 					c_active = false
 			lo_c_order += 1
+		'lo3':
+			match lo_c_order:
+				0: 
+					$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_10.png")
+				1:
+					$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_11.png")
+				2: 
+					$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_12.png")
+				3: 
+					$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_13.png")
+				4:
+					$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_14.png")
+				5:
+					get_tree().paused = false
+					$view.hide()
+					$Options.show()
+					lo_c_order = 0
+					$CutsceneTimer.stop()
+					c_active = false
+					
+					GameManager.player_spawn = 179
+					GameManager.save(get_parent().get_node('Player').get_node('AB_Timer').time_left)
+					GameManager.content_to_save['level'] = "res://scenes/levely/lo_3_level.tscn"
+					GameManager._save(179)
+					get_parent().get_node('Player').restore_bindings()
+					get_parent().get_node('Player').vytriezvi()
+					GameManager.enter_level("res://scenes/levely/lo_3_level.tscn")
+			lo_c_order += 1
+	
+
+func lo_cutscene_3():
+	s_cutscene_type = 'lo3'
+	$Options.hide()
+	get_tree().paused = true
+	$view.show()
+	c_active = true
+	_on_cutscene_timer_timeout()
 func lo_cutscene_2():
 	s_cutscene_type = 'lo2'
 	$Options.hide()

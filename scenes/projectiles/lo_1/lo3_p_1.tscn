@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://xdvrxadju6e8"]
+
+[ext_resource type="Script" uid="uid://d3v7ldknaoo1d" path="res://scripts/lo_3_p_1.gd" id="1_tncu3"]
+[ext_resource type="Texture2D" uid="uid://cpti0qpwscy0y" path="res://assets/enemies/lo_1/lo_projectiles/lo_orbiting.png" id="2_olrfh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c7jun"]
+radius = 46.0109
+
+[node name="lo2_p_1" type="Area2D"]
+position = Vector2(0, -1)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_tncu3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_olrfh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_c7jun")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

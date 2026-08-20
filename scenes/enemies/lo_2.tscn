@@ -135,7 +135,7 @@ _data = {
 script = ExtResource("1_u7jn2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(600, 70)
+position = Vector2(-4, -168)
 texture = ExtResource("2_u7jn2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -144,21 +144,23 @@ libraries = {
 }
 
 [node name="enemy_health_component" parent="." instance=ExtResource("11_17rcj")]
+position = Vector2(-604, -238)
 
 [node name="Healthbar" parent="." instance=ExtResource("12_mym15")]
-offset_left = 598.0
-offset_top = -36.0
-offset_right = 598.0
-offset_bottom = -36.0
+offset_left = -6.0
+offset_top = -274.0
+offset_right = -6.0
+offset_bottom = -274.0
 scale = Vector2(5, 1)
 
 [node name="damage_number_display" parent="." instance=ExtResource("13_m2e4l")]
-offset_left = 577.0
-offset_top = 50.0
-offset_right = 634.0
-offset_bottom = 229.0
+offset_left = -27.0
+offset_top = -188.0
+offset_right = 30.0
+offset_bottom = -9.0
 
 [node name="hurtbox" type="Area2D" parent="."]
+position = Vector2(-604, -238)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hurtbox"]
 position = Vector2(-25, -10)
@@ -169,9 +171,10 @@ wait_time = 5.0
 autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(594, -77)
+position = Vector2(-10, -315)
 
 [node name="spike_markers" type="Node2D" parent="."]
+position = Vector2(-604, -238)
 
 [node name="Marker2D2" type="Marker2D" parent="spike_markers"]
 position = Vector2(191, 200)

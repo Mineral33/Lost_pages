@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0hnsc4idy34j"]
 
-[ext_resource type="Script" uid="uid://dhx4fw6omhlj3" path="res://scripts/lo_p_1.gd" id="1_adj4o"]
+[ext_resource type="Script" uid="uid://bhbd5r4ytu5n3" path="res://scripts/lo_2_p_1.gd" id="1_adj4o"]
 [ext_resource type="Texture2D" uid="uid://6l5rbj16giuh" path="res://assets/enemies/lo_1/lo_projectiles/lo2_p_1.png" id="2_adj4o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c7jun"]

@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://bx0bksu778l40"]
+
+[ext_resource type="Script" uid="uid://c0x7pfyuvw0os" path="res://scripts/lo_3.gd" id="1_cpjsi"]
+[ext_resource type="Texture2D" uid="uid://hncpox1vb8ge" path="res://assets/enemies/lo_3/lo_3_face.png" id="2_a6xfi"]
+[ext_resource type="Script" uid="uid://blyjaax4mjrwn" path="res://scripts/lo_3_necklace.gd" id="6_a6xfi"]
+[ext_resource type="PackedScene" uid="uid://c4oa3p7fnjd2a" path="res://scenes/enemies/enemy_health_component.tscn" id="10_m4qkp"]
+[ext_resource type="PackedScene" uid="uid://c14p208xlejkn" path="res://scenes/UI/healthbar.tscn" id="11_jgsf1"]
+[ext_resource type="PackedScene" uid="uid://dwvlxjdk2iy8v" path="res://assets/enemies/damage_number_display.tscn" id="12_v7lnl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o3yqy"]
+radius = 60.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_28t5t"]
+
+[node name="lo_3" type="Node2D" groups=["Enemies"]]
+script = ExtResource("1_cpjsi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4, -168)
+texture = ExtResource("2_a6xfi")
+
+[node name="enemy_health_component" parent="." instance=ExtResource("10_m4qkp")]
+position = Vector2(-604, -238)
+
+[node name="Healthbar" parent="." instance=ExtResource("11_jgsf1")]
+offset_left = -6.0
+offset_top = -274.0
+offset_right = -6.0
+offset_bottom = -274.0
+scale = Vector2(5, 1)
+
+[node name="damage_number_display" parent="." instance=ExtResource("12_v7lnl")]
+offset_left = -74.0
+offset_top = -219.0
+offset_right = 60.0
+offset_bottom = -139.0
+
+[node name="hurtbox" type="Area2D" parent="."]
+position = Vector2(-604, -238)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(598, 60)
+shape = SubResource("CircleShape2D_o3yqy")
+
+[node name="HealTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Node2D" type="Node2D" parent="." groups=["Enemies"]]
+script = ExtResource("6_a6xfi")
+
+[node name="hurtbox" type="Area2D" parent="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/hurtbox"]
+position = Vector2(-12, -83)
+shape = SubResource("CircleShape2D_28t5t")
+
+[node name="enemy_health_component" parent="Node2D" instance=ExtResource("10_m4qkp")]
+position = Vector2(-604, -238)
+
+[node name="Healthbar" parent="Node2D" instance=ExtResource("11_jgsf1")]
+offset_left = -11.0
+offset_top = -103.0
+offset_right = -11.0
+offset_bottom = -103.0
+scale = Vector2(1, 0.5)
+
+[node name="damage_number_display" parent="Node2D" instance=ExtResource("12_v7lnl")]
+offset_left = -30.0
+offset_top = -189.0
+offset_right = 27.0
+offset_bottom = -10.0
+
+[connection signal="timeout" from="HealTimer" to="." method="_on_heal_timer_timeout"]

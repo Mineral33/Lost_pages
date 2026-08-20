@@ -82,3 +82,5 @@ func fire():
 			proj.global_position = $Marker2D.global_position
 		
 	$AnimationPlayer.play("back")
+func die():
+	get_parent().get_child(0).lo_cutscene_3()

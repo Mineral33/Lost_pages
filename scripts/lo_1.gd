@@ -4,6 +4,8 @@ var  max_shield = 1200
 var active = true
 var markers = []
 var projectile_scene = preload("res://scenes/projectiles/lo_1/lo_p_1.tscn")
+
+var lo_2 = preload("res://scenes/enemies/lo_2.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	markers = [$Marker2D,$Marker2D2,$Marker2D3,$Marker2D4,$Marker2D5,$Marker2D6,$Marker2D7,$Marker2D8]
@@ -22,6 +24,10 @@ func die():
 	# instantiate second phase
 	
 	get_parent().get_child(0).lo_cutscene_2()
+	var lo_2_inst = lo_2.instantiate()
+	lo_2_inst.global_position = $SpawnMarker.global_position
+	get_tree().current_scene.add_child(lo_2_inst)
+	
 	
 	queue_free()
 	
@@ -57,7 +63,7 @@ func _on_attack_area_2_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		is_here_2 = false
 		player = null
-var order = [1,1,1,1,2,2,1,1,1,1,2,2,3,3,1,1,1,1,2,3,3,3,1,1,1,1,3,1,2,3,1,3,3]
+var order = [1,1,1,1,2,2,1,1,1,1,2,2,3,3,1,1,1,1,2,3,3,3,1,1,1,1,3,1,2,3,1,3,3,1,1,1,1,1,1,1,1,1,1,1]
 var inaccuracy_degrees = 25
 var projectile_type= 1
 var order_position =  0
@@ -65,15 +71,15 @@ func fire_projectile():
 	projectile_type = order[order_position]
 	match projectile_type:
 		1: 
-			$ProjTimer.wait_time = 0.1 
+			$ProjTimer.wait_time = 0.08
 			projectile_type = 1
 			inaccuracy_degrees = 25
 		2:
-			$ProjTimer.wait_time = 0.4
+			$ProjTimer.wait_time = 0.2
 			projectile_type = 2
 			inaccuracy_degrees = 15
 		3:
-			$ProjTimer.wait_time = 0.5
+			$ProjTimer.wait_time = 0.2
 			projectile_type = 3
 			inaccuracy_degrees = 5
 	var proj = projectile_scene.instantiate()
@@ -83,7 +89,7 @@ func fire_projectile():
 	var direction = Vector2(0,1)
 	var spread_radians = deg_to_rad(randf_range(-inaccuracy_degrees, inaccuracy_degrees))
 	direction = direction.rotated(spread_radians)
-	proj.fire(direction, 0,projectile_type) 
+	proj.fire(direction, 500,projectile_type) 
 	order_position +=1
 	if order_position == len(order):
 		order_position = 0
