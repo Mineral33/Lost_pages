@@ -251,9 +251,11 @@ var drop_wind = [0,0,0]
 
 var smelted_bars = [0,0,0,0,0]
 
+var lo_defeat = false
 var fly = 0
 var fly_quest = false
 func _process(delta: float) -> void:
+#	print(lo_defeat)
 	##print(treasures['lianova_veza'])
 #	pr#int(plants)
 	##print(treasures['les_9'])
@@ -471,7 +473,8 @@ var content_to_save = {
 	'drop_earth' :[0,0,0],
 	'drop_fire' : [0,0,0],
 	'drop_wind' : [0,0,0],
-	'smelted_bars' : [0,0,0,0,0]
+	'smelted_bars' : [0,0,0,0,0],
+	'lo_defeat': false
 	}
 
 func _reset():
@@ -514,7 +517,8 @@ func _reset():
 	'drop_earth' :[0,0,0],
 	'drop_fire' : [0,0,0],
 	'drop_wind' : [0,0,0],
-	'smelted_bars' : [0,0,0,0,0]
+	'smelted_bars' : [0,0,0,0,0],
+	'lo_defeat': false
 	}
 func _save(last_spawn:= 000 ):
 	content_to_save['gold'] = gold
@@ -612,7 +616,7 @@ func _load():
 		drop_fire= save_data['drop_fire']
 		drop_wind =save_data['drop_wind']
 		smelted_bars = save_data['smelted_bars'] 
-		
+		lo_defeat = save_data['lo_defeat']
 		##print(player_position_save)
 		load_save()
 		return save_data

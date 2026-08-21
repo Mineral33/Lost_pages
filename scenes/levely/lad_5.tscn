@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cxnu6rqm3qnel"]
+[gd_scene load_steps=16 format=3 uid="uid://cxnu6rqm3qnel"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_ut1t3"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_quec0"]
@@ -13,10 +13,13 @@
 [ext_resource type="Texture2D" uid="uid://d04henqrvfdxl" path="res://assets/pozadie/ground.png" id="12_bt2ax"]
 [ext_resource type="PackedScene" uid="uid://byd5a7bw8qkhf" path="res://scenes/ingame_elements/decoration/area_cutscene.tscn" id="13_3uiok"]
 [ext_resource type="PackedScene" uid="uid://dfh6qcldm1s74" path="res://scenes/enemies/lo_1.tscn" id="14_6oer8"]
+[ext_resource type="PackedScene" uid="uid://bxsmfdbletwdk" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground2.tscn" id="14_bt2ax"]
+[ext_resource type="Script" uid="uid://cu3fj4tgf0kll" path="res://scripts/lo_defeat_passway.gd" id="15_y415r"]
 
 [node name="lad" type="Node2D"]
 script = ExtResource("1_ut1t3")
 level_name = "lad_5"
+metadata/_edit_vertical_guides_ = [-7210.0]
 
 [node name="UImanager" parent="." instance=ExtResource("2_quec0")]
 
@@ -32,6 +35,12 @@ position = Vector2(-3172, -791)
 texture = ExtResource("5_4hent")
 polygon = PackedVector2Array(2467, 867, 3053, 874, 3408, 875, 3422, 1384, 2847, 1360, 2330, 1364)
 
+[node name="Polygon2D10" type="Polygon2D" parent="."]
+texture_repeat = 2
+position = Vector2(-8961, -771)
+texture = ExtResource("5_4hent")
+polygon = PackedVector2Array(2467, 867, 3037, 863, 3018, 968, 3346, 1414, 3146, 2160, 2034, 1993)
+
 [node name="from_lad_4" type="Marker2D" parent="."]
 position = Vector2(-117, 0)
 
@@ -40,6 +49,12 @@ position = Vector2(-222, -30)
 to_level_name = "lad 4"
 path_to_level = "res://scenes/levely/lad_4.tscn"
 player_spawn = 176
+
+[node name="door_back2" parent="." instance=ExtResource("6_3uiok")]
+position = Vector2(-6221, -28)
+to_level_name = "lad 6"
+path_to_level = "res://scenes/levely/lad_6.tscn"
+player_spawn = 181
 
 [node name="ground2" parent="." instance=ExtResource("7_6oer8")]
 position = Vector2(-222, -8)
@@ -89,7 +104,7 @@ texture_repeat = 2
 position = Vector2(-17433, 1192)
 scale = Vector2(3.00312, 2.1037)
 texture = ExtResource("11_6oer8")
-polygon = PackedVector2Array(5790.98, -1438.42, 7437.92, -1317.68, 7683.68, -886.058, 7586.1, -433.046, 7140.23, -433.996, 6924.08, -462.684, 6407.35, -451.373, 5808.95, -438.275, 5785.19, -347.007, 5806.62, -146.408, 4975.49, -121.69, 4787.35, -1382.33)
+polygon = PackedVector2Array(5790.98, -1438.42, 7437.92, -1317.68, 7683.68, -886.058, 7586.1, -433.046, 7140.23, -433.996, 6924.08, -462.684, 6407.35, -451.373, 5808.95, -438.275, 5785.19, -347.007, 5806.62, -146.408, 4975.49, -121.69, 4568.92, -50.8628, 4787.35, -1382.33)
 
 [node name="Polygon2D10" type="Polygon2D" parent="ground15/Polygon2D14"]
 texture_repeat = 2
@@ -102,3 +117,24 @@ position = Vector2(-1227, -94)
 
 [node name="lo_1" parent="." instance=ExtResource("14_6oer8")]
 position = Vector2(-3640, -186)
+
+[node name="ground8" parent="." instance=ExtResource("14_bt2ax")]
+position = Vector2(-6082, -5)
+
+[node name="ground17" parent="." instance=ExtResource("8_bt2ax")]
+position = Vector2(-6382, -4)
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("15_y415r")
+
+[node name="Marker2D" type="Marker2D" parent="Node2D"]
+position = Vector2(-5218, -4)
+
+[node name="Marker2D2" type="Marker2D" parent="Node2D"]
+position = Vector2(-5639, 11)
+
+[node name="from_lad_6" type="Marker2D" parent="."]
+position = Vector2(-6027, 1)
+
+[node name="from_lo_3" type="Marker2D" parent="."]
+position = Vector2(-4740, -86)

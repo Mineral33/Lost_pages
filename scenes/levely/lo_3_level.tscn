@@ -64,8 +64,8 @@ position = Vector2(-271, -993)
 
 [node name="door_back" parent="." instance=ExtResource("6_y8tu3")]
 position = Vector2(-109, -589)
-path_to_level = "res://scenes/levely/lad.tscn"
-player_spawn = 172
+path_to_level = "res://scenes/levely/lad_5.tscn"
+player_spawn = 180
 
 [node name="ground2" parent="." instance=ExtResource("7_woggp")]
 position = Vector2(-222, -8)
@@ -202,6 +202,7 @@ wait_time = 0.1
 autostart = true
 
 [node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1, 0)
 script = ExtResource("16_7xgcl")
 
 [node name="Marker2D" type="Marker2D" parent="Node2D"]
@@ -239,5 +240,8 @@ position = Vector2(475, -1461)
 
 [node name="lo_2" parent="." instance=ExtResource("17_pe2c4")]
 position = Vector2(-988, -376)
+
+[node name="lo_2_spawn_marker" type="Marker2D" parent="."]
+position = Vector2(70, -470)
 
 [connection signal="timeout" from="ProjTimer" to="Node2D" method="_on_proj_timer_timeout"]

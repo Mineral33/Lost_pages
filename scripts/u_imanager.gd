@@ -1401,8 +1401,19 @@ func _on_cutscene_timer_timeout() -> void:
 					get_parent().get_node('Player').vytriezvi()
 					GameManager.enter_level("res://scenes/levely/lo_3_level.tscn")
 			lo_c_order += 1
-	
-
+		'lo3_end':
+			match lo_c_order:
+				0: 
+					$view.texture = preload("res://assets/pozadie/cutscenes/lo_ia_15.png")
+				1:
+					get_tree().paused = false
+					$view.hide()
+					$Options.show()
+					lo_c_order = 0
+					$CutsceneTimer.stop()
+					c_active = false
+			lo_c_order += 1
+					
 func lo_cutscene_3():
 	s_cutscene_type = 'lo3'
 	$Options.hide()
@@ -1513,18 +1524,24 @@ func gate_guard_init():
 		current_conversation.append('Leave or I throw you to the right.')
 	konverzácia(0)	
 
-var fg_face = [preload("res://assets/postavy/barman/barman_face.png")]
-var fg_talk = ['Want a drink?']
-var fg_face_order = [0]
-var fg_conversation_length = 1
-func bar_init():
+	 
+
+	
+var lo_2_face = [preload(	 "res://assets/enemies/lo_3/lo_3_face.png")]
+var lo_2_talk = ['What is happening? Where am I?',
+'Agggghhhh! I remember, that fool. But bigger fool was me thrusting him.',
+'Why is ice everywhere? What has he used me for...? But no longer.',
+'The amulet you destroyed must have manipulated me. I apologize for trouble.']
+var lo_2_face_order = [0,0,0,0]
+
+func lo_2_talk_init():
 	$conversation.show()
-	current_conversation =fg_talk
-	current_faces = fg_face
-	current_conversation_length = fg_conversation_length
-	current_face_order = fg_face_order
-	$"conversation/item_alcohol drink".show()
+	current_conversation =lo_2_talk
+	current_faces = lo_2_face
+	current_conversation_length = len(lo_2_talk)
+	current_face_order = lo_2_face_order
 	konverzácia(0)	
+	
 
 var bar_face = [preload("res://assets/postavy/fireguys/fireguy_face.png")]
 var bar_talk = ['Ha ha ha, we burned it prety well!',

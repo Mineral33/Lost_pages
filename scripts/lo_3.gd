@@ -30,10 +30,20 @@ func _process(delta: float) -> void:
 
 func _on_heal_timer_timeout() -> void:
 	$enemy_health_component.heal_hp(200)
-	
+var talk = preload('res://scenes/postavy/lo_3_talk.tscn')
 func die():
 	door.get_node('Area2D').get_node('CollisionShape2D').disabled = false
 	door.get_node('Sign').get_node('Area2D').get_node('CollisionShape2D').disabled = false
 	door.get_node('Sprite2D').show()
 	door.get_node('Sign').show()
+	
+	var talk_inst = talk.instantiate()
+	talk_inst.global_position = $"../lo_2_spawn_marker".global_position
+	get_tree().current_scene.add_child(talk_inst)
+	
+	$"../Node2D".stop = true
+
+	GameManager.content_to_save['lo_defeat'] = true
+	GameManager.lo_defeat = true
+	
 	queue_free()

@@ -184,7 +184,7 @@ autostart = true
 position = Vector2(-195, -410)
 
 [node name="Marker2D2" type="Marker2D" parent="."]
-position = Vector2(-2, -450)
+position = Vector2(103, -477)
 
 [node name="Marker2D3" type="Marker2D" parent="."]
 position = Vector2(196, -505)
@@ -193,7 +193,7 @@ position = Vector2(196, -505)
 position = Vector2(413, -516)
 
 [node name="Marker2D5" type="Marker2D" parent="."]
-position = Vector2(605, -429)
+position = Vector2(495, -498)
 
 [node name="Marker2D6" type="Marker2D" parent="."]
 position = Vector2(783, -406)

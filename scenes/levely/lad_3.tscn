@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6rvm8yyclyqf"]
+[gd_scene load_steps=9 format=3 uid="uid://b6rvm8yyclyqf"]
 
 [ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_b846f"]
 [ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_8uwoh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dbdqi6k6o5ix" path="res://assets/pozadie/ice_groundback.png" id="6_1o1w7"]
 [ext_resource type="PackedScene" uid="uid://14jbjx0enb5v" path="res://scenes/dvere/door_back.tscn" id="7_8ya5p"]
 [ext_resource type="PackedScene" uid="uid://dpkdqawaqh40m" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground7.tscn" id="8_51fnj"]
+[ext_resource type="Texture2D" uid="uid://d1nu083fahs1v" path="res://assets/pozadie/obloha.png" id="8_j06pe"]
 [ext_resource type="PackedScene" uid="uid://cb2hqwsb04rhs" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground3.tscn" id="9_gc1xc"]
 
 [node name="lad" type="Node2D"]
@@ -39,3 +40,11 @@ position = Vector2(-523, -8)
 
 [node name="ground4" parent="." instance=ExtResource("9_gc1xc")]
 position = Vector2(81, -9)
+
+[node name="Polygon2D14" type="Polygon2D" parent="."]
+z_index = -100
+texture_repeat = 2
+position = Vector2(-17433, 1192)
+scale = Vector2(3.00312, 2.1037)
+texture = ExtResource("8_j06pe")
+polygon = PackedVector2Array(5790.98, -1438.42, 7437.92, -1317.68, 7683.68, -886.058, 7586.1, -433.046, 7140.23, -433.996, 6924.08, -462.684, 6407.35, -451.373, 5808.95, -438.275, 5785.19, -347.007, 5806.62, -146.408, 4975.49, -121.69, 4568.92, -50.8628, 4787.35, -1382.33)
