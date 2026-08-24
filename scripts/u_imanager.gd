@@ -172,7 +172,7 @@ func _ready() :
 
 
 func _process(delta: float) -> void:
-	print('LO timer = ', $CutsceneTimer.time_left, ' lo c =', lo_c_order   )
+	#print('LO timer = ', $CutsceneTimer.time_left, ' lo c =', lo_c_order   )
 	#print('fly '+str(GameManager.fly))
 	await get_tree().create_timer(0.15).timeout
 	if GameManager.magic_ice_upgrade == 0:
@@ -1527,12 +1527,14 @@ func gate_guard_init():
 	 
 
 	
-var lo_2_face = [preload(	 "res://assets/enemies/lo_3/lo_3_face.png")]
+var lo_2_face = [preload(	 "res://assets/enemies/lo_3/lo_3_face_2.png")]
 var lo_2_talk = ['What is happening? Where am I?',
 'Agggghhhh! I remember, that fool. But bigger fool was me thrusting him.',
 'Why is ice everywhere? What has he used me for...? But no longer.',
-'The amulet you destroyed must have manipulated me. I apologize for trouble.']
-var lo_2_face_order = [0,0,0,0]
+'The amulet you destroyed must have manipulated me. I apologize for trouble.',
+'Please, help me save others, he has special necklace that controls others, if you were to destroy it, others will be set free as well.',
+'We will meet again.']
+var lo_2_face_order = [0,0,0,0,0,0]
 
 func lo_2_talk_init():
 	$conversation.show()
@@ -1543,18 +1545,80 @@ func lo_2_talk_init():
 	konverzácia(0)	
 	
 
-var bar_face = [preload("res://assets/postavy/fireguys/fireguy_face.png")]
-var bar_talk = ['Ha ha ha, we burned it prety well!',
-'this place needs much heat.',
-'the lad 5 place is recovered, but we need to do much more.']
-var bar_face_order = [0,0,0]
-var bar_conversation_length = len(bar_face_order)
-func fireguys_init():
+var lo_2_talk_p = ['Hey! Look!',
+'I made a passage for you. I cannot use it myself as owner of this castle knows many powerful spells.',
+'be careful!']
+var lo_2_p_face_order = [0,0,0]
+func lo_2_talk_passage_init():
+	$conversation.show()
+	current_conversation =lo_2_talk_p
+	current_faces = lo_2_face
+	current_conversation_length = len(lo_2_talk_p)
+	current_face_order = lo_2_p_face_order
+	konverzácia(0)	
+var bar_face = [preload("res://assets/postavy/barman/barman_face.png")]
+var bar_talk = ['Hey! Want a drink?']
+var bar_face_order = [0]
+func bar_init():
 	$conversation.show()
 	current_conversation =bar_talk
 	current_faces = bar_face
-	current_conversation_length = bar_conversation_length
+	current_conversation_length = len(bar_talk)
 	current_face_order = bar_face_order
+	konverzácia(0)	
+	
+var fg_face = [preload("res://assets/postavy/fireguys/fireguy_face.png"),preload("res://assets/postavy/fireguys/fireguy_face_2.png")]
+var fg_talk = ['Ha ha ha, we burned it prety well! this place needs much heat.',
+'Dont celebrate too early, it is possible someone will come to defend soon.',
+'Hah ahh ha, let them come! I will not need to search for them!',
+'This place needs fire but fire can also burn.',
+'Huh? from when? Once there wan no ice on this island. And they were living much more happyilly. But once a powerful ice mage looked for a new base and settled here. From than, nothing grows here because everything is coverd in ice.',
+'Hey you I saw that, you used ice! I bet you are one of spies!',
+'Let him be! Just for that he uses ice doest mean he is with them!',
+'Ah, okay, not that I fear them, but you are naive.']
+var fg_face_order = [0,1,0,1,0,0,1,0]
+var fg_conversation_length = len(fg_face_order)
+func fireguys_init():
+	$conversation.show()
+	current_conversation =fg_talk
+	current_faces = fg_face
+	current_conversation_length = fg_conversation_length
+	current_face_order = fg_face_order
+	konverzácia(0)	
+
+var fg_2_face = [preload("res://assets/postavy/fireguys/fireguy_face.png"),preload("res://assets/postavy/fireguys/fireguy_face_2.png")]
+var fg_2_talk = ['You are too naive indeed. I can no longer thrust you as you betrayed our ideal.',
+'Do you really think everything can be resolved by burning it?',
+'Want to see? You know, you are the problem, when i burn you, will you still be a problem?',
+'You are no better than the evil ice mage!',
+'Ha ha hhja, me fire no better than ice. This is why you are no fit.',
+'Hey, you! Where do you think, you are going?'
+
+]
+var fg_2_face_order = [0,1,0,1,0,0]
+var fg_2_conversation_length = len(fg_2_face_order)
+func fireguys_2_init():
+	$conversation.show()
+	current_conversation =fg_2_talk
+	current_faces = fg_2_face
+	current_conversation_length = fg_2_conversation_length
+	current_face_order = fg_2_face_order
+	konverzácia(0)	
+var fg_3_face = [preload("res://assets/postavy/fireguys/fireguy_face.png"),preload("res://assets/postavy/fireguys/fireguy_face_2.png")]
+var fg_3_talk = ['He was right, I was too naive thrusting him.',
+'Thank you, you saved my life!',
+'Run from this place! The owner is ... he is too powerful.',
+'Not to say, there isnt a way how to get in castle.',
+'An angel would must help you to this fight... that would not happen...'
+]
+var fg_3_face_order = [1,1,1,1,1]
+var fg_3_conversation_length = len(fg_3_face_order)
+func fireguys_3_init():
+	$conversation.show()
+	current_conversation =fg_3_talk
+	current_faces = fg_3_face
+	current_conversation_length = fg_3_conversation_length
+	current_face_order = fg_3_face_order
 	konverzácia(0)	
 	
 var fa_face = [preload("res://assets/postavy/frozen_apple/fa_face.png")]
@@ -1723,6 +1787,7 @@ var lodb_talk = ['Hey! How was your trip?',
 ]
 var lodb_face_order = [0,0,0]
 var lodb_conversation_length = 3
+
 func lod_init_back():
 	#print('lod inited')
 	$conversation.show()
@@ -1736,8 +1801,10 @@ var conv_yes = false
 var conv_no = false
 # univery8lna funkcia pre konverzáciu
 func konverzácia(i):
-	if i == 0 and current_faces != [preload("res://assets/postavy/barman/barman_face.png")]:
+	if  current_faces != [preload("res://assets/postavy/barman/barman_face.png")]:
 		$"conversation/item_alcohol drink".hide()
+	else:
+		$"conversation/item_alcohol drink".show()
 	if current_faces == [preload('res://assets/postavy/smugler_face_1.png')] and conversation_progres == 2 && !GameManager.package:
 		update_log_info('Package recieved')
 		GameManager.package = true
@@ -1747,6 +1814,13 @@ func konverzácia(i):
 	if (current_conversation == lod_talk or current_conversation == lodb_talk) and conversation_progres == 2:
 		$conversation/conv_no.show()
 		$conversation/conv_yes.show()
+	if current_conversation == fg_2_talk and i == len(fg_2_talk):
+		get_parent().get_node('fire guys').get_node('Sprite2D').texture = load("res://assets/postavy/fireguys/fireguys_2_2.png")
+		get_parent().get_node('fire guys').lock = true
+		var fg_boss = load("res://scenes/enemies/fg_boss.tscn")
+		var fg_boss_inst = fg_boss.instantiate()
+		fg_boss_inst.global_position = $"../fire guys".global_position
+		get_parent().add_child(fg_boss_inst)
 		
 	#print(i)
 	#print(current_conversation)

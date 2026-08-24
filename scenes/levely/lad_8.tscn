@@ -1,0 +1,102 @@
+[gd_scene load_steps=16 format=3 uid="uid://0pqw81cg8rdb"]
+
+[ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_i0huv"]
+[ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_mrc80"]
+[ext_resource type="PackedScene" uid="uid://da28lp31q8oc7" path="res://scenes/player.tscn" id="3_y0ldi"]
+[ext_resource type="Texture2D" uid="uid://dbdqi6k6o5ix" path="res://assets/pozadie/ice_groundback.png" id="4_61r3b"]
+[ext_resource type="PackedScene" uid="uid://14jbjx0enb5v" path="res://scenes/dvere/door_back.tscn" id="5_uaa1i"]
+[ext_resource type="PackedScene" uid="uid://dpkdqawaqh40m" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground7.tscn" id="6_827ml"]
+[ext_resource type="PackedScene" uid="uid://cb2hqwsb04rhs" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground3.tscn" id="7_5vlfg"]
+[ext_resource type="Texture2D" uid="uid://d1nu083fahs1v" path="res://assets/pozadie/obloha.png" id="8_b4hxn"]
+[ext_resource type="PackedScene" uid="uid://bg7g6o26vhcjs" path="res://scenes/ingame_elements/decoration/view_tower.tscn" id="9_y0ldi"]
+[ext_resource type="Texture2D" uid="uid://gdwnsf4hxlx" path="res://assets/pozadie/ice_castle_wall.png" id="10_61r3b"]
+[ext_resource type="PackedScene" uid="uid://cyf6r5p8f3m2b" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground4.tscn" id="11_827ml"]
+[ext_resource type="PackedScene" uid="uid://ch1ev2uix6ngi" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground6.tscn" id="12_5vlfg"]
+[ext_resource type="PackedScene" uid="uid://bt3yryhftax7i" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground1.tscn" id="13_b4hxn"]
+[ext_resource type="PackedScene" uid="uid://cgwsxyjgmpoqj" path="res://scenes/postavy/fireguys_2.tscn" id="14_5vlfg"]
+[ext_resource type="PackedScene" uid="uid://bujkufxxdick4" path="res://scenes/ingame_elements/decoration/poleno.tscn" id="15_b4hxn"]
+
+[node name="lad" type="Node2D"]
+script = ExtResource("1_i0huv")
+level_name = "lad_3"
+
+[node name="UImanager" parent="." instance=ExtResource("2_mrc80")]
+
+[node name="Player" parent="." instance=ExtResource("3_y0ldi")]
+position = Vector2(-61, 10)
+
+[node name="Polygon2D9" type="Polygon2D" parent="."]
+texture_repeat = 2
+position = Vector2(-3156, -785)
+texture = ExtResource("4_61r3b")
+polygon = PackedVector2Array(1994, 1136, 1710, 960, 1177, 1070, 351, 1004, 97, 876, 1935, 866, 2681, 871, 3053, 874, 3421, 878, 3381, 1188, 2909, 1058, 2402, 1179)
+
+[node name="from_lad_7" type="Marker2D" parent="."]
+position = Vector2(-117, 0)
+
+[node name="door_back" parent="." instance=ExtResource("5_uaa1i")]
+position = Vector2(-222, -30)
+to_level_name = "lad 7"
+path_to_level = "res://scenes/levely/lad_7.tscn"
+player_spawn = 186
+
+[node name="ground2" parent="." instance=ExtResource("6_827ml")]
+position = Vector2(-222, -8)
+
+[node name="ground3" parent="." instance=ExtResource("7_5vlfg")]
+position = Vector2(-523, -8)
+
+[node name="ground4" parent="." instance=ExtResource("7_5vlfg")]
+position = Vector2(81, -9)
+
+[node name="Polygon2D14" type="Polygon2D" parent="."]
+z_index = -100
+texture_repeat = 2
+position = Vector2(-17433, 1192)
+scale = Vector2(3.00312, 2.1037)
+texture = ExtResource("8_b4hxn")
+polygon = PackedVector2Array(5790.98, -1438.42, 7437.92, -1317.68, 7683.68, -886.058, 7586.1, -433.046, 7140.23, -433.996, 6924.08, -462.684, 6407.35, -451.373, 5808.95, -438.275, 5785.19, -347.007, 5806.62, -146.408, 4975.49, -121.69, 4568.92, -50.8628, 4787.35, -1382.33)
+
+[node name="view_tower" parent="." instance=ExtResource("9_y0ldi")]
+position = Vector2(-406, -87)
+wiew_image = ExtResource("10_61r3b")
+
+[node name="ground5" parent="." instance=ExtResource("11_827ml")]
+position = Vector2(-820, -9)
+
+[node name="ground6" parent="." instance=ExtResource("12_5vlfg")]
+position = Vector2(-1117, -9)
+
+[node name="ground7" parent="." instance=ExtResource("12_5vlfg")]
+position = Vector2(-1417, -9)
+
+[node name="ground8" parent="." instance=ExtResource("6_827ml")]
+position = Vector2(-1717, -9)
+
+[node name="ground9" parent="." instance=ExtResource("7_5vlfg")]
+position = Vector2(-2019, -9)
+
+[node name="ice_ground" parent="." instance=ExtResource("13_b4hxn")]
+position = Vector2(-2321, -8)
+
+[node name="ground10" parent="." instance=ExtResource("6_827ml")]
+position = Vector2(-2647, -8)
+
+[node name="ground11" parent="." instance=ExtResource("12_5vlfg")]
+position = Vector2(-2947, -9)
+
+[node name="fire guys" parent="." instance=ExtResource("14_5vlfg")]
+position = Vector2(-1334, -6)
+
+[node name="poleno" parent="." instance=ExtResource("15_b4hxn")]
+position = Vector2(-1369, 23)
+light = false
+
+[node name="poleno2" parent="." instance=ExtResource("15_b4hxn")]
+position = Vector2(-1582, 19)
+light = false
+
+[node name="poleno3" parent="." instance=ExtResource("15_b4hxn")]
+position = Vector2(-1190, 21)
+scale = Vector2(-1, 1)
+light = false

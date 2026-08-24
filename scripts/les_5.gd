@@ -209,6 +209,14 @@ func _ready() -> void:
 		180: spawn_position = $from_lo_3.position
 		181: spawn_position = $from_lad_5.position
 		182: spawn_position = $from_lad_6.position
+		183: spawn_position = $from_lad_6.position
+		184: spawn_position = $from_lad_7.position
+		185: spawn_position = $from_lad_7.position
+		186: spawn_position = $from_lad_8.position
+		187: spawn_position = $from_lad_7.position
+		188: spawn_position = $from_lad_9.position
+		189: spawn_position = $from_lad_9.position
+		190: spawn_position = $from_ice_castle_1.position
 	player = $Player 
 
 	if spawn_position:

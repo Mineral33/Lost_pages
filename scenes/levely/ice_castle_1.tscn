@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://0tmnyk65e4oo"]
+
+[ext_resource type="Script" uid="uid://bva6g72uuiqqv" path="res://scripts/les_5.gd" id="1_cgau6"]
+[ext_resource type="PackedScene" uid="uid://dmdioispe2bdd" path="res://scenes/UI/u_imanager.tscn" id="2_iyag2"]
+[ext_resource type="PackedScene" uid="uid://da28lp31q8oc7" path="res://scenes/player.tscn" id="3_7bwqg"]
+[ext_resource type="Texture2D" uid="uid://dbdqi6k6o5ix" path="res://assets/pozadie/ice_groundback.png" id="4_ksqtv"]
+[ext_resource type="PackedScene" uid="uid://14jbjx0enb5v" path="res://scenes/dvere/door_back.tscn" id="5_ex45x"]
+[ext_resource type="PackedScene" uid="uid://dpkdqawaqh40m" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground7.tscn" id="6_d5s21"]
+[ext_resource type="PackedScene" uid="uid://cb2hqwsb04rhs" path="res://scenes/ingame_elements/decoration/collision/ice_ground/ice_ground3.tscn" id="7_dobuj"]
+[ext_resource type="Texture2D" uid="uid://d1nu083fahs1v" path="res://assets/pozadie/obloha.png" id="8_2hfnn"]
+
+[node name="lad" type="Node2D"]
+script = ExtResource("1_cgau6")
+level_name = "lad_3"
+
+[node name="UImanager" parent="." instance=ExtResource("2_iyag2")]
+
+[node name="Player" parent="." instance=ExtResource("3_7bwqg")]
+position = Vector2(-61, 10)
+
+[node name="Polygon2D9" type="Polygon2D" parent="."]
+texture_repeat = 2
+position = Vector2(-3156, -785)
+texture = ExtResource("4_ksqtv")
+polygon = PackedVector2Array(1994, 1136, 1692, 930, 1651, 793, 1935, 866, 2681, 871, 3053, 874, 3421, 878, 3381, 1188, 2855.44, 1190.6, 2402, 1179)
+
+[node name="from_lad_9" type="Marker2D" parent="."]
+position = Vector2(-117, 0)
+
+[node name="door_back" parent="." instance=ExtResource("5_ex45x")]
+position = Vector2(-222, -30)
+to_level_name = "lad_9"
+path_to_level = "res://scenes/levely/lad_9.tscn"
+player_spawn = 190
+
+[node name="ground2" parent="." instance=ExtResource("6_d5s21")]
+position = Vector2(-222, -8)
+
+[node name="ground3" parent="." instance=ExtResource("7_dobuj")]
+position = Vector2(-523, -8)
+
+[node name="ground4" parent="." instance=ExtResource("7_dobuj")]
+position = Vector2(81, -9)
+
+[node name="Polygon2D14" type="Polygon2D" parent="."]
+z_index = -100
+texture_repeat = 2
+position = Vector2(-17433, 1192)
+scale = Vector2(3.00312, 2.1037)
+texture = ExtResource("8_2hfnn")
+polygon = PackedVector2Array(5790.98, -1438.42, 7437.92, -1317.68, 7683.68, -886.058, 7586.1, -433.046, 7140.23, -433.996, 6924.08, -462.684, 6407.35, -451.373, 5808.95, -438.275, 5785.19, -347.007, 5806.62, -146.408, 4975.49, -121.69, 4568.92, -50.8628, 4787.35, -1382.33)

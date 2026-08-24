@@ -4,6 +4,7 @@ extends Node2D
 
 var is_here = false
 
+			
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("go_to") and is_here or Input.is_action_pressed("go_to") and is_here:
 		#print('open')

@@ -1,9 +1,11 @@
 extends Node2D
 @export var damage = 5
+@export var light = true
 var player_inside: Player = null
 func _ready() -> void:
 	$AnimationPlayer.play("hori")
-
+	if !light:
+		$PointLight2D.hide()
 
 func _on_damage_timer_timeout() -> void:
 	if player_inside:

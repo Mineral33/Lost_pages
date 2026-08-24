@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgwsxyjgmpoqj"]
+
+[ext_resource type="Script" uid="uid://fkorapigfi30" path="res://scripts/fireguys_2.gd" id="1_kw8cv"]
+[ext_resource type="Texture2D" uid="uid://dgyw83ywyp3j3" path="res://assets/postavy/fireguys/fireguys_2.png" id="2_rl8og"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmmwm"]
+size = Vector2(268, 98.5)
+
+[node name="fire guys" type="Node2D"]
+script = ExtResource("1_kw8cv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-104, 23)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_rl8og")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-89, 35)
+shape = SubResource("RectangleShape2D_cmmwm")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
